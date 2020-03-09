@@ -1,10 +1,11 @@
-import {ChatType, DeliveryStatus} from '../Enums';
+import {ChatType, ReceiveStatus, SendStatus} from '../Enums';
 
 export default interface Chat{
     _id:string,
     sender: string,
     text: string,
-    deliveryStatus: DeliveryStatus,
+    sendStatus: SendStatus,
+    receiveStatus: ReceiveStatus,
     type: ChatType,
     date:Date,
 
