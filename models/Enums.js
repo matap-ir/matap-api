@@ -5,21 +5,21 @@ var UserType;
     UserType["PATIENT"] = "PATIENT";
     UserType["DOCTOR"] = "DOCTOR";
 })(UserType = exports.UserType || (exports.UserType = {}));
-var IOStatus;
-(function (IOStatus) {
-    IOStatus[IOStatus["FAILED"] = 0] = "FAILED";
-    IOStatus[IOStatus["PROGRESSING"] = 1] = "PROGRESSING";
-    IOStatus[IOStatus["FILE_AVAILABLE"] = 2] = "FILE_AVAILABLE";
-})(IOStatus = exports.IOStatus || (exports.IOStatus = {}));
-var DeliveryStatus;
-(function (DeliveryStatus) {
-    DeliveryStatus[DeliveryStatus["FAILED"] = -1] = "FAILED";
-    DeliveryStatus[DeliveryStatus["WAITING_FOR_QUEUE"] = 0] = "WAITING_FOR_QUEUE";
-    DeliveryStatus[DeliveryStatus["SENDING"] = 1] = "SENDING";
-    DeliveryStatus[DeliveryStatus["SENT"] = 2] = "SENT";
-    DeliveryStatus[DeliveryStatus["DELIVERED"] = 3] = "DELIVERED";
-    DeliveryStatus[DeliveryStatus["READEN"] = 4] = "READEN";
-})(DeliveryStatus = exports.DeliveryStatus || (exports.DeliveryStatus = {}));
+var ReceiveStatus;
+(function (ReceiveStatus) {
+    ReceiveStatus[ReceiveStatus["FAILED"] = 0] = "FAILED";
+    ReceiveStatus[ReceiveStatus["DOWNLOADING"] = 1] = "DOWNLOADING";
+    ReceiveStatus[ReceiveStatus["FILE_AVAILABLE"] = 2] = "FILE_AVAILABLE";
+})(ReceiveStatus = exports.ReceiveStatus || (exports.ReceiveStatus = {}));
+var SendStatus;
+(function (SendStatus) {
+    SendStatus[SendStatus["FAILED"] = -1] = "FAILED";
+    SendStatus[SendStatus["WAITING_FOR_QUEUE"] = 0] = "WAITING_FOR_QUEUE";
+    SendStatus[SendStatus["SENDING"] = 1] = "SENDING";
+    SendStatus[SendStatus["SENT"] = 2] = "SENT";
+    SendStatus[SendStatus["DELIVERED"] = 3] = "DELIVERED";
+    SendStatus[SendStatus["READEN"] = 4] = "READEN";
+})(SendStatus = exports.SendStatus || (exports.SendStatus = {}));
 var EventType;
 (function (EventType) {
     EventType["REQUEST_VISIT"] = "REQUEST_VISIT";

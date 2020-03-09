@@ -3,13 +3,13 @@ export enum UserType {
    DOCTOR = 'DOCTOR'
 }
 
-export enum IOStatus {
+export enum ReceiveStatus {
    FAILED = 0,
-   PROGRESSING = 1,
+   DOWNLOADING = 1,
    FILE_AVAILABLE = 2
 }
 
-export enum DeliveryStatus{
+export enum SendStatus{
    FAILED = -1,
    WAITING_FOR_QUEUE = 0,
    SENDING = 1,
