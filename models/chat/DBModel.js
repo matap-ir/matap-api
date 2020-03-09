@@ -6,6 +6,7 @@ const dbModel = {
     deliveryStatus: { type: String, required: true },
     type: { type: String, required: true },
     url: String,
-    date: Date
+    date: Date,
+    file_size: Number
 };
 exports.default = dbModel;
