@@ -3,20 +3,13 @@ export enum UserType {
    DOCTOR = 'DOCTOR'
 }
 
-export enum DeliveryStatus {
-   FAILED = 'FAILED',
-   SENDING = 'SENDING',
-   SENT = 'SENT',
-   DELIVERED = 'DELIVERED',
-   READEN = 'READEN'
-}
-
-export enum IOStatus{
+export enum DeliveryStatus{
    FAILED = -1,
    WAITING_FOR_QUEUE = 0,
-   DOWNLOADING = 1,
-   UPLOADING = 2,
-   DONE = 3
+   SENDING = 1,
+   SENT = 2,
+   DELIVERED = 3,
+   READEN = 4
 }
 
 export enum EventType {

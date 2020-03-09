@@ -7,20 +7,13 @@ var UserType;
 })(UserType = exports.UserType || (exports.UserType = {}));
 var DeliveryStatus;
 (function (DeliveryStatus) {
-    DeliveryStatus["FAILED"] = "FAILED";
-    DeliveryStatus["SENDING"] = "SENDING";
-    DeliveryStatus["SENT"] = "SENT";
-    DeliveryStatus["DELIVERED"] = "DELIVERED";
-    DeliveryStatus["READEN"] = "READEN";
+    DeliveryStatus[DeliveryStatus["FAILED"] = -1] = "FAILED";
+    DeliveryStatus[DeliveryStatus["WAITING_FOR_QUEUE"] = 0] = "WAITING_FOR_QUEUE";
+    DeliveryStatus[DeliveryStatus["SENDING"] = 1] = "SENDING";
+    DeliveryStatus[DeliveryStatus["SENT"] = 2] = "SENT";
+    DeliveryStatus[DeliveryStatus["DELIVERED"] = 3] = "DELIVERED";
+    DeliveryStatus[DeliveryStatus["READEN"] = 4] = "READEN";
 })(DeliveryStatus = exports.DeliveryStatus || (exports.DeliveryStatus = {}));
-var IOStatus;
-(function (IOStatus) {
-    IOStatus[IOStatus["FAILED"] = -1] = "FAILED";
-    IOStatus[IOStatus["WAITING_FOR_QUEUE"] = 0] = "WAITING_FOR_QUEUE";
-    IOStatus[IOStatus["DOWNLOADING"] = 1] = "DOWNLOADING";
-    IOStatus[IOStatus["UPLOADING"] = 2] = "UPLOADING";
-    IOStatus[IOStatus["DONE"] = 3] = "DONE";
-})(IOStatus = exports.IOStatus || (exports.IOStatus = {}));
 var EventType;
 (function (EventType) {
     EventType["REQUEST_VISIT"] = "REQUEST_VISIT";
