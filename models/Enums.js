@@ -5,6 +5,12 @@ var UserType;
     UserType["PATIENT"] = "PATIENT";
     UserType["DOCTOR"] = "DOCTOR";
 })(UserType = exports.UserType || (exports.UserType = {}));
+var IOStatus;
+(function (IOStatus) {
+    IOStatus[IOStatus["FAILED"] = 0] = "FAILED";
+    IOStatus[IOStatus["PROGRESSING"] = 1] = "PROGRESSING";
+    IOStatus[IOStatus["FILE_AVAILABLE"] = 2] = "FILE_AVAILABLE";
+})(IOStatus = exports.IOStatus || (exports.IOStatus = {}));
 var DeliveryStatus;
 (function (DeliveryStatus) {
     DeliveryStatus[DeliveryStatus["FAILED"] = -1] = "FAILED";
