@@ -5,7 +5,6 @@ export default interface Chat{
     sender: string,
     text: string,
     sendStatus: SendStatus,
-    receiveStatus: ReceiveStatus,
     type: ChatType,
     date:Date,
 
