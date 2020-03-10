@@ -19,6 +19,7 @@ export enum SendStatus{
 }
 
 export enum IOStatus {
+   FAILED = -1,
    READY = 0,
    DOWNLOADING = 1,
    UPLOADING = 2,
