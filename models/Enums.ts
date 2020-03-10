@@ -18,6 +18,15 @@ export enum SendStatus{
    READEN = 4
 }
 
+export enum IOStatus {
+   READY = 0,
+   DOWNLOADING = 1,
+   UPLOADING = 2,
+   WAITING_FOR_UPLOAD = 3,
+   WAITING_FOR_DOWNLOAD = 4
+}
+
+
 export enum EventType {
    REQUEST_VISIT = 'REQUEST_VISIT',
    REQUEST_END_VISIT = 'REQUEST_END_VISIT',

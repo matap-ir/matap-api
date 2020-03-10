@@ -20,6 +20,14 @@ var SendStatus;
     SendStatus[SendStatus["DELIVERED"] = 3] = "DELIVERED";
     SendStatus[SendStatus["READEN"] = 4] = "READEN";
 })(SendStatus = exports.SendStatus || (exports.SendStatus = {}));
+var IOStatus;
+(function (IOStatus) {
+    IOStatus[IOStatus["READY"] = 0] = "READY";
+    IOStatus[IOStatus["DOWNLOADING"] = 1] = "DOWNLOADING";
+    IOStatus[IOStatus["UPLOADING"] = 2] = "UPLOADING";
+    IOStatus[IOStatus["WAITING_FOR_UPLOAD"] = 3] = "WAITING_FOR_UPLOAD";
+    IOStatus[IOStatus["WAITING_FOR_DOWNLOAD"] = 4] = "WAITING_FOR_DOWNLOAD";
+})(IOStatus = exports.IOStatus || (exports.IOStatus = {}));
 var EventType;
 (function (EventType) {
     EventType["REQUEST_VISIT"] = "REQUEST_VISIT";
