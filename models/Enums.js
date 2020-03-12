@@ -7,27 +7,27 @@ var UserType;
 })(UserType = exports.UserType || (exports.UserType = {}));
 var ReceiveStatus;
 (function (ReceiveStatus) {
-    ReceiveStatus[ReceiveStatus["FAILED"] = 0] = "FAILED";
-    ReceiveStatus[ReceiveStatus["DOWNLOADING"] = 1] = "DOWNLOADING";
-    ReceiveStatus[ReceiveStatus["FILE_AVAILABLE"] = 2] = "FILE_AVAILABLE";
+    ReceiveStatus["FAILED"] = "FAILED";
+    ReceiveStatus["DOWNLOADING"] = "DOWNLOADING";
+    ReceiveStatus["FILE_AVAILABLE"] = "FILE_AVAILABLE";
 })(ReceiveStatus = exports.ReceiveStatus || (exports.ReceiveStatus = {}));
 var SendStatus;
 (function (SendStatus) {
-    SendStatus[SendStatus["FAILED"] = -1] = "FAILED";
-    SendStatus[SendStatus["WAITING_FOR_QUEUE"] = 0] = "WAITING_FOR_QUEUE";
-    SendStatus[SendStatus["SENDING"] = 1] = "SENDING";
-    SendStatus[SendStatus["SENT"] = 2] = "SENT";
-    SendStatus[SendStatus["DELIVERED"] = 3] = "DELIVERED";
-    SendStatus[SendStatus["READEN"] = 4] = "READEN";
+    SendStatus["FAILED"] = "FAILED";
+    SendStatus["WAITING_FOR_QUEUE"] = "WAITING_FOR_QUEUE";
+    SendStatus["SENDING"] = "SENDING";
+    SendStatus["SENT"] = "SENT";
+    SendStatus["DELIVERED"] = "DELIVERED";
+    SendStatus["READEN"] = "READEN";
 })(SendStatus = exports.SendStatus || (exports.SendStatus = {}));
 var IOStatus;
 (function (IOStatus) {
-    IOStatus[IOStatus["FAILED"] = -1] = "FAILED";
-    IOStatus[IOStatus["READY"] = 0] = "READY";
-    IOStatus[IOStatus["DOWNLOADING"] = 1] = "DOWNLOADING";
-    IOStatus[IOStatus["UPLOADING"] = 2] = "UPLOADING";
-    IOStatus[IOStatus["WAITING_FOR_UPLOAD"] = 3] = "WAITING_FOR_UPLOAD";
-    IOStatus[IOStatus["WAITING_FOR_DOWNLOAD"] = 4] = "WAITING_FOR_DOWNLOAD";
+    IOStatus["FAILED"] = "FAILED";
+    IOStatus["READY"] = "READY";
+    IOStatus["DOWNLOADING"] = "DOWNLOADING";
+    IOStatus["UPLOADING"] = "UPLOADING";
+    IOStatus["WAITING_FOR_UPLOAD"] = "WAITING_FOR_UPLOAD";
+    IOStatus["WAITING_FOR_DOWNLOAD"] = "WAITING_FOR_DOWNLOAD";
 })(IOStatus = exports.IOStatus || (exports.IOStatus = {}));
 var EventType;
 (function (EventType) {
