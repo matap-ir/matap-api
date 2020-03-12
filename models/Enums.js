@@ -22,7 +22,6 @@ var SendStatus;
 })(SendStatus = exports.SendStatus || (exports.SendStatus = {}));
 var IOStatus;
 (function (IOStatus) {
-    IOStatus["FAILED"] = "FAILED";
     IOStatus["READY"] = "READY";
     IOStatus["DOWNLOADING"] = "DOWNLOADING";
     IOStatus["UPLOADING"] = "UPLOADING";
