@@ -7,6 +7,12 @@ const dbModel = {
     type: { type: String, required: true },
     url: String,
     date: Date,
-    file_size: Number
+    file_size: Number,
+    mediaInfo: {
+        width: Number,
+        height: Number,
+        duration: Number,
+        orientation: Number
+    }
 };
 exports.default = dbModel;
