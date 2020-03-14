@@ -1,5 +1,6 @@
 import { ObjectId } from 'mongoose';
 const dbModel = {
+    id:{type:String,required:true},
     sender:{type:String,required:true},
     text:String,
     sendStatus:{type:String,required:true},
