@@ -4,8 +4,10 @@ import { UserType } from 'models/Enums';
 import Chat from './models/chat/Chat';
 import * as Enums from './models/Enums';
 import Status from './models/Status';
+import Call from './models/Call';
 
 export {
+    Call,
     UserType,
     FileAddresses,
     User,
