@@ -3,8 +3,8 @@ interface CallSession{
     type: 'video/audio' | 'audio',
     state: 'initiating' | 'transmitting' | 'ended',
     initiateDate: number,
-    from: {id:string,url:string},
-    to: {id:string,url:string},
+    initiator: {id: string,outputUrl: string,inputUrl: string},
+    receiver: {id: string,outputUrl: string,inputUrl: string},
 }
 
 export default CallSession;
