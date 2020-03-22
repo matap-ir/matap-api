@@ -41,6 +41,9 @@ var EventType;
     EventType["ROOM_NOT_FOUND"] = "ROOM_NOT_FOUND";
     EventType["EVENT_STATUS_UPDATE"] = "EVENT_STATUS_UPDATE";
     EventType["EVENT_SET_AVAILABLE"] = "EVENT_SET_AVAILABLE";
+    EventType["EVENT_CALL_REQUEST"] = "EVENT_CALL_REQUEST";
+    EventType["EVENT_CALL_ACCEPTED"] = "EVENT_CALL_ACCEPTED";
+    EventType["EVENT_CALL_DECLINED"] = "EVENT_CALL_DECLINED";
 })(EventType = exports.EventType || (exports.EventType = {}));
 var ChatType;
 (function (ChatType) {
