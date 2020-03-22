@@ -44,6 +44,7 @@ var EventType;
     EventType["EVENT_CALL_REQUEST"] = "EVENT_CALL_REQUEST";
     EventType["EVENT_CALL_ACCEPTED"] = "EVENT_CALL_ACCEPTED";
     EventType["EVENT_CALL_DECLINED"] = "EVENT_CALL_DECLINED";
+    EventType["EVENT_CALL_ENDED"] = "EVENT_CALL_ENDED";
 })(EventType = exports.EventType || (exports.EventType = {}));
 var ChatType;
 (function (ChatType) {
