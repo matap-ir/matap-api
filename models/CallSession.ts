@@ -1,5 +1,6 @@
 interface CallSession{
     id: string,
+    host: string,
     type: 'video/audio' | 'audio',
     state: 'initiating' | 'transmitting' | 'ended',
     initiateDate: number,
