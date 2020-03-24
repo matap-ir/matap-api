@@ -1,4 +1,4 @@
-interface CallSession{
+interface CallOffer{
     id: string,
     host: string,
     type: 'video/audio' | 'audio',
@@ -8,4 +8,4 @@ interface CallSession{
     receiver: {id: string,outputUrl: string,inputUrl: string},
 }
 
-export default CallSession;
+export default CallOffer;

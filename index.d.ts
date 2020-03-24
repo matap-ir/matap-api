@@ -4,10 +4,10 @@ import { UserType } from 'models/Enums';
 import Chat from './models/chat/Chat';
 import * as Enums from './models/Enums';
 import Status from './models/Status';
-import CallSession from './models/CallSession';
+import CallOffer from './models/CallOffer';
 
 export {
-    CallSession,
+    CallOffer,
     UserType,
     FileAddresses,
     User,
