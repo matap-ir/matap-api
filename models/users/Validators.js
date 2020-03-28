@@ -19,6 +19,7 @@ const validator = {
             first_name: Joi_1.default.string().required(),
             last_name: Joi_1.default.string().required(),
             code: Joi_1.default.number().optional(),
+            imageUrl: Joi_1.default.string().optional()
         })
     },
     public: {

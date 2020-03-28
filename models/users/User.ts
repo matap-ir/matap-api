@@ -6,6 +6,7 @@ export default interface User {
     type:UserType;
     first_name:string;
     last_name:string,
+    imageUrl: string,
 
     code: number
 }

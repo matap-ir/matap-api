@@ -1,10 +1,12 @@
+import {User} from '../index';
+
 export default interface Status{
     room: string | undefined,
     ready: boolean,
     doctor:{
-        queueList:string[]
+        queueList:User[]
     },
     patient:{
-        doctorCode: number | undefined
+        queueDoctor:User
     }
 }

@@ -20,6 +20,7 @@ const validator : GeneratedValidator<User> = {
           first_name:Joi.string().required(),
           last_name:Joi.string().required(),
           code:Joi.number().optional(),
+          imageUrl:Joi.string().optional()
       })
   },
   public:{
