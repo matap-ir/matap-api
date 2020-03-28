@@ -7,6 +7,6 @@ export default interface Status{
         queueList:User[]
     },
     forPatient:{
-        queueDoctor:User
+        queueDoctor:User | undefined
     }
 }
