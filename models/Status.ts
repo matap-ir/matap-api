@@ -3,10 +3,10 @@ import {User} from '../index';
 export default interface Status{
     room: string | undefined,
     ready: boolean,
-    doctor:{
+    forDoctor:{
         queueList:User[]
     },
-    patient:{
+    forPatient:{
         queueDoctor:User
     }
 }
