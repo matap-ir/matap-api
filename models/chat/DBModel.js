@@ -7,7 +7,7 @@ const dbModel = {
     sendStatus: { type: String, required: true },
     type: { type: String, required: true },
     url: String,
-    date: Date,
+    date: Number,
     file_size: Number,
     mediaInfo: {
         width: Number,
