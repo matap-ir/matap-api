@@ -10,7 +10,7 @@ export default interface Chat{
 
     url: string,
     file_size:number,
-
+    file_name: string,
     mediaInfo:{
         width:number,
         height:number,
