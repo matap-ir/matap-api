@@ -6,7 +6,7 @@ export default interface Chat{
     text: string,
     sendStatus: SendStatus,
     type: ChatType,
-    date:Date,
+    date:number,
 
     url: string,
     file_size:number,
