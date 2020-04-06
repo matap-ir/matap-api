@@ -8,6 +8,7 @@ const dbModel = {
     url:String,
     date:Number,
     file_size:Number,
+    file_name: String,
     mediaInfo:{
         width:Number,
         height:Number,
