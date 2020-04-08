@@ -8,25 +8,24 @@ const validator = {
         insert: createValidator_1.default({
             mobile: Joi_1.phone(),
             type: Joi_1.default.string().required().allow('PATIENT', 'DOCTOR'),
-            first_name: Joi_1.default.string().required(),
-            last_name: Joi_1.default.string().required(),
-            code: Joi_1.default.number().optional()
+            name: Joi_1.default.string().required(),
+            code: Joi_1.default.number().optional(),
+            specialization: Joi_1.default.string().optional()
         }),
         update: createValidator_1.default({
             _id: Joi_1.default.string().required(),
             mobile: Joi_1.phone(),
             type: Joi_1.default.string().required().allow('PATIENT', 'DOCTOR'),
-            first_name: Joi_1.default.string().required(),
-            last_name: Joi_1.default.string().required(),
+            name: Joi_1.default.string().required(),
             code: Joi_1.default.number().optional(),
-            imageUrl: Joi_1.default.string().optional()
+            imageUrl: Joi_1.default.string().optional(),
+            specialization: Joi_1.default.string().optional()
         })
     },
     public: {
         post: createValidator_1.default({
             mobile: Joi_1.phone(),
-            first_name: Joi_1.default.string().required(),
-            last_name: Joi_1.default.string().required()
+            name: Joi_1.default.string().required()
         }),
         put: null,
         patch: null

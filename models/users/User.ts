@@ -4,9 +4,9 @@ export default interface User {
     _id: string;
     mobile: string;
     type:UserType;
-    first_name:string;
-    last_name:string,
+    name:string;
     imageUrl: string,
 
-    code: number
+    code: number,
+    specialization: string
 }

@@ -9,25 +9,24 @@ const validator : GeneratedValidator<User> = {
     insert:createValidator({
         mobile:phone(),
         type:Joi.string().required().allow('PATIENT','DOCTOR'),
-        first_name:Joi.string().required(),
-        last_name:Joi.string().required(),
-        code:Joi.number().optional()
+        name:Joi.string().required(),
+        code:Joi.number().optional(),
+        specialization:Joi.string().optional()
     }),
       update:createValidator({
           _id:Joi.string().required(),
           mobile:phone(),
           type:Joi.string().required().allow('PATIENT','DOCTOR'),
-          first_name:Joi.string().required(),
-          last_name:Joi.string().required(),
+          name:Joi.string().required(),
           code:Joi.number().optional(),
-          imageUrl:Joi.string().optional()
+          imageUrl:Joi.string().optional(),
+          specialization:Joi.string().optional()
       })
   },
   public:{
       post:createValidator({
           mobile:phone(),
-          first_name:Joi.string().required(),
-          last_name:Joi.string().required()
+          name:Joi.string().required()
       }),
       put:null,
       patch:null
