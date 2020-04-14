@@ -5,8 +5,8 @@ interface CallOffer{
     state: 'initiating' | 'transmitting' | 'ended',
     initiateDate: number,
     iceServers:{url:string,credential:string,username:string,password:string}[]
-    /*initiator: {id: string,outputUrl: string,inputUrl: string},
-    receiver: {id: string,outputUrl: string,inputUrl: string},*/
+    initiator: {id: string},
+    receiver: {id: string},
 }
 
 export default CallOffer;
