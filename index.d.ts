@@ -5,6 +5,8 @@ import Chat from './models/chat/Chat';
 import * as Enums from './models/Enums';
 import Status from './models/Status';
 import CallOffer from './models/CallOffer';
+import Specialization from './models/specialization/Specialization';
+import HealthCenter from 'models/health_center/HealthCenter';
 
 export {
     CallOffer,
@@ -13,7 +15,9 @@ export {
     User,
     Chat,
     Enums,
-    Status
+    Status,
+    Specialization,
+    HealthCenter
 };
 
 export type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';

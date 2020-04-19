@@ -10,7 +10,16 @@ const validator = {
             type: Joi_1.default.string().required().allow('PATIENT', 'DOCTOR'),
             name: Joi_1.default.string().required(),
             code: Joi_1.default.number().optional(),
-            specialization: Joi_1.default.string().optional()
+            imageUrl: Joi_1.default.string().optional(),
+            price: Joi_1.default.number().required(),
+            specialization: require('../specialization/Validators').default.db.insert.validator.required(),
+            details: Joi_1.default.object().keys({
+                city: Joi_1.default.string().required(),
+                nezam_pezeshki_code: Joi_1.default.string().required(),
+                monthlyCut: Joi_1.default.number().required(),
+                clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.insert.validator.required),
+                hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.db.insert.validator.required)
+            })
         }),
         update: createValidator_1.default({
             _id: Joi_1.default.string().required(),
@@ -19,7 +28,15 @@ const validator = {
             name: Joi_1.default.string().required(),
             code: Joi_1.default.number().optional(),
             imageUrl: Joi_1.default.string().optional(),
-            specialization: Joi_1.default.string().optional()
+            price: Joi_1.default.number().required(),
+            specialization: require('../specialization/Validators').default.db.insert.validator.required(),
+            details: Joi_1.default.object().keys({
+                city: Joi_1.default.string().required(),
+                nezam_pezeshki_code: Joi_1.default.string().required(),
+                monthlyCut: Joi_1.default.number().required(),
+                clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.insert.validator.required),
+                hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.db.insert.validator.required)
+            })
         })
     },
     public: {
@@ -27,8 +44,23 @@ const validator = {
             mobile: Joi_1.phone(),
             name: Joi_1.default.string().required()
         }),
-        put: null,
-        patch: null
+        put: createValidator_1.default({
+            _id: Joi_1.default.string().required(),
+            mobile: Joi_1.phone(),
+            type: Joi_1.default.string().required().allow('PATIENT', 'DOCTOR'),
+            name: Joi_1.default.string().required(),
+            code: Joi_1.default.number().optional(),
+            imageUrl: Joi_1.default.string().optional(),
+            price: Joi_1.default.number().required(),
+            specialization: require('../specialization/Validators').default.db.insert.validator.required(),
+            details: Joi_1.default.object().keys({
+                city: Joi_1.default.string().required(),
+                nezam_pezeshki_code: Joi_1.default.string().required(),
+                monthlyCut: Joi_1.default.number().required(),
+                clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.insert.validator.required),
+                hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.db.insert.validator.required)
+            })
+        })
     },
     signin: createValidator_1.default({
         mobile: Joi_1.default.string().required()

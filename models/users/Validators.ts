@@ -11,7 +11,16 @@ const validator : GeneratedValidator<User> = {
         type:Joi.string().required().allow('PATIENT','DOCTOR'),
         name:Joi.string().required(),
         code:Joi.number().optional(),
-        specialization:Joi.string().optional()
+        imageUrl:Joi.string().optional(),
+        price:Joi.number().required(),
+        specialization:require('../specialization/Validators').default.db.insert.validator.required(),
+        details:Joi.object().keys({
+            city:Joi.string().required(),
+            nezam_pezeshki_code:Joi.string().required(),
+            monthlyCut:Joi.number().required(),
+            clinics:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required),
+            hospitals:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required)
+        })
     }),
       update:createValidator({
           _id:Joi.string().required(),
@@ -20,7 +29,15 @@ const validator : GeneratedValidator<User> = {
           name:Joi.string().required(),
           code:Joi.number().optional(),
           imageUrl:Joi.string().optional(),
-          specialization:Joi.string().optional()
+          price:Joi.number().required(),
+          specialization:require('../specialization/Validators').default.db.insert.validator.required(),
+          details:Joi.object().keys({
+              city:Joi.string().required(),
+              nezam_pezeshki_code:Joi.string().required(),
+              monthlyCut:Joi.number().required(),
+              clinics:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required),
+              hospitals:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required)
+          })
       })
   },
   public:{
@@ -28,8 +45,23 @@ const validator : GeneratedValidator<User> = {
           mobile:phone(),
           name:Joi.string().required()
       }),
-      put:null,
-      patch:null
+      put:createValidator({
+          _id:Joi.string().required(),
+          mobile:phone(),
+          type:Joi.string().required().allow('PATIENT','DOCTOR'),
+          name:Joi.string().required(),
+          code:Joi.number().optional(),
+          imageUrl:Joi.string().optional(),
+          price:Joi.number().required(),
+          specialization:require('../specialization/Validators').default.db.insert.validator.required(),
+          details:Joi.object().keys({
+              city:Joi.string().required(),
+              nezam_pezeshki_code:Joi.string().required(),
+              monthlyCut:Joi.number().required(),
+              clinics:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required),
+              hospitals:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required)
+          })
+      })
   },
     signin:createValidator({
         mobile:Joi.string().required()
