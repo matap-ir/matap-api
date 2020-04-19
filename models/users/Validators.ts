@@ -45,7 +45,7 @@ const validator : GeneratedValidator<User> = {
           mobile:phone(),
           name:Joi.string().required()
       }),
-      put:createValidator({
+      patch:createValidator({
           _id:Joi.string().required(),
           mobile:phone(),
           type:Joi.string().required().allow('PATIENT','DOCTOR'),

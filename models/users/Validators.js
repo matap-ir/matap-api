@@ -44,7 +44,7 @@ const validator = {
             mobile: Joi_1.phone(),
             name: Joi_1.default.string().required()
         }),
-        put: createValidator_1.default({
+        patch: createValidator_1.default({
             _id: Joi_1.default.string().required(),
             mobile: Joi_1.phone(),
             type: Joi_1.default.string().required().allow('PATIENT', 'DOCTOR'),
