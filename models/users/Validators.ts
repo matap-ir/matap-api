@@ -38,13 +38,13 @@ const validator : GeneratedValidator<User> = {
           code:Joi.number().optional(),
           imageUrl:Joi.string().optional(),
           price:Joi.number().required(),
-          specialization:require('../specialization/Validators').default.db.update.validator.required(),
+          specialization:Joi.string().required(),
           details:Joi.object().keys({
               city:Joi.string().required(),
               nezam_pezeshki_code:Joi.string().required(),
               monthlyCut:Joi.number().required(),
-              clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator.required()),
-              hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator.required())
+              clinics:Joi.array().items(Joi.string()).required(),
+              hospitals:Joi.array().items(Joi.string()).required()
           })
       })
   },
