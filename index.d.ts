@@ -1,6 +1,6 @@
 import FileAddresses from './constants/FileAddresses';
 import User from './models/users/User';
-import { UserType } from 'models/Enums';
+import { UserType, HealthCenterType } from 'models/Enums';
 import Chat from './models/chat/Chat';
 import * as Enums from './models/Enums';
 import Status from './models/Status';
@@ -11,6 +11,7 @@ import HealthCenter from 'models/health_center/HealthCenter';
 export {
     CallOffer,
     UserType,
+    HealthCenterType,
     FileAddresses,
     User,
     Chat,
