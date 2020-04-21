@@ -12,7 +12,7 @@ const validator = {
             doctorCut: Joi_1.default.number().required()
         }),
         update: createValidator_1.default({
-            _id: Joi_1.default.string().required(),
+            _id: Joi_1.default.any().required(),
             name: Joi_1.default.string().required(),
             price: Joi_1.default.number().required(),
             monthlyCut: Joi_1.default.number().required(),
@@ -27,7 +27,7 @@ const validator = {
             doctorCut: Joi_1.default.number().required()
         }),
         patch: createValidator_1.default({
-            _id: Joi_1.default.string().required(),
+            _id: Joi_1.default.any().required(),
             name: Joi_1.default.string().required(),
             price: Joi_1.default.number().required(),
             monthlyCut: Joi_1.default.number().required(),

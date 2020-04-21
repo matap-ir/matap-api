@@ -13,7 +13,7 @@ const validator : GeneratedValidator<Specialization> = {
         doctorCut:Joi.number().required()
     }),
       update:createValidator({
-          _id:Joi.string().required(),
+          _id:Joi.any().required(),
           name:Joi.string().required(),
           price:Joi.number().required(),
           monthlyCut:Joi.number().required(),
@@ -28,7 +28,7 @@ const validator : GeneratedValidator<Specialization> = {
           doctorCut:Joi.number().required()
       }),
       patch:createValidator({
-          _id:Joi.string().required(),
+          _id:Joi.any().required(),
           name:Joi.string().required(),
           price:Joi.number().required(),
           monthlyCut:Joi.number().required(),

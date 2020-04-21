@@ -86,8 +86,8 @@ const validator : GeneratedValidator<User> = {
               city:Joi.string().required(),
               nezam_pezeshki_code:Joi.string().required(),
               monthlyCut:Joi.number().required(),
-              clinics:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required()).required(),
-              hospitals:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required()).required()
+              clinics:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
+              hospitals:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required()
           })
       })
   },

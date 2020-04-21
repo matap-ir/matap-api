@@ -79,8 +79,8 @@ const validator = {
                 city: Joi_1.default.string().required(),
                 nezam_pezeshki_code: Joi_1.default.string().required(),
                 monthlyCut: Joi_1.default.number().required(),
-                clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.insert.validator.required()).required(),
-                hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.db.insert.validator.required()).required()
+                clinics: Joi_1.default.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
+                hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required()
             })
         })
     },

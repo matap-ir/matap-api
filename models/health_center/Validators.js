@@ -12,7 +12,7 @@ const validator = {
             type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC')
         }),
         update: createValidator_1.default({
-            _id: Joi_1.default.string().required(),
+            _id: Joi_1.default.any().required(),
             name: Joi_1.default.string().required(),
             address: Joi_1.default.string().optional(),
             logoUrl: Joi_1.default.string().optional(),
@@ -27,7 +27,7 @@ const validator = {
             type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').required()
         }),
         patch: createValidator_1.default({
-            _id: Joi_1.default.string().required(),
+            _id: Joi_1.default.any().required(),
             name: Joi_1.default.string().required(),
             address: Joi_1.default.string().optional(),
             logoUrl: Joi_1.default.string().optional(),

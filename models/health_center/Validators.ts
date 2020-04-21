@@ -13,7 +13,7 @@ const validator : GeneratedValidator<HealthCenter> = {
         type: Joi.string().allow('HOSPITAL','CLINIC')
     }),
       update:createValidator({
-          _id:Joi.string().required(),
+          _id:Joi.any().required(),
           name:Joi.string().required(),
           address:Joi.string().optional(),
           logoUrl:Joi.string().optional(),
@@ -28,7 +28,7 @@ const validator : GeneratedValidator<HealthCenter> = {
           type: Joi.string().allow('HOSPITAL','CLINIC').required()
       }),
       patch:createValidator({
-          _id:Joi.string().required(),
+          _id:Joi.any().required(),
           name:Joi.string().required(),
           address:Joi.string().optional(),
           logoUrl:Joi.string().optional(),
