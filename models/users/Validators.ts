@@ -18,8 +18,8 @@ const validator : GeneratedValidator<User> = {
             city:Joi.string().required(),
             nezam_pezeshki_code:Joi.string().required(),
             monthlyCut:Joi.number().required(),
-            clinics:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required),
-            hospitals:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required)
+            clinics:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required()),
+            hospitals:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required())
         })
     }),
       update:createValidator({
@@ -35,16 +35,36 @@ const validator : GeneratedValidator<User> = {
               city:Joi.string().required(),
               nezam_pezeshki_code:Joi.string().required(),
               monthlyCut:Joi.number().required(),
-              clinics:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required),
-              hospitals:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required)
+              clinics:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required()),
+              hospitals:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required())
           })
       })
   },
   public:{
-      post:createValidator({
-          mobile:phone(),
-          name:Joi.string().required()
-      }),
+      post:{
+          validator:Joi.alternatives().try(
+              Joi.object({
+                  mobile:phone().required(),
+                  name:Joi.string().required(),
+                  type:Joi.string().required().allow('DOCTOR'),
+                  code:Joi.number().required(),
+                  price:Joi.number().required(),
+                  specialization:require('../specialization/Validators').default.db.insert.validator.required(),
+                  details:Joi.object().required().keys({
+                      city:Joi.string().required(),
+                      nezam_pezeshki_code:Joi.string().required(),
+                      monthlyCut:Joi.number().required(),
+                      clinics:Joi.array().items(require('../health_center/Validators').default.db.insert.validator).required(),
+                      hospitals:Joi.array().items(require('../health_center/Validators').default.db.insert.validator).required()
+                  }),
+              }),
+              Joi.object({
+                  mobile:phone().required(),
+                  name:Joi.string().required(),
+                  type:Joi.string().required().allow('PATIENT'),
+              })
+          )
+      },
       patch:createValidator({
           _id:Joi.string().required(),
           mobile:phone(),
@@ -52,14 +72,14 @@ const validator : GeneratedValidator<User> = {
           name:Joi.string().required(),
           code:Joi.number().optional(),
           imageUrl:Joi.string().optional(),
-          price:Joi.number().required(),
-          specialization:require('../specialization/Validators').default.db.insert.validator.required(),
-          details:Joi.object().keys({
+          price:Joi.number().optional(),
+          specialization:require('../specialization/Validators').default.db.insert.validator.optional(),
+          details:Joi.object().optional().keys({
               city:Joi.string().required(),
               nezam_pezeshki_code:Joi.string().required(),
               monthlyCut:Joi.number().required(),
-              clinics:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required),
-              hospitals:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required)
+              clinics:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required()).required(),
+              hospitals:Joi.array().items(require('../health_center/Validators').default.db.insert.validator.required()).required()
           })
       })
   },
