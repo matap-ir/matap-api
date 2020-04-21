@@ -5,15 +5,15 @@ const dbModel = {
     name:{type:String,required:true},
     imageUrl:{type:String},
     code:{type:Number},
-    specialization:{type:require('../specialization/DBModel').default,ref:'specializations'},
+    specialization:{type:ObjectId,ref:'specializations'},
     price:{type:Number},
     details:{
         type:{
             city:String,
             nezam_pezeshki_code:String,
             monthlyCut:Number,
-            clinics:[{type:require('../health_center/DBModel').default,ref:'health_centers'}],
-            hospitals:[{type:require('../health_center/DBModel').default,ref:'health_centers'}]
+            clinics:[{type:ObjectId,ref:'health_centers'}],
+            hospitals:[{type:ObjectId,ref:'health_centers'}]
         }
     }
 };
