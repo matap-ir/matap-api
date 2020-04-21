@@ -5,9 +5,9 @@ const dbModel = {
     type: { type: String, require: true },
     name: { type: String, required: true },
     imageUrl: { type: String },
-    code: { type: Number, required: false },
-    specialization: { type: require('../specialization/DBModel').default, required: true, ref: 'specializations' },
-    price: { type: Number, required: true },
+    code: { type: Number },
+    specialization: { type: require('../specialization/DBModel').default, ref: 'specializations' },
+    price: { type: Number },
     details: {
         type: {
             city: String,
@@ -15,8 +15,7 @@ const dbModel = {
             monthlyCut: Number,
             clinics: [{ type: require('../health_center/DBModel').default, ref: 'health_centers' }],
             hospitals: [{ type: require('../health_center/DBModel').default, ref: 'health_centers' }]
-        },
-        required: true
+        }
     }
 };
 exports.default = dbModel;
