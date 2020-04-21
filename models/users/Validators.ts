@@ -31,7 +31,7 @@ const validator : GeneratedValidator<User> = {
         )
     },
       update:createValidator({
-          _id:Joi.string().required(),
+          _id:Joi.any().required(),
           mobile:phone(),
           type:Joi.string().required().allow('PATIENT','DOCTOR'),
           name:Joi.string().required(),
@@ -74,7 +74,7 @@ const validator : GeneratedValidator<User> = {
           )
       },
       patch:createValidator({
-          _id:Joi.string().required(),
+          _id:Joi.any().required(),
           mobile:phone(),
           type:Joi.string().required().allow('PATIENT','DOCTOR'),
           name:Joi.string().required(),

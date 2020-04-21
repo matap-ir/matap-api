@@ -27,7 +27,7 @@ const validator = {
             }))
         },
         update: createValidator_1.default({
-            _id: Joi_1.default.string().required(),
+            _id: Joi_1.default.any().required(),
             mobile: Joi_1.phone(),
             type: Joi_1.default.string().required().allow('PATIENT', 'DOCTOR'),
             name: Joi_1.default.string().required(),
@@ -67,7 +67,7 @@ const validator = {
             }))
         },
         patch: createValidator_1.default({
-            _id: Joi_1.default.string().required(),
+            _id: Joi_1.default.any().required(),
             mobile: Joi_1.phone(),
             type: Joi_1.default.string().required().allow('PATIENT', 'DOCTOR'),
             name: Joi_1.default.string().required(),
