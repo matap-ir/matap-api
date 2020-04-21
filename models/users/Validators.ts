@@ -38,13 +38,13 @@ const validator : GeneratedValidator<User> = {
           code:Joi.number().optional(),
           imageUrl:Joi.string().optional(),
           price:Joi.number().required(),
-          specialization:Joi.string().required(),
+          specialization:Joi.any().required(),
           details:Joi.object().keys({
               city:Joi.string().required(),
               nezam_pezeshki_code:Joi.string().required(),
               monthlyCut:Joi.number().required(),
-              clinics:Joi.array().items(Joi.string()).required(),
-              hospitals:Joi.array().items(Joi.string()).required()
+              clinics:Joi.array().items(Joi.any()).required(),
+              hospitals:Joi.array().items(Joi.any()).required()
           })
       })
   },
@@ -57,7 +57,7 @@ const validator : GeneratedValidator<User> = {
                   type:Joi.string().required().allow('DOCTOR'),
                   code:Joi.number().required(),
                   price:Joi.number().required(),
-                  specialization:require('../specialization/Validators').default.db.update.validator.required(),
+                  specialization:require('../specialization/Validators').default.public.post.validator.required(),
                   details:Joi.object().required().keys({
                       city:Joi.string().required(),
                       nezam_pezeshki_code:Joi.string().required(),
@@ -81,7 +81,7 @@ const validator : GeneratedValidator<User> = {
           code:Joi.number().optional(),
           imageUrl:Joi.string().optional(),
           price:Joi.number().optional(),
-          specialization:require('../specialization/Validators').default.db.insert.validator.optional(),
+          specialization:require('../specialization/Validators').default.public.patch.validator.optional(),
           details:Joi.object().optional().keys({
               city:Joi.string().required(),
               nezam_pezeshki_code:Joi.string().required(),
