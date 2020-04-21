@@ -5,7 +5,7 @@ const createValidator_1 = tslib_1.__importDefault(require("../createValidator"))
 const Joi_1 = tslib_1.__importStar(require("../Joi"));
 const validator = {
     db: {
-        insert: createValidator_1.default({
+        insert: {
             validator: Joi_1.default.alternatives().try(Joi_1.default.object({
                 mobile: Joi_1.phone().required(),
                 name: Joi_1.default.string().required(),
@@ -25,7 +25,7 @@ const validator = {
                 name: Joi_1.default.string().required(),
                 type: Joi_1.default.string().required().allow('PATIENT'),
             }))
-        }),
+        },
         update: createValidator_1.default({
             _id: Joi_1.default.string().required(),
             mobile: Joi_1.phone(),

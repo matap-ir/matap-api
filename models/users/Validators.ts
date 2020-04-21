@@ -6,7 +6,7 @@ import User from './User';
 
 const validator : GeneratedValidator<User> = {
   db:{
-    insert:createValidator({
+    insert:{
         validator:Joi.alternatives().try(
             Joi.object({
                 mobile:phone().required(),
@@ -29,7 +29,7 @@ const validator : GeneratedValidator<User> = {
                 type:Joi.string().required().allow('PATIENT'),
             })
         )
-    }),
+    },
       update:createValidator({
           _id:Joi.string().required(),
           mobile:phone(),
