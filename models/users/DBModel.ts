@@ -12,8 +12,8 @@ const dbModel = {
             city:String,
             nezam_pezeshki_code:String,
             monthlyCut:Number,
-            clinics:[{type:ObjectId,ref:'health_centers'}],
-            hospitals:[{type:ObjectId,ref:'health_centers'}]
+            clinics:[{type:ObjectId,ref:'healthcenters'}],
+            hospitals:[{type:ObjectId,ref:'healthcenters'}]
         }
     }
 };

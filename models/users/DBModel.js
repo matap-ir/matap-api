@@ -14,8 +14,8 @@ const dbModel = {
             city: String,
             nezam_pezeshki_code: String,
             monthlyCut: Number,
-            clinics: [{ type: mongoose_1.ObjectId, ref: 'health_centers' }],
-            hospitals: [{ type: mongoose_1.ObjectId, ref: 'health_centers' }]
+            clinics: [{ type: mongoose_1.ObjectId, ref: 'healthcenters' }],
+            hospitals: [{ type: mongoose_1.ObjectId, ref: 'healthcenters' }]
         }
     }
 };
