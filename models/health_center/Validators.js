@@ -8,26 +8,30 @@ const validator = {
         insert: createValidator_1.default({
             name: Joi_1.default.string().required(),
             address: Joi_1.default.string().optional(),
-            logoUrl: Joi_1.default.string().optional()
+            logoUrl: Joi_1.default.string().optional(),
+            type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC')
         }),
         update: createValidator_1.default({
             _id: Joi_1.default.string().required(),
             name: Joi_1.default.string().required(),
             address: Joi_1.default.string().optional(),
-            logoUrl: Joi_1.default.string().optional()
+            logoUrl: Joi_1.default.string().optional(),
+            type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').optional()
         })
     },
     public: {
         post: createValidator_1.default({
             name: Joi_1.default.string().required(),
-            address: Joi_1.default.string().optional(),
-            logoUrl: Joi_1.default.string().optional()
+            address: Joi_1.default.string().required(),
+            logoUrl: Joi_1.default.string().optional(),
+            type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').required()
         }),
         patch: createValidator_1.default({
             _id: Joi_1.default.string().required(),
             name: Joi_1.default.string().required(),
             address: Joi_1.default.string().optional(),
-            logoUrl: Joi_1.default.string().optional()
+            logoUrl: Joi_1.default.string().optional(),
+            type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').optional()
         })
     }
 };
