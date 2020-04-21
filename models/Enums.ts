@@ -3,6 +3,11 @@ export enum UserType {
    DOCTOR = 'DOCTOR'
 }
 
+export enum HealthCenterType {
+   HOSPITAL = 'HOSPITAL',
+   CLINIC = 'CLINIC'
+}
+
 export enum ReceiveStatus {
    FAILED = 'FAILED',
    DOWNLOADING = 'DOWNLOADING',

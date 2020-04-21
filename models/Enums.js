@@ -5,6 +5,11 @@ var UserType;
     UserType["PATIENT"] = "PATIENT";
     UserType["DOCTOR"] = "DOCTOR";
 })(UserType = exports.UserType || (exports.UserType = {}));
+var HealthCenterType;
+(function (HealthCenterType) {
+    HealthCenterType["HOSPITAL"] = "HOSPITAL";
+    HealthCenterType["CLINIC"] = "CLINIC";
+})(HealthCenterType = exports.HealthCenterType || (exports.HealthCenterType = {}));
 var ReceiveStatus;
 (function (ReceiveStatus) {
     ReceiveStatus["FAILED"] = "FAILED";
