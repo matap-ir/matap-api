@@ -57,7 +57,7 @@ const validator : GeneratedValidator<User> = {
                   type:Joi.string().required().allow('DOCTOR'),
                   code:Joi.number().required(),
                   price:Joi.number().required(),
-                  specialization:require('../specialization/Validators').default.public.post.validator.required(),
+                  specialization:require('../specialization/Validators').default.public.patch.validator.required(),
                   details:Joi.object().required().keys({
                       city:Joi.string().required(),
                       nezam_pezeshki_code:Joi.string().required(),
