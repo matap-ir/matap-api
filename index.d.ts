@@ -7,6 +7,7 @@ import Status from './models/Status';
 import CallOffer from './models/CallOffer';
 import Specialization from './models/specialization/Specialization';
 import HealthCenter from 'models/health_center/HealthCenter';
+import DiscountCoupon from './models/discount/DiscountCoupon';
 
 export {
     CallOffer,
@@ -18,7 +19,8 @@ export {
     Enums,
     Status,
     Specialization,
-    HealthCenter
+    HealthCenter,
+    DiscountCoupon
 };
 
 export type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';

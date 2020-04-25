@@ -1,10 +1,10 @@
 import createValidator from '../createValidator';
 import Joi from '../Joi';
 import {GeneratedValidator} from '../Validator';
-import Discount from './Discount';
+import DiscountCoupon from './DiscountCoupon';
 
 
-const validator : GeneratedValidator<Discount> = {
+const validator : GeneratedValidator<DiscountCoupon> = {
     db:{
         insert:createValidator({
             title:Joi.string().required(),

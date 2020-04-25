@@ -1,4 +1,4 @@
-export default interface Discount{
+export default interface DiscountCoupon{
     _id:string,
     title: string,
     code: string,
