@@ -1,8 +1,7 @@
 import {User, UserType} from '../index';
-import Visit from './visit/Visit';
 
 export default interface Status{
-    room: Visit | undefined,
+    room: {id:string,patient:User,doctor:User} | undefined,
     ready: boolean,
     type: UserType,
     forDoctor:{
