@@ -1,4 +1,4 @@
-export interface Queue{
+interface Queue{
     _id: string,
     patientId: string,
     doctorId: string,

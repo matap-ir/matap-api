@@ -10,6 +10,7 @@ import DiscountCoupon from './models/discount/DiscountCoupon';
 import Receipt from 'models/receipt/Receipt';
 import PatientStatus from 'models/PatientStatus';
 import DoctorStatus from 'models/DoctorStatus';
+import Queue from 'Queue';
 
 export {
     CallOffer,
@@ -24,7 +25,8 @@ export {
     Specialization,
     HealthCenter,
     DiscountCoupon,
-    Receipt
+    Receipt,
+    Queue
 };
 
 export type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';
