@@ -8,6 +8,6 @@ export default interface Status{
     },
     forPatient:{
         queueDoctor:User | undefined,
-        queueDiscountCode: string
+        queueDiscountCode: string | undefined
     }
 }
