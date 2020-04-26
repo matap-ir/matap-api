@@ -1,10 +1,10 @@
 import createValidator from '../createValidator';
 import Joi from '../Joi';
 import {GeneratedValidator} from '../Validator';
-import BillRecord from './BillRecord';
+import Receipt from './Receipt';
 
 
-const validator : GeneratedValidator<BillRecord> = {
+const validator : GeneratedValidator<Receipt> = {
     db:{
         insert:createValidator({
             amount:Joi.number().required(),
