@@ -3,12 +3,13 @@ import User from './models/users/User';
 import { UserType, HealthCenterType } from 'models/Enums';
 import Chat from './models/chat/Chat';
 import * as Enums from './models/Enums';
-import Status from './models/Status';
 import CallOffer from './models/CallOffer';
 import Specialization from './models/specialization/Specialization';
 import HealthCenter from 'models/health_center/HealthCenter';
 import DiscountCoupon from './models/discount/DiscountCoupon';
 import Receipt from 'models/receipt/Receipt';
+import PatientStatus from 'models/PatientStatus';
+import DoctorStatus from 'models/DoctorStatus';
 
 export {
     CallOffer,
@@ -18,7 +19,8 @@ export {
     User,
     Chat,
     Enums,
-    Status,
+    DoctorStatus,
+    PatientStatus,
     Specialization,
     HealthCenter,
     DiscountCoupon,
