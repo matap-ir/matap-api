@@ -1,7 +1,9 @@
+import {User} from './index';
+
 interface Queue{
     _id: string,
-    patientId: string,
-    doctorId: string,
+    patient: User,
+    doctor: User,
     discountId: string,
 }
 
