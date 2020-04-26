@@ -36,6 +36,8 @@ const validator : GeneratedValidator<DiscountCoupon> = {
             amount:Joi.number().required(),
             end_date:Joi.number().required(),
             per_user_limit:Joi.number().required(),
+            start_date: Joi.number().required(),
+            total_usage_limit:Joi.number().required()
         }),
         put: createValidator({
             _id:Joi.string().required(),

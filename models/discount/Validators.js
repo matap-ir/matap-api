@@ -35,6 +35,8 @@ const validator = {
             amount: Joi_1.default.number().required(),
             end_date: Joi_1.default.number().required(),
             per_user_limit: Joi_1.default.number().required(),
+            start_date: Joi_1.default.number().required(),
+            total_usage_limit: Joi_1.default.number().required()
         }),
         put: createValidator_1.default({
             _id: Joi_1.default.string().required(),
