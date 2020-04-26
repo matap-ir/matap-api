@@ -27,6 +27,7 @@ const validator : GeneratedValidator<User> = {
                 mobile:phone().required(),
                 name:Joi.string().required(),
                 type:Joi.string().required().allow('PATIENT'),
+                currency: Joi.number().optional(),
             })
         )
     },
@@ -39,6 +40,7 @@ const validator : GeneratedValidator<User> = {
           imageUrl:Joi.string().optional(),
           price:Joi.number().required(),
           specialization:Joi.any().required(),
+          currency: Joi.number().optional(),
           details:Joi.object().keys({
               city:Joi.string().required(),
               nezam_pezeshki_code:Joi.string().required(),
@@ -70,6 +72,7 @@ const validator : GeneratedValidator<User> = {
                   mobile:phone().required(),
                   name:Joi.string().required(),
                   type:Joi.string().required().allow('PATIENT'),
+                  currency: Joi.number().optional(),
               })
           )
       },
@@ -82,6 +85,7 @@ const validator : GeneratedValidator<User> = {
           imageUrl:Joi.string().optional(),
           price:Joi.number().optional(),
           specialization:require('../specialization/Validators').default.public.patch.validator.optional(),
+          currency: Joi.number().optional(),
           details:Joi.object().optional().keys({
               city:Joi.string().required(),
               nezam_pezeshki_code:Joi.string().required(),

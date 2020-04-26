@@ -24,6 +24,7 @@ const validator = {
                 mobile: Joi_1.phone().required(),
                 name: Joi_1.default.string().required(),
                 type: Joi_1.default.string().required().allow('PATIENT'),
+                currency: Joi_1.default.number().optional(),
             }))
         },
         update: createValidator_1.default({
@@ -35,6 +36,7 @@ const validator = {
             imageUrl: Joi_1.default.string().optional(),
             price: Joi_1.default.number().required(),
             specialization: Joi_1.default.any().required(),
+            currency: Joi_1.default.number().optional(),
             details: Joi_1.default.object().keys({
                 city: Joi_1.default.string().required(),
                 nezam_pezeshki_code: Joi_1.default.string().required(),
@@ -64,6 +66,7 @@ const validator = {
                 mobile: Joi_1.phone().required(),
                 name: Joi_1.default.string().required(),
                 type: Joi_1.default.string().required().allow('PATIENT'),
+                currency: Joi_1.default.number().optional(),
             }))
         },
         patch: createValidator_1.default({
@@ -75,6 +78,7 @@ const validator = {
             imageUrl: Joi_1.default.string().optional(),
             price: Joi_1.default.number().optional(),
             specialization: require('../specialization/Validators').default.public.patch.validator.optional(),
+            currency: Joi_1.default.number().optional(),
             details: Joi_1.default.object().optional().keys({
                 city: Joi_1.default.string().required(),
                 nezam_pezeshki_code: Joi_1.default.string().required(),
