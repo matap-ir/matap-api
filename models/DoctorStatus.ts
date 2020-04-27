@@ -1,7 +1,8 @@
 import {User} from '../index';
+import Visit from './visit/Visit';
 
 export default interface DoctorStatus{
-    room: {id:string,patient:User,doctor:User} | undefined,
+    visit: Visit | undefined,
     ready: boolean,
     queueList:User[] | string[]
 }
