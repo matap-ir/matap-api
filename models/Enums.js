@@ -10,6 +10,11 @@ var HealthCenterType;
     HealthCenterType["HOSPITAL"] = "HOSPITAL";
     HealthCenterType["CLINIC"] = "CLINIC";
 })(HealthCenterType = exports.HealthCenterType || (exports.HealthCenterType = {}));
+var VisitStatus;
+(function (VisitStatus) {
+    VisitStatus["IN_QUEUE"] = "IN_QUEUE";
+    VisitStatus["STARTED"] = "STARTED";
+})(VisitStatus = exports.VisitStatus || (exports.VisitStatus = {}));
 var ReceiveStatus;
 (function (ReceiveStatus) {
     ReceiveStatus["FAILED"] = "FAILED";

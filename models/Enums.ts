@@ -8,6 +8,11 @@ export enum HealthCenterType {
    CLINIC = 'CLINIC'
 }
 
+export enum VisitStatus {
+   IN_QUEUE = 'IN_QUEUE' ,
+   STARTED = 'STARTED'
+}
+
 export enum ReceiveStatus {
    FAILED = 'FAILED',
    DOWNLOADING = 'DOWNLOADING',
