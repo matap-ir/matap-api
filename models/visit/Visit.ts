@@ -5,7 +5,7 @@ interface Visit{
     _id: string,
     patient: User | string,
     doctor: User | string,
-    discount: DiscountCoupon | string,
+    discount?: DiscountCoupon | string,
     state: VisitStatus,
     initiate_date: number,
     start_date: number,
