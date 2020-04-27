@@ -8,6 +8,7 @@ const dbModel = {
     specialization:{type:ObjectId,ref:'specializations'},
     price:{type:Number},
     currency:{type:Number,default:0,required:true},
+    ready:{type:Boolean,default: false},
     details:{
         type:{
             city:String,

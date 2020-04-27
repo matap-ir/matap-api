@@ -12,6 +12,7 @@ export default interface User {
     specialization:Specialization,
     price:number,
     currency: number,
+    ready: boolean,
     details:{
         city:string,
         nezam_pezeshki_code:string,
