@@ -6,6 +6,7 @@ exports.default = {
     doctor: { type: mongoose_1.ObjectId, ref: 'user' },
     discount: { type: mongoose_1.ObjectId, ref: 'discount_coupons' },
     state: { type: String, required: true, default: 'IN_QUEUE' },
+    initiate_date: { type: Number, required: true },
     start_date: { type: Number, required: true },
     conversations: [{ delivered: { type: [String], default: [] }, chat: require('../chat/DBModel').default }]
 };
