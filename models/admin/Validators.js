@@ -7,7 +7,7 @@ const validator = {
     db: {
         insert: createValidator_1.default({
             name: Joi_1.default.string().required(),
-            type: Joi_1.default.string().required().allow(['MANAGER', 'ADMIN']),
+            type: Joi_1.default.string().required().allow('MANAGER', 'ADMIN'),
             username: Joi_1.default.string().required(),
             password: Joi_1.default.string().required(),
             accesses: Joi_1.default.array().items(Joi_1.default.string()).optional(),
@@ -22,7 +22,7 @@ const validator = {
     public: {
         post: createValidator_1.default({
             name: Joi_1.default.string().required(),
-            type: Joi_1.default.string().required().allow(['MANAGER', 'ADMIN']),
+            type: Joi_1.default.string().required().allow('MANAGER', 'ADMIN'),
             username: Joi_1.default.string().required(),
             password: Joi_1.default.string().required(),
             accesses: Joi_1.default.array().items(Joi_1.default.string()).optional(),

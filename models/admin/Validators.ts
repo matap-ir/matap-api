@@ -8,7 +8,7 @@ const validator : GeneratedValidator<Admin> = {
   db:{
     insert:createValidator({
         name:Joi.string().required(),
-        type:Joi.string().required().allow(['MANAGER','ADMIN']),
+        type:Joi.string().required().allow('MANAGER','ADMIN'),
         username:Joi.string().required(),
         password:Joi.string().required(),
         accesses:Joi.array().items(Joi.string()).optional(),
@@ -23,7 +23,7 @@ const validator : GeneratedValidator<Admin> = {
   public:{
       post:createValidator({
           name:Joi.string().required(),
-          type:Joi.string().required().allow(['MANAGER','ADMIN']),
+          type:Joi.string().required().allow('MANAGER','ADMIN'),
           username:Joi.string().required(),
           password:Joi.string().required(),
           accesses:Joi.array().items(Joi.string()).optional(),
