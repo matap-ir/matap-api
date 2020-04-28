@@ -3,6 +3,11 @@ export enum UserType {
    DOCTOR = 'DOCTOR'
 }
 
+export enum AdminType{
+   MANAGER = 'MANAGER',
+   ADMIN = 'ADMIN'
+}
+
 export enum HealthCenterType {
    HOSPITAL = 'HOSPITAL',
    CLINIC = 'CLINIC'

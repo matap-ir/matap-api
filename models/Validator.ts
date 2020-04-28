@@ -9,6 +9,6 @@ export interface GeneratedValidator<T> {
     public: {
         post: ValidatorModel,
         patch: ValidatorModel,
-        put: ValidatorModel,
+        put?: ValidatorModel,
     };
 }

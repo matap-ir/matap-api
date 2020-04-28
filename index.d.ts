@@ -11,6 +11,7 @@ import Receipt from 'models/receipt/Receipt';
 import PatientStatus from 'models/PatientStatus';
 import DoctorStatus from 'models/DoctorStatus';
 import Visit from 'models/visit/Visit';
+import Admin from 'models/admin/Admin';
 
 export {
     CallOffer,
@@ -27,7 +28,8 @@ export {
     DiscountCoupon,
     Receipt,
     Visit,
-    VisitStatus
+    VisitStatus,
+    Admin
 };
 
 export type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';

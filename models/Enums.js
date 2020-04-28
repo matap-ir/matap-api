@@ -5,6 +5,11 @@ var UserType;
     UserType["PATIENT"] = "PATIENT";
     UserType["DOCTOR"] = "DOCTOR";
 })(UserType = exports.UserType || (exports.UserType = {}));
+var AdminType;
+(function (AdminType) {
+    AdminType["MANAGER"] = "MANAGER";
+    AdminType["ADMIN"] = "ADMIN";
+})(AdminType = exports.AdminType || (exports.AdminType = {}));
 var HealthCenterType;
 (function (HealthCenterType) {
     HealthCenterType["HOSPITAL"] = "HOSPITAL";
