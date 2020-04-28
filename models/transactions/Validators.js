@@ -7,9 +7,15 @@ const validator = {
     db: {
         insert: createValidator_1.default({
             amount: Joi_1.default.number().required(),
-            type: Joi_1.default.string().required(),
-            issuer: Joi_1.default.string().required(),
-            tracking_code: Joi_1.default.string().required()
+            type: Joi_1.default.string().required().allow('CHARGE_BY_GATEWAY', 'CHARGE_BY_ADMIN', 'STARTER_CHARGE', 'VISIT_PAYMENT', 'PAYROLL'),
+            tracking_code: Joi_1.default.string().required(),
+            date: Joi_1.default.number().required(),
+            hint: Joi_1.default.string().optional(),
+            issuer: Joi_1.default.object({
+                type: Joi_1.default.string().required().allow('admin', 'user'),
+                id: Joi_1.default.string().required(),
+                name: Joi_1.default.string().required()
+            }),
         })
     }
 };
