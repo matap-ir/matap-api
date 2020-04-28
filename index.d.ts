@@ -7,7 +7,7 @@ import CallOffer from './models/CallOffer';
 import Specialization from './models/specialization/Specialization';
 import HealthCenter from 'models/health_center/HealthCenter';
 import DiscountCoupon from './models/discount/DiscountCoupon';
-import Receipt from 'models/receipt/Receipt';
+import Transaction from 'models/transactions/Transaction';
 import PatientStatus from 'models/PatientStatus';
 import DoctorStatus from 'models/DoctorStatus';
 import Visit from 'models/visit/Visit';
@@ -26,7 +26,7 @@ export {
     Specialization,
     HealthCenter,
     DiscountCoupon,
-    Receipt,
+    Transaction,
     Visit,
     VisitStatus,
     Admin
