@@ -13,8 +13,7 @@ interface Visit{
     receipt:{
         total: number,
         paid: number,
-        discount: number,
-        doctorCut: number
+        discount: number
     }
 }
 
