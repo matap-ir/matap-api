@@ -9,9 +9,15 @@ const dbModel = {
     issuer: {
         type: {
             type: { type: String, required: true },
-            id: { type: String, required: true },
+            _id: { type: String, required: true },
             name: { type: String, required: true }
         }
     },
+    target: {
+        type: {
+            _id: { type: String, required: true },
+            name: { type: String, required: true }
+        }
+    }
 };
 exports.default = dbModel;
