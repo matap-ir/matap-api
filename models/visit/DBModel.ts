@@ -8,5 +8,10 @@ export default{
     state:{type:String,required:true,default:VisitStatus.IN_QUEUE},
     initiate_date:{type:Number,required: true},
     start_date:{type:Number},
-    conversations:[{delivered:{type:[String],default: []},chat:require('../chat/DBModel').default}]
+    conversations:[{delivered:{type:[String],default: []},chat:require('../chat/DBModel').default}],
+    receipt:{
+        total: {type:Number,required:true},
+        paid: {type:Number,required:true},
+        discount: {type:Number,required:true}
+    }
 }

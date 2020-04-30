@@ -9,7 +9,12 @@ interface Visit{
     state: VisitStatus,
     initiate_date: number,
     start_date: number,
-    conversations : {delivered:string[],chat:Chat}[]
+    conversations : {delivered:string[],chat:Chat}[],
+    receipt:{
+        total: number,
+        paid: number,
+        discount: number
+    }
 }
 
 export default Visit;
