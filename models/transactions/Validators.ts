@@ -11,6 +11,7 @@ const validator : GeneratedValidator<Transaction> = {
             tracking_code:Joi.string().optional().allow('').allow(null),
             date:Joi.number().required(),
             hint:Joi.string().optional().allow('').allow(null),
+            visit_id:Joi.any().optional().allow(null),
             issuer:Joi.object({
                 type:Joi.string().required().allow('admin','user'),
                 _id:Joi.any().required(),

@@ -11,6 +11,7 @@ const validator = {
             tracking_code: Joi_1.default.string().optional().allow('').allow(null),
             date: Joi_1.default.number().required(),
             hint: Joi_1.default.string().optional().allow('').allow(null),
+            visit_id: Joi_1.default.any().optional().allow(null),
             issuer: Joi_1.default.object({
                 type: Joi_1.default.string().required().allow('admin', 'user'),
                 _id: Joi_1.default.any().required(),

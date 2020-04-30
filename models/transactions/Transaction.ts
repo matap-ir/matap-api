@@ -12,6 +12,7 @@ export default interface Transaction{
         name:string
     },
     tracking_code:string,
+    visit_id:string,
     date:number,
     hint:string
 }
