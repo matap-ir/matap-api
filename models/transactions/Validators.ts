@@ -13,11 +13,11 @@ const validator : GeneratedValidator<Transaction> = {
             hint:Joi.string().optional(),
             issuer:Joi.object({
                 type:Joi.string().required().allow('admin','user'),
-                id:Joi.string().required(),
+                _id:Joi.any().required(),
                 name:Joi.string().required()
             }),
             target:Joi.object({
-                id:Joi.string().required(),
+                _id:Joi.any().required(),
                 name:Joi.string().required()
             })
         })

@@ -13,11 +13,11 @@ const validator = {
             hint: Joi_1.default.string().optional(),
             issuer: Joi_1.default.object({
                 type: Joi_1.default.string().required().allow('admin', 'user'),
-                id: Joi_1.default.string().required(),
+                _id: Joi_1.default.any().required(),
                 name: Joi_1.default.string().required()
             }),
             target: Joi_1.default.object({
-                id: Joi_1.default.string().required(),
+                _id: Joi_1.default.any().required(),
                 name: Joi_1.default.string().required()
             })
         })
