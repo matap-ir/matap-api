@@ -12,6 +12,7 @@ import PatientStatus from 'models/PatientStatus';
 import DoctorStatus from 'models/DoctorStatus';
 import Visit from 'models/visit/Visit';
 import Admin from 'models/admin/Admin';
+import FinancialAudit from 'models/FinancialAudit';
 
 export {
     CallOffer,
@@ -29,7 +30,8 @@ export {
     Transaction,
     Visit,
     VisitStatus,
-    Admin
+    Admin,
+    FinancialAudit
 };
 
 export type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';
