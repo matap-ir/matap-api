@@ -8,7 +8,7 @@ const validator : GeneratedValidator<Transaction> = {
         insert:createValidator({
             amount:Joi.number().required(),
             type:Joi.string().required().allow('CHARGE_BY_GATEWAY' , 'CHARGE_BY_ADMIN' , 'STARTER_CHARGE' , 'VISIT_PAYMENT' , 'PAYROLL'),
-            tracking_code:Joi.string().required(),
+            tracking_code:Joi.string().optional(),
             date:Joi.number().required(),
             hint:Joi.string().optional(),
             issuer:Joi.object({
@@ -16,6 +16,14 @@ const validator : GeneratedValidator<Transaction> = {
                 id:Joi.string().required(),
                 name:Joi.string().required()
             }),
+        })
+    },
+    public:{
+        post:createValidator({
+            amount:Joi.number().required(),
+            type:Joi.string().required().allow('CHARGE_BY_GATEWAY' , 'CHARGE_BY_ADMIN' , 'STARTER_CHARGE' , 'VISIT_PAYMENT' , 'PAYROLL'),
+            tracking_code:Joi.string().optional(),
+            hint:Joi.string().optional(),
         })
     }
 };
