@@ -8,15 +8,15 @@ const dbModel = {
     hint: { type: String, default: '' },
     issuer: {
         type: {
-            type: { type: String, required: true },
-            _id: { type: String, required: true },
-            name: { type: String, required: true }
+            type: String,
+            _id: String,
+            name: String
         }
     },
     target: {
         type: {
-            _id: { type: String, required: true },
-            name: { type: String, required: true }
+            _id: String,
+            name: String
         }
     }
 };
