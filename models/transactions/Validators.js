@@ -16,6 +16,10 @@ const validator = {
                 id: Joi_1.default.string().required(),
                 name: Joi_1.default.string().required()
             }),
+            target: Joi_1.default.object({
+                id: Joi_1.default.string().required(),
+                name: Joi_1.default.string().required()
+            })
         })
     },
     public: {

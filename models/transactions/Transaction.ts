@@ -6,7 +6,11 @@ export default interface Transaction{
         type: 'admin' | 'user',
         id:string,
         name:string
-    }
+    },
+    target:{
+      id:string,
+      name:string
+    },
     tracking_code:string,
     date:number,
     hint:string

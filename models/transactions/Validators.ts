@@ -16,6 +16,10 @@ const validator : GeneratedValidator<Transaction> = {
                 id:Joi.string().required(),
                 name:Joi.string().required()
             }),
+            target:Joi.object({
+                id:Joi.string().required(),
+                name:Joi.string().required()
+            })
         })
     },
     public:{
