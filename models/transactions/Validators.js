@@ -8,9 +8,9 @@ const validator = {
         insert: createValidator_1.default({
             amount: Joi_1.default.number().required(),
             type: Joi_1.default.string().required().allow('CHARGE_BY_GATEWAY', 'CHARGE_BY_ADMIN', 'STARTER_CHARGE', 'VISIT_PAYMENT', 'PAYROLL'),
-            tracking_code: Joi_1.default.string().optional(),
+            tracking_code: Joi_1.default.string().optional().allow('').allow(null),
             date: Joi_1.default.number().required(),
-            hint: Joi_1.default.string().optional(),
+            hint: Joi_1.default.string().optional().allow('').allow(null),
             issuer: Joi_1.default.object({
                 type: Joi_1.default.string().required().allow('admin', 'user'),
                 _id: Joi_1.default.any().required(),
@@ -26,8 +26,8 @@ const validator = {
         post: createValidator_1.default({
             amount: Joi_1.default.number().required(),
             type: Joi_1.default.string().required().allow('CHARGE_BY_GATEWAY', 'CHARGE_BY_ADMIN', 'STARTER_CHARGE', 'VISIT_PAYMENT', 'PAYROLL'),
-            tracking_code: Joi_1.default.string().optional(),
-            hint: Joi_1.default.string().optional(),
+            tracking_code: Joi_1.default.string().optional().allow('').allow(null),
+            hint: Joi_1.default.string().optional().allow('').allow(null),
         })
     }
 };
