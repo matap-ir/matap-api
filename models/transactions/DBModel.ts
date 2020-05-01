@@ -6,17 +6,13 @@ const dbModel = {
     date:{type:Number,required:true},
     hint:{type:String,default:''},
     issuer:{
-        type:{
             type:{type:String,required:true},
             _id:{type:String,required:true},
             name:{type:String,required:true}
-        }
     },
     target:{
-        type:{
             _id:{type:String,required:true},
             name:{type:String,required:true}
-        }
     }
 };
 
