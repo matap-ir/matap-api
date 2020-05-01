@@ -8,6 +8,15 @@ export enum AdminType{
    ADMIN = 'ADMIN'
 }
 
+export enum TransactionType {
+   CHARGE_BY_GATEWAY = 'CHARGE_BY_GATEWAY',
+   CHARGE_BY_ADMIN = 'CHARGE_BY_ADMIN',
+   REDUCE_BY_ADMIN = 'REDUCE_BY_ADMIN',
+   STARTER_CHARGE = 'STARTER_CHARGE',
+   VISIT_PAYMENT = 'VISIT_PAYMENT',
+   PAYROLL = 'PAYROLL'
+}
+
 export enum HealthCenterType {
    HOSPITAL = 'HOSPITAL',
    CLINIC = 'CLINIC'

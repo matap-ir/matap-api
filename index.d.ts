@@ -1,6 +1,6 @@
 import FileAddresses from './constants/FileAddresses';
 import User from './models/users/User';
-import {UserType, HealthCenterType, VisitStatus} from 'models/Enums';
+import {UserType, HealthCenterType, VisitStatus, TransactionType} from 'models/Enums';
 import Chat from './models/chat/Chat';
 import * as Enums from './models/Enums';
 import CallOffer from './models/CallOffer';
@@ -31,7 +31,8 @@ export {
     Visit,
     VisitStatus,
     Admin,
-    FinancialAudit
+    FinancialAudit,
+    TransactionType
 };
 
 export type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';

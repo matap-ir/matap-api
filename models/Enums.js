@@ -10,6 +10,15 @@ var AdminType;
     AdminType["MANAGER"] = "MANAGER";
     AdminType["ADMIN"] = "ADMIN";
 })(AdminType = exports.AdminType || (exports.AdminType = {}));
+var TransactionType;
+(function (TransactionType) {
+    TransactionType["CHARGE_BY_GATEWAY"] = "CHARGE_BY_GATEWAY";
+    TransactionType["CHARGE_BY_ADMIN"] = "CHARGE_BY_ADMIN";
+    TransactionType["REDUCE_BY_ADMIN"] = "REDUCE_BY_ADMIN";
+    TransactionType["STARTER_CHARGE"] = "STARTER_CHARGE";
+    TransactionType["VISIT_PAYMENT"] = "VISIT_PAYMENT";
+    TransactionType["PAYROLL"] = "PAYROLL";
+})(TransactionType = exports.TransactionType || (exports.TransactionType = {}));
 var HealthCenterType;
 (function (HealthCenterType) {
     HealthCenterType["HOSPITAL"] = "HOSPITAL";
