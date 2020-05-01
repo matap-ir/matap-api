@@ -1,7 +1,9 @@
+import {TransactionType} from '../Enums';
+
 export default interface Transaction{
     _id:string,
     amount:number,
-    type:'CHARGE_BY_GATEWAY' | 'CHARGE_BY_ADMIN' | 'REDUCE_BY_ADMIN' | 'STARTER_CHARGE' | 'VISIT_PAYMENT' | 'PAYROLL',
+    type:TransactionType,
     issuer:{
         type: 'admin' | 'user',
         _id:string,
