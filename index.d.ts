@@ -13,6 +13,7 @@ import DoctorStatus from 'models/DoctorStatus';
 import Visit from 'models/visit/Visit';
 import Admin from 'models/admin/Admin';
 import FinancialAudit from 'models/FinancialAudit';
+import QueryResponse from 'models/QueryResponse';
 
 export {
     CallOffer,
@@ -32,7 +33,8 @@ export {
     VisitStatus,
     Admin,
     FinancialAudit,
-    TransactionType
+    TransactionType,
+    QueryResponse
 };
 
 export type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';
