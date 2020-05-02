@@ -6,6 +6,7 @@ const dbModel = {
     tracking_code: { type: String },
     date: { type: Number, required: true },
     hint: { type: String, default: '' },
+    visit_id: { type: String, required: false },
     issuer: {
         type: { type: String, required: true },
         _id: { type: String, required: true },
