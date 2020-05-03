@@ -24,7 +24,9 @@ export enum HealthCenterType {
 
 export enum VisitStatus {
    IN_QUEUE = 'IN_QUEUE' ,
-   STARTED = 'STARTED'
+   STARTED = 'STARTED',
+   ENDED = 'ENDED',
+   CANCELLED = 'CANCELLED'
 }
 
 export enum ReceiveStatus {

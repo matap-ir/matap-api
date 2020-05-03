@@ -28,6 +28,8 @@ var VisitStatus;
 (function (VisitStatus) {
     VisitStatus["IN_QUEUE"] = "IN_QUEUE";
     VisitStatus["STARTED"] = "STARTED";
+    VisitStatus["ENDED"] = "ENDED";
+    VisitStatus["CANCELLED"] = "CANCELLED";
 })(VisitStatus = exports.VisitStatus || (exports.VisitStatus = {}));
 var ReceiveStatus;
 (function (ReceiveStatus) {
