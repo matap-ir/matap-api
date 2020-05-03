@@ -9,6 +9,7 @@ exports.default = {
     state: { type: String, required: true, default: Enums_1.VisitStatus.IN_QUEUE },
     initiate_date: { type: Number, required: true },
     start_date: { type: Number },
+    end_date: { type: Number },
     conversations: [{ delivered: { type: [String], default: [] }, chat: require('../chat/DBModel').default }],
     receipt: {
         total: { type: Number, required: false },
