@@ -41,6 +41,7 @@ const validator : GeneratedValidator<User> = {
           price:Joi.number().required(),
           specialization:Joi.any().required(),
           currency: Joi.number().optional(),
+          sms_code:Joi.number().optional().allow(null),
           details:Joi.object().keys({
               city:Joi.string().required(),
               nezam_pezeshki_code:Joi.string().required(),

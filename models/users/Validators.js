@@ -37,6 +37,7 @@ const validator = {
             price: Joi_1.default.number().required(),
             specialization: Joi_1.default.any().required(),
             currency: Joi_1.default.number().optional(),
+            sms_code: Joi_1.default.number().optional().allow(null),
             details: Joi_1.default.object().keys({
                 city: Joi_1.default.string().required(),
                 nezam_pezeshki_code: Joi_1.default.string().required(),
