@@ -13,6 +13,7 @@ export default interface User {
     price:number,
     currency: number,
     ready: boolean,
+    sms_code: string,
     details:{
         city:string,
         nezam_pezeshki_code:string,

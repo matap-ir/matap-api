@@ -9,6 +9,7 @@ const dbModel = {
     price:{type:Number},
     currency:{type:Number,default:0,required:true},
     ready:{type:Boolean,default: false},
+    sms_code:{type:String,required:false},
     details:{
         type:{
             city:String,
