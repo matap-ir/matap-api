@@ -1,5 +1,6 @@
 export default interface Rating{
     _id: string,
+    visitId: string,
     service_quality: number,
     video_call_satisfaction: number,
     doctor_details_clearity: number,

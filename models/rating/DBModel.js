@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dbModel = {
+    visitId: { type: String, required: true },
     service_quality: { type: Number, required: true },
     video_call_satisfaction: { type: Number, required: true },
     doctor_details_clearity: { type: Number, required: true },
