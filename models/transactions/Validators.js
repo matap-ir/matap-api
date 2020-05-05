@@ -7,7 +7,7 @@ const validator = {
     db: {
         insert: createValidator_1.default({
             amount: Joi_1.default.number().required(),
-            type: Joi_1.default.string().required().allow('CHARGE_BY_GATEWAY', 'CHARGE_BY_ADMIN', 'STARTER_CHARGE', 'VISIT_PAYMENT', 'PAYROLL'),
+            type: Joi_1.default.string().required().allow('CHARGE_BY_GATEWAY', 'CHARGE_BY_ADMIN', 'STARTER_CHARGE', 'VISIT_PAYMENT', 'PAYROLL', 'RETURN_VISIT_PAYMENT'),
             tracking_code: Joi_1.default.string().optional().allow('').allow(null),
             date: Joi_1.default.number().required(),
             hint: Joi_1.default.string().optional().allow('').allow(null),
