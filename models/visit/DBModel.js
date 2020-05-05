@@ -13,7 +13,7 @@ exports.default = {
     conversations: [{ delivered: { type: [String], default: [] }, chat: require('../chat/DBModel').default }],
     rating: { type: require('../rating/DBModel').default, required: false },
     receipt: {
-        transaction_id: { type: String, required: true },
+        transaction_id: { type: String, required: false },
         total: { type: Number, required: false },
         paid: { type: Number, required: false },
         discount: { type: Number, required: false },
