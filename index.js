@@ -11,6 +11,6 @@ module.exports= {
     ChatType,
     SendStatus,
     IOStatus,
-    ReceiveStatus
+    ReceiveStatus,
     FileAddresses,
 };
