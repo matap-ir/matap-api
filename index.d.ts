@@ -14,6 +14,7 @@ import Visit from 'models/visit/Visit';
 import Admin from 'models/admin/Admin';
 import FinancialAudit from 'models/FinancialAudit';
 import QueryResponse from 'models/QueryResponse';
+import Rating from 'models/rating/Rating';
 
 export {
     CallOffer,
@@ -34,7 +35,8 @@ export {
     Admin,
     FinancialAudit,
     TransactionType,
-    QueryResponse
+    QueryResponse,
+    Rating
 };
 
 export type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';

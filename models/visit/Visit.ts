@@ -1,4 +1,4 @@
-import {Chat, DiscountCoupon, User} from '../../index';
+import {Chat, DiscountCoupon, User, Rating} from '../../index';
 import {VisitStatus} from '../Enums';
 
 interface Visit{
@@ -11,6 +11,7 @@ interface Visit{
     start_date: number,
     end_date: number,
     conversations : {delivered:string[],chat:Chat}[],
+    rating: Rating,
     receipt:{
         transaction_id: string,
         total: number,
