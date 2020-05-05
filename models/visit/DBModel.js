@@ -11,7 +11,7 @@ exports.default = {
     start_date: { type: Number },
     end_date: { type: Number },
     conversations: [{ delivered: { type: [String], default: [] }, chat: require('../chat/DBModel').default }],
-    rating: require('../rating/DBModel').default,
+    rating: { type: require('../rating/DBModel').default, required: false },
     receipt: {
         transaction_id: { type: String, required: true },
         total: { type: Number, required: false },
