@@ -12,9 +12,11 @@ interface Visit{
     end_date: number,
     conversations : {delivered:string[],chat:Chat}[],
     receipt:{
+        transaction_id: string,
         total: number,
         paid: number,
-        discount: number
+        discount: number,
+        return_transaction_id:string
     }
 }
 
