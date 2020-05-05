@@ -6,6 +6,7 @@ const Joi_1 = tslib_1.__importDefault(require("../Joi"));
 const validator = {
     db: {
         insert: createValidator_1.default({
+            visitId: Joi_1.default.any().required(),
             service_quality: Joi_1.default.number().required(),
             video_call_satisfaction: Joi_1.default.number().required(),
             doctor_details_clearity: Joi_1.default.number().required(),
@@ -16,6 +17,7 @@ const validator = {
     },
     public: {
         post: createValidator_1.default({
+            visitId: Joi_1.default.any().required(),
             service_quality: Joi_1.default.number().required(),
             video_call_satisfaction: Joi_1.default.number().required(),
             doctor_details_clearity: Joi_1.default.number().required(),

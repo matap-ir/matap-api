@@ -6,6 +6,7 @@ import Rating from './Rating';
 const validator : GeneratedValidator<Rating> = {
     db:{
         insert:createValidator({
+            visitId: Joi.any().required(),
             service_quality:Joi.number().required(),
             video_call_satisfaction:Joi.number().required(),
             doctor_details_clearity:Joi.number().required(),
@@ -16,6 +17,7 @@ const validator : GeneratedValidator<Rating> = {
     },
     public:{
         post:createValidator({
+            visitId: Joi.any().required(),
             service_quality:Joi.number().required(),
             video_call_satisfaction:Joi.number().required(),
             doctor_details_clearity:Joi.number().required(),
