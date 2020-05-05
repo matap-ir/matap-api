@@ -80,6 +80,7 @@ const validator = {
             price: Joi_1.default.number().optional(),
             specialization: require('../specialization/Validators').default.public.patch.validator.optional(),
             currency: Joi_1.default.number().optional(),
+            finalizable_visits: Joi_1.default.array().items(Joi_1.default.string()),
             details: Joi_1.default.object().optional().keys({
                 city: Joi_1.default.string().required(),
                 nezam_pezeshki_code: Joi_1.default.string().required(),

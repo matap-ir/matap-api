@@ -1,6 +1,7 @@
 import {UserType} from '../Enums';
 import {Specialization} from '../../index';
 import HealthCenter from '../health_center/HealthCenter';
+import Visit from '../visit/Visit';
 
 export default interface User {
     _id: string;
@@ -14,6 +15,7 @@ export default interface User {
     currency: number,
     ready: boolean,
     sms_code: string,
+    finalizable_visits:Visit[] | string[],
     details:{
         city:string,
         nezam_pezeshki_code:string,
