@@ -10,6 +10,7 @@ const dbModel = {
     currency:{type:Number,default:0,required:true},
     ready:{type:Boolean,default: false},
     sms_code:{type:String,required:false},
+    fcmtoken:{type:String,required:false},
     finalizable_visits:{type: [String],default:[]},
     details:{
         type:{

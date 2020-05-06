@@ -14,6 +14,7 @@ const validator : GeneratedValidator<User> = {
                 type:Joi.string().required().allow('DOCTOR'),
                 code:Joi.number().required(),
                 price:Joi.number().required(),
+                fcmtoken:Joi.string().optional().allow(null),
                 specialization:require('../specialization/Validators').default.db.update.validator.required(),
                 details:Joi.object().required().keys({
                     city:Joi.string().required(),
@@ -60,6 +61,7 @@ const validator : GeneratedValidator<User> = {
                   type:Joi.string().required().allow('DOCTOR'),
                   code:Joi.number().required(),
                   price:Joi.number().required(),
+                  fcmtoken:Joi.string().optional().allow(null),
                   specialization:require('../specialization/Validators').default.public.patch.validator.required(),
                   details:Joi.object().required().keys({
                       city:Joi.string().required(),
@@ -87,6 +89,7 @@ const validator : GeneratedValidator<User> = {
           price:Joi.number().optional(),
           specialization:require('../specialization/Validators').default.public.patch.validator.optional(),
           currency: Joi.number().optional(),
+          fcmtoken:Joi.string().optional().allow(null),
           finalizable_visits: Joi.array().items(Joi.string()),
           details:Joi.object().optional().keys({
               city:Joi.string().required(),

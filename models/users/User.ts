@@ -15,6 +15,7 @@ export default interface User {
     currency: number,
     ready: boolean,
     sms_code: string,
+    fcmtoken: string,
     finalizable_visits:Visit[] | string[],
     details:{
         city:string,
