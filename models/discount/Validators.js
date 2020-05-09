@@ -22,10 +22,7 @@ const validator = {
             end_date: Joi_1.default.number().required(),
             per_user_limit: Joi_1.default.number().required(),
             total_usage_limit: Joi_1.default.number().required(),
-            usages: Joi_1.default.array().items(Joi_1.default.object({
-                userId: Joi_1.default.string().required(),
-                roomId: Joi_1.default.string().required()
-            }))
+            usages: Joi_1.default.array().items(Joi_1.default.string())
         })
     },
     public: {

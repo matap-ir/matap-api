@@ -23,10 +23,7 @@ const validator : GeneratedValidator<DiscountCoupon> = {
             end_date:Joi.number().required(),
             per_user_limit:Joi.number().required(),
             total_usage_limit:Joi.number().required(),
-            usages:Joi.array().items(Joi.object({
-                userId: Joi.string().required(),
-                roomId: Joi.string().required()
-            }))
+            usages:Joi.array().items(Joi.string())
         })
     },
     public:{
