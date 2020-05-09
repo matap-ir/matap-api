@@ -7,7 +7,7 @@ const dbModel = {
     end_date: {type:Number,required:true},
     per_user_limit: {type:Number,required:true},
     total_usage_limit: {type:Number,required:true},
-    usages: {type:[{userId:String,roomId:String}],required:true,default:[]}
+    usages: {type:[String],required:true,default:[]}
 };
 
 export default dbModel;
