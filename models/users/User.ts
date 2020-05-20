@@ -23,5 +23,6 @@ export default interface User {
         monthlyCut: number,
         clinics:HealthCenter[],
         hospitals:HealthCenter[],
+        response_days:string,
     }
 }

@@ -20,7 +20,8 @@ const dbModel = {
             nezam_pezeshki_code: String,
             monthlyCut: Number,
             clinics: [{ type: mongoose_1.ObjectId, ref: 'healthcenters' }],
-            hospitals: [{ type: mongoose_1.ObjectId, ref: 'healthcenters' }]
+            hospitals: [{ type: mongoose_1.ObjectId, ref: 'healthcenters' }],
+            response_days: { type: String, required: true }
         }
     }
 };

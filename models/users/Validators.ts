@@ -21,7 +21,8 @@ const validator : GeneratedValidator<User> = {
                     nezam_pezeshki_code:Joi.string().required(),
                     monthlyCut:Joi.number().required(),
                     clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                    hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required()
+                    hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
+                    response_days:Joi.string().required()
                 }),
             }),
             Joi.object({
@@ -49,7 +50,8 @@ const validator : GeneratedValidator<User> = {
               nezam_pezeshki_code:Joi.string().required(),
               monthlyCut:Joi.number().required(),
               clinics:Joi.array().items(Joi.any()).required(),
-              hospitals:Joi.array().items(Joi.any()).required()
+              hospitals:Joi.array().items(Joi.any()).required(),
+              response_days:Joi.string().required()
           })
       })
   },
@@ -69,7 +71,8 @@ const validator : GeneratedValidator<User> = {
                       nezam_pezeshki_code:Joi.string().required(),
                       monthlyCut:Joi.number().required(),
                       clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                      hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required()
+                      hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
+                      response_days:Joi.string().required()
                   }),
               }),
               Joi.object({
@@ -97,7 +100,8 @@ const validator : GeneratedValidator<User> = {
               nezam_pezeshki_code:Joi.string().required(),
               monthlyCut:Joi.number().required(),
               clinics:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
-              hospitals:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required()
+              hospitals:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
+              response_days:Joi.string().required()
           })
       })
   },
