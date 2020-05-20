@@ -19,7 +19,7 @@ const dbModel = {
             monthlyCut:Number,
             clinics:[{type:ObjectId,ref:'healthcenters'}],
             hospitals:[{type:ObjectId,ref:'healthcenters'}],
-            response_days:{type:String,required:true}
+            response_days:{type:String,required:false}
         }
     }
 };

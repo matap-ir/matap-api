@@ -21,7 +21,7 @@ const dbModel = {
             monthlyCut: Number,
             clinics: [{ type: mongoose_1.ObjectId, ref: 'healthcenters' }],
             hospitals: [{ type: mongoose_1.ObjectId, ref: 'healthcenters' }],
-            response_days: { type: String, required: true }
+            response_days: { type: String, required: false }
         }
     }
 };

@@ -22,7 +22,7 @@ const validator : GeneratedValidator<User> = {
                     monthlyCut:Joi.number().required(),
                     clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                    response_days:Joi.string().required()
+                    response_days:Joi.string().optional().allow(null)
                 }),
             }),
             Joi.object({
@@ -51,7 +51,7 @@ const validator : GeneratedValidator<User> = {
               monthlyCut:Joi.number().required(),
               clinics:Joi.array().items(Joi.any()).required(),
               hospitals:Joi.array().items(Joi.any()).required(),
-              response_days:Joi.string().required()
+              response_days:Joi.string().optional().allow(null)
           })
       })
   },
@@ -72,7 +72,7 @@ const validator : GeneratedValidator<User> = {
                       monthlyCut:Joi.number().required(),
                       clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                       hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                      response_days:Joi.string().required()
+                      response_days:Joi.string().optional().allow(null)
                   }),
               }),
               Joi.object({
@@ -101,7 +101,7 @@ const validator : GeneratedValidator<User> = {
               monthlyCut:Joi.number().required(),
               clinics:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
               hospitals:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
-              response_days:Joi.string().required()
+              response_days:Joi.string().optional().allow(null)
           })
       })
   },
