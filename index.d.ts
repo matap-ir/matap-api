@@ -15,6 +15,7 @@ import Admin from 'models/admin/Admin';
 import FinancialAudit from 'models/FinancialAudit';
 import QueryResponse from 'models/QueryResponse';
 import Rating from 'models/rating/Rating';
+import ServerConfig from './models/serverconfig/ServerConfig';
 
 export {
     CallOffer,
@@ -36,7 +37,8 @@ export {
     FinancialAudit,
     TransactionType,
     QueryResponse,
-    Rating
+    Rating,
+    ServerConfig
 };
 
 export type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';
