@@ -10,6 +10,7 @@ interface Visit{
     initiate_date: number,
     start_date: number,
     end_date: number,
+    duration_limit: number,
     conversations : {delivered:string[],chat:Chat}[],
     rating: Rating,
     receipt:{

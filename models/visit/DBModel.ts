@@ -9,6 +9,7 @@ export default{
     initiate_date:{type:Number,required: true},
     start_date:{type:Number},
     end_date:{type:Number},
+    duration_limit:{type:Number,required:true,default:0},
     conversations:[{delivered:{type:[String],default: []},chat:require('../chat/DBModel').default}],
     rating:{type:require('../rating/DBModel').default,required:false},
     receipt:{
