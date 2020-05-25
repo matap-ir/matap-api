@@ -4,7 +4,7 @@ const dbModel = {
     type:{type: String,require:true},
     name:{type:String,required:true},
     imageUrl:{type:String},
-    code:{type:Number},
+    code:{type:Number,unique:true,sparse:true},
     specialization:{type:ObjectId,ref:'specializations'},
     price:{type:Number},
     currency:{type:Number,default:0,required:true},
