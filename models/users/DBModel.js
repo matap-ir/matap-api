@@ -31,7 +31,16 @@ const dbModel = {
                     5: String,
                     6: String,
                 },
-                required: true
+                required: true,
+                default: {
+                    0: '',
+                    1: '',
+                    2: '',
+                    3: '',
+                    4: '',
+                    5: '',
+                    6: '',
+                }
             }
         }
     }
