@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
 const dbModel = {
-    mobile: { type: String, required: true },
+    mobile: { type: String, unique: true, required: true },
     type: { type: String, require: true },
     name: { type: String, required: true },
     imageUrl: { type: String },
@@ -21,7 +21,18 @@ const dbModel = {
             monthlyCut: Number,
             clinics: [{ type: mongoose_1.ObjectId, ref: 'healthcenters' }],
             hospitals: [{ type: mongoose_1.ObjectId, ref: 'healthcenters' }],
-            response_days: { type: String, required: false }
+            response_days: {
+                type: {
+                    saturday: String,
+                    sunday: String,
+                    monday: String,
+                    tuesday: String,
+                    wednesday: String,
+                    thursday: String,
+                    friday: String
+                },
+                required: true
+            }
         }
     }
 };

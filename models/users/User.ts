@@ -23,6 +23,14 @@ export default interface User {
         monthlyCut: number,
         clinics:HealthCenter[],
         hospitals:HealthCenter[],
-        response_days:string,
+        response_days:{
+            saturday?:string,
+            sunday?: string,
+            monday?: string,
+            tuesday?: string,
+            wednesday?: string,
+            thursday?: string,
+            friday?: string
+        },
     }
 }

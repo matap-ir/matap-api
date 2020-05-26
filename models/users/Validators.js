@@ -20,7 +20,15 @@ const validator = {
                     monthlyCut: Joi_1.default.number().required(),
                     clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                    response_days: Joi_1.default.string().required()
+                    response_days: Joi_1.default.object({
+                        saturday: Joi_1.default.string().optional().allow(null),
+                        sunday: Joi_1.default.string().optional().allow(null),
+                        monday: Joi_1.default.string().optional().allow(null),
+                        tuesday: Joi_1.default.string().optional().allow(null),
+                        wednesday: Joi_1.default.string().optional().allow(null),
+                        thursday: Joi_1.default.string().optional().allow(null),
+                        friday: Joi_1.default.string().optional().allow(null)
+                    }).required()
                 }),
             }), Joi_1.default.object({
                 mobile: Joi_1.phone().required(),
@@ -47,7 +55,15 @@ const validator = {
                 monthlyCut: Joi_1.default.number().required(),
                 clinics: Joi_1.default.array().items(Joi_1.default.any()).required(),
                 hospitals: Joi_1.default.array().items(Joi_1.default.any()).required(),
-                response_days: Joi_1.default.string().required()
+                response_days: Joi_1.default.object({
+                    saturday: Joi_1.default.string().optional().allow(null),
+                    sunday: Joi_1.default.string().optional().allow(null),
+                    monday: Joi_1.default.string().optional().allow(null),
+                    tuesday: Joi_1.default.string().optional().allow(null),
+                    wednesday: Joi_1.default.string().optional().allow(null),
+                    thursday: Joi_1.default.string().optional().allow(null),
+                    friday: Joi_1.default.string().optional().allow(null)
+                }).required()
             })
         })
     },
@@ -67,7 +83,15 @@ const validator = {
                     monthlyCut: Joi_1.default.number().required(),
                     clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                    response_days: Joi_1.default.string().required()
+                    response_days: Joi_1.default.object({
+                        saturday: Joi_1.default.string().optional().allow(null),
+                        sunday: Joi_1.default.string().optional().allow(null),
+                        monday: Joi_1.default.string().optional().allow(null),
+                        tuesday: Joi_1.default.string().optional().allow(null),
+                        wednesday: Joi_1.default.string().optional().allow(null),
+                        thursday: Joi_1.default.string().optional().allow(null),
+                        friday: Joi_1.default.string().optional().allow(null)
+                    }).required()
                 }),
             }), Joi_1.default.object({
                 mobile: Joi_1.phone().required(),
@@ -94,7 +118,15 @@ const validator = {
                 monthlyCut: Joi_1.default.number().required(),
                 clinics: Joi_1.default.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
                 hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
-                response_days: Joi_1.default.string().required()
+                response_days: Joi_1.default.object({
+                    saturday: Joi_1.default.string().optional().allow(null),
+                    sunday: Joi_1.default.string().optional().allow(null),
+                    monday: Joi_1.default.string().optional().allow(null),
+                    tuesday: Joi_1.default.string().optional().allow(null),
+                    wednesday: Joi_1.default.string().optional().allow(null),
+                    thursday: Joi_1.default.string().optional().allow(null),
+                    friday: Joi_1.default.string().optional().allow(null)
+                }).required()
             })
         })
     },

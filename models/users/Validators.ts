@@ -22,7 +22,15 @@ const validator : GeneratedValidator<User> = {
                     monthlyCut:Joi.number().required(),
                     clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                    response_days:Joi.string().required()
+                    response_days:Joi.object({
+                        saturday: Joi.string().optional().allow(null),
+                        sunday: Joi.string().optional().allow(null),
+                        monday: Joi.string().optional().allow(null),
+                        tuesday: Joi.string().optional().allow(null),
+                        wednesday: Joi.string().optional().allow(null),
+                        thursday: Joi.string().optional().allow(null),
+                        friday: Joi.string().optional().allow(null)
+                    }).required()
                 }),
             }),
             Joi.object({
@@ -51,7 +59,15 @@ const validator : GeneratedValidator<User> = {
               monthlyCut:Joi.number().required(),
               clinics:Joi.array().items(Joi.any()).required(),
               hospitals:Joi.array().items(Joi.any()).required(),
-              response_days:Joi.string().required()
+              response_days:Joi.object({
+                  saturday: Joi.string().optional().allow(null),
+                  sunday: Joi.string().optional().allow(null),
+                  monday: Joi.string().optional().allow(null),
+                  tuesday: Joi.string().optional().allow(null),
+                  wednesday: Joi.string().optional().allow(null),
+                  thursday: Joi.string().optional().allow(null),
+                  friday: Joi.string().optional().allow(null)
+              }).required()
           })
       })
   },
@@ -72,7 +88,15 @@ const validator : GeneratedValidator<User> = {
                       monthlyCut:Joi.number().required(),
                       clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                       hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                      response_days:Joi.string().required()
+                      response_days:Joi.object({
+                          saturday: Joi.string().optional().allow(null),
+                          sunday: Joi.string().optional().allow(null),
+                          monday: Joi.string().optional().allow(null),
+                          tuesday: Joi.string().optional().allow(null),
+                          wednesday: Joi.string().optional().allow(null),
+                          thursday: Joi.string().optional().allow(null),
+                          friday: Joi.string().optional().allow(null)
+                      }).required()
                   }),
               }),
               Joi.object({
@@ -101,7 +125,15 @@ const validator : GeneratedValidator<User> = {
               monthlyCut:Joi.number().required(),
               clinics:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
               hospitals:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
-              response_days:Joi.string().required()
+              response_days:Joi.object({
+                  saturday: Joi.string().optional().allow(null),
+                  sunday: Joi.string().optional().allow(null),
+                  monday: Joi.string().optional().allow(null),
+                  tuesday: Joi.string().optional().allow(null),
+                  wednesday: Joi.string().optional().allow(null),
+                  thursday: Joi.string().optional().allow(null),
+                  friday: Joi.string().optional().allow(null)
+              }).required()
           })
       })
   },
