@@ -24,13 +24,13 @@ export default interface User {
         clinics:HealthCenter[],
         hospitals:HealthCenter[],
         response_days:{
-            saturday?:string,
-            sunday?: string,
-            monday?: string,
-            tuesday?: string,
-            wednesday?: string,
-            thursday?: string,
-            friday?: string
+            0: string,// sunday
+            1: string,// monday
+            2: string,// tuesday
+            3: string,// wednesday
+            4: string,// thursday
+            5: string,// friday
+            6:string,// saturday
         },
     }
 }

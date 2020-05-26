@@ -23,13 +23,13 @@ const dbModel = {
             hospitals: [{ type: mongoose_1.ObjectId, ref: 'healthcenters' }],
             response_days: {
                 type: {
-                    saturday: String,
-                    sunday: String,
-                    monday: String,
-                    tuesday: String,
-                    wednesday: String,
-                    thursday: String,
-                    friday: String
+                    0: String,
+                    1: String,
+                    2: String,
+                    3: String,
+                    4: String,
+                    5: String,
+                    6: String,
                 },
                 required: true
             }
