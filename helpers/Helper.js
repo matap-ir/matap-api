@@ -5,10 +5,19 @@ const v4_1 = tslib_1.__importDefault(require("uuid/v4"));
 const generateUUID = () => {
     return v4_1.default();
 };
-const createResponsiveDaysText = (day, value) => {
-    const dayText = dayNumberToString(day);
-    const fromAndTo = createFromAndToResponsiveTime(value);
-    return dayText + ' => ' + (fromAndTo ? fromAndTo.from + ' - ' + fromAndTo.to : '');
+const createResponsiveDaysText = (responseDays) => {
+    if (!responseDays || responseDays === '') {
+        return '';
+    }
+    let text = '';
+    Object.keys(responseDays).forEach((day) => {
+        const fromAndTo = createFromAndToResponsiveTime(responseDays[day]);
+        if (fromAndTo) {
+            const dayText = dayNumberToString(day);
+            text = text.concat(dayText + ' => ' + (fromAndTo ? fromAndTo.from + ' - ' + fromAndTo.to : '') + '\n');
+        }
+    });
+    return text;
 };
 const createFromAndToResponsiveTime = (value) => {
     if (!value || !value.includes('|')) {
