@@ -5,6 +5,17 @@ const v4_1 = tslib_1.__importDefault(require("uuid/v4"));
 const generateUUID = () => {
     return v4_1.default();
 };
+const createResponsiveDaysText = (day, value) => {
+    const dayText = dayNumberToString(day);
+    const fromAndTo = createFromAndToWorkTime(value);
+    return dayText + ' => ' + (fromAndTo ? fromAndTo.from + ' - ' + fromAndTo.to : '');
+};
+const createFromAndToWorkTime = (value) => {
+    if (!value || !value.includes('|')) {
+        return undefined;
+    }
+    return { from: value.split('|')[0], to: value.split('|')[1] };
+};
 const dayNumberToString = (day) => {
     switch (day) {
         case '0':
@@ -21,9 +32,13 @@ const dayNumberToString = (day) => {
             return 'جمعه';
         case '6':
             return 'شنبه';
+        default:
+            return '';
     }
 };
 exports.default = {
     generateUUID,
-    dayNumberToString
+    dayNumberToString,
+    createResponsiveDaysText,
+    createFromAndToWorkTime
 };
