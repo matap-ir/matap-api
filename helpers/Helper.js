@@ -7,10 +7,10 @@ const generateUUID = () => {
 };
 const createResponsiveDaysText = (day, value) => {
     const dayText = dayNumberToString(day);
-    const fromAndTo = createFromAndToWorkTime(value);
+    const fromAndTo = createFromAndToResponsiveTime(value);
     return dayText + ' => ' + (fromAndTo ? fromAndTo.from + ' - ' + fromAndTo.to : '');
 };
-const createFromAndToWorkTime = (value) => {
+const createFromAndToResponsiveTime = (value) => {
     if (!value || !value.includes('|')) {
         return undefined;
     }
@@ -40,5 +40,5 @@ exports.default = {
     generateUUID,
     dayNumberToString,
     createResponsiveDaysText,
-    createFromAndToWorkTime
+    createFromAndToResponsiveTime
 };
