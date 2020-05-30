@@ -1,6 +1,6 @@
 import { ObjectId } from 'mongoose';
 const dbModel = {
-    mobile: {type: String,unique:true, required: true},
+    mobile: {type: String,index:true,unique:true, required: true},
     type:{type: String,require:true},
     name:{type:String,required:true},
     imageUrl:{type:String},
