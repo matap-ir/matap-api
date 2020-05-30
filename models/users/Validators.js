@@ -21,13 +21,13 @@ const validator = {
                     clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     response_days: Joi_1.default.object({
-                        0: Joi_1.default.string().optional().allow(null),
-                        1: Joi_1.default.string().optional().allow(null),
-                        2: Joi_1.default.string().optional().allow(null),
-                        3: Joi_1.default.string().optional().allow(null),
-                        4: Joi_1.default.string().optional().allow(null),
-                        5: Joi_1.default.string().optional().allow(null),
-                        6: Joi_1.default.string().optional().allow(null),
+                        0: Joi_1.default.string().optional().allow(''),
+                        1: Joi_1.default.string().optional().allow(''),
+                        2: Joi_1.default.string().optional().allow(''),
+                        3: Joi_1.default.string().optional().allow(''),
+                        4: Joi_1.default.string().optional().allow(''),
+                        5: Joi_1.default.string().optional().allow(''),
+                        6: Joi_1.default.string().optional().allow(''),
                     }).required()
                 }),
             }), Joi_1.default.object({
@@ -56,13 +56,13 @@ const validator = {
                 clinics: Joi_1.default.array().items(Joi_1.default.any()).required(),
                 hospitals: Joi_1.default.array().items(Joi_1.default.any()).required(),
                 response_days: Joi_1.default.object({
-                    0: Joi_1.default.string().optional().allow(null),
-                    1: Joi_1.default.string().optional().allow(null),
-                    2: Joi_1.default.string().optional().allow(null),
-                    3: Joi_1.default.string().optional().allow(null),
-                    4: Joi_1.default.string().optional().allow(null),
-                    5: Joi_1.default.string().optional().allow(null),
-                    6: Joi_1.default.string().optional().allow(null),
+                    0: Joi_1.default.string().optional().allow(''),
+                    1: Joi_1.default.string().optional().allow(''),
+                    2: Joi_1.default.string().optional().allow(''),
+                    3: Joi_1.default.string().optional().allow(''),
+                    4: Joi_1.default.string().optional().allow(''),
+                    5: Joi_1.default.string().optional().allow(''),
+                    6: Joi_1.default.string().optional().allow(''),
                 }).required()
             })
         })
@@ -84,13 +84,13 @@ const validator = {
                     clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     response_days: Joi_1.default.object({
-                        0: Joi_1.default.string().optional().allow(null),
-                        1: Joi_1.default.string().optional().allow(null),
-                        2: Joi_1.default.string().optional().allow(null),
-                        3: Joi_1.default.string().optional().allow(null),
-                        4: Joi_1.default.string().optional().allow(null),
-                        5: Joi_1.default.string().optional().allow(null),
-                        6: Joi_1.default.string().optional().allow(null),
+                        0: Joi_1.default.string().optional().allow(''),
+                        1: Joi_1.default.string().optional().allow(''),
+                        2: Joi_1.default.string().optional().allow(''),
+                        3: Joi_1.default.string().optional().allow(''),
+                        4: Joi_1.default.string().optional().allow(''),
+                        5: Joi_1.default.string().optional().allow(''),
+                        6: Joi_1.default.string().optional().allow(''),
                     }).required()
                 }),
             }), Joi_1.default.object({
@@ -119,13 +119,13 @@ const validator = {
                 clinics: Joi_1.default.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
                 hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
                 response_days: Joi_1.default.object({
-                    0: Joi_1.default.string().optional().allow(null),
-                    1: Joi_1.default.string().optional().allow(null),
-                    2: Joi_1.default.string().optional().allow(null),
-                    3: Joi_1.default.string().optional().allow(null),
-                    4: Joi_1.default.string().optional().allow(null),
-                    5: Joi_1.default.string().optional().allow(null),
-                    6: Joi_1.default.string().optional().allow(null),
+                    0: Joi_1.default.string().optional().allow(''),
+                    1: Joi_1.default.string().optional().allow(''),
+                    2: Joi_1.default.string().optional().allow(''),
+                    3: Joi_1.default.string().optional().allow(''),
+                    4: Joi_1.default.string().optional().allow(''),
+                    5: Joi_1.default.string().optional().allow(''),
+                    6: Joi_1.default.string().optional().allow(''),
                 }).required()
             })
         })
