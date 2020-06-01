@@ -7,7 +7,8 @@ interface CallOffer{
     iceServers:{username: string,credential:string,urls:string[]}[]
     initiator: {id: string},
     receiver: {id: string},
-    mediaConstraints:{}
+    mediaConstraints:{},
+    forceSpeaker: boolean
 }
 
 export default CallOffer;
