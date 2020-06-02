@@ -23,6 +23,9 @@ const createFromAndToResponsiveTime = (value: string):{from:string,to:string} | 
     if (!value || !value.includes('|')){
         return undefined;
     }
+    if(value.split('|')[0] === '' || value.split('|')[1] === ''){
+        return undefined;
+    }
     return {from:value.split('|')[0],to:value.split('|')[1]};
 };
 
