@@ -1,5 +1,5 @@
 import Joi from './Joi';
-import {HTMLTypes, ValidatorModel} from '../index';
+import {ValidatorModel} from '../index';
 
 export interface GeneratedValidator<T> {
     db: {
