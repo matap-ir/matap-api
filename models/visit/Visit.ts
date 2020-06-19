@@ -13,6 +13,7 @@ interface Visit{
     duration_limit: number,
     conversations : {delivered:string[],chat:Chat}[],
     rating: Rating,
+    chatting:boolean,
     receipt:{
         transaction_id: string,
         total: number,
