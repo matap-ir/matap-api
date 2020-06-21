@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ChatType = exports.EventType = exports.IOStatus = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.AdminType = exports.UserType = void 0;
 var UserType;
 (function (UserType) {
     UserType["PATIENT"] = "PATIENT";
