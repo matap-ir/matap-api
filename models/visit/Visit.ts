@@ -14,7 +14,6 @@ interface Visit{
     conversations : {delivered:string[],chat:Chat}[],
     rating: Rating,
     chatting:boolean,
-
     receipt:{
         transaction_id: string,
         total: number,
