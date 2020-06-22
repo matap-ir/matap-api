@@ -1,6 +1,5 @@
 import { ObjectId } from 'mongoose';
 const dbModel = {
-    _id:{type:ObjectId,required: true,auto:true},
     iceServers:{
         type:[{username: String,credential:String,urls:[String]}]
     },
