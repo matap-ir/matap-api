@@ -5,6 +5,11 @@ const dbModel = {
         type: [{ username: String, credential: String, urls: [String] }]
     },
     mediaConstraints: Object,
-    forceSpeaker: Boolean
+    forceSpeaker: Boolean,
+    medicalServices: {
+        type: [require('../medical_service/MedicalService').default],
+        required: true,
+        default: []
+    }
 };
 exports.default = dbModel;
