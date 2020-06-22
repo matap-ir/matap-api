@@ -27,6 +27,7 @@ const validator : GeneratedValidator<MedicalService> = {
           details:Joi.string().required(),
       }),
       patch:createValidator({
+          _id:Joi.any().required(),
           title:Joi.string().required(),
           subTitle:Joi.string().required(),
           details:Joi.string().required(),

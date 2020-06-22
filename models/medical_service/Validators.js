@@ -26,6 +26,7 @@ const validator = {
             details: Joi_1.default.string().required(),
         }),
         patch: createValidator_1.default({
+            _id: Joi_1.default.any().required(),
             title: Joi_1.default.string().required(),
             subTitle: Joi_1.default.string().required(),
             details: Joi_1.default.string().required(),
