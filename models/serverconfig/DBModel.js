@@ -6,10 +6,6 @@ const dbModel = {
     },
     mediaConstraints: Object,
     forceSpeaker: Boolean,
-    medicalServices: {
-        type: [require('../medical_service/MedicalService').default],
-        required: true,
-        default: []
-    }
+    termsandconditions: String
 };
 exports.default = dbModel;
