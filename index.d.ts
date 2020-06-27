@@ -18,7 +18,7 @@ import Rating from 'models/rating/Rating';
 import ServerConfig from './models/serverconfig/ServerConfig';
 import Helper from './helpers/Helper';
 import MedicalService from './models/medical_service/MedicalService';
-import ServiceRequest from 'models/ServiceRequest';
+import ServiceRequest from 'models/service_request/ServiceRequest';
 
 export {
     CallOffer,
