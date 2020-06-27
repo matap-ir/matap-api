@@ -9,6 +9,7 @@ const validator = {
             age: Joi_1.default.number().required(),
             service: Joi_1.default.string().required(),
             mobile: Joi_1.default.string().required(),
+            request_date: Joi_1.default.number().required(),
             gender: Joi_1.default.string().required().allow(['male', 'female']),
             details: Joi_1.default.string().required(),
         }),

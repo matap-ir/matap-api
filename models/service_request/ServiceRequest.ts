@@ -6,5 +6,6 @@ export default interface ServiceRequest{
     age: number,
     mobile: string,
     gender: 'male' | 'female',
+    request_date: number,
     details: string
 }

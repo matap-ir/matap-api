@@ -10,6 +10,7 @@ const validator : GeneratedValidator<MedicalService> = {
         age:Joi.number().required(),
         service: Joi.string().required(),
         mobile:Joi.string().required(),
+        request_date: Joi.number().required(),
         gender:Joi.string().required().allow(['male','female']),
         details:Joi.string().required(),
     }),
