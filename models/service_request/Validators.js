@@ -7,6 +7,7 @@ const validator = {
     db: {
         insert: createValidator_1.default({
             age: Joi_1.default.number().required(),
+            service: Joi_1.default.string().required(),
             mobile: Joi_1.default.string().required(),
             gender: Joi_1.default.string().required().allow(['male', 'female']),
             details: Joi_1.default.string().required(),
@@ -21,6 +22,7 @@ const validator = {
     public: {
         post: createValidator_1.default({
             age: Joi_1.default.number().required(),
+            service: Joi_1.default.string().required(),
             mobile: Joi_1.default.string().required(),
             gender: Joi_1.default.string().required().allow(['male', 'female']),
             details: Joi_1.default.string().required(),

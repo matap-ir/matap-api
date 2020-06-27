@@ -8,6 +8,7 @@ const validator : GeneratedValidator<MedicalService> = {
   db:{
     insert:createValidator({
         age:Joi.number().required(),
+        service: Joi.string().required(),
         mobile:Joi.string().required(),
         gender:Joi.string().required().allow(['male','female']),
         details:Joi.string().required(),
@@ -22,6 +23,7 @@ const validator : GeneratedValidator<MedicalService> = {
   public:{
       post:createValidator({
           age:Joi.number().required(),
+          service: Joi.string().required(),
           mobile:Joi.string().required(),
           gender:Joi.string().required().allow(['male','female']),
           details:Joi.string().required(),
