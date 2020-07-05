@@ -20,6 +20,7 @@ const validator = {
                     monthlyCut: Joi_1.default.number().required(),
                     clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
+                    gender: Joi_1.default.string().required().allow('', 'male', 'female'),
                     response_days: Joi_1.default.object({
                         0: Joi_1.default.string().optional().allow(''),
                         1: Joi_1.default.string().optional().allow(''),
@@ -49,6 +50,7 @@ const validator = {
             currency: Joi_1.default.number().optional(),
             sms_code: Joi_1.default.number().optional().allow(null),
             fcmtoken: Joi_1.default.string().optional().allow(null),
+            gender: Joi_1.default.string().required().allow('', 'male', 'female'),
             details: Joi_1.default.object().keys({
                 city: Joi_1.default.string().required(),
                 nezam_pezeshki_code: Joi_1.default.string().required(),
@@ -76,6 +78,7 @@ const validator = {
                 code: Joi_1.default.number().required(),
                 price: Joi_1.default.number().required(),
                 fcmtoken: Joi_1.default.string().optional().allow(null),
+                gender: Joi_1.default.string().required().allow('', 'male', 'female'),
                 specialization: require('../specialization/Validators').default.public.patch.validator.required(),
                 details: Joi_1.default.object().required().keys({
                     city: Joi_1.default.string().required(),
@@ -111,6 +114,7 @@ const validator = {
             specialization: require('../specialization/Validators').default.public.patch.validator.optional(),
             currency: Joi_1.default.number().optional(),
             fcmtoken: Joi_1.default.string().optional().allow(null),
+            gender: Joi_1.default.string().required().allow('', 'male', 'female'),
             finalizable_visits: Joi_1.default.array().items(Joi_1.default.string()),
             details: Joi_1.default.object().optional().keys({
                 city: Joi_1.default.string().required(),

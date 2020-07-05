@@ -12,6 +12,7 @@ const dbModel = {
     sms_code:{type:String,required:false},
     fcmtoken:{type:String,required:false},
     finalizable_visits:{type: [String],default:[]},
+    gender:{type:String,required:true,default:''},
     details:{
         type:{
             city:String,

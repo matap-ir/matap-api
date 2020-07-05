@@ -17,6 +17,7 @@ export default interface User {
     sms_code: string,
     fcmtoken: string,
     finalizable_visits:Visit[] | string[],
+    gender:'male' | 'female' | '',
     details:{
         city:string,
         nezam_pezeshki_code:string,
