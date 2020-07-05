@@ -20,7 +20,7 @@ const validator : GeneratedValidator<User> = {
                 details:Joi.object().required().keys({
                     city:Joi.string().required(),
                     nezam_pezeshki_code:Joi.string().required(),
-                    monthlyCut:Joi.number().required(),
+                    cut:Joi.number().required(),
                     clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     response_days:Joi.object({
@@ -59,7 +59,7 @@ const validator : GeneratedValidator<User> = {
           details:Joi.object().keys({
               city:Joi.string().required(),
               nezam_pezeshki_code:Joi.string().required(),
-              monthlyCut:Joi.number().required(),
+              cut:Joi.number().required(),
               clinics:Joi.array().items(Joi.any()).required(),
               hospitals:Joi.array().items(Joi.any()).required(),
               response_days:Joi.object({
@@ -89,7 +89,7 @@ const validator : GeneratedValidator<User> = {
                   details:Joi.object().required().keys({
                       city:Joi.string().required(),
                       nezam_pezeshki_code:Joi.string().required(),
-                      monthlyCut:Joi.number().required(),
+                      cut:Joi.number().required(),
                       clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                       hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                       response_days:Joi.object({
@@ -128,7 +128,7 @@ const validator : GeneratedValidator<User> = {
           details:Joi.object().optional().keys({
               city:Joi.string().required(),
               nezam_pezeshki_code:Joi.string().required(),
-              monthlyCut:Joi.number().required(),
+              cut:Joi.number().required(),
               clinics:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
               hospitals:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
               response_days:Joi.object({

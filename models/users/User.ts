@@ -21,7 +21,7 @@ export default interface User {
     details:{
         city:string,
         nezam_pezeshki_code:string,
-        monthlyCut: number,
+        cut: number,
         clinics:HealthCenter[],
         hospitals:HealthCenter[],
         response_days:{

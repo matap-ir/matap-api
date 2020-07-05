@@ -19,7 +19,7 @@ const dbModel = {
         type: {
             city: String,
             nezam_pezeshki_code: String,
-            monthlyCut: Number,
+            cut: Number,
             clinics: [{ type: mongoose_1.ObjectId, ref: 'healthcenters' }],
             hospitals: [{ type: mongoose_1.ObjectId, ref: 'healthcenters' }],
             response_days: {
