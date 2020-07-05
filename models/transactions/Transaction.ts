@@ -5,6 +5,7 @@ export default interface Transaction{
     amount:number,
     type:TransactionType,
     discount: number,
+    doctorCut: number,
     issuer:{
         type: 'admin' | 'user',
         _id:string,
