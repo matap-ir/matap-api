@@ -6,32 +6,20 @@ const Joi_1 = tslib_1.__importDefault(require("../Joi"));
 const validator = {
     db: {
         insert: createValidator_1.default({
-            name: Joi_1.default.string().required(),
-            price: Joi_1.default.number().required(),
-            monthlyCut: Joi_1.default.number().required(),
-            doctorCut: Joi_1.default.number().required()
+            name: Joi_1.default.string().required()
         }),
         update: createValidator_1.default({
             _id: Joi_1.default.any().required(),
-            name: Joi_1.default.string().required(),
-            price: Joi_1.default.number().required(),
-            monthlyCut: Joi_1.default.number().required(),
-            doctorCut: Joi_1.default.number().required()
+            name: Joi_1.default.string().required()
         })
     },
     public: {
         post: createValidator_1.default({
-            name: Joi_1.default.string().required(),
-            price: Joi_1.default.number().required(),
-            monthlyCut: Joi_1.default.number().required(),
-            doctorCut: Joi_1.default.number().required()
+            name: Joi_1.default.string().required()
         }),
         patch: createValidator_1.default({
             _id: Joi_1.default.any().required(),
-            name: Joi_1.default.string().required(),
-            price: Joi_1.default.number().required(),
-            monthlyCut: Joi_1.default.number().required(),
-            doctorCut: Joi_1.default.number().required()
+            name: Joi_1.default.string().required()
         })
     }
 };
