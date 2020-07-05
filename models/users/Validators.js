@@ -32,6 +32,7 @@ const validator = {
                     }).required()
                 }),
             }), Joi_1.default.object({
+                gender: Joi_1.default.string().optional().allow(undefined, '', 'male', 'female'),
                 mobile: Joi_1.phone().required(),
                 name: Joi_1.default.string().required(),
                 type: Joi_1.default.string().required().allow('PATIENT'),
