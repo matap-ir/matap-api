@@ -4,6 +4,7 @@ export default interface Transaction{
     _id:string,
     amount:number,
     type:TransactionType,
+    discount: number,
     issuer:{
         type: 'admin' | 'user',
         _id:string,

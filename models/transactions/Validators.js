@@ -12,6 +12,7 @@ const validator = {
             date: Joi_1.default.number().required(),
             hint: Joi_1.default.string().optional().allow('').allow(null),
             visit_id: Joi_1.default.any().optional().allow(null),
+            discount: Joi_1.default.number().optional().allow(null),
             issuer: Joi_1.default.object({
                 type: Joi_1.default.string().required().allow('admin', 'user'),
                 _id: Joi_1.default.any().required(),
