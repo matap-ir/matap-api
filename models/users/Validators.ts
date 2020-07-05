@@ -35,7 +35,7 @@ const validator : GeneratedValidator<User> = {
                 }),
             }),
             Joi.object({
-                gender:Joi.string().optional().allow(undefined,'','male','female'),
+                gender:Joi.string().optional().allow('','male','female'),
                 mobile:phone().required(),
                 name:Joi.string().required(),
                 type:Joi.string().required().allow('PATIENT'),
