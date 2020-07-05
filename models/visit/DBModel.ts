@@ -17,6 +17,7 @@ export default{
         transaction_id:{type:String,required:false},
         total: {type:Number,required:false},
         paid: {type:Number,required:false},
+        doctorCut: {type:Number,required:true},
         discount: {type:Number,required:false},
         return_transaction_id:{type: String,required:false}
     }

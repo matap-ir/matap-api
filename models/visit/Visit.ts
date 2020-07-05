@@ -18,6 +18,7 @@ interface Visit{
         transaction_id: string,
         total: number,
         paid: number,
+        doctorCut: number,
         discount: number,
         return_transaction_id:string
     }
