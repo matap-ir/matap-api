@@ -14,13 +14,13 @@ const validator = {
                 price: Joi_1.default.number().required(),
                 fcmtoken: Joi_1.default.string().optional().allow(null),
                 specialization: require('../specialization/Validators').default.db.update.validator.required(),
+                gender: Joi_1.default.string().required().allow('', 'male', 'female'),
                 details: Joi_1.default.object().required().keys({
                     city: Joi_1.default.string().required(),
                     nezam_pezeshki_code: Joi_1.default.string().required(),
                     monthlyCut: Joi_1.default.number().required(),
                     clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                    gender: Joi_1.default.string().required().allow('', 'male', 'female'),
                     response_days: Joi_1.default.object({
                         0: Joi_1.default.string().optional().allow(''),
                         1: Joi_1.default.string().optional().allow(''),

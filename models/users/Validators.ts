@@ -16,13 +16,13 @@ const validator : GeneratedValidator<User> = {
                 price:Joi.number().required(),
                 fcmtoken:Joi.string().optional().allow(null),
                 specialization:require('../specialization/Validators').default.db.update.validator.required(),
+                gender:Joi.string().required().allow('','male','female'),
                 details:Joi.object().required().keys({
                     city:Joi.string().required(),
                     nezam_pezeshki_code:Joi.string().required(),
                     monthlyCut:Joi.number().required(),
                     clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                    gender:Joi.string().required().allow('','male','female'),
                     response_days:Joi.object({
                         0: Joi.string().optional().allow(''),
                         1: Joi.string().optional().allow(''),
