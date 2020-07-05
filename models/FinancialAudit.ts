@@ -1,8 +1,10 @@
 import {Transaction} from '../index';
 
 export default interface FinancialAudit{
-    payable: number,
+    total: number,
     paid: number,
+    companyCut: number,
+    doctorCut: number,
     fromDate: number,
     toDate: number
 };
