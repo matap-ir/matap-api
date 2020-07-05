@@ -16,7 +16,7 @@ const validator : GeneratedValidator<User> = {
                 price:Joi.number().required(),
                 fcmtoken:Joi.string().optional().allow(null),
                 specialization:require('../specialization/Validators').default.db.update.validator.required(),
-                gender:Joi.string().required().allow('','male','female'),
+                gender:Joi.string().optional().allow('','male','female'),
                 details:Joi.object().required().keys({
                     city:Joi.string().required(),
                     nezam_pezeshki_code:Joi.string().required(),
@@ -35,7 +35,7 @@ const validator : GeneratedValidator<User> = {
                 }),
             }),
             Joi.object({
-                gender:Joi.string().required().allow('','male','female'),
+                gender:Joi.string().optional().allow('','male','female'),
                 mobile:phone().required(),
                 name:Joi.string().required(),
                 type:Joi.string().required().allow('PATIENT'),
@@ -55,7 +55,7 @@ const validator : GeneratedValidator<User> = {
           currency: Joi.number().optional(),
           sms_code:Joi.number().optional().allow(null),
           fcmtoken:Joi.string().optional().allow(null),
-          gender:Joi.string().required().allow('','male','female'),
+          gender:Joi.string().optional().allow('','male','female'),
           details:Joi.object().keys({
               city:Joi.string().required(),
               nezam_pezeshki_code:Joi.string().required(),
@@ -84,7 +84,7 @@ const validator : GeneratedValidator<User> = {
                   code:Joi.number().required(),
                   price:Joi.number().required(),
                   fcmtoken:Joi.string().optional().allow(null),
-                  gender:Joi.string().required().allow('','male','female'),
+                  gender:Joi.string().optional().allow('','male','female'),
                   specialization:require('../specialization/Validators').default.public.patch.validator.required(),
                   details:Joi.object().required().keys({
                       city:Joi.string().required(),
@@ -123,7 +123,7 @@ const validator : GeneratedValidator<User> = {
           specialization:require('../specialization/Validators').default.public.patch.validator.optional(),
           currency: Joi.number().optional(),
           fcmtoken:Joi.string().optional().allow(null),
-          gender:Joi.string().required().allow('','male','female'),
+          gender:Joi.string().optional().allow('','male','female'),
           finalizable_visits: Joi.array().items(Joi.string()),
           details:Joi.object().optional().keys({
               city:Joi.string().required(),
