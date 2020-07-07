@@ -12,7 +12,7 @@ const general = createValidator_1.default({
         hour: Joi_1.default.string().required(),
         minute: Joi_1.default.string().required(),
     }).required(),
-    type: Joi_1.default.string().allow('healthcenter', 'self').required(),
+    healthCenterId: Joi_1.default.string().optional().allow(null),
 });
 const validator = {
     db: {
