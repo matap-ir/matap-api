@@ -5,6 +5,6 @@ const dbModel = {
     address: { type: String, required: true },
     logoUrl: { type: String },
     type: { type: String, required: true },
-    percentage: { Type: Number, required: true, default: 0 }
+    percentage: { type: Number, required: true, default: 0 }
 };
 exports.default = dbModel;
