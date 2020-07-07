@@ -63,13 +63,13 @@ const validator : GeneratedValidator<User> = {
               clinics:Joi.array().items(Joi.any()).required(),
               hospitals:Joi.array().items(Joi.any()).required(),
               response_days:Joi.object({
-                  0: Joi.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
-                  1: Joi.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
-                  2: Joi.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
-                  3: Joi.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
-                  4: Joi.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
-                  5: Joi.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
-                  6: Joi.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
+                  0: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
+                  1: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
+                  2: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
+                  3: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
+                  4: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
+                  5: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
+                  6: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
               }).required()
           })
       })

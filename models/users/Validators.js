@@ -59,13 +59,13 @@ const validator = {
                 clinics: Joi_1.default.array().items(Joi_1.default.any()).required(),
                 hospitals: Joi_1.default.array().items(Joi_1.default.any()).required(),
                 response_days: Joi_1.default.object({
-                    0: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
-                    1: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
-                    2: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
-                    3: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
-                    4: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
-                    5: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
-                    6: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator.required()).required(),
+                    0: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator),
+                    1: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator),
+                    2: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator),
+                    3: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator),
+                    4: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator),
+                    5: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator),
+                    6: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator),
                 }).required()
             })
         })
