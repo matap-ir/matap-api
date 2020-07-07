@@ -5,13 +5,13 @@ const createValidator_1 = tslib_1.__importDefault(require("../createValidator"))
 const Joi_1 = tslib_1.__importDefault(require("../Joi"));
 const general = createValidator_1.default({
     from: Joi_1.default.object().keys({
-        hour: Joi_1.default.string().optional(),
-        minute: Joi_1.default.string().optional(),
-    }).optional(),
+        hour: Joi_1.default.string().required(),
+        minute: Joi_1.default.string().required(),
+    }),
     to: Joi_1.default.object().keys({
-        hour: Joi_1.default.string().optional(),
-        minute: Joi_1.default.string().optional(),
-    }).optional(),
+        hour: Joi_1.default.string().required(),
+        minute: Joi_1.default.string().required(),
+    }),
     healthCenter: Joi_1.default.string().optional().allow(null),
 });
 const validator = {
