@@ -14,7 +14,7 @@ const createResponsiveDaysText = (responseDays) => {
         const array = responseDays[day];
         array.forEach((responseTime) => {
             const dayText = dayNumberToString(day);
-            text = text.concat(dayText + ' => ' + (responseTime.from + ' - ' + responseTime.to) + '\n');
+            text = text.concat(dayText + ' => ' + responseTime.from + ' - ' + responseTime.to + '\n');
         });
     });
     return text;
