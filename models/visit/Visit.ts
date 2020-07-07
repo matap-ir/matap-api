@@ -20,6 +20,8 @@ interface Visit{
         paid: number,
         doctorCut: number,
         discount: number,
+        healthCenterCut: number,
+        healthCenterId: string,
         return_transaction_id:string
     }
 }

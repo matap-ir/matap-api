@@ -19,8 +19,10 @@ import ServerConfig from './models/serverconfig/ServerConfig';
 import Helper from './helpers/Helper';
 import MedicalService from './models/medical_service/MedicalService';
 import ServiceRequest from 'models/service_request/ServiceRequest';
+import ResponseTime from './models/response_time/ResponseTime';
 
 export {
+    ResponseTime,
     CallOffer,
     UserType,
     HealthCenterType,

@@ -22,23 +22,23 @@ const dbModel = {
             hospitals:[{type:ObjectId,ref:'healthcenters'}],
             response_days:{
                 type:{
-                    0: String,
-                    1: String,
-                    2: String,
-                    3: String,
-                    4: String,
-                    5: String,
-                    6: String,
+                    0: [require('../response_time/ResponseTime').default],
+                    1: [require('../response_time/ResponseTime').default],
+                    2: [require('../response_time/ResponseTime').default],
+                    3: [require('../response_time/ResponseTime').default],
+                    4: [require('../response_time/ResponseTime').default],
+                    5: [require('../response_time/ResponseTime').default],
+                    6: [require('../response_time/ResponseTime').default],
                 },
                 required: true,
                 default:{
-                    0: '',
-                    1: '',
-                    2: '',
-                    3: '',
-                    4: '',
-                    5: '',
-                    6: '',
+                    0: [],
+                    1: [],
+                    2: [],
+                    3: [],
+                    4: [],
+                    5: [],
+                    6: [],
                 }
             }
         }

@@ -18,6 +18,8 @@ export default{
         total: {type:Number,required:false},
         paid: {type:Number,required:false},
         doctorCut: {type:Number,required:false},
+        healthCenterCut: {type:Number,required:false},
+        healthCenterId: {type: ObjectId,required:false},
         discount: {type:Number,required:false},
         return_transaction_id:{type: String,required:false}
     }

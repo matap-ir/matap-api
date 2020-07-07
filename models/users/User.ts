@@ -1,5 +1,5 @@
 import {UserType} from '../Enums';
-import {Specialization} from '../../index';
+import {ResponseTime, Specialization} from '../../index';
 import HealthCenter from '../health_center/HealthCenter';
 import Visit from '../visit/Visit';
 
@@ -25,13 +25,13 @@ export default interface User {
         clinics:HealthCenter[],
         hospitals:HealthCenter[],
         response_days:{
-            0: string,// sunday
-            1: string,// monday
-            2: string,// tuesday
-            3: string,// wednesday
-            4: string,// thursday
-            5: string,// friday
-            6:string,// saturday
+            0: ResponseTime[] ,// sunday
+            1: ResponseTime[],// monday
+            2: ResponseTime[],// tuesday
+            3: ResponseTime[],// wednesday
+            4: ResponseTime[],// thursday
+            5: ResponseTime[],// friday
+            6: ResponseTime[],// saturday
         },
     }
 }
