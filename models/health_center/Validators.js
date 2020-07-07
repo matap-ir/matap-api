@@ -9,14 +9,16 @@ const validator = {
             name: Joi_1.default.string().required(),
             address: Joi_1.default.string().optional(),
             logoUrl: Joi_1.default.string().optional(),
-            type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC')
+            type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC'),
+            percentage: Joi_1.default.number().required().min(0).max(100)
         }),
         update: createValidator_1.default({
             _id: Joi_1.default.any().required(),
             name: Joi_1.default.string().required(),
             address: Joi_1.default.string().optional(),
             logoUrl: Joi_1.default.string().optional(),
-            type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').optional()
+            type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').optional(),
+            percentage: Joi_1.default.number().required().min(0).max(100)
         })
     },
     public: {
@@ -24,14 +26,16 @@ const validator = {
             name: Joi_1.default.string().required(),
             address: Joi_1.default.string().required(),
             logoUrl: Joi_1.default.string().optional(),
-            type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').required()
+            type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').required(),
+            percentage: Joi_1.default.number().required().min(0).max(100)
         }),
         patch: createValidator_1.default({
             _id: Joi_1.default.any().required(),
             name: Joi_1.default.string().required(),
             address: Joi_1.default.string().optional(),
             logoUrl: Joi_1.default.string().optional(),
-            type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').optional()
+            type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').optional(),
+            percentage: Joi_1.default.number().required().min(0).max(100)
         })
     }
 };

@@ -10,14 +10,16 @@ const validator : GeneratedValidator<HealthCenter> = {
         name:Joi.string().required(),
         address:Joi.string().optional(),
         logoUrl:Joi.string().optional(),
-        type: Joi.string().allow('HOSPITAL','CLINIC')
+        type: Joi.string().allow('HOSPITAL','CLINIC'),
+        percentage: Joi.number().required().min(0).max(100)
     }),
       update:createValidator({
           _id:Joi.any().required(),
           name:Joi.string().required(),
           address:Joi.string().optional(),
           logoUrl:Joi.string().optional(),
-          type: Joi.string().allow('HOSPITAL','CLINIC').optional()
+          type: Joi.string().allow('HOSPITAL','CLINIC').optional(),
+          percentage: Joi.number().required().min(0).max(100)
       })
   },
   public:{
@@ -25,14 +27,16 @@ const validator : GeneratedValidator<HealthCenter> = {
           name:Joi.string().required(),
           address:Joi.string().required(),
           logoUrl:Joi.string().optional(),
-          type: Joi.string().allow('HOSPITAL','CLINIC').required()
+          type: Joi.string().allow('HOSPITAL','CLINIC').required(),
+          percentage: Joi.number().required().min(0).max(100)
       }),
       patch:createValidator({
           _id:Joi.any().required(),
           name:Joi.string().required(),
           address:Joi.string().optional(),
           logoUrl:Joi.string().optional(),
-          type: Joi.string().allow('HOSPITAL','CLINIC').optional()
+          type: Joi.string().allow('HOSPITAL','CLINIC').optional(),
+          percentage: Joi.number().required().min(0).max(100)
       })
   }
 };

@@ -5,5 +5,6 @@ export default interface HealthCenter{
     name:string,
     address:string,
     logoUrl:string,
-    type: HealthCenterType
+    type: HealthCenterType,
+    percentage: number
 };
