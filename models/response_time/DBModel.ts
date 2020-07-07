@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongoose';
 const dbModel = {
-    from: {type: {hour:String, minute:String},required:false},
-    to: {type: {hour:String, minute:String},required:false},
+    from: {type: {hour:String, minute:String},required:true},
+    to: {type: {hour:String, minute:String},required:true},
     healthCenter: {type: ObjectId,ref:'healthcenters',required:false}
 };
 

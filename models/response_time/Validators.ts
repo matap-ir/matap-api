@@ -5,12 +5,12 @@ import {ResponseTime} from '../../index';
 
 const general = createValidator({
     from:Joi.object().keys({
-        hour:Joi.string().required(),
-        minute:Joi.string().required(),
+        hour:Joi.string().optional(),
+        minute:Joi.string().optional(),
     }).required(),
     to:Joi.object().keys({
-        hour:Joi.string().required(),
-        minute:Joi.string().required(),
+        hour:Joi.string().optional(),
+        minute:Joi.string().optional(),
     }).required(),
     healthCenter:Joi.string().optional().allow(null),
 })
