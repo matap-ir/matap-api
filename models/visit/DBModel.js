@@ -20,7 +20,7 @@ exports.default = {
         paid: { type: Number, required: false },
         doctorCut: { type: Number, required: false },
         healthCenterCut: { type: Number, required: false },
-        healthCenterId: { type: mongoose_1.ObjectId, required: false },
+        healthCenterId: { type: mongoose_1.ObjectId, ref: 'healthcenters', required: false },
         discount: { type: Number, required: false },
         return_transaction_id: { type: String, required: false }
     }

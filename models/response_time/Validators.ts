@@ -12,7 +12,7 @@ const general = createValidator({
         hour:Joi.string().required(),
         minute:Joi.string().required(),
     }).required(),
-    type:Joi.string().required().allow('healthcenter' , 'self'),
+    type:Joi.string().allow('healthcenter' , 'self').required(),
 })
 
 const validator : GeneratedValidator<ResponseTime> = {
