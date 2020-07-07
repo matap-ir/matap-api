@@ -4,6 +4,6 @@ const mongoose_1 = require("mongoose");
 const dbModel = {
     from: { type: { hour: String, minute: String }, required: true },
     to: { type: { hour: String, minute: String }, required: true },
-    healthCenterId: { type: mongoose_1.ObjectId, ref: 'healthcenters', required: false }
+    healthCenter: { type: mongoose_1.ObjectId, ref: 'healthcenters', required: false }
 };
 exports.default = dbModel;
