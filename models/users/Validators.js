@@ -125,13 +125,13 @@ const validator = {
                 clinics: Joi_1.default.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
                 hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
                 response_days: Joi_1.default.object({
-                    0: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
-                    1: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
-                    2: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
-                    3: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
-                    4: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
-                    5: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
-                    6: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
+                    0: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator),
+                    1: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator),
+                    2: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator),
+                    3: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator),
+                    4: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator),
+                    5: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator),
+                    6: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator),
                 }).required()
             })
         })

@@ -132,13 +132,13 @@ const validator : GeneratedValidator<User> = {
               clinics:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
               hospitals:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
               response_days:Joi.object({
-                  0: Joi.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
-                  1: Joi.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
-                  2: Joi.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
-                  3: Joi.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
-                  4: Joi.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
-                  5: Joi.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
-                  6: Joi.array().items(require('../response_time/Validators').default.public.patch.validator).required(),
+                  0: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
+                  1: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
+                  2: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
+                  3: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
+                  4: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
+                  5: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
+                  6: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
               }).required()
           })
       })
