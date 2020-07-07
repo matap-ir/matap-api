@@ -11,22 +11,13 @@ const createResponsiveDaysText = (responseDays) => {
     }
     let text = '';
     Object.keys(responseDays).forEach((day) => {
-        const fromAndTo = createFromAndToResponsiveTime(responseDays[day]);
-        if (fromAndTo) {
+        const array = responseDays[day];
+        array.forEach((responseTime) => {
             const dayText = dayNumberToString(day);
-            text = text.concat(dayText + ' => ' + (fromAndTo ? fromAndTo.from + ' - ' + fromAndTo.to : '') + '\n');
-        }
+            text = text.concat(dayText + ' => ' + (responseTime.from + ' - ' + responseTime.to) + '\n');
+        });
     });
     return text;
-};
-const createFromAndToResponsiveTime = (value) => {
-    if (!value || !value.includes('|')) {
-        return undefined;
-    }
-    if (value.split('|')[0] === '' || value.split('|')[1] === '') {
-        return undefined;
-    }
-    return { from: value.split('|')[0], to: value.split('|')[1] };
 };
 const dayNumberToString = (day) => {
     switch (day) {
@@ -51,6 +42,5 @@ const dayNumberToString = (day) => {
 exports.default = {
     generateUUID,
     dayNumberToString,
-    createResponsiveDaysText,
-    createFromAndToResponsiveTime
+    createResponsiveDaysText
 };
