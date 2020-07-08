@@ -22,13 +22,13 @@ const validator = {
                     clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     response_days: Joi_1.default.object({
-                        0: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator.required()).required(),
-                        1: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator.required()).required(),
-                        2: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator.required()).required(),
-                        3: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator.required()).required(),
-                        4: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator.required()).required(),
-                        5: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator.required()).required(),
-                        6: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator.required()).required(),
+                        0: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator),
+                        1: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator),
+                        2: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator),
+                        3: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator),
+                        4: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator),
+                        5: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator),
+                        6: Joi_1.default.array().items(require('../response_time/Validators').default.db.insert.validator),
                     }).required()
                 }),
             }), Joi_1.default.object({
@@ -88,13 +88,13 @@ const validator = {
                     clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
                     response_days: Joi_1.default.object({
-                        0: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator.required()).required(),
-                        1: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator.required()).required(),
-                        2: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator.required()).required(),
-                        3: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator.required()).required(),
-                        4: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator.required()).required(),
-                        5: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator.required()).required(),
-                        6: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator.required()).required(),
+                        0: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
+                        1: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
+                        2: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
+                        3: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
+                        4: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
+                        5: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
+                        6: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
                     }).required()
                 }),
             }), Joi_1.default.object({
