@@ -6,6 +6,8 @@ export default interface Transaction{
     type:TransactionType,
     discount: number,
     doctorCut: number,
+    healthCenterId: string,
+    healthCenterCut: number,
     issuer:{
         type: 'admin' | 'user',
         _id:string,
@@ -17,7 +19,6 @@ export default interface Transaction{
     },
     tracking_code:string,
     visit_id:string,
-    healthCenterId: string,
     date:number,
     hint:string
 }
