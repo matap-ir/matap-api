@@ -17,6 +17,7 @@ export default interface Transaction{
     },
     tracking_code:string,
     visit_id:string,
+    healthCenterId: string,
     date:number,
     hint:string
 }

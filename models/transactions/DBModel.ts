@@ -8,6 +8,7 @@ const dbModel = {
     discount:{type:Number,required:false},
     visit_id:{type:String,required:false},
     doctorCut:{type:Number,required:false},
+    healthCenterId:{type:String,required:false},
     issuer:{
             type:{type:String,required:true},
             _id:{type:String,required:true},
