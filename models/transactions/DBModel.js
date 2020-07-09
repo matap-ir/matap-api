@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = require("mongoose");
 const dbModel = {
     amount: { type: Number, required: true },
     type: { type: String, required: true },
@@ -9,7 +10,7 @@ const dbModel = {
     discount: { type: Number, required: false },
     visit_id: { type: String, required: false },
     doctorCut: { type: Number, required: false },
-    healthCenterId: { type: String, required: false },
+    healthCenterId: { type: mongoose_1.ObjectId, required: false, ref: 'healthcenters' },
     healthCenterCut: { type: Number, required: false },
     issuer: {
         type: { type: String, required: true },
