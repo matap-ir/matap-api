@@ -14,7 +14,7 @@ const validator : GeneratedValidator<Transaction> = {
             visit_id:Joi.any().optional().allow(null),
             discount:Joi.number().optional().allow(null),
             doctorCut:Joi.number().optional().allow(null),
-            healthCenterId:Joi.any().optional().allow(null),
+            healthCenter:Joi.any().optional().allow(null),
             healthCenterCut: Joi.number().optional(),
             issuer:Joi.object({
                 type:Joi.string().required().allow('admin','user'),

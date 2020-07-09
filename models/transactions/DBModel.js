@@ -10,7 +10,7 @@ const dbModel = {
     discount: { type: Number, required: false },
     visit_id: { type: String, required: false },
     doctorCut: { type: Number, required: false },
-    healthCenterId: { type: mongoose_1.ObjectId, required: false, ref: 'healthcenters' },
+    healthCenter: { type: mongoose_1.ObjectId, required: false, ref: 'healthcenters' },
     healthCenterCut: { type: Number, required: false },
     issuer: {
         type: { type: String, required: true },

@@ -1,4 +1,5 @@
 import {TransactionType} from '../Enums';
+import {HealthCenter} from '../../index';
 
 export default interface Transaction{
     _id:string,
@@ -6,7 +7,7 @@ export default interface Transaction{
     type:TransactionType,
     discount: number,
     doctorCut: number,
-    healthCenterId: string,
+    healthCenter: string | HealthCenter,
     healthCenterCut: number,
     issuer:{
         type: 'admin' | 'user',

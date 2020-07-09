@@ -14,7 +14,7 @@ const validator = {
             visit_id: Joi_1.default.any().optional().allow(null),
             discount: Joi_1.default.number().optional().allow(null),
             doctorCut: Joi_1.default.number().optional().allow(null),
-            healthCenterId: Joi_1.default.any().optional().allow(null),
+            healthCenter: Joi_1.default.any().optional().allow(null),
             healthCenterCut: Joi_1.default.number().optional(),
             issuer: Joi_1.default.object({
                 type: Joi_1.default.string().required().allow('admin', 'user'),
