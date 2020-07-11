@@ -8,7 +8,7 @@ const validator = {
         insert: {
             validator: Joi_1.default.alternatives().try(Joi_1.default.object({
                 mobile: Joi_1.phone().required(),
-                name: Joi_1.default.string().required(),
+                name: Joi_1.default.string().optional().allow(''),
                 type: Joi_1.default.string().required().allow('DOCTOR'),
                 code: Joi_1.default.number().required(),
                 price: Joi_1.default.number().required(),
@@ -43,7 +43,7 @@ const validator = {
             _id: Joi_1.default.any().required(),
             mobile: Joi_1.phone(),
             type: Joi_1.default.string().required().allow('PATIENT', 'DOCTOR'),
-            name: Joi_1.default.string().required(),
+            name: Joi_1.default.string().optional().allow(''),
             code: Joi_1.default.number().optional(),
             imageUrl: Joi_1.default.string().optional(),
             price: Joi_1.default.number().required(),
@@ -74,7 +74,7 @@ const validator = {
         post: {
             validator: Joi_1.default.alternatives().try(Joi_1.default.object({
                 mobile: Joi_1.phone().required(),
-                name: Joi_1.default.string().required(),
+                name: Joi_1.default.string().optional().allow(''),
                 type: Joi_1.default.string().required().allow('DOCTOR'),
                 code: Joi_1.default.number().required(),
                 price: Joi_1.default.number().required(),
@@ -100,7 +100,7 @@ const validator = {
             }), Joi_1.default.object({
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
                 mobile: Joi_1.phone().required(),
-                name: Joi_1.default.string().required(),
+                name: Joi_1.default.string().optional().allow(''),
                 type: Joi_1.default.string().required().allow('PATIENT'),
                 currency: Joi_1.default.number().optional(),
             }))
@@ -109,7 +109,7 @@ const validator = {
             _id: Joi_1.default.any().required(),
             mobile: Joi_1.phone(),
             type: Joi_1.default.string().required().allow('PATIENT', 'DOCTOR'),
-            name: Joi_1.default.string().required(),
+            name: Joi_1.default.string().optional().allow(''),
             code: Joi_1.default.number().optional(),
             imageUrl: Joi_1.default.string().optional(),
             price: Joi_1.default.number().optional(),
