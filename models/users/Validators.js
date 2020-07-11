@@ -8,7 +8,7 @@ const validator = {
         insert: {
             validator: Joi_1.default.alternatives().try(Joi_1.default.object({
                 mobile: Joi_1.phone().required(),
-                name: Joi_1.default.string().optional().allow(''),
+                name: Joi_1.default.string().required(),
                 type: Joi_1.default.string().required().allow('DOCTOR'),
                 code: Joi_1.default.number().required(),
                 price: Joi_1.default.number().required(),
@@ -34,7 +34,7 @@ const validator = {
             }), Joi_1.default.object({
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
                 mobile: Joi_1.phone().required(),
-                name: Joi_1.default.string().required(),
+                name: Joi_1.default.string().optional().allow(''),
                 type: Joi_1.default.string().required().allow('PATIENT'),
                 currency: Joi_1.default.number().optional(),
             }))
@@ -74,7 +74,7 @@ const validator = {
         post: {
             validator: Joi_1.default.alternatives().try(Joi_1.default.object({
                 mobile: Joi_1.phone().required(),
-                name: Joi_1.default.string().optional().allow(''),
+                name: Joi_1.default.string().required(),
                 type: Joi_1.default.string().required().allow('DOCTOR'),
                 code: Joi_1.default.number().required(),
                 price: Joi_1.default.number().required(),

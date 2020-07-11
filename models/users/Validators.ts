@@ -10,7 +10,7 @@ const validator : GeneratedValidator<User> = {
         validator:Joi.alternatives().try(
             Joi.object({
                 mobile:phone().required(),
-                name:Joi.string().optional().allow(''),
+                name:Joi.string().required(),
                 type:Joi.string().required().allow('DOCTOR'),
                 code:Joi.number().required(),
                 price:Joi.number().required(),
@@ -37,7 +37,7 @@ const validator : GeneratedValidator<User> = {
             Joi.object({
                 gender:Joi.string().optional().allow('','male','female'),
                 mobile:phone().required(),
-                name:Joi.string().required(),
+                name:Joi.string().optional().allow(''),
                 type:Joi.string().required().allow('PATIENT'),
                 currency: Joi.number().optional(),
             })
@@ -79,7 +79,7 @@ const validator : GeneratedValidator<User> = {
           validator:Joi.alternatives().try(
               Joi.object({
                   mobile:phone().required(),
-                  name:Joi.string().optional().allow(''),
+                  name:Joi.string().required(),
                   type:Joi.string().required().allow('DOCTOR'),
                   code:Joi.number().required(),
                   price:Joi.number().required(),
