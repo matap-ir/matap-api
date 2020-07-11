@@ -75,10 +75,11 @@ const validator : GeneratedValidator<User> = {
               })
           }),
           Joi.object({
+              _id:Joi.any().required(),
               gender:Joi.string().optional().allow('','male','female'),
               mobile:phone().required(),
               name:Joi.string().optional().allow(''),
-              type:Joi.string().required().allow('PATIENT'),
+              type:Joi.string().optional().allow('PATIENT'),
               currency: Joi.number().optional(),
           })
       )
@@ -121,36 +122,44 @@ const validator : GeneratedValidator<User> = {
               })
           )
       },
-      patch:createValidator({
-          _id:Joi.any().required(),
-          mobile:phone(),
-          type:Joi.string().required().allow('PATIENT','DOCTOR'),
-          name:Joi.string().optional().allow(''),
-          code:Joi.number().optional(),
-          imageUrl:Joi.string().optional(),
-          price:Joi.number().optional(),
-          specialization:require('../specialization/Validators').default.public.patch.validator.optional(),
-          currency: Joi.number().optional(),
-          fcmtoken:Joi.string().optional().allow(null),
-          gender:Joi.string().optional().allow('','male','female'),
-          finalizable_visits: Joi.array().items(Joi.string()),
-          details:Joi.object().optional().keys({
-              city:Joi.string().required(),
-              nezam_pezeshki_code:Joi.string().required(),
-              cut:Joi.number().required(),
-              clinics:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
-              hospitals:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
-              response_days:Joi.object({
-                  0: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
-                  1: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
-                  2: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
-                  3: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
-                  4: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
-                  5: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
-                  6: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
-              }).required()
+      patch:Joi.alternatives().try(
+          Joi.object({
+              _id:Joi.any().required(),
+              mobile:phone(),
+              type:Joi.string().required().allow('PATIENT','DOCTOR'),
+              name:Joi.string().optional().allow(''),
+              code:Joi.number().optional(),
+              imageUrl:Joi.string().optional(),
+              price:Joi.number().optional(),
+              specialization:require('../specialization/Validators').default.public.patch.validator.optional(),
+              currency: Joi.number().optional(),
+              fcmtoken:Joi.string().optional().allow(null),
+              gender:Joi.string().optional().allow('','male','female'),
+              finalizable_visits: Joi.array().items(Joi.string()),
+              details:Joi.object().optional().keys({
+                  city:Joi.string().required(),
+                  nezam_pezeshki_code:Joi.string().required(),
+                  cut:Joi.number().required(),
+                  clinics:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
+                  hospitals:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),
+                  response_days:Joi.object({
+                      0: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
+                      1: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
+                      2: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
+                      3: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
+                      4: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
+                      5: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
+                      6: Joi.array().items(require('../response_time/Validators').default.public.patch.validator),
+                  }).required()
+              })
+          }),
+          Joi.object({
+              gender:Joi.string().optional().allow('','male','female'),
+              mobile:phone().required(),
+              name:Joi.string().optional().allow(''),
+              type:Joi.string().optional().allow('PATIENT')
           })
-      })
+      )
   },
     signin:createValidator({
         mobile:Joi.string().required()

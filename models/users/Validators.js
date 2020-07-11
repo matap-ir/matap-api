@@ -69,10 +69,11 @@ const validator = {
                 }).required()
             })
         }), Joi_1.default.object({
+            _id: Joi_1.default.any().required(),
             gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
             mobile: Joi_1.phone().required(),
             name: Joi_1.default.string().optional().allow(''),
-            type: Joi_1.default.string().required().allow('PATIENT'),
+            type: Joi_1.default.string().optional().allow('PATIENT'),
             currency: Joi_1.default.number().optional(),
         }))
     },
@@ -111,7 +112,7 @@ const validator = {
                 currency: Joi_1.default.number().optional(),
             }))
         },
-        patch: createValidator_1.default({
+        patch: Joi_1.default.alternatives().try(Joi_1.default.object({
             _id: Joi_1.default.any().required(),
             mobile: Joi_1.phone(),
             type: Joi_1.default.string().required().allow('PATIENT', 'DOCTOR'),
@@ -140,7 +141,12 @@ const validator = {
                     6: Joi_1.default.array().items(require('../response_time/Validators').default.public.patch.validator),
                 }).required()
             })
-        })
+        }), Joi_1.default.object({
+            gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
+            mobile: Joi_1.phone().required(),
+            name: Joi_1.default.string().optional().allow(''),
+            type: Joi_1.default.string().optional().allow('PATIENT')
+        }))
     },
     signin: createValidator_1.default({
         mobile: Joi_1.default.string().required()
