@@ -43,36 +43,45 @@ const validator : GeneratedValidator<User> = {
             })
         )
     },
-      update:createValidator({
-          _id:Joi.any().required(),
-          mobile:phone(),
-          type:Joi.string().required().allow('PATIENT','DOCTOR'),
-          name:Joi.string().optional().allow(''),
-          code:Joi.number().optional(),
-          imageUrl:Joi.string().optional(),
-          price:Joi.number().required(),
-          specialization:Joi.any().required(),
-          currency: Joi.number().optional(),
-          sms_code:Joi.number().optional().allow(null),
-          fcmtoken:Joi.string().optional().allow(null),
-          gender:Joi.string().optional().allow('','male','female'),
-          details:Joi.object().keys({
-              city:Joi.string().required(),
-              nezam_pezeshki_code:Joi.string().required(),
-              cut:Joi.number().required(),
-              clinics:Joi.array().items(Joi.any()).required(),
-              hospitals:Joi.array().items(Joi.any()).required(),
-              response_days:Joi.object({
-                  0: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
-                  1: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
-                  2: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
-                  3: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
-                  4: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
-                  5: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
-                  6: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
-              }).required()
+      update:Joi.alternatives().try(
+          Joi.object({
+              _id:Joi.any().required(),
+              mobile:phone(),
+              type:Joi.string().required().allow('DOCTOR'),
+              name:Joi.string().optional().allow(''),
+              code:Joi.number().optional(),
+              imageUrl:Joi.string().optional(),
+              price:Joi.number().required(),
+              specialization:Joi.any().required(),
+              currency: Joi.number().optional(),
+              sms_code:Joi.number().optional().allow(null),
+              fcmtoken:Joi.string().optional().allow(null),
+              gender:Joi.string().optional().allow('','male','female'),
+              details:Joi.object().keys({
+                  city:Joi.string().required(),
+                  nezam_pezeshki_code:Joi.string().required(),
+                  cut:Joi.number().required(),
+                  clinics:Joi.array().items(Joi.any()).required(),
+                  hospitals:Joi.array().items(Joi.any()).required(),
+                  response_days:Joi.object({
+                      0: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
+                      1: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
+                      2: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
+                      3: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
+                      4: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
+                      5: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
+                      6: Joi.array().items(require('../response_time/Validators').default.db.update.validator),
+                  }).required()
+              })
+          }),
+          Joi.object({
+              gender:Joi.string().optional().allow('','male','female'),
+              mobile:phone().required(),
+              name:Joi.string().optional().allow(''),
+              type:Joi.string().required().allow('PATIENT'),
+              currency: Joi.number().optional(),
           })
-      })
+      )
   },
   public:{
       post:{

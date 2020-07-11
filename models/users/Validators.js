@@ -39,10 +39,10 @@ const validator = {
                 currency: Joi_1.default.number().optional(),
             }))
         },
-        update: createValidator_1.default({
+        update: Joi_1.default.alternatives().try(Joi_1.default.object({
             _id: Joi_1.default.any().required(),
             mobile: Joi_1.phone(),
-            type: Joi_1.default.string().required().allow('PATIENT', 'DOCTOR'),
+            type: Joi_1.default.string().required().allow('DOCTOR'),
             name: Joi_1.default.string().optional().allow(''),
             code: Joi_1.default.number().optional(),
             imageUrl: Joi_1.default.string().optional(),
@@ -68,7 +68,13 @@ const validator = {
                     6: Joi_1.default.array().items(require('../response_time/Validators').default.db.update.validator),
                 }).required()
             })
-        })
+        }), Joi_1.default.object({
+            gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
+            mobile: Joi_1.phone().required(),
+            name: Joi_1.default.string().optional().allow(''),
+            type: Joi_1.default.string().required().allow('PATIENT'),
+            currency: Joi_1.default.number().optional(),
+        }))
     },
     public: {
         post: {
