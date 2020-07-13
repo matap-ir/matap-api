@@ -15,6 +15,7 @@ const dbModel = {
     gender:{type:String,default:''},
     details:{
         type:{
+            maxVisitDurationMillisec: {type:Number,required:true},
             city:String,
             nezam_pezeshki_code:String,
             cut:Number,

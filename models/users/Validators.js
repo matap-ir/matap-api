@@ -16,6 +16,7 @@ const validator = {
                 specialization: require('../specialization/Validators').default.db.update.validator.required(),
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
                 details: Joi_1.default.object().required().keys({
+                    maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                     city: Joi_1.default.string().required(),
                     nezam_pezeshki_code: Joi_1.default.string().required(),
                     cut: Joi_1.default.number().required(),
@@ -53,6 +54,7 @@ const validator = {
             fcmtoken: Joi_1.default.string().optional().allow(null),
             gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
             details: Joi_1.default.object().keys({
+                maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                 city: Joi_1.default.string().required(),
                 nezam_pezeshki_code: Joi_1.default.string().required(),
                 cut: Joi_1.default.number().required(),
@@ -89,6 +91,7 @@ const validator = {
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
                 specialization: require('../specialization/Validators').default.public.patch.validator.required(),
                 details: Joi_1.default.object().required().keys({
+                    maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                     city: Joi_1.default.string().required(),
                     nezam_pezeshki_code: Joi_1.default.string().required(),
                     cut: Joi_1.default.number().required(),
@@ -126,6 +129,7 @@ const validator = {
             gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
             finalizable_visits: Joi_1.default.array().items(Joi_1.default.string()),
             details: Joi_1.default.object().optional().keys({
+                maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                 city: Joi_1.default.string().required(),
                 nezam_pezeshki_code: Joi_1.default.string().required(),
                 cut: Joi_1.default.number().required(),

@@ -19,6 +19,7 @@ export default interface User {
     finalizable_visits:Visit[] | string[],
     gender:'male' | 'female' | '',
     details:{
+        maxVisitDurationMillisec: number,
         city:string,
         nezam_pezeshki_code:string,
         cut: number,

@@ -18,6 +18,7 @@ const validator : GeneratedValidator<User> = {
                 specialization:require('../specialization/Validators').default.db.update.validator.required(),
                 gender:Joi.string().optional().allow('','male','female'),
                 details:Joi.object().required().keys({
+                    maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                     city:Joi.string().required(),
                     nezam_pezeshki_code:Joi.string().required(),
                     cut:Joi.number().required(),
@@ -58,6 +59,7 @@ const validator : GeneratedValidator<User> = {
               fcmtoken:Joi.string().optional().allow(null),
               gender:Joi.string().optional().allow('','male','female'),
               details:Joi.object().keys({
+                  maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                   city:Joi.string().required(),
                   nezam_pezeshki_code:Joi.string().required(),
                   cut:Joi.number().required(),
@@ -97,6 +99,7 @@ const validator : GeneratedValidator<User> = {
                   gender:Joi.string().optional().allow('','male','female'),
                   specialization:require('../specialization/Validators').default.public.patch.validator.required(),
                   details:Joi.object().required().keys({
+                      maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                       city:Joi.string().required(),
                       nezam_pezeshki_code:Joi.string().required(),
                       cut:Joi.number().required(),
@@ -137,6 +140,7 @@ const validator : GeneratedValidator<User> = {
               gender:Joi.string().optional().allow('','male','female'),
               finalizable_visits: Joi.array().items(Joi.string()),
               details:Joi.object().optional().keys({
+                  maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                   city:Joi.string().required(),
                   nezam_pezeshki_code:Joi.string().required(),
                   cut:Joi.number().required(),
