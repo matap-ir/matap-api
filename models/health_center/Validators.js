@@ -8,6 +8,7 @@ const validator = {
         insert: createValidator_1.default({
             name: Joi_1.default.string().required(),
             address: Joi_1.default.string().optional(),
+            wallpaperUrl: Joi_1.default.string().optional(),
             logoUrl: Joi_1.default.string().optional(),
             type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC'),
             percentage: Joi_1.default.number().required().min(0).max(100)
@@ -16,6 +17,7 @@ const validator = {
             _id: Joi_1.default.any().required(),
             name: Joi_1.default.string().required(),
             address: Joi_1.default.string().optional(),
+            wallpaperUrl: Joi_1.default.string().optional(),
             logoUrl: Joi_1.default.string().optional(),
             type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').optional(),
             percentage: Joi_1.default.number().required().min(0).max(100)
@@ -33,6 +35,7 @@ const validator = {
             _id: Joi_1.default.any().required(),
             name: Joi_1.default.string().required(),
             address: Joi_1.default.string().optional(),
+            wallpaperUrl: Joi_1.default.string().optional(),
             logoUrl: Joi_1.default.string().optional(),
             type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').optional(),
             percentage: Joi_1.default.number().required().min(0).max(100)

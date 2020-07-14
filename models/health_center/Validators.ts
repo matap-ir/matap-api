@@ -9,6 +9,7 @@ const validator : GeneratedValidator<HealthCenter> = {
     insert:createValidator({
         name:Joi.string().required(),
         address:Joi.string().optional(),
+        wallpaperUrl:Joi.string().optional(),
         logoUrl:Joi.string().optional(),
         type: Joi.string().allow('HOSPITAL','CLINIC'),
         percentage: Joi.number().required().min(0).max(100)
@@ -17,6 +18,7 @@ const validator : GeneratedValidator<HealthCenter> = {
           _id:Joi.any().required(),
           name:Joi.string().required(),
           address:Joi.string().optional(),
+          wallpaperUrl:Joi.string().optional(),
           logoUrl:Joi.string().optional(),
           type: Joi.string().allow('HOSPITAL','CLINIC').optional(),
           percentage: Joi.number().required().min(0).max(100)
@@ -34,6 +36,7 @@ const validator : GeneratedValidator<HealthCenter> = {
           _id:Joi.any().required(),
           name:Joi.string().required(),
           address:Joi.string().optional(),
+          wallpaperUrl:Joi.string().optional(),
           logoUrl:Joi.string().optional(),
           type: Joi.string().allow('HOSPITAL','CLINIC').optional(),
           percentage: Joi.number().required().min(0).max(100)
