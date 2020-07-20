@@ -1,4 +1,5 @@
 import {Transaction} from '../index';
+import Visit from './visit/Visit';
 
 export default interface FinancialAudit{
     total: number,
@@ -9,5 +10,6 @@ export default interface FinancialAudit{
     payable: number,
     medicalCenterCut: number,
     fromDate: number,
-    toDate: number
+    toDate: number,
+    unsettledVisits:Visit[]
 };
