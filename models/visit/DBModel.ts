@@ -21,6 +21,7 @@ export default{
         healthCenterCut: {type:Number,required:false},
         healthCenterId: {type: ObjectId,ref:'healthcenters',required:false},
         discount: {type:Number,required:false},
-        return_transaction_id:{type: String,required:false}
+        return_transaction_id:{type: String,required:false},
+        settled:{type:Boolean,required:false,default:false}
     }
 }
