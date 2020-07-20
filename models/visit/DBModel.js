@@ -23,6 +23,7 @@ exports.default = {
         healthCenterId: { type: mongoose_1.ObjectId, ref: 'healthcenters', required: false },
         discount: { type: Number, required: false },
         return_transaction_id: { type: String, required: false },
-        settled: { type: Boolean, required: false, default: false }
+        settled: { type: Boolean, required: false, default: false },
+        healthCenterSettled: { type: Boolean, required: false, default: false }
     }
 };

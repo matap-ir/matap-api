@@ -23,7 +23,8 @@ interface Visit{
         healthCenterCut: number,
         healthCenterId: string,
         return_transaction_id:string,
-        settled:boolean
+        settled:boolean,
+        healthCenterSettled:boolean
     }
 }
 
