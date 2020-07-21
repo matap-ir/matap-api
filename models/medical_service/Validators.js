@@ -10,6 +10,7 @@ const validator = {
             title: Joi_1.default.string().required(),
             subTitle: Joi_1.default.string().required(),
             details: Joi_1.default.string().required(),
+            price: Joi_1.default.number().required()
         }),
         update: createValidator_1.default({
             _id: Joi_1.default.any().required(),
@@ -17,6 +18,7 @@ const validator = {
             title: Joi_1.default.string().required(),
             subTitle: Joi_1.default.string().required(),
             details: Joi_1.default.string().required(),
+            price: Joi_1.default.number().required()
         })
     },
     public: {
@@ -24,12 +26,14 @@ const validator = {
             title: Joi_1.default.string().required(),
             subTitle: Joi_1.default.string().required(),
             details: Joi_1.default.string().required(),
+            price: Joi_1.default.number().required()
         }),
         patch: createValidator_1.default({
             _id: Joi_1.default.any().required(),
             title: Joi_1.default.string().required(),
             subTitle: Joi_1.default.string().required(),
             details: Joi_1.default.string().required(),
+            price: Joi_1.default.number().required()
         })
     }
 };
