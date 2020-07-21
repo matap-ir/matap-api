@@ -20,6 +20,7 @@ const validator : GeneratedValidator<User> = {
                 details:Joi.object().required().keys({
                     maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                     city:Joi.string().required(),
+                    shaba:Joi.string().required(),
                     nezam_pezeshki_code:Joi.string().required(),
                     cut:Joi.number().required(),
                     clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
@@ -61,6 +62,7 @@ const validator : GeneratedValidator<User> = {
               details:Joi.object().keys({
                   maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                   city:Joi.string().required(),
+                  shaba:Joi.string().required(),
                   nezam_pezeshki_code:Joi.string().required(),
                   cut:Joi.number().required(),
                   clinics:Joi.array().items(Joi.any()).required(),
@@ -101,6 +103,7 @@ const validator : GeneratedValidator<User> = {
                   details:Joi.object().required().keys({
                       maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                       city:Joi.string().required(),
+                      shaba:Joi.string().required(),
                       nezam_pezeshki_code:Joi.string().required(),
                       cut:Joi.number().required(),
                       clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
@@ -142,6 +145,7 @@ const validator : GeneratedValidator<User> = {
               details:Joi.object().optional().keys({
                   maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                   city:Joi.string().required(),
+                  shaba:Joi.string().required(),
                   nezam_pezeshki_code:Joi.string().required(),
                   cut:Joi.number().required(),
                   clinics:Joi.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),

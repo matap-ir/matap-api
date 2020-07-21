@@ -21,6 +21,7 @@ export default interface User {
     details:{
         maxVisitDurationMillisec: number,
         city:string,
+        shaba:string,
         nezam_pezeshki_code:string,
         cut: number,
         clinics:HealthCenter[],

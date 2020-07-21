@@ -18,6 +18,7 @@ const validator = {
                 details: Joi_1.default.object().required().keys({
                     maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                     city: Joi_1.default.string().required(),
+                    shaba: Joi_1.default.string().required(),
                     nezam_pezeshki_code: Joi_1.default.string().required(),
                     cut: Joi_1.default.number().required(),
                     clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
@@ -56,6 +57,7 @@ const validator = {
             details: Joi_1.default.object().keys({
                 maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                 city: Joi_1.default.string().required(),
+                shaba: Joi_1.default.string().required(),
                 nezam_pezeshki_code: Joi_1.default.string().required(),
                 cut: Joi_1.default.number().required(),
                 clinics: Joi_1.default.array().items(Joi_1.default.any()).required(),
@@ -93,6 +95,7 @@ const validator = {
                 details: Joi_1.default.object().required().keys({
                     maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                     city: Joi_1.default.string().required(),
+                    shaba: Joi_1.default.string().required(),
                     nezam_pezeshki_code: Joi_1.default.string().required(),
                     cut: Joi_1.default.number().required(),
                     clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
@@ -131,6 +134,7 @@ const validator = {
             details: Joi_1.default.object().optional().keys({
                 maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                 city: Joi_1.default.string().required(),
+                shaba: Joi_1.default.string().required(),
                 nezam_pezeshki_code: Joi_1.default.string().required(),
                 cut: Joi_1.default.number().required(),
                 clinics: Joi_1.default.array().items(require('../health_center/Validators').default.public.patch.validator.required()).required(),

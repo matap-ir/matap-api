@@ -17,6 +17,7 @@ const dbModel = {
         type:{
             maxVisitDurationMillisec: {type:Number,required:true},
             city:String,
+            shaba:String,
             nezam_pezeshki_code:String,
             cut:Number,
             clinics:[{type:ObjectId,ref:'healthcenters'}],
