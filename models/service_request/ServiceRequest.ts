@@ -7,5 +7,6 @@ export default interface ServiceRequest{
     mobile: string,
     gender: 'male' | 'female',
     request_date: number,
-    details: string
+    details: string,
+    trackingCode: string
 }

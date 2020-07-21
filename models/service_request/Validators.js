@@ -12,12 +12,14 @@ const validator = {
             request_date: Joi_1.default.number().required(),
             gender: Joi_1.default.string().required().allow('male', 'female'),
             details: Joi_1.default.string().required(),
+            trackingCode: Joi_1.default.string().required()
         }),
         update: createValidator_1.default({
             _id: Joi_1.default.any().required(),
             mobile: Joi_1.default.string().required(),
             gender: Joi_1.default.string().required().allow('male', 'female'),
             details: Joi_1.default.string().required(),
+            trackingCode: Joi_1.default.string().required()
         })
     },
     public: {
@@ -27,6 +29,7 @@ const validator = {
             mobile: Joi_1.default.string().required(),
             gender: Joi_1.default.string().required().allow('male', 'female'),
             details: Joi_1.default.string().required(),
+            trackingCode: Joi_1.default.string().required()
         }),
         patch: createValidator_1.default({
             _id: Joi_1.default.any().required(),
@@ -34,6 +37,7 @@ const validator = {
             mobile: Joi_1.default.string().required(),
             gender: Joi_1.default.string().required().allow('male', 'female'),
             details: Joi_1.default.string().required(),
+            trackingCode: Joi_1.default.string().required()
         })
     }
 };

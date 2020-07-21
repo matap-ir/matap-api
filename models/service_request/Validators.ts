@@ -13,12 +13,14 @@ const validator : GeneratedValidator<MedicalService> = {
         request_date: Joi.number().required(),
         gender:Joi.string().required().allow('male','female'),
         details:Joi.string().required(),
+        trackingCode:Joi.string().required()
     }),
       update:createValidator({
           _id:Joi.any().required(),
           mobile:Joi.string().required(),
           gender:Joi.string().required().allow('male','female'),
           details:Joi.string().required(),
+          trackingCode:Joi.string().required()
       })
   },
   public:{
@@ -28,6 +30,7 @@ const validator : GeneratedValidator<MedicalService> = {
           mobile:Joi.string().required(),
           gender:Joi.string().required().allow('male','female'),
           details:Joi.string().required(),
+          trackingCode:Joi.string().required()
       }),
       patch:createValidator({
           _id:Joi.any().required(),
@@ -35,6 +38,7 @@ const validator : GeneratedValidator<MedicalService> = {
           mobile:Joi.string().required(),
           gender:Joi.string().required().allow('male','female'),
           details:Joi.string().required(),
+          trackingCode:Joi.string().required()
       })
   }
 };
