@@ -4,8 +4,7 @@ const dbModel = {
     title:{type:String,required:true},
     subTitle:{type:String,required: true},
     details:{type:String,required:true},
-    price:{type:Number,required:true},
-    priorities:{type:[String],required:true,default:[]},
+    price:{type:Number,required:true}
 };
 
 export default dbModel;

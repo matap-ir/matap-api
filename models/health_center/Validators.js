@@ -11,7 +11,8 @@ const validator = {
             wallpaperUrl: Joi_1.default.string().optional(),
             logoUrl: Joi_1.default.string().optional(),
             type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC'),
-            percentage: Joi_1.default.number().required().min(0).max(100)
+            percentage: Joi_1.default.number().required().min(0).max(100),
+            priorities: Joi_1.default.array().items(Joi_1.default.string()).optional()
         }),
         update: createValidator_1.default({
             _id: Joi_1.default.any().required(),
@@ -20,7 +21,8 @@ const validator = {
             wallpaperUrl: Joi_1.default.string().optional(),
             logoUrl: Joi_1.default.string().optional(),
             type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').optional(),
-            percentage: Joi_1.default.number().required().min(0).max(100)
+            percentage: Joi_1.default.number().required().min(0).max(100),
+            priorities: Joi_1.default.array().items(Joi_1.default.string()).required()
         })
     },
     public: {
@@ -29,7 +31,8 @@ const validator = {
             address: Joi_1.default.string().required(),
             logoUrl: Joi_1.default.string().optional(),
             type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').required(),
-            percentage: Joi_1.default.number().required().min(0).max(100)
+            percentage: Joi_1.default.number().required().min(0).max(100),
+            priorities: Joi_1.default.array().items(Joi_1.default.string()).optional()
         }),
         patch: createValidator_1.default({
             _id: Joi_1.default.any().required(),
@@ -38,7 +41,8 @@ const validator = {
             wallpaperUrl: Joi_1.default.string().optional(),
             logoUrl: Joi_1.default.string().optional(),
             type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').optional(),
-            percentage: Joi_1.default.number().required().min(0).max(100)
+            percentage: Joi_1.default.number().required().min(0).max(100),
+            priorities: Joi_1.default.array().items(Joi_1.default.string()).optional()
         })
     }
 };

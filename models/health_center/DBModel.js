@@ -6,6 +6,7 @@ const dbModel = {
     logoUrl: { type: String },
     wallpaperUrl: { type: String },
     type: { type: String, required: true },
-    percentage: { type: Number, required: true, default: 0 }
+    percentage: { type: Number, required: true, default: 0 },
+    priorities: { type: [String], required: true, default: [] },
 };
 exports.default = dbModel;

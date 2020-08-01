@@ -11,8 +11,7 @@ const validator : GeneratedValidator<MedicalService> = {
         title:Joi.string().required(),
         subTitle:Joi.string().required(),
         details:Joi.string().required(),
-        price:Joi.number().required(),
-        priorities:Joi.array().items(Joi.string()).optional()
+        price:Joi.number().required()
     }),
       update:createValidator({
           _id:Joi.any().required(),
@@ -20,8 +19,7 @@ const validator : GeneratedValidator<MedicalService> = {
           title:Joi.string().required(),
           subTitle:Joi.string().required(),
           details:Joi.string().required(),
-          price:Joi.number().required(),
-          priorities:Joi.array().items(Joi.string()).optional()
+          price:Joi.number().required()
       })
   },
   public:{
@@ -29,16 +27,14 @@ const validator : GeneratedValidator<MedicalService> = {
           title:Joi.string().required(),
           subTitle:Joi.string().required(),
           details:Joi.string().required(),
-          price:Joi.number().required(),
-          priorities:Joi.array().items(Joi.string()).optional()
+          price:Joi.number().required()
       }),
       patch:createValidator({
           _id:Joi.any().required(),
           title:Joi.string().required(),
           subTitle:Joi.string().required(),
           details:Joi.string().required(),
-          price:Joi.number().required(),
-          priorities:Joi.array().items(Joi.string()).optional()
+          price:Joi.number().required()
       })
   }
 };

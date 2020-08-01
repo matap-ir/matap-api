@@ -4,6 +4,5 @@ export default interface MedicalService{
     title: string,
     subTitle: string,
     details: string,
-    price: number,
-    priorities:string[],
+    price: number
 }
