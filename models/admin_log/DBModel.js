@@ -4,7 +4,7 @@ const mongoose_1 = require("mongoose");
 const dbModel = {
     url: { type: String, required: true },
     headers: { type: [String], required: false, default: [] },
-    user: { type: mongoose_1.ObjectId, required: true },
+    user: { type: mongoose_1.ObjectId, required: true, ref: 'users' },
     description: { type: String, required: false },
     date: { type: Number, required: true },
     body: { type: Object, required: false }
