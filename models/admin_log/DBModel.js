@@ -11,7 +11,7 @@ const dbModel = {
     body: { type: Object, required: false },
     success: { type: Boolean, required: false },
     params: { type: [String], required: false, default: [] },
-    type: { type: String, required: true },
+    type: { type: String, required: false },
     method: { type: String, required: true }
 };
 exports.default = dbModel;
