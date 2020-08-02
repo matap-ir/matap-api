@@ -9,7 +9,8 @@ const dbModel = {
     body:{type:Object,required:false},
     success:{type:Boolean,required:false},
     params:{type:[String],required:false,default:[]},
-    type:{type:String,required:true}
+    type:{type:String,required:true},
+    method:{type:String,required:true}
 };
 
 export default dbModel;

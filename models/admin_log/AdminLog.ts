@@ -10,5 +10,6 @@ export default interface AdminLog{
     body?:any,
     success?: boolean,
     params?: string[],
-    type:string
+    type:string,
+    method:'POST' | 'PATCH'
 }
