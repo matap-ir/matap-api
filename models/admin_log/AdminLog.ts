@@ -10,7 +10,7 @@ export default interface AdminLog{
     date: number,
     body?:any,
     success?: boolean,
-    params?: string[],
+    params?: any[],
     type?:string,
     method:'POST' | 'PATCH'
 }

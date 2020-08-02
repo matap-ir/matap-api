@@ -9,7 +9,7 @@ const dbModel = {
     date: {type:Number,required:true},
     body:{type:Object,required:false},
     success:{type:Boolean,required:false},
-    params:{type:[String],required:false,default:[]},
+    params:{type:[Object],required:false,default:[]},
     type:{type:String,required:false},
     method:{type:String,required:true}
 };
