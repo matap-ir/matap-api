@@ -8,5 +8,7 @@ export default interface AdminLog{
     description?: string,
     date: number,
     body?:any,
-    success?: boolean
+    success?: boolean,
+    params?: string[],
+    type:string
 }
