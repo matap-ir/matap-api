@@ -7,7 +7,8 @@ const dbModel = {
     user:{type:ObjectId,required:true,ref:'users'},
     description:{type:String,required:false},
     date: {type:Number,required:true},
-    body:{type:Object,required:false}
+    body:{type:Object,required:false},
+    success:{type:Boolean,required:false}
 };
 
 export default dbModel;

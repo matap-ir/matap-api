@@ -7,5 +7,6 @@ export default interface AdminLog{
     user:string | User,
     description?: string,
     date: number,
-    body?:any
+    body?:any,
+    success?: boolean
 }
