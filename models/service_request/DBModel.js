@@ -10,6 +10,7 @@ const dbModel = {
     request_date: { type: Number, required: true },
     details: { type: String, required: true },
     trackingCode: { type: String, required: true, unique: true },
-    status: { type: String, required: true }
+    status: { type: String, required: true },
+    requester: { type: mongoose_1.ObjectId, ref: 'users', required: true }
 };
 exports.default = dbModel;

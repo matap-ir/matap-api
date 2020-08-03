@@ -1,9 +1,10 @@
-import {MedicalService} from '../../index';
+import {MedicalService, User} from '../../index';
 
 export default interface ServiceRequest{
     _id: string,
     service: MedicalService | string,
     age: number,
+    requester:string | User,
     mobile: string,
     gender: 'male' | 'female',
     request_date: number,
