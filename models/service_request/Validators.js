@@ -14,7 +14,7 @@ const validator = {
             details: Joi_1.default.string().required(),
             trackingCode: Joi_1.default.string().required(),
             status: Joi_1.default.string().required(),
-            price: Joi_1.default.number().required(),
+            price: Joi_1.default.number().optional().allow(null),
             requester: Joi_1.default.any().required()
         }),
         update: createValidator_1.default({
@@ -24,7 +24,7 @@ const validator = {
             details: Joi_1.default.string().required(),
             trackingCode: Joi_1.default.string().required(),
             status: Joi_1.default.string().required(),
-            price: Joi_1.default.number().required(),
+            price: Joi_1.default.number().optional().allow(null),
             requester: Joi_1.default.any().required()
         })
     },
@@ -43,7 +43,7 @@ const validator = {
             gender: Joi_1.default.string().required().allow('male', 'female'),
             details: Joi_1.default.string().required(),
             status: Joi_1.default.string().required(),
-            price: Joi_1.default.number().required()
+            price: Joi_1.default.number().optional().allow(null)
         })
     }
 };

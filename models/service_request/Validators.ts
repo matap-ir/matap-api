@@ -15,7 +15,7 @@ const validator : GeneratedValidator<MedicalService> = {
         details:Joi.string().required(),
         trackingCode:Joi.string().required(),
         status:Joi.string().required(),
-        price:Joi.number().required(),
+        price:Joi.number().optional().allow(null),
         requester:Joi.any().required()
     }),
       update:createValidator({
@@ -25,7 +25,7 @@ const validator : GeneratedValidator<MedicalService> = {
           details:Joi.string().required(),
           trackingCode:Joi.string().required(),
           status:Joi.string().required(),
-          price:Joi.number().required(),
+          price:Joi.number().optional().allow(null),
           requester:Joi.any().required()
       })
   },
@@ -44,7 +44,7 @@ const validator : GeneratedValidator<MedicalService> = {
           gender:Joi.string().required().allow('male','female'),
           details:Joi.string().required(),
           status:Joi.string().required(),
-          price:Joi.number().required()
+          price:Joi.number().optional().allow(null)
       })
   }
 };
