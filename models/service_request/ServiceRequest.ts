@@ -10,6 +10,6 @@ export default interface ServiceRequest{
     request_date: number,
     details: string,
     trackingCode: string,
-    status:'CHECKING' | 'WAITING_PAYMENT' | 'PROCESSING' | 'ENDED' | 'NOT_SEEN',
+    status:'CHECKING' | 'PAID' | 'WAITING_PAYMENT' | 'PROCESSING' | 'ENDED' | 'NOT_SEEN',
     price:number
 }
