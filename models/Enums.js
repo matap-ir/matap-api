@@ -20,6 +20,7 @@ var TransactionType;
     TransactionType["VISIT_PAYMENT"] = "VISIT_PAYMENT";
     TransactionType["PAYROLL"] = "PAYROLL";
     TransactionType["RETURN_VISIT_PAYMENT"] = "RETURN_VISIT_PAYMENT";
+    TransactionType["SERVICE_REQUEST_PAYMENT"] = "SERVICE_REQUEST_PAYMENT";
 })(TransactionType = exports.TransactionType || (exports.TransactionType = {}));
 var HealthCenterType;
 (function (HealthCenterType) {

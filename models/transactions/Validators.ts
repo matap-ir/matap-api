@@ -7,7 +7,7 @@ const validator : GeneratedValidator<Transaction> = {
     db:{
         insert:createValidator({
             amount:Joi.number().required(),
-            type:Joi.string().required().allow('CHARGE_BY_GATEWAY' , 'CHARGE_BY_ADMIN' , 'STARTER_CHARGE' , 'VISIT_PAYMENT' , 'PAYROLL' , 'RETURN_VISIT_PAYMENT'),
+            type:Joi.string().required().allow('SERVICE_REQUEST_PAYMENT','CHARGE_BY_GATEWAY' , 'CHARGE_BY_ADMIN' , 'STARTER_CHARGE' , 'VISIT_PAYMENT' , 'PAYROLL' , 'RETURN_VISIT_PAYMENT'),
             tracking_code:Joi.string().optional().allow('').allow(null),
             date:Joi.number().required(),
             hint:Joi.string().optional().allow('').allow(null),
@@ -30,7 +30,7 @@ const validator : GeneratedValidator<Transaction> = {
     public:{
         post:createValidator({
             amount:Joi.number().required(),
-            type:Joi.string().required().allow('CHARGE_BY_GATEWAY' , 'CHARGE_BY_ADMIN' , 'STARTER_CHARGE' , 'VISIT_PAYMENT' , 'PAYROLL'),
+            type:Joi.string().required().allow('SERVICE_REQUEST_PAYMENT','CHARGE_BY_GATEWAY' , 'CHARGE_BY_ADMIN' , 'STARTER_CHARGE' , 'VISIT_PAYMENT' , 'PAYROLL'),
             tracking_code:Joi.string().optional().allow('').allow(null),
             hint:Joi.string().optional().allow('').allow(null),
         })
