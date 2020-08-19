@@ -21,8 +21,10 @@ import MedicalService from './models/medical_service/MedicalService';
 import ServiceRequest from 'models/service_request/ServiceRequest';
 import ResponseTime from './models/response_time/ResponseTime';
 import AdminLog from 'models/admin_log/AdminLog';
+import Privileges from './models/privileges/Privileges';
 
 export {
+    Privileges,
     AdminLog,
     ResponseTime,
     CallOffer,
