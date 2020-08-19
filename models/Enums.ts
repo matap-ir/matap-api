@@ -5,7 +5,8 @@ export enum UserType {
 
 export enum AdminType{
    MANAGER = 'MANAGER',
-   ADMIN = 'ADMIN'
+   ADMIN = 'ADMIN',
+   HEALTHCENTER = 'HEALTHCENTER'
 }
 
 export enum TransactionType {

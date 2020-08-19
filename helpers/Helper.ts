@@ -1,5 +1,6 @@
 import uuidv4 from 'uuid/v4';
-import {ResponseTime} from '../index';
+import {Privileges, ResponseTime} from '../index';
+import {AdminType} from '../models/Enums';
 
 const generateUUID = () => {
     return uuidv4();
@@ -19,16 +20,6 @@ const createResponsiveDaysText = (responseDays: {}): string=>{
     });
     return text;
 };
-
-/*const createFromAndToResponsiveTime = (value: string):{from:string,to:string} | undefined=> {
-    if (!value || !value.includes('|')){
-        return undefined;
-    }
-    if(value.split('|')[0] === '' || value.split('|')[1] === ''){
-        return undefined;
-    }
-    return {from:value.split('|')[0],to:value.split('|')[1]};
-};*/
 
 const dayNumberToString = (day: string): string => {
     switch (day) {

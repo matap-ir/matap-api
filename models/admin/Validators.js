@@ -7,31 +7,31 @@ const validator = {
     db: {
         insert: createValidator_1.default({
             name: Joi_1.default.string().required(),
-            type: Joi_1.default.string().required().allow('MANAGER', 'ADMIN'),
+            type: Joi_1.default.string().required().allow('MANAGER', 'ADMIN', 'HEALTHCENTER'),
             username: Joi_1.default.string().required(),
             password: Joi_1.default.string().required(),
-            accesses: Joi_1.default.array().items(Joi_1.default.string()).optional(),
+            privileges: require('../privileges/Validators').default.db.insert.validator
         }),
         update: createValidator_1.default({
             _id: Joi_1.default.string().required(),
             name: Joi_1.default.string().required(),
             password: Joi_1.default.string().required(),
-            accesses: Joi_1.default.array().items(Joi_1.default.string()).optional(),
+            privileges: require('../privileges/Validators').default.db.update.validator
         })
     },
     public: {
         post: createValidator_1.default({
             name: Joi_1.default.string().required(),
-            type: Joi_1.default.string().required().allow('MANAGER', 'ADMIN'),
+            type: Joi_1.default.string().required().allow('MANAGER', 'ADMIN', 'HEALTHCENTER'),
             username: Joi_1.default.string().required(),
             password: Joi_1.default.string().required(),
-            accesses: Joi_1.default.array().items(Joi_1.default.string()).optional(),
+            privileges: require('../privileges/Validators').default.public.post.validator
         }),
         patch: createValidator_1.default({
             _id: Joi_1.default.string().required(),
             name: Joi_1.default.string().required(),
             password: Joi_1.default.string().required(),
-            accesses: Joi_1.default.array().items(Joi_1.default.string()).optional(),
+            privileges: require('../privileges/Validators').default.public.patch.validator
         })
     },
     signin: createValidator_1.default({

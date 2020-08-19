@@ -5,7 +5,7 @@ const dbModel = {
     username:{type:String,required:true,unique:true},
     password:{type:String,required:true},
     type:{type:String,required:true},
-    accesses:{type:[String],default:[]},
+    privileges:{type:require('../privileges/DBModel').default,required:true,default:{}},
 };
 
 export default dbModel;

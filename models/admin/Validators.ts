@@ -8,31 +8,31 @@ const validator : GeneratedValidator<Admin> = {
   db:{
     insert:createValidator({
         name:Joi.string().required(),
-        type:Joi.string().required().allow('MANAGER','ADMIN'),
+        type:Joi.string().required().allow('MANAGER','ADMIN','HEALTHCENTER'),
         username:Joi.string().required(),
         password:Joi.string().required(),
-        accesses:Joi.array().items(Joi.string()).optional(),
+        privileges:require('../privileges/Validators').default.db.insert.validator
     }),
       update:createValidator({
           _id:Joi.string().required(),
           name:Joi.string().required(),
           password:Joi.string().required(),
-          accesses:Joi.array().items(Joi.string()).optional(),
+          privileges:require('../privileges/Validators').default.db.update.validator
       })
   },
   public:{
       post:createValidator({
           name:Joi.string().required(),
-          type:Joi.string().required().allow('MANAGER','ADMIN'),
+          type:Joi.string().required().allow('MANAGER','ADMIN','HEALTHCENTER'),
           username:Joi.string().required(),
           password:Joi.string().required(),
-          accesses:Joi.array().items(Joi.string()).optional(),
+          privileges:require('../privileges/Validators').default.public.post.validator
       }),
       patch:createValidator({
           _id:Joi.string().required(),
           name:Joi.string().required(),
           password:Joi.string().required(),
-          accesses:Joi.array().items(Joi.string()).optional(),
+          privileges:require('../privileges/Validators').default.public.patch.validator
       })
   },
     signin:createValidator({

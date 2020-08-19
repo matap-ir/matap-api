@@ -10,6 +10,7 @@ var AdminType;
 (function (AdminType) {
     AdminType["MANAGER"] = "MANAGER";
     AdminType["ADMIN"] = "ADMIN";
+    AdminType["HEALTHCENTER"] = "HEALTHCENTER";
 })(AdminType = exports.AdminType || (exports.AdminType = {}));
 var TransactionType;
 (function (TransactionType) {

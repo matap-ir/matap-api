@@ -1,4 +1,5 @@
 import {AdminType} from '../Enums';
+import {Privileges} from '../../index';
 
 export default interface Admin {
     _id: string;
@@ -6,5 +7,5 @@ export default interface Admin {
     username:string;
     password:string;
     type: AdminType,
-    accesses: string[]
+    privileges: Privileges
 }

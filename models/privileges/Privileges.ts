@@ -3,7 +3,6 @@ interface PrivilegeOptions{
     edit:boolean,
     delete:boolean
 }
-
 export default interface Privileges{
     users:{
         patients:PrivilegeOptions,

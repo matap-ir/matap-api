@@ -6,8 +6,8 @@ const privilegeOptions = {
         edit: { type: Boolean, required: true, default: false },
         delete: { type: Boolean, required: true, default: false }
     },
-    default: {},
-    required: true
+    required: true,
+    default: {}
 };
 const dbModel = {
     users: {
