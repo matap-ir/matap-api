@@ -4,7 +4,8 @@ const privilegeOptions = {
     type: {
         create: { type: Boolean, required: true, default: false },
         edit: { type: Boolean, required: true, default: false },
-        delete: { type: Boolean, required: true, default: false }
+        delete: { type: Boolean, required: true, default: false },
+        view: { type: Boolean, required: true, default: false }
     },
     required: true,
     default: {}
@@ -13,7 +14,7 @@ const dbModel = {
     users: {
         type: {
             patients: privilegeOptions,
-            customers: privilegeOptions
+            doctors: privilegeOptions
         },
         required: true,
         default: {}

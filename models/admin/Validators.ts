@@ -6,18 +6,18 @@ import Admin from './Admin';
 
 const validator : GeneratedValidator<Admin> = {
   db:{
-    insert:createValidator({
-        name:Joi.string().required(),
-        type:Joi.string().required().allow('MANAGER','ADMIN','HEALTHCENTER'),
-        username:Joi.string().required(),
-        password:Joi.string().required(),
-        privileges:require('../privileges/Validators').default.db.insert.validator
-    }),
+      insert:createValidator({
+          name:Joi.string().required(),
+          type:Joi.string().required().allow('MANAGER','ADMIN','HEALTHCENTER'),
+          username:Joi.string().required(),
+          password:Joi.string().required(),
+          privileges:require('../privileges/Validators').default.db.insert.validator.required()
+      }),
       update:createValidator({
           _id:Joi.string().required(),
           name:Joi.string().required(),
           password:Joi.string().required(),
-          privileges:require('../privileges/Validators').default.db.update.validator
+          privileges:require('../privileges/Validators').default.db.update.validator.required()
       })
   },
   public:{
@@ -26,13 +26,13 @@ const validator : GeneratedValidator<Admin> = {
           type:Joi.string().required().allow('MANAGER','ADMIN','HEALTHCENTER'),
           username:Joi.string().required(),
           password:Joi.string().required(),
-          privileges:require('../privileges/Validators').default.public.post.validator
+          privileges:require('../privileges/Validators').default.public.post.validator.required()
       }),
       patch:createValidator({
           _id:Joi.string().required(),
           name:Joi.string().required(),
           password:Joi.string().required(),
-          privileges:require('../privileges/Validators').default.public.patch.validator
+          privileges:require('../privileges/Validators').default.public.patch.validator.required()
       })
   },
     signin:createValidator({

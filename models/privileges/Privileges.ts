@@ -1,12 +1,13 @@
 interface PrivilegeOptions{
     create:boolean,
     edit:boolean,
-    delete:boolean
+    delete:boolean,
+    view:boolean
 }
 export default interface Privileges{
     users:{
         patients:PrivilegeOptions,
-        customers:PrivilegeOptions
+        doctors:PrivilegeOptions
     },
     admins:{
         support:PrivilegeOptions,

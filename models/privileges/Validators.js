@@ -6,12 +6,13 @@ const Joi_1 = tslib_1.__importDefault(require("../Joi"));
 const privilegeOptions = Joi_1.default.object({
     create: Joi_1.default.boolean().optional().allow(null),
     edit: Joi_1.default.boolean().optional().allow(null),
-    delete: Joi_1.default.boolean().optional().allow(null)
+    delete: Joi_1.default.boolean().optional().allow(null),
+    view: Joi_1.default.boolean().optional().allow(null)
 });
 const general = createValidator_1.default({
     users: Joi_1.default.object({
         patients: privilegeOptions,
-        customers: privilegeOptions
+        doctors: privilegeOptions
     }),
     admins: Joi_1.default.object({
         support: privilegeOptions,

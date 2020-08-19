@@ -6,13 +6,14 @@ import {Privileges} from '../../index';
 const privilegeOptions = Joi.object({
     create: Joi.boolean().optional().allow(null),
     edit: Joi.boolean().optional().allow(null),
-    delete: Joi.boolean().optional().allow(null)
+    delete: Joi.boolean().optional().allow(null),
+    view: Joi.boolean().optional().allow(null)
 })
 
 const general = createValidator({
     users:Joi.object({
         patients: privilegeOptions,
-        customers: privilegeOptions
+        doctors: privilegeOptions
     }),
     admins:Joi.object({
         support: privilegeOptions,

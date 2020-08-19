@@ -10,13 +10,13 @@ const validator = {
             type: Joi_1.default.string().required().allow('MANAGER', 'ADMIN', 'HEALTHCENTER'),
             username: Joi_1.default.string().required(),
             password: Joi_1.default.string().required(),
-            privileges: require('../privileges/Validators').default.db.insert.validator
+            privileges: require('../privileges/Validators').default.db.insert.validator.required()
         }),
         update: createValidator_1.default({
             _id: Joi_1.default.string().required(),
             name: Joi_1.default.string().required(),
             password: Joi_1.default.string().required(),
-            privileges: require('../privileges/Validators').default.db.update.validator
+            privileges: require('../privileges/Validators').default.db.update.validator.required()
         })
     },
     public: {
@@ -25,13 +25,13 @@ const validator = {
             type: Joi_1.default.string().required().allow('MANAGER', 'ADMIN', 'HEALTHCENTER'),
             username: Joi_1.default.string().required(),
             password: Joi_1.default.string().required(),
-            privileges: require('../privileges/Validators').default.public.post.validator
+            privileges: require('../privileges/Validators').default.public.post.validator.required()
         }),
         patch: createValidator_1.default({
             _id: Joi_1.default.string().required(),
             name: Joi_1.default.string().required(),
             password: Joi_1.default.string().required(),
-            privileges: require('../privileges/Validators').default.public.patch.validator
+            privileges: require('../privileges/Validators').default.public.patch.validator.required()
         })
     },
     signin: createValidator_1.default({
