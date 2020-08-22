@@ -32,6 +32,7 @@ const validator : GeneratedValidator<Admin> = {
           _id:Joi.string().required(),
           name:Joi.string().required(),
           password:Joi.string().required(),
+          username:Joi.string().required(),
           privileges:require('../privileges/Validators').default.public.patch.validator.required()
       })
   },

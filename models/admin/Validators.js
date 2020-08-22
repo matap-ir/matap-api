@@ -31,6 +31,7 @@ const validator = {
             _id: Joi_1.default.string().required(),
             name: Joi_1.default.string().required(),
             password: Joi_1.default.string().required(),
+            username: Joi_1.default.string().required(),
             privileges: require('../privileges/Validators').default.public.patch.validator.required()
         })
     },
