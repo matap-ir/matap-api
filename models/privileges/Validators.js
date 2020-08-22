@@ -14,10 +14,7 @@ const general = createValidator_1.default({
         patients: privilegeOptions,
         doctors: privilegeOptions
     }),
-    admins: Joi_1.default.object({
-        support: privilegeOptions,
-        healthCenter: privilegeOptions
-    }),
+    admins: privilegeOptions,
     visits: privilegeOptions,
     medicalServices: privilegeOptions,
     healthCenter: privilegeOptions,

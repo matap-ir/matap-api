@@ -9,10 +9,7 @@ export default interface Privileges{
         patients:PrivilegeOptions,
         doctors:PrivilegeOptions
     },
-    admins:{
-        support:PrivilegeOptions,
-        healthCenter:PrivilegeOptions
-    },
+    admins:PrivilegeOptions,
     visits:PrivilegeOptions,
     medicalServices:PrivilegeOptions,
     healthCenter:PrivilegeOptions,

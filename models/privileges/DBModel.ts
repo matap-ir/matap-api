@@ -20,14 +20,7 @@ const dbModel = {
         required:true,
         default:{}
     },
-    admins:{
-        type:{
-            support: privilegeOptions,
-            healthCenter: privilegeOptions
-        },
-        required:true,
-        default:{}
-    },
+    admins: privilegeOptions,
     visits: privilegeOptions,
     medicalServices: privilegeOptions,
     healthCenter: privilegeOptions,
