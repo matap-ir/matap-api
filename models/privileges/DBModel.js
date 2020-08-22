@@ -22,7 +22,7 @@ const dbModel = {
     admins: privilegeOptions,
     visits: privilegeOptions,
     medicalServices: privilegeOptions,
-    healthCenter: privilegeOptions,
+    healthCenters: privilegeOptions,
     adminLogs: privilegeOptions,
     discounts: privilegeOptions,
     serverConfigs: privilegeOptions,

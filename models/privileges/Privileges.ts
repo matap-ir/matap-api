@@ -12,7 +12,7 @@ export default interface Privileges{
     admins:PrivilegeOptions,
     visits:PrivilegeOptions,
     medicalServices:PrivilegeOptions,
-    healthCenter:PrivilegeOptions,
+    healthCenters:PrivilegeOptions,
     adminLogs:PrivilegeOptions,
     discounts:PrivilegeOptions,
     serverConfigs:PrivilegeOptions,
