@@ -14,6 +14,7 @@ const validator = {
         }),
         update: createValidator_1.default({
             _id: Joi_1.default.string().required(),
+            username: Joi_1.default.string().required(),
             name: Joi_1.default.string().required(),
             password: Joi_1.default.string().required(),
             privileges: require('../privileges/Validators').default.db.update.validator.required()
