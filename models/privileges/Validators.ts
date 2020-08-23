@@ -5,7 +5,8 @@ import {Privileges} from '../../index';
 
 const privilegeOptionsDetails =  Joi.object({
     allowed: Joi.boolean().required(),
-    restrictions: Joi.array().items(Joi.string()).optional().allow(null)
+    restrictions: Joi.array().items(Joi.string()).optional().allow(null),
+    menuVisible: Joi.boolean().required()
 })
 
 const privilegeOptions = Joi.object({

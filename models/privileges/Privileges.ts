@@ -1,6 +1,7 @@
 export interface PrivilegeOptionsDetails{
     allowed: boolean,
-    restrictions:[]
+    restrictions:[],
+    menuVisible: boolean
 }
 export interface PrivilegeOptions{
     create: PrivilegeOptionsDetails,

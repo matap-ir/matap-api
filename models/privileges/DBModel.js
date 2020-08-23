@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const privilegeOptionsDetails = {
     type: {
         allowed: { type: Boolean, required: true, default: false },
-        restrictions: { type: [String], required: false, default: null }
+        restrictions: { type: [String], required: false, default: null },
+        menuVisible: { type: Boolean, required: true }
     },
     default: { allowed: false, restrictions: null },
     required: true
