@@ -3,11 +3,7 @@ import Joi from '../Joi';
 import {GeneratedValidator} from '../Validator';
 import {Privileges} from '../../index';
 
-const privilegeOptionsDetails =  Joi.object({
-    allowed: Joi.boolean().required(),
-    restrictions: Joi.array().items(Joi.string()).optional().allow(null),
-    menuVisible: Joi.boolean().required()
-})
+const privilegeOptionsDetails =  Joi.string().required();
 
 const privilegeOptions = Joi.object({
     create: privilegeOptionsDetails,

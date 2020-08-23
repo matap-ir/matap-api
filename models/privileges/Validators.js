@@ -3,11 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const createValidator_1 = tslib_1.__importDefault(require("../createValidator"));
 const Joi_1 = tslib_1.__importDefault(require("../Joi"));
-const privilegeOptionsDetails = Joi_1.default.object({
-    allowed: Joi_1.default.boolean().required(),
-    restrictions: Joi_1.default.array().items(Joi_1.default.string()).optional().allow(null),
-    menuVisible: Joi_1.default.boolean().required()
-});
+const privilegeOptionsDetails = Joi_1.default.string().required();
 const privilegeOptions = Joi_1.default.object({
     create: privilegeOptionsDetails,
     edit: privilegeOptionsDetails,

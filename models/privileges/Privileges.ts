@@ -1,5 +1,5 @@
 
-export type PrivilegeOptionsDetails = 'all' | 'none' | {_id:string,name:string}[];
+export type PrivilegeOptionsDetails = string;
 
 export interface PrivilegeOptions{
     create: PrivilegeOptionsDetails,

@@ -1,12 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const privilegeOptionsDetails = {
-    type: {
-        allowed: { type: Boolean, required: true, default: false },
-        restrictions: { type: [String], required: true, default: [] },
-        menuVisible: { type: Boolean, required: true }
-    },
-    default: { allowed: false, restrictions: [] },
+    type: String,
+    default: '(function(){ return true; })',
     required: true
 };
 const privilegeOptions = {
