@@ -1,8 +1,7 @@
 export interface PrivilegeOptionsDetails{
     allowed: boolean,
     whiteList:string[] | any[],
-    test: string | ((privilegeOptions,req)=>boolean),
-    filter: string | ((...res)=>any[]),
+    test: string | ((privilegeOptions,req)=>boolean)
 }
 export interface PrivilegeOptions{
     post: PrivilegeOptionsDetails,

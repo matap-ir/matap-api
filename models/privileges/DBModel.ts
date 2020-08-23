@@ -5,8 +5,7 @@ const createPrivilegeOptionsDetails =(ref: string) => {
         type: {
             allowed:{type:Boolean,required:true,default:true},
             whiteList:[{type:ObjectId,ref,required:true,default:[]}],
-            test:{type:String,required:false},
-            filter:{type:String,required:false}
+            test:{type:String,required:false}
         },
         required:true,
         default:[]

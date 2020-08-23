@@ -6,8 +6,7 @@ const Joi_1 = tslib_1.__importDefault(require("../Joi"));
 const privilegeOptionsDetails = Joi_1.default.object().keys({
     allowed: Joi_1.default.boolean().required(),
     whiteList: Joi_1.default.array().items(Joi_1.default.any()).required(),
-    test: Joi_1.default.string().optional().allow(null),
-    filter: Joi_1.default.string().optional().allow(null)
+    test: Joi_1.default.string().optional().allow(null)
 });
 const privilegeOptions = Joi_1.default.object({
     post: privilegeOptionsDetails,
