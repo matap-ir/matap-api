@@ -13,12 +13,12 @@ const createPrivilegeOptionsDetails = (ref) => {
 const createPrivilegeOptions = (ref) => {
     return {
         type: {
-            test: { type: String, required: true, default: '(function(privileges,method,req){ return false; })' },
             menuVisible: { type: Boolean, required: true, default: false },
             post: createPrivilegeOptionsDetails(ref),
             patch: createPrivilegeOptionsDetails(ref),
             delete: createPrivilegeOptionsDetails(ref),
-            get: createPrivilegeOptionsDetails(ref)
+            get: createPrivilegeOptionsDetails(ref),
+            test: { type: String, required: true, default: '(function(privileges,method,req){ return false; })' }
         },
         required: true,
         default: {}
