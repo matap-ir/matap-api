@@ -1,5 +1,6 @@
 
-export type PrivilegeOptionsDetails = string;
+// tslint:disable-next-line:ban-types
+export type PrivilegeOptionsDetails = string | Function;
 
 export interface PrivilegeOptions{
     create: PrivilegeOptionsDetails,
