@@ -5,10 +5,13 @@ const createValidator_1 = tslib_1.__importDefault(require("../createValidator"))
 const Joi_1 = tslib_1.__importDefault(require("../Joi"));
 const privilegeOptionsDetails = Joi_1.default.string().required();
 const privilegeOptions = Joi_1.default.object({
-    create: privilegeOptionsDetails,
-    edit: privilegeOptionsDetails,
+    post: privilegeOptionsDetails,
+    patch: privilegeOptionsDetails,
     delete: privilegeOptionsDetails,
-    view: privilegeOptionsDetails
+    get: privilegeOptionsDetails,
+    put: privilegeOptionsDetails,
+    whiteList: Joi_1.default.array().items(Joi_1.default.any()).required(),
+    menuVisible: Joi_1.default.boolean().required()
 });
 const general = createValidator_1.default({
     users: privilegeOptions,

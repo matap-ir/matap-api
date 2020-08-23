@@ -18,6 +18,7 @@ const createPrivilegeOptions = (ref:string)=> {
             patch: createPrivilegeOptionsDetails(ref),
             delete: createPrivilegeOptionsDetails(ref),
             get: createPrivilegeOptionsDetails(ref),
+            put: createPrivilegeOptionsDetails(ref),
             test:{type:String,required:true,default:'(function(privileges,method,req){ return false; })'}
         },
         required:true,

@@ -7,7 +7,8 @@ export interface PrivilegeOptions{
     post: PrivilegeOptionsDetails,
     patch: PrivilegeOptionsDetails,
     delete: PrivilegeOptionsDetails,
-    get: PrivilegeOptionsDetails
+    get: PrivilegeOptionsDetails,
+    put: PrivilegeOptionsDetails
 }
 export default interface Privileges{
     users:PrivilegeOptions,

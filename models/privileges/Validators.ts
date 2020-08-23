@@ -6,10 +6,13 @@ import {Privileges} from '../../index';
 const privilegeOptionsDetails =  Joi.string().required();
 
 const privilegeOptions = Joi.object({
-    create: privilegeOptionsDetails,
-    edit: privilegeOptionsDetails,
+    post: privilegeOptionsDetails,
+    patch: privilegeOptionsDetails,
     delete: privilegeOptionsDetails,
-    view: privilegeOptionsDetails
+    get: privilegeOptionsDetails,
+    put: privilegeOptionsDetails,
+    whiteList: Joi.array().items(Joi.any()).required(),
+    menuVisible: Joi.boolean().required()
 })
 
 const general = createValidator({
