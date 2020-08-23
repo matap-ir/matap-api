@@ -1,8 +1,6 @@
-export interface PrivilegeOptionsDetails{
-    allowed: boolean,
-    restrictions:[],
-    menuVisible: boolean
-}
+
+export type PrivilegeOptionsDetails = 'all' | 'none' | {_id:string,name:string}[];
+
 export interface PrivilegeOptions{
     create: PrivilegeOptionsDetails,
     edit: PrivilegeOptionsDetails,
