@@ -13,10 +13,7 @@ const privilegeOptions = Joi.object({
 })
 
 const general = createValidator({
-    users:Joi.object({
-        patients: privilegeOptions,
-        doctors: privilegeOptions
-    }),
+    users: privilegeOptions,
     admins: privilegeOptions,
     visits: privilegeOptions,
     medicalServices: privilegeOptions,

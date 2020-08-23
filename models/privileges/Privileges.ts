@@ -1,18 +1,16 @@
-
-// tslint:disable-next-line:ban-types
-export type PrivilegeOptionsDetails = string | Function;
-
+export interface PrivilegeOptionsDetails{
+    test: string | (()=>boolean),
+}
 export interface PrivilegeOptions{
-    create: PrivilegeOptionsDetails,
-    edit: PrivilegeOptionsDetails,
+    menuVisible: boolean,
+    whiteList:string[] | any[],
+    post: PrivilegeOptionsDetails,
+    patch: PrivilegeOptionsDetails,
     delete: PrivilegeOptionsDetails,
-    view: PrivilegeOptionsDetails
+    get: PrivilegeOptionsDetails
 }
 export default interface Privileges{
-    users:{
-        patients:PrivilegeOptions,
-        doctors:PrivilegeOptions
-    },
+    users:PrivilegeOptions,
     admins:PrivilegeOptions,
     visits:PrivilegeOptions,
     medicalServices:PrivilegeOptions,
