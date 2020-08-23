@@ -16,8 +16,7 @@ const privilegeOptions = {
         delete: privilegeOptionsDetails,
         view: privilegeOptionsDetails
     },
-    required:true,
-    default:{}
+    required:true
 }
 
 const dbModel = {
