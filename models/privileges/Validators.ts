@@ -5,7 +5,9 @@ import {Privileges} from '../../index';
 
 const privilegeOptionsDetails =  Joi.object().keys({
     allowed: Joi.boolean().required(),
-    whiteList: Joi.array().items(Joi.any()).required()
+    whiteList: Joi.array().items(Joi.any()).required(),
+    test: Joi.string().optional().allow(null),
+    filter: Joi.string().optional().allow(null)
 })
 
 const privilegeOptions = Joi.object({
@@ -14,8 +16,7 @@ const privilegeOptions = Joi.object({
     delete: privilegeOptionsDetails,
     get: privilegeOptionsDetails,
     put: privilegeOptionsDetails,
-    menuVisible: Joi.boolean().required(),
-    test: Joi.string().optional().allow(null)
+    menuVisible: Joi.boolean().required()
 })
 
 const general = createValidator({

@@ -1,6 +1,8 @@
 export interface PrivilegeOptionsDetails{
     allowed: boolean,
     whiteList:string[] | any[],
+    test: string | ((privilegeOptions,req)=>boolean),
+    filter: string | ((...res)=>any[]),
 }
 export interface PrivilegeOptions{
     post: PrivilegeOptionsDetails,
@@ -8,8 +10,7 @@ export interface PrivilegeOptions{
     delete: PrivilegeOptionsDetails,
     get: PrivilegeOptionsDetails,
     put: PrivilegeOptionsDetails,
-    menuVisible: boolean,
-    test: string | ((privilegeOptions,req)=>boolean)
+    menuVisible: boolean
 }
 export default interface Privileges{
     users:PrivilegeOptions,

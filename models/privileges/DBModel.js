@@ -6,6 +6,8 @@ const createPrivilegeOptionsDetails = (ref) => {
         type: {
             allowed: { type: Boolean, required: true, default: true },
             whiteList: [{ type: mongoose_1.ObjectId, ref, required: true, default: [] }],
+            test: { type: String, required: false },
+            filter: { type: String, required: false }
         },
         required: true,
         default: []
@@ -19,7 +21,6 @@ const createPrivilegeOptions = (ref) => {
             delete: createPrivilegeOptionsDetails(ref),
             get: createPrivilegeOptionsDetails(ref),
             put: createPrivilegeOptionsDetails(ref),
-            test: { type: String, required: false },
             menuVisible: { type: Boolean, required: true, default: false }
         },
         required: true,
