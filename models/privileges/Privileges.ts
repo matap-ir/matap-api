@@ -1,8 +1,12 @@
+export interface PrivilegeOptionsDetails{
+    allowed: boolean,
+    restrictions:[]
+}
 export interface PrivilegeOptions{
-    create:boolean,
-    edit:boolean,
-    delete:boolean,
-    view:boolean
+    create: PrivilegeOptionsDetails,
+    edit: PrivilegeOptionsDetails,
+    delete: PrivilegeOptionsDetails,
+    view: PrivilegeOptionsDetails
 }
 export default interface Privileges{
     users:{

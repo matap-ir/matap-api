@@ -1,11 +1,20 @@
 import { ObjectId } from 'mongoose';
 
+const privilegeOptionsDetails = {
+    type:{
+        allowed: {type:Boolean,required:true,default:false},
+        restrictions: {type:[String],required:false,default:null}
+    },
+    default:{allowed: false,restrictions: null},
+    required:true
+}
+
 const privilegeOptions = {
     type:{
-        create: { type:Boolean,required:true,default:false },
-        edit: { type:Boolean,required:true,default:false },
-        delete: { type:Boolean,required:true,default:false },
-        view: { type:Boolean,required:true,default:false }
+        create: privilegeOptionsDetails,
+        edit: privilegeOptionsDetails,
+        delete: privilegeOptionsDetails,
+        view: privilegeOptionsDetails
     },
     required:true,
     default:{}
