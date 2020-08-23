@@ -1,14 +1,15 @@
 export interface PrivilegeOptionsDetails{
-    test: string | (()=>boolean),
+    allowed: boolean,
+    whiteList:string[] | any[],
 }
 export interface PrivilegeOptions{
-    menuVisible: boolean,
-    whiteList:string[] | any[],
     post: PrivilegeOptionsDetails,
     patch: PrivilegeOptionsDetails,
     delete: PrivilegeOptionsDetails,
     get: PrivilegeOptionsDetails,
-    put: PrivilegeOptionsDetails
+    put: PrivilegeOptionsDetails,
+    menuVisible: boolean,
+    test: string | ((privilegeOptions,req)=>boolean)
 }
 export default interface Privileges{
     users:PrivilegeOptions,
@@ -21,5 +22,6 @@ export default interface Privileges{
     serverConfigs:PrivilegeOptions,
     serviceRequests:PrivilegeOptions,
     specializations:PrivilegeOptions,
-    transactions:PrivilegeOptions
+    transactions:PrivilegeOptions,
+    defaultTestFunction: string
 }

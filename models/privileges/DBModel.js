@@ -4,6 +4,7 @@ const mongoose_1 = require("mongoose");
 const createPrivilegeOptionsDetails = (ref) => {
     return {
         type: {
+            allowed: { type: Boolean, required: true, default: true },
             whiteList: [{ type: mongoose_1.ObjectId, ref, required: true, default: [] }],
         },
         required: true,
@@ -13,13 +14,13 @@ const createPrivilegeOptionsDetails = (ref) => {
 const createPrivilegeOptions = (ref) => {
     return {
         type: {
-            menuVisible: { type: Boolean, required: true, default: false },
             post: createPrivilegeOptionsDetails(ref),
             patch: createPrivilegeOptionsDetails(ref),
             delete: createPrivilegeOptionsDetails(ref),
             get: createPrivilegeOptionsDetails(ref),
             put: createPrivilegeOptionsDetails(ref),
-            test: { type: String, required: true, default: '(function(privileges,method,req){ return false; })' }
+            test: { type: String, required: false },
+            menuVisible: { type: Boolean, required: true, default: false }
         },
         required: true,
         default: {}
