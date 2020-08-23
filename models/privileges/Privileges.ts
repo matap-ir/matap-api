@@ -1,4 +1,4 @@
-interface PrivilegeOptions{
+export interface PrivilegeOptions{
     create:boolean,
     edit:boolean,
     delete:boolean,
