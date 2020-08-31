@@ -22,8 +22,10 @@ import ServiceRequest from 'models/service_request/ServiceRequest';
 import ResponseTime from './models/response_time/ResponseTime';
 import AdminLog from 'models/admin_log/AdminLog';
 import Privileges,{PrivilegeOptions,PrivilegeOptionsDetails} from './models/privileges/Privileges';
+import Notification from './models/notification/Notification';
 
 export {
+    Notification,
     PrivilegeOptionsDetails,
     PrivilegeOptions,
     Privileges,
