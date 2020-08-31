@@ -7,5 +7,6 @@ export default interface Notification{
     success: number,
     fails: number,
     date: number,
-    sender: string | Admin
+    sender: string | Admin,
+    state:'SENDING' | 'DONE'
 }

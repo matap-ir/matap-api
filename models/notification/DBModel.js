@@ -7,5 +7,6 @@ const dbModel = {
     fails: { type: Number, required: true },
     date: { type: Number, required: true },
     sender: { type: Number, required: true },
+    state: { type: String, required: true }
 };
 exports.default = dbModel;

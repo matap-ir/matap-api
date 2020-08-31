@@ -12,11 +12,13 @@ const validator : GeneratedValidator<MedicalService> = {
             success:Joi.number().required(),
             fails:Joi.number().required(),
             date:Joi.number().required(),
-            sender:Joi.any().required()
+            sender:Joi.any().required(),
+            state:Joi.string().required()
         }),
         update:createValidator({
             success:Joi.number().required(),
-            fails:Joi.number().required()
+            fails:Joi.number().required(),
+            state:Joi.string().required()
         })
     },
     public:{
