@@ -1,0 +1,11 @@
+import { ObjectId } from 'mongoose';
+const dbModel = {
+    title:{type:String,required:true},
+    body:{type:String,required:true},
+    success:{type:Number,required: true},
+    fails:{type:Number,required:true},
+    date:{type:Number,required:true},
+    sender:{type:Number,required:true},
+};
+
+export default dbModel;

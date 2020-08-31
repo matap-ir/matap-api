@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.ChatType = exports.EventType = exports.IOStatus = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.AdminType = exports.UserType = void 0;
 var UserType;
 (function (UserType) {
@@ -83,3 +83,4 @@ var ChatType;
     ChatType["GIF"] = "GIF";
     ChatType["PDF"] = "PDF";
 })(ChatType = exports.ChatType || (exports.ChatType = {}));
+//# sourceMappingURL=Enums.js.map
