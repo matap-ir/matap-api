@@ -37,6 +37,7 @@ const dbModel = {
     serverConfigs: createPrivilegeOptions('server_config'),
     serviceRequests: createPrivilegeOptions('service_requests'),
     specializations: createPrivilegeOptions('specializations'),
-    transactions: createPrivilegeOptions('transactions')
+    transactions: createPrivilegeOptions('transactions'),
+    notifications: createPrivilegeOptions('notifications')
 };
 exports.default = dbModel;

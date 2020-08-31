@@ -1,6 +1,6 @@
 import { ObjectId,Schema } from 'mongoose';
 
-const createPrivilegeOptionsDetails =(ref: string) => {
+const createPrivilegeOptionsDetails =(ref?: string) => {
     return{
         type: {
             allowed:{type:Boolean,required:true,default:true},
@@ -38,7 +38,8 @@ const dbModel = {
     serverConfigs: createPrivilegeOptions('server_config'),
     serviceRequests: createPrivilegeOptions('service_requests'),
     specializations: createPrivilegeOptions('specializations'),
-    transactions: createPrivilegeOptions('transactions')
+    transactions: createPrivilegeOptions('transactions'),
+    notifications: createPrivilegeOptions('notifications')
 }
 
 export default dbModel;
