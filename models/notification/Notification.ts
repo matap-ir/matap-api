@@ -8,5 +8,5 @@ export default interface Notification{
     fails: number,
     date: number,
     sender: string | Admin,
-    state:'SENDING' | 'DONE'
+    state:'SENDING' | 'DONE' | 'FAILED'
 }
