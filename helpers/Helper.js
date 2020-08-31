@@ -1,24 +1,25 @@
 "use strict";
-exports.__esModule = true;
-var v4_1 = require("uuid/v4");
-var generateUUID = function () {
-    return v4_1["default"]();
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+const v4_1 = tslib_1.__importDefault(require("uuid/v4"));
+const generateUUID = () => {
+    return v4_1.default();
 };
-var createResponsiveDaysText = function (responseDays) {
+const createResponsiveDaysText = (responseDays) => {
     if (!responseDays || responseDays === '') {
         return '';
     }
-    var text = '';
-    Object.keys(responseDays).forEach(function (day) {
-        var array = responseDays[day];
-        array.forEach(function (responseTime) {
-            var dayText = dayNumberToString(day);
+    let text = '';
+    Object.keys(responseDays).forEach((day) => {
+        const array = responseDays[day];
+        array.forEach((responseTime) => {
+            const dayText = dayNumberToString(day);
             text = text.concat(dayText + ' => ' + responseTime.from.hour + ':' + responseTime.from.minute + ' - ' + responseTime.to.hour + ':' + responseTime.to.minute + '\n');
         });
     });
     return text;
 };
-var dayNumberToString = function (day) {
+const dayNumberToString = (day) => {
     switch (day) {
         case '0':
             return 'یکشنبه';
@@ -38,9 +39,8 @@ var dayNumberToString = function (day) {
             return '';
     }
 };
-exports["default"] = {
-    generateUUID: generateUUID,
-    dayNumberToString: dayNumberToString,
-    createResponsiveDaysText: createResponsiveDaysText
+exports.default = {
+    generateUUID,
+    dayNumberToString,
+    createResponsiveDaysText
 };
-//# sourceMappingURL=Helper.js.map
