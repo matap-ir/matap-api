@@ -10,14 +10,12 @@ const validator : GeneratedValidator<MedicalService> = {
             title:Joi.string().required(),
             body:Joi.string().required(),
             successCount:Joi.number().required(),
-            fails:Joi.number().required(),
             date:Joi.number().required(),
             sender:Joi.any().required(),
             state:Joi.string().required()
         }),
         update:createValidator({
             successCount:Joi.number().required(),
-            fails:Joi.number().required(),
             state:Joi.string().required()
         })
     },

@@ -9,14 +9,12 @@ const validator = {
             title: Joi_1.default.string().required(),
             body: Joi_1.default.string().required(),
             successCount: Joi_1.default.number().required(),
-            fails: Joi_1.default.number().required(),
             date: Joi_1.default.number().required(),
             sender: Joi_1.default.any().required(),
             state: Joi_1.default.string().required()
         }),
         update: createValidator_1.default({
             successCount: Joi_1.default.number().required(),
-            fails: Joi_1.default.number().required(),
             state: Joi_1.default.string().required()
         })
     },
