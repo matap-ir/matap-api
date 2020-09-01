@@ -6,7 +6,7 @@ const Joi_1 = tslib_1.__importDefault(require("../Joi"));
 const validator = {
     db: {
         insert: createValidator_1.default({
-            title: Joi_1.default.string().optional(),
+            title: Joi_1.default.string().required(),
             body: Joi_1.default.string().required(),
             successCount: Joi_1.default.number().required(),
             fails: Joi_1.default.number().required(),
@@ -22,7 +22,7 @@ const validator = {
     },
     public: {
         post: createValidator_1.default({
-            title: Joi_1.default.string().optional(),
+            title: Joi_1.default.string().required(),
             body: Joi_1.default.string().required()
         }),
         patch: createValidator_1.default({})

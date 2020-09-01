@@ -7,7 +7,7 @@ import {MedicalService} from '../../index';
 const validator : GeneratedValidator<MedicalService> = {
     db:{
         insert:createValidator({
-            title:Joi.string().optional(),
+            title:Joi.string().required(),
             body:Joi.string().required(),
             successCount:Joi.number().required(),
             fails:Joi.number().required(),
@@ -23,7 +23,7 @@ const validator : GeneratedValidator<MedicalService> = {
     },
     public:{
         post:createValidator({
-            title:Joi.string().optional(),
+            title:Joi.string().required(),
             body:Joi.string().required()
         }),
         patch:createValidator({
