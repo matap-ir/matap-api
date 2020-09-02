@@ -7,10 +7,12 @@ export default interface ServerConfig {
     termsandconditions: string,
     android:{
         forceUpdate:boolean,
-        versionCode:string
+        versionCode:string,
+        downloadLink: string
     },
     ios:{
         forceUpdate:boolean,
-        versionCode:string
+        versionCode:string,
+        downloadLink: string
     }
 }
