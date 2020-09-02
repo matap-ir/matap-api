@@ -7,11 +7,11 @@ const dbModel = {
     forceSpeaker:Boolean,
     termsandconditions: String,
     android:{
-        forceUpdate:{type:Boolean,required:true},
+        forceUpdate:{type:Boolean,required:true,default:false},
         versionCode:{type:String,required:true}
     },
     ios:{
-        forceUpdate:{type:Boolean,required:true},
+        forceUpdate:{type:Boolean,required:true,default:false},
         versionCode:{type:String,required:true}
     }
 };
