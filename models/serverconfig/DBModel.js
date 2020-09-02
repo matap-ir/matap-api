@@ -6,6 +6,14 @@ const dbModel = {
     },
     mediaConstraints: Object,
     forceSpeaker: Boolean,
-    termsandconditions: String
+    termsandconditions: String,
+    android: {
+        forceUpdate: { type: Boolean, required: true },
+        versionCode: { type: String, required: true }
+    },
+    ios: {
+        forceUpdate: { type: Boolean, required: true },
+        versionCode: { type: String, required: true }
+    }
 };
 exports.default = dbModel;
