@@ -10,12 +10,14 @@ const dbModel = {
     android: {
         forceUpdate: { type: Boolean, required: true },
         versionCode: { type: String, required: true },
-        downloadLink: { type: String, required: true }
+        downloadLink: { type: String, required: true },
+        changeLog: { type: String, required: true }
     },
     ios: {
         forceUpdate: { type: Boolean, required: true },
         versionCode: { type: String, required: true },
-        downloadLink: { type: String, required: true }
+        downloadLink: { type: String, required: true },
+        changeLog: { type: String, required: true }
     }
 };
 exports.default = dbModel;

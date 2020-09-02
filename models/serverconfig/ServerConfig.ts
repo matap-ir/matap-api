@@ -8,11 +8,13 @@ export default interface ServerConfig {
     android:{
         forceUpdate:boolean,
         versionCode:string,
-        downloadLink: string
+        downloadLink: string,
+        changeLog: string
     },
     ios:{
         forceUpdate:boolean,
         versionCode:string,
-        downloadLink: string
+        downloadLink: string,
+        changeLog: string
     }
 }
