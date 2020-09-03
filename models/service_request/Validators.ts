@@ -36,7 +36,8 @@ const validator : GeneratedValidator<MedicalService> = {
           service: Joi.string().required(),
           mobile:Joi.string().required(),
           gender:Joi.string().required().allow('male','female'),
-          details:Joi.string().required()
+          details:Joi.string().required(),
+          app:Joi.string().required()
       }),
       patch:createValidator({
           _id:Joi.any().required(),

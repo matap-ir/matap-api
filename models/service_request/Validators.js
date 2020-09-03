@@ -35,7 +35,8 @@ const validator = {
             service: Joi_1.default.string().required(),
             mobile: Joi_1.default.string().required(),
             gender: Joi_1.default.string().required().allow('male', 'female'),
-            details: Joi_1.default.string().required()
+            details: Joi_1.default.string().required(),
+            app: Joi_1.default.string().required()
         }),
         patch: createValidator_1.default({
             _id: Joi_1.default.any().required(),
