@@ -12,7 +12,8 @@ const validator = {
             logoUrl: Joi_1.default.string().optional(),
             type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC'),
             percentage: Joi_1.default.number().required().min(0).max(100),
-            priorities: Joi_1.default.array().items(Joi_1.default.string()).optional()
+            priorities: Joi_1.default.array().items(Joi_1.default.string()).optional(),
+            shaba: Joi_1.default.string().optional().allow(null)
         }),
         update: createValidator_1.default({
             _id: Joi_1.default.any().required(),
@@ -22,7 +23,8 @@ const validator = {
             logoUrl: Joi_1.default.string().optional(),
             type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').optional(),
             percentage: Joi_1.default.number().required().min(0).max(100),
-            priorities: Joi_1.default.array().items(Joi_1.default.string()).required()
+            priorities: Joi_1.default.array().items(Joi_1.default.string()).required(),
+            shaba: Joi_1.default.string().optional().allow(null)
         })
     },
     public: {
@@ -32,7 +34,8 @@ const validator = {
             logoUrl: Joi_1.default.string().optional(),
             type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').required(),
             percentage: Joi_1.default.number().required().min(0).max(100),
-            priorities: Joi_1.default.array().items(Joi_1.default.string()).optional()
+            priorities: Joi_1.default.array().items(Joi_1.default.string()).optional(),
+            shaba: Joi_1.default.string().optional().allow(null)
         }),
         patch: createValidator_1.default({
             _id: Joi_1.default.any().required(),
@@ -42,7 +45,8 @@ const validator = {
             logoUrl: Joi_1.default.string().optional(),
             type: Joi_1.default.string().allow('HOSPITAL', 'CLINIC').optional(),
             percentage: Joi_1.default.number().required().min(0).max(100),
-            priorities: Joi_1.default.array().items(Joi_1.default.string()).optional()
+            priorities: Joi_1.default.array().items(Joi_1.default.string()).optional(),
+            shaba: Joi_1.default.string().optional().allow(null)
         })
     }
 };

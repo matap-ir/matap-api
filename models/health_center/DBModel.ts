@@ -7,6 +7,7 @@ const dbModel = {
     type:{type:String,required:true},
     percentage:{type:Number,required:true,default:0},
     priorities:{type:[String],required:true,default:[]},
+    shaba:{type:String,required:false}
 };
 
 export default dbModel;

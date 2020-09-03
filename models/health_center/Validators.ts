@@ -13,7 +13,8 @@ const validator : GeneratedValidator<HealthCenter> = {
         logoUrl:Joi.string().optional(),
         type: Joi.string().allow('HOSPITAL','CLINIC'),
         percentage: Joi.number().required().min(0).max(100),
-        priorities: Joi.array().items(Joi.string()).optional()
+        priorities: Joi.array().items(Joi.string()).optional(),
+        shaba:Joi.string().optional().allow(null)
     }),
       update:createValidator({
           _id:Joi.any().required(),
@@ -23,7 +24,8 @@ const validator : GeneratedValidator<HealthCenter> = {
           logoUrl:Joi.string().optional(),
           type: Joi.string().allow('HOSPITAL','CLINIC').optional(),
           percentage: Joi.number().required().min(0).max(100),
-          priorities: Joi.array().items(Joi.string()).required()
+          priorities: Joi.array().items(Joi.string()).required(),
+          shaba:Joi.string().optional().allow(null)
       })
   },
   public:{
@@ -33,7 +35,8 @@ const validator : GeneratedValidator<HealthCenter> = {
           logoUrl:Joi.string().optional(),
           type: Joi.string().allow('HOSPITAL','CLINIC').required(),
           percentage: Joi.number().required().min(0).max(100),
-          priorities: Joi.array().items(Joi.string()).optional()
+          priorities: Joi.array().items(Joi.string()).optional(),
+          shaba:Joi.string().optional().allow(null)
       }),
       patch:createValidator({
           _id:Joi.any().required(),
@@ -43,7 +46,8 @@ const validator : GeneratedValidator<HealthCenter> = {
           logoUrl:Joi.string().optional(),
           type: Joi.string().allow('HOSPITAL','CLINIC').optional(),
           percentage: Joi.number().required().min(0).max(100),
-          priorities: Joi.array().items(Joi.string()).optional()
+          priorities: Joi.array().items(Joi.string()).optional(),
+          shaba:Joi.string().optional().allow(null)
       })
   }
 };
