@@ -16,7 +16,8 @@ const validator : GeneratedValidator<MedicalService> = {
         trackingCode:Joi.string().required(),
         status:Joi.string().required(),
         price:Joi.number().optional().allow(null),
-        requester:Joi.any().required()
+        requester:Joi.any().required(),
+        app:Joi.string().required()
     }),
       update:createValidator({
           _id:Joi.any().required(),

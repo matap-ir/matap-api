@@ -11,6 +11,7 @@ const dbModel = {
     details: { type: String, required: true },
     trackingCode: { type: String, required: true, unique: true },
     status: { type: String, required: true },
-    requester: { type: mongoose_1.ObjectId, ref: 'users', required: true }
+    requester: { type: mongoose_1.ObjectId, ref: 'users', required: true },
+    app: { type: String, required: true }
 };
 exports.default = dbModel;

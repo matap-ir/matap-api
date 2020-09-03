@@ -15,7 +15,8 @@ const validator = {
             trackingCode: Joi_1.default.string().required(),
             status: Joi_1.default.string().required(),
             price: Joi_1.default.number().optional().allow(null),
-            requester: Joi_1.default.any().required()
+            requester: Joi_1.default.any().required(),
+            app: Joi_1.default.string().required()
         }),
         update: createValidator_1.default({
             _id: Joi_1.default.any().required(),
