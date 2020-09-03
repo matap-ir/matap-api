@@ -9,5 +9,6 @@ export default interface HealthCenter{
     type: HealthCenterType,
     percentage: number,
     priorities:string[],
-    shaba: string
+    shaba: string,
+    priority: number
 };
