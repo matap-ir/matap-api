@@ -1,12 +1,11 @@
 import uuidv4 from 'uuid/v4';
-import {Privileges, ResponseTime} from '../index';
-import {AdminType} from '../models/Enums';
+import {ResponseTime} from '../index';
 
 const generateUUID = () => {
     return uuidv4();
 };
 
-const createResponsiveDaysText = (responseDays: {}): string=>{
+const createResponsiveDaysText = (responseDays: {},language = 'fa'): string=>{
     if(!responseDays || responseDays === ''){
         return '';
     }
@@ -21,22 +20,22 @@ const createResponsiveDaysText = (responseDays: {}): string=>{
     return text;
 };
 
-const dayNumberToString = (day: string): string => {
+const dayNumberToString = (day: string,lang = 'fa'): string => {
     switch (day) {
         case '0':
-            return 'یکشنبه';
+            return lang === 'fa' ? 'یکشنبه' : 'Sunday';
         case '1':
-            return 'دوشنبه';
+            return lang === 'fa' ? 'دوشنبه' : 'Monday';
         case '2':
-            return 'سه شنبه';
+            return lang === 'fa' ? 'سه شنبه' : 'Tuesday';
         case '3':
-            return 'چهارشنبه';
+            return lang === 'fa' ? 'چهارشنبه' : 'Wednesday';
         case '4':
-            return 'پنجشنبه';
+            return lang === 'fa' ? 'پنجشنبه' : 'Thursday';
         case '5':
-            return 'جمعه';
+            return lang === 'fa' ? 'جمعه' : 'Friday';
         case '6':
-            return 'شنبه';
+            return lang === 'fa' ? 'شنبه' : 'Saturday';
         default:
             return '';
     }

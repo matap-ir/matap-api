@@ -5,7 +5,7 @@ const v4_1 = tslib_1.__importDefault(require("uuid/v4"));
 const generateUUID = () => {
     return v4_1.default();
 };
-const createResponsiveDaysText = (responseDays) => {
+const createResponsiveDaysText = (responseDays, language = 'fa') => {
     if (!responseDays || responseDays === '') {
         return '';
     }
@@ -19,22 +19,22 @@ const createResponsiveDaysText = (responseDays) => {
     });
     return text;
 };
-const dayNumberToString = (day) => {
+const dayNumberToString = (day, lang = 'fa') => {
     switch (day) {
         case '0':
-            return 'یکشنبه';
+            return lang === 'fa' ? 'یکشنبه' : 'Sunday';
         case '1':
-            return 'دوشنبه';
+            return lang === 'fa' ? 'دوشنبه' : 'Monday';
         case '2':
-            return 'سه شنبه';
+            return lang === 'fa' ? 'سه شنبه' : 'Tuesday';
         case '3':
-            return 'چهارشنبه';
+            return lang === 'fa' ? 'چهارشنبه' : 'Wednesday';
         case '4':
-            return 'پنجشنبه';
+            return lang === 'fa' ? 'پنجشنبه' : 'Thursday';
         case '5':
-            return 'جمعه';
+            return lang === 'fa' ? 'جمعه' : 'Friday';
         case '6':
-            return 'شنبه';
+            return lang === 'fa' ? 'شنبه' : 'Saturday';
         default:
             return '';
     }
