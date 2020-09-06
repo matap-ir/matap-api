@@ -15,6 +15,7 @@ const validator : GeneratedValidator<User> = {
                 code:Joi.number().required(),
                 price:Joi.number().required(),
                 fcmtoken:Joi.string().optional().allow(null),
+                creationDate:Joi.number().required(),
                 specialization:require('../specialization/Validators').default.db.update.validator.required(),
                 gender:Joi.string().optional().allow('','male','female'),
                 details:Joi.object().required().keys({

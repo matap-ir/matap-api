@@ -13,6 +13,7 @@ const validator = {
                 code: Joi_1.default.number().required(),
                 price: Joi_1.default.number().required(),
                 fcmtoken: Joi_1.default.string().optional().allow(null),
+                creationDate: Joi_1.default.number().required(),
                 specialization: require('../specialization/Validators').default.db.update.validator.required(),
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
                 details: Joi_1.default.object().required().keys({

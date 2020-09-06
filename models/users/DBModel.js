@@ -13,6 +13,7 @@ const dbModel = {
     ready: { type: Boolean, default: false },
     sms_code: { type: String, required: false },
     fcmtoken: { type: String, required: false },
+    creationDate: { type: Number, required: true },
     finalizable_visits: { type: [String], default: [] },
     gender: { type: String, default: '' },
     details: {

@@ -16,6 +16,7 @@ export default interface User {
     ready: boolean,
     sms_code: string,
     fcmtoken: string,
+    creationDate: number,
     finalizable_visits:Visit[] | string[],
     gender:'male' | 'female' | '',
     details:{
