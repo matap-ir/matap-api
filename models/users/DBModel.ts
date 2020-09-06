@@ -2,7 +2,7 @@ import { ObjectId } from 'mongoose';
 const dbModel = {
     mobile: {type: String,index:true,unique:true, required: true},
     type:{type: String,require:true},
-    name:{type:String,required:true},
+    name:{type:String,required:false,default:''},
     imageUrl:{type:String},
     code:{type:Number,index:true,unique:true,sparse:true},
     specialization:{type:ObjectId,ref:'specializations'},
