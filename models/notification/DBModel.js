@@ -7,6 +7,7 @@ const dbModel = {
     successCount: { type: Number, required: true },
     date: { type: Number, required: true },
     sender: { type: mongoose_1.ObjectId, required: true, ref: 'admins' },
-    state: { type: String, required: true }
+    state: { type: String, required: true },
+    link: { type: String, required: false }
 };
 exports.default = dbModel;
