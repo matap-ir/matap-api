@@ -13,7 +13,7 @@ const validator : GeneratedValidator<MedicalService> = {
             date:Joi.number().required(),
             sender:Joi.any().required(),
             state:Joi.string().required(),
-            link: Joi.string().required()
+            link: Joi.string().optional().allow(null).allow('')
         }),
         update:createValidator({
             successCount:Joi.number().required(),
