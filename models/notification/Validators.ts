@@ -12,7 +12,8 @@ const validator : GeneratedValidator<MedicalService> = {
             successCount:Joi.number().required(),
             date:Joi.number().required(),
             sender:Joi.any().required(),
-            state:Joi.string().required()
+            state:Joi.string().required(),
+            link: Joi.string().optional().allow(null).allow('')
         }),
         update:createValidator({
             successCount:Joi.number().required(),
@@ -22,7 +23,8 @@ const validator : GeneratedValidator<MedicalService> = {
     public:{
         post:createValidator({
             title:Joi.string().required(),
-            body:Joi.string().required()
+            body:Joi.string().required(),
+            link: Joi.string().optional().allow(null).allow('')
         }),
         patch:createValidator({
 

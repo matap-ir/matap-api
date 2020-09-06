@@ -11,7 +11,8 @@ const validator = {
             successCount: Joi_1.default.number().required(),
             date: Joi_1.default.number().required(),
             sender: Joi_1.default.any().required(),
-            state: Joi_1.default.string().required()
+            state: Joi_1.default.string().required(),
+            link: Joi_1.default.string().optional().allow(null).allow('')
         }),
         update: createValidator_1.default({
             successCount: Joi_1.default.number().required(),
@@ -21,7 +22,8 @@ const validator = {
     public: {
         post: createValidator_1.default({
             title: Joi_1.default.string().required(),
-            body: Joi_1.default.string().required()
+            body: Joi_1.default.string().required(),
+            link: Joi_1.default.string().optional().allow(null).allow('')
         }),
         patch: createValidator_1.default({})
     }
