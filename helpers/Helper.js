@@ -5,7 +5,7 @@ const v4_1 = tslib_1.__importDefault(require("uuid/v4"));
 const generateUUID = () => {
     return v4_1.default();
 };
-const createResponsiveDaysText = (responseDays, language = 'fa') => {
+const createResponsiveDaysText = (responseDays, lang = 'fa') => {
     if (!responseDays || responseDays === '') {
         return '';
     }
@@ -13,7 +13,7 @@ const createResponsiveDaysText = (responseDays, language = 'fa') => {
     Object.keys(responseDays).forEach((day) => {
         const array = responseDays[day];
         array.forEach((responseTime) => {
-            const dayText = dayNumberToString(day);
+            const dayText = dayNumberToString(day, lang);
             text = text.concat(dayText + ' => ' + responseTime.from.hour + ':' + responseTime.from.minute + ' - ' + responseTime.to.hour + ':' + responseTime.to.minute + '\n');
         });
     });

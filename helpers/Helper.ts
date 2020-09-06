@@ -5,7 +5,7 @@ const generateUUID = () => {
     return uuidv4();
 };
 
-const createResponsiveDaysText = (responseDays: {},language = 'fa'): string=>{
+const createResponsiveDaysText = (responseDays: {},lang = 'fa'): string=>{
     if(!responseDays || responseDays === ''){
         return '';
     }
@@ -13,7 +13,7 @@ const createResponsiveDaysText = (responseDays: {},language = 'fa'): string=>{
     Object.keys(responseDays).forEach((day)=>{
         const array:ResponseTime[] = responseDays[day];
         array.forEach((responseTime)=>{
-            const dayText = dayNumberToString(day);
+            const dayText = dayNumberToString(day,lang);
             text = text.concat(dayText+' => '+responseTime.from.hour+':'+responseTime.from.minute+' - '+responseTime.to.hour+':'+responseTime.to.minute +'\n');
         })
     });
