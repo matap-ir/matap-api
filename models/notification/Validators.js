@@ -12,7 +12,7 @@ const validator = {
             date: Joi_1.default.number().required(),
             sender: Joi_1.default.any().required(),
             state: Joi_1.default.string().required(),
-            link: Joi_1.default.string().optional().allow(null).allow('')
+            link: Joi_1.default.string().optional()
         }),
         update: createValidator_1.default({
             successCount: Joi_1.default.number().required(),
