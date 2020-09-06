@@ -39,6 +39,7 @@ const validator = {
                 mobile: Joi_1.phone().required(),
                 name: Joi_1.default.string().optional().allow(''),
                 type: Joi_1.default.string().required().allow('PATIENT'),
+                creationDate: Joi_1.default.number().required(),
                 currency: Joi_1.default.number().optional(),
             }))
         },

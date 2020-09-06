@@ -42,6 +42,7 @@ const validator : GeneratedValidator<User> = {
                 mobile:phone().required(),
                 name:Joi.string().optional().allow(''),
                 type:Joi.string().required().allow('PATIENT'),
+                creationDate:Joi.number().required(),
                 currency: Joi.number().optional(),
             })
         )
