@@ -6,6 +6,8 @@ const dbModel = {
     type: { type: String, required: false },
     date: { type: Number, required: true },
     error: { type: String, required: true },
+    occurrences: { type: Number, required: false, default: 0 },
+    resolved: { type: Boolean, required: false, default: false },
     user: {
         type: {
             userId: { type: String, required: false },

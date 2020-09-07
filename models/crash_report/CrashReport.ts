@@ -7,6 +7,8 @@ export default interface CrashReport{
     type:'native' | 'js',
     date: number,
     error: string,
+    occurrences: number,
+    resolved: number,
     user:{
         userId: string,
         userType: UserType | null,
