@@ -1,6 +1,7 @@
 import {UserType} from '../Enums';
 
 export default interface CrashReport{
+    _id: string,
     os:'android' | 'ios' | 'web',
     fatal: boolean,
     type:'native' | 'js',
