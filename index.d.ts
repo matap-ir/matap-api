@@ -23,8 +23,10 @@ import ResponseTime from './models/response_time/ResponseTime';
 import AdminLog from 'models/admin_log/AdminLog';
 import Privileges,{PrivilegeOptions,PrivilegeOptionsDetails} from './models/privileges/Privileges';
 import Notification from './models/notification/Notification';
+import CrashReport from './models/crash_report/CrashReport';
 
 export {
+    CrashReport,
     Notification,
     PrivilegeOptionsDetails,
     PrivilegeOptions,
