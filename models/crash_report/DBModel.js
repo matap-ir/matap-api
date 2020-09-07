@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = require("mongoose");
 const dbModel = {
     os: { type: String, required: false },
     fatal: { type: Boolean, required: false },
     type: { type: String, required: false },
     date: { type: Number, required: true },
-    error: { type: String, required: true },
+    error: { type: mongoose_1.Schema.Types.Mixed, required: true },
     occurrences: { type: Number, required: false, default: 0 },
     resolved: { type: Boolean, required: false, default: false },
     user: {

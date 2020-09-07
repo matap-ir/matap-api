@@ -6,7 +6,7 @@ export default interface CrashReport{
     fatal: boolean,
     type:'native' | 'js',
     date: number,
-    error: string,
+    error: any,
     occurrences: number,
     resolved: number,
     user:{

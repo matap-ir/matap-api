@@ -1,10 +1,11 @@
-import { ObjectId } from 'mongoose';
+import { ObjectId,Schema } from 'mongoose';
+
 const dbModel = {
     os:{type: String,required:false},
     fatal: {type: Boolean,required:false},
     type: {type:String,required:false},
     date: {type:Number,required:true},
-    error: {type:String,required:true},
+    error: {type:Schema.Types.Mixed,required:true},
     occurrences: {type:Number,required:false,default:0},
     resolved:{type:Boolean,required:false,default:false},
     user:{
