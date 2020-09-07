@@ -5,6 +5,7 @@ export default interface ServerConfig {
     mediaConstraints:{},
     forceSpeaker: boolean,
     termsandconditions: string,
+    retryThreshold: number,
     android:{
         forceUpdate:boolean,
         versionCode:string,

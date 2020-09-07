@@ -7,6 +7,7 @@ const dbModel = {
     mediaConstraints: Object,
     forceSpeaker: Boolean,
     termsandconditions: String,
+    retryThreshold: Number,
     android: {
         forceUpdate: { type: Boolean, required: true },
         versionCode: { type: String, required: true },

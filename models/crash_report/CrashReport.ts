@@ -6,7 +6,12 @@ export default interface CrashReport{
     fatal: boolean,
     type:'native' | 'js',
     date: number,
-    error: any,
+    error: {
+        name: string,
+        message: string,
+        stack:any,
+        object:any
+    },
     occurrences: number,
     resolved: number,
     user:{
