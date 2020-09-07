@@ -8,6 +8,7 @@ interface CallOffer{
     initiator: {id: string},
     receiver: {id: string},
     mediaConstraints:{},
+    retryThreshold: number,
     forceSpeaker: boolean
 }
 
