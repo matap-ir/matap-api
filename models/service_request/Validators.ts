@@ -17,7 +17,7 @@ const validator : GeneratedValidator<MedicalService> = {
         status:Joi.string().required(),
         price:Joi.number().optional().allow(null),
         requester:Joi.any().required(),
-        app:Joi.string().required()
+        app:Joi.string().optional().allow(null)
     }),
       update:createValidator({
           _id:Joi.any().required(),
@@ -37,7 +37,7 @@ const validator : GeneratedValidator<MedicalService> = {
           mobile:Joi.string().required(),
           gender:Joi.string().required().allow('male','female'),
           details:Joi.string().required(),
-          app:Joi.string().required()
+          app:Joi.string().optional().allow(null)
       }),
       patch:createValidator({
           _id:Joi.any().required(),
