@@ -3,6 +3,12 @@ export enum UserType {
    DOCTOR = 'DOCTOR'
 }
 
+export enum TypingStatus{
+   TYPING = 'TYPING',
+   IDLE = 'IDLE',
+   SENDING_MEDIA = 'SENDING_MEDIA'
+}
+
 export enum AdminType{
    MANAGER = 'MANAGER',
    ADMIN = 'ADMIN',
