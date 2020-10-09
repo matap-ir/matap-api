@@ -56,8 +56,7 @@ export {
     QueryResponse,
     Rating,
     ServerConfig,
-    Helper,
-    TypingStatus
+    Helper
 };
 
 export type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';

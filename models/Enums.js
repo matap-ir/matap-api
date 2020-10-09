@@ -11,6 +11,7 @@ var TypingStatus;
     TypingStatus["TYPING"] = "TYPING";
     TypingStatus["IDLE"] = "IDLE";
     TypingStatus["SENDING_MEDIA"] = "SENDING_MEDIA";
+    TypingStatus["RECORDING_VOICE"] = "RECORDING_VOICE";
 })(TypingStatus = exports.TypingStatus || (exports.TypingStatus = {}));
 var AdminType;
 (function (AdminType) {

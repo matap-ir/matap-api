@@ -6,7 +6,8 @@ export enum UserType {
 export enum TypingStatus{
    TYPING = 'TYPING',
    IDLE = 'IDLE',
-   SENDING_MEDIA = 'SENDING_MEDIA'
+   SENDING_MEDIA = 'SENDING_MEDIA',
+   RECORDING_VOICE = 'RECORDING_VOICE',
 }
 
 export enum AdminType{
