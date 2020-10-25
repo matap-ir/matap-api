@@ -24,7 +24,6 @@ import AdminLog from 'models/admin_log/AdminLog';
 import Privileges,{PrivilegeOptions,PrivilegeOptionsDetails} from './models/privileges/Privileges';
 import Notification from './models/notification/Notification';
 import CrashReport from './models/crash_report/CrashReport';
-import DoctorsNotificationQueue from './models/doctors_notification_queue/DoctorsNotificationQueue';
 
 export {
     CrashReport,
@@ -57,8 +56,7 @@ export {
     QueryResponse,
     Rating,
     ServerConfig,
-    Helper,
-    DoctorsNotificationQueue
+    Helper
 };
 
 export type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';
