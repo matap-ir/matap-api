@@ -16,6 +16,7 @@ const validator = {
                 creationDate: Joi_1.default.number().required(),
                 specialization: require('../specialization/Validators').default.db.update.validator.required(),
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
+                notificationQueuePatients: Joi_1.default.array().items(Joi_1.default.string()).optional(),
                 details: Joi_1.default.object().required().keys({
                     maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                     city: Joi_1.default.string().required(),
@@ -56,6 +57,7 @@ const validator = {
             sms_code: Joi_1.default.number().optional().allow(null),
             fcmtoken: Joi_1.default.string().optional().allow(null),
             gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
+            notificationQueuePatients: Joi_1.default.array().items(Joi_1.default.string()).optional(),
             details: Joi_1.default.object().keys({
                 maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                 city: Joi_1.default.string().required(),

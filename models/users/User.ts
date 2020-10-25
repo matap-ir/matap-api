@@ -19,6 +19,7 @@ export default interface User {
     creationDate: number,
     finalizable_visits:Visit[] | string[],
     gender:'male' | 'female' | '',
+    notificationQueuePatients: string[],
     details:{
         maxVisitDurationMillisec: number,
         city:string,

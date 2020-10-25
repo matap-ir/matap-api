@@ -14,7 +14,6 @@ exports.default = {
     rating: { type: require('../rating/DBModel').default, required: false },
     chatting: { type: Boolean, default: false },
     maxDurationMillisec: { type: Number, required: true },
-    notificationQueuePatients: { type: [String], required: true },
     receipt: {
         transaction_id: { type: String, required: false },
         total: { type: Number, required: false },

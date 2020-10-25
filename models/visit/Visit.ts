@@ -14,7 +14,6 @@ interface Visit{
     rating: Rating,
     chatting:boolean,
     maxDurationMillisec: number,
-    notificationQueuePatients: string[],
     receipt:{
         transaction_id: string,
         total: number,
