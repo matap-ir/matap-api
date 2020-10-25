@@ -14,7 +14,7 @@ const dbModel = {
     creationDate:{type:Number,required:true},
     finalizable_visits:{type: [String],default:[]},
     gender:{type:String,default:''},
-    notificationQueuePatients: {type:[String],required:true},
+    notificationQueuePatients: {type:[String],required:true,default:[]},
     details:{
         type:{
             maxVisitDurationMillisec: {type:Number,required:true},
