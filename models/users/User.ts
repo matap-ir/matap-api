@@ -21,6 +21,7 @@ export default interface User {
     gender:'male' | 'female' | '',
     notificationQueuePatients: string[],
     details:{
+        displayInList: boolean,
         maxVisitDurationMillisec: number,
         city:string,
         shaba:string,

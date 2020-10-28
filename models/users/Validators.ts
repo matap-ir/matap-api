@@ -21,6 +21,7 @@ const validator : GeneratedValidator<User> = {
                 notificationQueuePatients: Joi.array().items(Joi.string()).optional(),
                 details:Joi.object().required().keys({
                     maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
+                    displayInList: Joi.boolean().required(),
                     city:Joi.string().required(),
                     shaba:Joi.string().required(),
                     nezam_pezeshki_code:Joi.string().required(),
@@ -64,6 +65,7 @@ const validator : GeneratedValidator<User> = {
               gender:Joi.string().optional().allow('','male','female'),
               notificationQueuePatients: Joi.array().items(Joi.string()).optional(),
               details:Joi.object().keys({
+                  displayInList: Joi.boolean().required(),
                   maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                   city:Joi.string().required(),
                   shaba:Joi.string().required(),
@@ -105,6 +107,7 @@ const validator : GeneratedValidator<User> = {
                   gender:Joi.string().optional().allow('','male','female'),
                   specialization:require('../specialization/Validators').default.public.patch.validator.required(),
                   details:Joi.object().required().keys({
+                      displayInList: Joi.boolean().required(),
                       maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                       city:Joi.string().required(),
                       shaba:Joi.string().required(),
@@ -147,6 +150,7 @@ const validator : GeneratedValidator<User> = {
               gender:Joi.string().optional().allow('','male','female'),
               finalizable_visits: Joi.array().items(Joi.string()),
               details:Joi.object().optional().keys({
+                  displayInList: Joi.boolean().required(),
                   maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                   city:Joi.string().required(),
                   shaba:Joi.string().required(),

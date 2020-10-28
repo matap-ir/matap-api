@@ -19,6 +19,7 @@ const validator = {
                 notificationQueuePatients: Joi_1.default.array().items(Joi_1.default.string()).optional(),
                 details: Joi_1.default.object().required().keys({
                     maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
+                    displayInList: Joi_1.default.boolean().required(),
                     city: Joi_1.default.string().required(),
                     shaba: Joi_1.default.string().required(),
                     nezam_pezeshki_code: Joi_1.default.string().required(),
@@ -59,6 +60,7 @@ const validator = {
             gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
             notificationQueuePatients: Joi_1.default.array().items(Joi_1.default.string()).optional(),
             details: Joi_1.default.object().keys({
+                displayInList: Joi_1.default.boolean().required(),
                 maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                 city: Joi_1.default.string().required(),
                 shaba: Joi_1.default.string().required(),
@@ -97,6 +99,7 @@ const validator = {
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
                 specialization: require('../specialization/Validators').default.public.patch.validator.required(),
                 details: Joi_1.default.object().required().keys({
+                    displayInList: Joi_1.default.boolean().required(),
                     maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                     city: Joi_1.default.string().required(),
                     shaba: Joi_1.default.string().required(),
@@ -136,6 +139,7 @@ const validator = {
             gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
             finalizable_visits: Joi_1.default.array().items(Joi_1.default.string()),
             details: Joi_1.default.object().optional().keys({
+                displayInList: Joi_1.default.boolean().required(),
                 maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                 city: Joi_1.default.string().required(),
                 shaba: Joi_1.default.string().required(),

@@ -19,6 +19,7 @@ const dbModel = {
     notificationQueuePatients: { type: [String], required: true, default: [] },
     details: {
         type: {
+            displayInList: { type: Boolean, required: true, default: true },
             maxVisitDurationMillisec: { type: Number, required: true },
             city: String,
             shaba: String,
