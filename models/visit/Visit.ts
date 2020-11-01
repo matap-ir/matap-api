@@ -1,7 +1,7 @@
 import {Chat, DiscountCoupon, User, Rating} from '../../index';
 import {VisitStatus} from '../Enums';
 
-interface Visit{
+interface Visit {
     _id: string,
     patient: User | string,
     doctor: User | string,
