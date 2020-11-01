@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const createValidator_1 = tslib_1.__importDefault(require("../createValidator"));
 const Joi_1 = tslib_1.__importStar(require("../Joi"));
-console.log('HELLO FROM THE NEW VERSION 2');
+console.log('HELLO FROM THE NEW VERSION 3');
 const validator = {
     db: {
         insert: {
