@@ -102,28 +102,7 @@ const validator : GeneratedValidator<User> = {
                   name:Joi.string().required(),
                   type:Joi.string().required().allow('DOCTOR'),
                   code:Joi.number().required(),
-                  price:Joi.number().required(),
-                  gender:Joi.string().optional().allow('','male','female'),
-                  specialization:require('../specialization/Validators').default.public.patch.validator.required(),
-                  details:Joi.object().required().keys({
-                      displayInList: Joi.boolean().required(),
-                      maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
-                      city:Joi.string().required(),
-                      shaba:Joi.string().required(),
-                      nezam_pezeshki_code:Joi.string().required(),
-                      cut:Joi.number().required(),
-                      clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                      hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                      response_days:Joi.object({
-                          0: Joi.array().items(require('../response_time/Validators').default.public.post.validator),
-                          1: Joi.array().items(require('../response_time/Validators').default.public.post.validator),
-                          2: Joi.array().items(require('../response_time/Validators').default.public.post.validator),
-                          3: Joi.array().items(require('../response_time/Validators').default.public.post.validator),
-                          4: Joi.array().items(require('../response_time/Validators').default.public.post.validator),
-                          5: Joi.array().items(require('../response_time/Validators').default.public.post.validator),
-                          6: Joi.array().items(require('../response_time/Validators').default.public.post.validator),
-                      }).required()
-                  }),
+
               })
       },
       patch:Joi.alternatives().try(
