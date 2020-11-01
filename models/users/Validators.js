@@ -89,14 +89,14 @@ const validator = {
     },
     public: {
         post: {
-            validator: Joi_1.default.alternatives().try(Joi_1.default.object({
+            validator: Joi_1.default.object({
                 mobile: Joi_1.phone().required(),
                 name: Joi_1.default.string().required(),
                 type: Joi_1.default.string().required().allow('DOCTOR'),
                 code: Joi_1.default.number().required(),
                 price: Joi_1.default.number().required(),
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
-                specialization: Joi_1.default.any().required(),
+                specialization: require('../specialization/Validators').default.public.patch.validator.required(),
                 details: Joi_1.default.object().required().keys({
                     displayInList: Joi_1.default.boolean().required(),
                     maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
@@ -116,13 +116,7 @@ const validator = {
                         6: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
                     }).required()
                 }),
-            }), Joi_1.default.object({
-                gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
-                mobile: Joi_1.phone().required(),
-                name: Joi_1.default.string().optional().allow(''),
-                type: Joi_1.default.string().required().allow('PATIENT'),
-                currency: Joi_1.default.number().optional(),
-            }))
+            })
         },
         patch: Joi_1.default.alternatives().try(Joi_1.default.object({
             _id: Joi_1.default.any().required(),

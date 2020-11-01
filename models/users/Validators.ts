@@ -96,7 +96,7 @@ const validator : GeneratedValidator<User> = {
   },
   public:{
       post:{
-          validator:Joi.alternatives().try(
+          validator:
               Joi.object({
                   mobile:phone().required(),
                   name:Joi.string().required(),
@@ -104,7 +104,7 @@ const validator : GeneratedValidator<User> = {
                   code:Joi.number().required(),
                   price:Joi.number().required(),
                   gender:Joi.string().optional().allow('','male','female'),
-                  specialization:Joi.any().required(),
+                  specialization:require('../specialization/Validators').default.public.patch.validator.required(),
                   details:Joi.object().required().keys({
                       displayInList: Joi.boolean().required(),
                       maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
@@ -124,15 +124,7 @@ const validator : GeneratedValidator<User> = {
                           6: Joi.array().items(require('../response_time/Validators').default.public.post.validator),
                       }).required()
                   }),
-              }),
-              Joi.object({
-                  gender:Joi.string().optional().allow('','male','female'),
-                  mobile:phone().required(),
-                  name:Joi.string().optional().allow(''),
-                  type:Joi.string().required().allow('PATIENT'),
-                  currency: Joi.number().optional(),
               })
-          )
       },
       patch:Joi.alternatives().try(
           Joi.object({
