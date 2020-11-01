@@ -14,7 +14,7 @@ const validator = {
                 price: Joi_1.default.number().required(),
                 fcmtoken: Joi_1.default.string().optional().allow(null),
                 creationDate: Joi_1.default.number().required(),
-                specialization: Joi_1.default.any().required(),
+                specialization: require('../specialization/Validators').default.db.update.validator.required(),
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
                 notificationQueuePatients: Joi_1.default.array().items(Joi_1.default.string()).optional(),
                 details: Joi_1.default.object().required().keys({
@@ -96,7 +96,7 @@ const validator = {
                 code: Joi_1.default.number().required(),
                 price: Joi_1.default.number().required(),
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
-                specialization: require('../specialization/Validators').default.public.patch.validator.required(),
+                specialization: Joi_1.default.any().required(),
                 details: Joi_1.default.object().required().keys({
                     displayInList: Joi_1.default.boolean().required(),
                     maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
