@@ -94,28 +94,6 @@ const validator = {
                 name: Joi_1.default.string().required(),
                 type: Joi_1.default.string().required().allow('DOCTOR'),
                 code: Joi_1.default.number().required(),
-                price: Joi_1.default.number().required(),
-                gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
-                specialization: require('../specialization/Validators').default.public.patch.validator.required(),
-                details: Joi_1.default.object().required().keys({
-                    displayInList: Joi_1.default.boolean().required(),
-                    maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
-                    city: Joi_1.default.string().required(),
-                    shaba: Joi_1.default.string().required(),
-                    nezam_pezeshki_code: Joi_1.default.string().required(),
-                    cut: Joi_1.default.number().required(),
-                    clinics: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                    hospitals: Joi_1.default.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                    response_days: Joi_1.default.object({
-                        0: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
-                        1: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
-                        2: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
-                        3: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
-                        4: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
-                        5: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
-                        6: Joi_1.default.array().items(require('../response_time/Validators').default.public.post.validator),
-                    }).required()
-                }),
             })
         },
         patch: Joi_1.default.alternatives().try(Joi_1.default.object({
