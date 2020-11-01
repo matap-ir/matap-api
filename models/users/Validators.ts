@@ -3,8 +3,6 @@ import Joi, {phone} from '../Joi';
 import {GeneratedValidator} from '../Validator';
 import User from './User';
 
-console.log('HELLO FROM THE NEW VERSION 5');
-
 const validator : GeneratedValidator<User> = {
   db:{
     insert:{
