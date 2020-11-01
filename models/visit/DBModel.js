@@ -6,7 +6,7 @@ exports.default = {
     patient: { type: mongoose_1.ObjectId, ref: 'users', required: true },
     doctor: { type: mongoose_1.ObjectId, ref: 'users', required: true },
     discount: { type: mongoose_1.ObjectId, ref: 'discount_coupons' },
-    state: { type: String, required: true, default: Enums_1.VisitStatus.IN_QUEUE },
+    state: { type: String, required: true, default: Enums_1.VisitStatus.IN_QUEUE, index: true },
     initiate_date: { type: Number, required: true },
     start_date: { type: Number, index: true },
     end_date: { type: Number, index: true },

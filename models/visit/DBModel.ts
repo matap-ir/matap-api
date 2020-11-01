@@ -1,11 +1,11 @@
-import { ObjectId } from 'mongoose';
+import { ObjectId,SchemaDefinition } from 'mongoose';
 import {VisitStatus} from '../Enums';
 
 export default{
     patient:{type:ObjectId,ref:'users',required:true},
     doctor:{type:ObjectId,ref:'users',required:true},
     discount:{type:ObjectId,ref:'discount_coupons'},
-    state:{type:String,required:true,default:VisitStatus.IN_QUEUE},
+    state:{type:String,required:true,default:VisitStatus.IN_QUEUE,index: true},
     initiate_date:{type:Number,required: true},
     start_date:{type:Number,index:true},
     end_date:{type:Number,index:true},
@@ -25,4 +25,4 @@ export default{
         settled:{type:Boolean,required:false,default:false},
         healthCenterSettled:{type:Boolean,required:false,default:false}
     }
-}
+} as SchemaDefinition

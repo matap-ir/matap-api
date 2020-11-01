@@ -8,13 +8,14 @@
   },
   "devDependencies": {
     "@hapi/joi": "^17.1.0",
+    "@types/mongoose": "^5.7.37",
     "@types/node": "^13.7.0",
-    "mongoose": "^5.8.11",
     "tslint": "^6.0.0",
     "typescript": "^3.7.5"
   },
   "dependencies": {
     "@types/hapi__joi": "^16.0.9",
+    "mongoose": "^5.8.11",
     "uuid": "^3.4.0"
   }
 }
