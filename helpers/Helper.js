@@ -4,6 +4,9 @@ const uuid_1 = require("uuid");
 const generateUUID = () => {
     return uuid_1.v4();
 };
+const get = () => {
+    return '';
+};
 const createResponsiveDaysText = (responseDays, lang = 'fa') => {
     if (!responseDays || responseDays === '') {
         return '';

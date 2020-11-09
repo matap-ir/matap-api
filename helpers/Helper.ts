@@ -5,6 +5,10 @@ const generateUUID = () => {
     return uuidv4();
 };
 
+const get = ()=>{
+  return ''
+};
+
 const createResponsiveDaysText = (responseDays: {},lang = 'fa'): string=>{
     if(!responseDays || responseDays === ''){
         return '';
