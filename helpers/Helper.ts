@@ -1,12 +1,8 @@
-import { v4 as uuidv4 } from 'uuid';
+import uuidv4 from 'uuid/v4';
 import {ResponseTime} from '../index';
 
 const generateUUID = () => {
     return uuidv4();
-};
-
-const get = ()=>{
-  return ''
 };
 
 const createResponsiveDaysText = (responseDays: {},lang = 'fa'): string=>{

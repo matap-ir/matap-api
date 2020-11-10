@@ -1,11 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChatType = exports.EventType = exports.IOStatus = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.AdminType = exports.TypingStatus = exports.UserType = void 0;
+exports.ChatType = exports.EventType = exports.IOStatus = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.AdminType = exports.TypingStatus = exports.GatewayType = exports.UserType = void 0;
 var UserType;
 (function (UserType) {
     UserType["PATIENT"] = "PATIENT";
     UserType["DOCTOR"] = "DOCTOR";
 })(UserType = exports.UserType || (exports.UserType = {}));
+var GatewayType;
+(function (GatewayType) {
+    GatewayType["ZARINPAL"] = "ZARINPAL";
+})(GatewayType = exports.GatewayType || (exports.GatewayType = {}));
 var TypingStatus;
 (function (TypingStatus) {
     TypingStatus["TYPING"] = "TYPING";

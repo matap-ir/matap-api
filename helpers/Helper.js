@@ -1,11 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const uuid_1 = require("uuid");
+const tslib_1 = require("tslib");
+const v4_1 = tslib_1.__importDefault(require("uuid/v4"));
 const generateUUID = () => {
-    return uuid_1.v4();
-};
-const get = () => {
-    return '';
+    return v4_1.default();
 };
 const createResponsiveDaysText = (responseDays, lang = 'fa') => {
     if (!responseDays || responseDays === '') {
