@@ -3,10 +3,6 @@ export enum UserType {
    DOCTOR = 'DOCTOR'
 }
 
-export enum GatewayType{
-   ZARINPAL = 'ZARINPAL'
-}
-
 export enum TypingStatus{
    TYPING = 'TYPING',
    IDLE = 'IDLE',
