@@ -1,12 +1,11 @@
 // const base_path = 'D:/LifeMate/';
-const base_path = 'businesses/';
 const img_type = 'jpg';
 
 const chats = {
-    folder_chat: (roomId: string) => base_path + 'chats/' + roomId + '/'
+    folder_chat: (roomId: string) => '/chats/' + roomId + '/'
 };
 
-const folder_medical_services = () => base_path + 'medical_services/';
+const folder_medical_services = () => '/medical_services/';
 
 
 export default {
