@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@types/hapi__joi": "^16.0.9",
+    "moment": "^2.29.1",
     "mongoose": "^5.10.14",
     "uuid": "^8.3.1"
   }
