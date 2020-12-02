@@ -19,6 +19,7 @@ const validator = {
                 notificationQueuePatients: Joi_1.default.array().items(Joi_1.default.string()).optional(),
                 os: Joi_1.default.string().optional().allow(null),
                 details: Joi_1.default.object().required().keys({
+                    videoCallAllowed: Joi_1.default.boolean().required(),
                     bio: Joi_1.default.string().required().allow(''),
                     displayInList: Joi_1.default.boolean().required(),
                     maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
@@ -63,6 +64,7 @@ const validator = {
             notificationQueuePatients: Joi_1.default.array().items(Joi_1.default.string()).optional(),
             os: Joi_1.default.string().optional().allow(null),
             details: Joi_1.default.object().keys({
+                videoCallAllowed: Joi_1.default.boolean().required(),
                 bio: Joi_1.default.string().required().allow(''),
                 displayInList: Joi_1.default.boolean().required(),
                 maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
@@ -103,6 +105,7 @@ const validator = {
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
                 specialization: require('../specialization/Validators').default.public.patch.validator.required(),
                 details: Joi_1.default.object().required().keys({
+                    videoCallAllowed: Joi_1.default.boolean().required(),
                     bio: Joi_1.default.string().required().allow(''),
                     displayInList: Joi_1.default.boolean().required(),
                     maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
@@ -144,6 +147,7 @@ const validator = {
             gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
             finalizable_visits: Joi_1.default.array().items(Joi_1.default.string()),
             details: Joi_1.default.object().optional().keys({
+                videoCallAllowed: Joi_1.default.boolean().required(),
                 bio: Joi_1.default.string().required().allow(''),
                 displayInList: Joi_1.default.boolean().required(),
                 maxVisitDurationMillisec: Joi_1.default.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),

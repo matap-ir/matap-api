@@ -22,6 +22,7 @@ export default interface User {
     notificationQueuePatients: string[],
     os?: string,
     details:{
+        videoCallAllowed: boolean,
         bio: string,
         displayInList: boolean,
         maxVisitDurationMillisec: number,

@@ -20,6 +20,7 @@ const dbModel = {
     os: { type: String, required: false },
     details: {
         type: {
+            videoCallAllowed: { type: Boolean, required: true },
             bio: { type: String, required: true },
             displayInList: { type: Boolean, required: true, default: true },
             maxVisitDurationMillisec: { type: Number, required: true },
