@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChatType = exports.EventType = exports.IOStatus = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.AdminType = exports.TypingStatus = exports.UserType = void 0;
+exports.ChatType = exports.EventType = exports.IOStatus = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.ReservationState = exports.AdminType = exports.TypingStatus = exports.UserType = void 0;
 var UserType;
 (function (UserType) {
     UserType["PATIENT"] = "PATIENT";
@@ -19,6 +19,14 @@ var AdminType;
     AdminType["ADMIN"] = "ADMIN";
     AdminType["HEALTHCENTER"] = "HEALTHCENTER";
 })(AdminType = exports.AdminType || (exports.AdminType = {}));
+var ReservationState;
+(function (ReservationState) {
+    ReservationState["WAITING_FOR_OFFERS"] = "WAITING_FOR_OFFERS";
+    ReservationState["WAITING_FOR_REQUEST"] = "WAITING_FOR_CONFIRM";
+    ReservationState["WAITING_FOR_OFFER_CONFIRM"] = "WAITING_FOR_OFFER_CONFIRM";
+    ReservationState["CONFIRMED"] = "CONFIRMED";
+    ReservationState["CANCELLED"] = "CANCELLED";
+})(ReservationState = exports.ReservationState || (exports.ReservationState = {}));
 var TransactionType;
 (function (TransactionType) {
     TransactionType["CHARGE_BY_GATEWAY"] = "CHARGE_BY_GATEWAY";

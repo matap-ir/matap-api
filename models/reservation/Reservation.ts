@@ -1,5 +1,5 @@
-import {Business, User, YYYYMMDDHHmm} from '../../../index';
-import {ReservationPluginMethod, ReservationState} from '../../Enums';
+import {User} from '../../index';
+import {ReservationState} from '../Enums';
 
 export interface ReservationCancellation {
     _id: string,
@@ -36,7 +36,6 @@ export default interface Reservation {
     requestDate: number,
     patient: User,
     doctor: User,
-    method: ReservationPluginMethod,
     state: ReservationState,
     timeLine: (ReservationOffer | ReservationRequest | ReservationCancellation)[]
     due: {
