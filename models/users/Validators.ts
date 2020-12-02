@@ -20,6 +20,12 @@ const validator : GeneratedValidator<User> = {
                 notificationQueuePatients: Joi.array().items(Joi.string()).optional(),
                 os: Joi.string().optional().allow(null),
                 details:Joi.object().required().keys({
+                    phone: Joi.string().required().allow(''),
+                    address: Joi.string().required().allow(''),
+                    coordinates:Joi.object().keys({
+                        lat: Joi.number().required(),
+                        lng: Joi.number().required()
+                    }).optional().allow(null),
                     videoCallAllowed: Joi.boolean().required(),
                     bio: Joi.string().required().allow(''),
                     displayInList: Joi.boolean().required(),
@@ -68,6 +74,12 @@ const validator : GeneratedValidator<User> = {
               notificationQueuePatients: Joi.array().items(Joi.string()).optional(),
               os: Joi.string().optional().allow(null),
               details:Joi.object().keys({
+                  phone: Joi.string().required().allow(''),
+                  address: Joi.string().required().allow(''),
+                  coordinates:Joi.object().keys({
+                      lat: Joi.number().required(),
+                      lng: Joi.number().required()
+                  }).optional().allow(null),
                   videoCallAllowed: Joi.boolean().required(),
                   bio: Joi.string().required().allow(''),
                   displayInList: Joi.boolean().required(),
@@ -112,6 +124,12 @@ const validator : GeneratedValidator<User> = {
                   gender:Joi.string().optional().allow('','male','female'),
                   specialization:require('../specialization/Validators').default.public.patch.validator.required(),
                   details:Joi.object().required().keys({
+                      phone: Joi.string().required().allow(''),
+                      address: Joi.string().required().allow(''),
+                      coordinates:Joi.object().keys({
+                          lat: Joi.number().required(),
+                          lng: Joi.number().required()
+                      }).optional().allow(null),
                       videoCallAllowed: Joi.boolean().required(),
                       bio: Joi.string().required().allow(''),
                       displayInList: Joi.boolean().required(),
@@ -157,6 +175,12 @@ const validator : GeneratedValidator<User> = {
               gender:Joi.string().optional().allow('','male','female'),
               finalizable_visits: Joi.array().items(Joi.string()),
               details:Joi.object().optional().keys({
+                  phone: Joi.string().required().allow(''),
+                  address: Joi.string().required().allow(''),
+                  coordinates:Joi.object().keys({
+                      lat: Joi.number().required(),
+                      lng: Joi.number().required()
+                  }).optional().allow(null),
                   videoCallAllowed: Joi.boolean().required(),
                   bio: Joi.string().required().allow(''),
                   displayInList: Joi.boolean().required(),

@@ -22,6 +22,9 @@ export default interface User {
     notificationQueuePatients: string[],
     os?: string,
     details:{
+        phone: string,
+        address: string,
+        coordinates?:{lat: number,lng: number}
         videoCallAllowed: boolean,
         bio: string,
         displayInList: boolean,

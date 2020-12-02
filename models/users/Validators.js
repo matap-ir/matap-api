@@ -19,6 +19,12 @@ const validator = {
                 notificationQueuePatients: Joi_1.default.array().items(Joi_1.default.string()).optional(),
                 os: Joi_1.default.string().optional().allow(null),
                 details: Joi_1.default.object().required().keys({
+                    phone: Joi_1.default.string().required().allow(''),
+                    address: Joi_1.default.string().required().allow(''),
+                    coordinates: Joi_1.default.object().keys({
+                        lat: Joi_1.default.number().required(),
+                        lng: Joi_1.default.number().required()
+                    }).optional().allow(null),
                     videoCallAllowed: Joi_1.default.boolean().required(),
                     bio: Joi_1.default.string().required().allow(''),
                     displayInList: Joi_1.default.boolean().required(),
@@ -64,6 +70,12 @@ const validator = {
             notificationQueuePatients: Joi_1.default.array().items(Joi_1.default.string()).optional(),
             os: Joi_1.default.string().optional().allow(null),
             details: Joi_1.default.object().keys({
+                phone: Joi_1.default.string().required().allow(''),
+                address: Joi_1.default.string().required().allow(''),
+                coordinates: Joi_1.default.object().keys({
+                    lat: Joi_1.default.number().required(),
+                    lng: Joi_1.default.number().required()
+                }).optional().allow(null),
                 videoCallAllowed: Joi_1.default.boolean().required(),
                 bio: Joi_1.default.string().required().allow(''),
                 displayInList: Joi_1.default.boolean().required(),
@@ -105,6 +117,12 @@ const validator = {
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
                 specialization: require('../specialization/Validators').default.public.patch.validator.required(),
                 details: Joi_1.default.object().required().keys({
+                    phone: Joi_1.default.string().required().allow(''),
+                    address: Joi_1.default.string().required().allow(''),
+                    coordinates: Joi_1.default.object().keys({
+                        lat: Joi_1.default.number().required(),
+                        lng: Joi_1.default.number().required()
+                    }).optional().allow(null),
                     videoCallAllowed: Joi_1.default.boolean().required(),
                     bio: Joi_1.default.string().required().allow(''),
                     displayInList: Joi_1.default.boolean().required(),
@@ -147,6 +165,12 @@ const validator = {
             gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
             finalizable_visits: Joi_1.default.array().items(Joi_1.default.string()),
             details: Joi_1.default.object().optional().keys({
+                phone: Joi_1.default.string().required().allow(''),
+                address: Joi_1.default.string().required().allow(''),
+                coordinates: Joi_1.default.object().keys({
+                    lat: Joi_1.default.number().required(),
+                    lng: Joi_1.default.number().required()
+                }).optional().allow(null),
                 videoCallAllowed: Joi_1.default.boolean().required(),
                 bio: Joi_1.default.string().required().allow(''),
                 displayInList: Joi_1.default.boolean().required(),
