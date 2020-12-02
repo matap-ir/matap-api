@@ -24,12 +24,12 @@ const validator : GeneratedValidator<User> = {
                     reservationInfo:Joi.object().keys({
                         enabled: Joi.boolean().required(),
                         phone: Joi.string().required().allow(''),
-                        gapMinutes: Joi.number().min(10).required(),
                         address: Joi.string().required().allow(''),
+                        gapMinutes: Joi.number().min(10).required(),
                         coordinates:Joi.object().keys({
                             lat: Joi.number().required(),
                             lng: Joi.number().required()
-                        }).optional(),
+                        }).optional().allow(null),
                         workTimes: Joi.object().keys({
                             saturday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
                             sunday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
@@ -92,13 +92,13 @@ const validator : GeneratedValidator<User> = {
               details:Joi.object().keys({
                   reservationInfo:Joi.object().keys({
                       enabled: Joi.boolean().required(),
-                      phone: Joi.string().required(),
+                      phone: Joi.string().required().allow(''),
+                      address: Joi.string().required().allow(''),
                       gapMinutes: Joi.number().min(10).required(),
-                      address: Joi.string().required(),
                       coordinates:Joi.object().keys({
                           lat: Joi.number().required(),
                           lng: Joi.number().required()
-                      }).optional(),
+                      }).optional().allow(null),
                       workTimes: Joi.object().keys({
                           saturday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
                           sunday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
@@ -157,13 +157,13 @@ const validator : GeneratedValidator<User> = {
                   details:Joi.object().required().keys({
                       reservationInfo:Joi.object().keys({
                           enabled: Joi.boolean().required(),
-                          phone: Joi.string().required(),
+                          phone: Joi.string().required().allow(''),
+                          address: Joi.string().required().allow(''),
                           gapMinutes: Joi.number().min(10).required(),
-                          address: Joi.string().required(),
                           coordinates:Joi.object().keys({
                               lat: Joi.number().required(),
                               lng: Joi.number().required()
-                          }).optional(),
+                          }).optional().allow(null),
                           workTimes: Joi.object().keys({
                               saturday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
                               sunday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
@@ -223,13 +223,13 @@ const validator : GeneratedValidator<User> = {
               details:Joi.object().optional().keys({
                   reservationInfo:Joi.object().keys({
                       enabled: Joi.boolean().required(),
-                      phone: Joi.string().required(),
                       gapMinutes: Joi.number().min(10).required(),
-                      address: Joi.string().required(),
+                      phone: Joi.string().required().allow(''),
+                      address: Joi.string().required().allow(''),
                       coordinates:Joi.object().keys({
                           lat: Joi.number().required(),
                           lng: Joi.number().required()
-                      }).optional(),
+                      }).optional().allow(null),
                       workTimes: Joi.object().keys({
                           saturday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
                           sunday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
