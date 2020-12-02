@@ -1,6 +1,6 @@
 import Joi from '../Joi';
 import {GeneratedValidator} from '../Validator';
-import createValidator from 'models/createValidator';
+import createValidator from '../createValidator';
 
 const request = {
     _id: Joi.any().required(),
