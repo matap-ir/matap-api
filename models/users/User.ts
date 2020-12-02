@@ -1,5 +1,5 @@
 import {UserType} from '../Enums';
-import {ResponseTime, Specialization} from '../../index';
+import {ResponseTime, Specialization, WorkTime} from '../../index';
 import HealthCenter from '../health_center/HealthCenter';
 import Visit from '../visit/Visit';
 
@@ -22,9 +22,23 @@ export default interface User {
     notificationQueuePatients: string[],
     os?: string,
     details:{
+        reservationInfo?:{
+            enabled: boolean,
+            phone: string,
+            address: string,
+            coordinates?:{lat: number,lng: number}
+            workTimes: {
+                saturday:WorkTime[],
+                sunday:WorkTime[],
+                monday:WorkTime[],
+                tuesday:WorkTime[],
+                wednesday:WorkTime[],
+                thursday:WorkTime[],
+                friday:WorkTime[]
+            }
+        },
         phone: string,
         address: string,
-        coordinates?:{lat: number,lng: number}
         videoCallAllowed: boolean,
         bio: string,
         displayInList: boolean,

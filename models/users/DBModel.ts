@@ -20,7 +20,6 @@ const dbModel = {
         type:{
             phone: {type: String,required: true},
             address: {type: String,required: true},
-            coordinates: {type:{lat:Number,lng: Number},required: false},
             videoCallAllowed: {type: Boolean,required: true},
             bio:{type:String,required: true},
             displayInList: {type:Boolean,required:true,default:true},

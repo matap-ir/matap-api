@@ -21,10 +21,6 @@ const validator = {
                 details: Joi_1.default.object().required().keys({
                     phone: Joi_1.default.string().required().allow(''),
                     address: Joi_1.default.string().required().allow(''),
-                    coordinates: Joi_1.default.object().keys({
-                        lat: Joi_1.default.number().required(),
-                        lng: Joi_1.default.number().required()
-                    }).optional().allow(null),
                     videoCallAllowed: Joi_1.default.boolean().required(),
                     bio: Joi_1.default.string().required().allow(''),
                     displayInList: Joi_1.default.boolean().required(),
@@ -72,10 +68,6 @@ const validator = {
             details: Joi_1.default.object().keys({
                 phone: Joi_1.default.string().required().allow(''),
                 address: Joi_1.default.string().required().allow(''),
-                coordinates: Joi_1.default.object().keys({
-                    lat: Joi_1.default.number().required(),
-                    lng: Joi_1.default.number().required()
-                }).optional().allow(null),
                 videoCallAllowed: Joi_1.default.boolean().required(),
                 bio: Joi_1.default.string().required().allow(''),
                 displayInList: Joi_1.default.boolean().required(),
@@ -119,10 +111,6 @@ const validator = {
                 details: Joi_1.default.object().required().keys({
                     phone: Joi_1.default.string().required().allow(''),
                     address: Joi_1.default.string().required().allow(''),
-                    coordinates: Joi_1.default.object().keys({
-                        lat: Joi_1.default.number().required(),
-                        lng: Joi_1.default.number().required()
-                    }).optional().allow(null),
                     videoCallAllowed: Joi_1.default.boolean().required(),
                     bio: Joi_1.default.string().required().allow(''),
                     displayInList: Joi_1.default.boolean().required(),
@@ -167,10 +155,6 @@ const validator = {
             details: Joi_1.default.object().optional().keys({
                 phone: Joi_1.default.string().required().allow(''),
                 address: Joi_1.default.string().required().allow(''),
-                coordinates: Joi_1.default.object().keys({
-                    lat: Joi_1.default.number().required(),
-                    lng: Joi_1.default.number().required()
-                }).optional().allow(null),
                 videoCallAllowed: Joi_1.default.boolean().required(),
                 bio: Joi_1.default.string().required().allow(''),
                 displayInList: Joi_1.default.boolean().required(),

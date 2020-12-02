@@ -25,8 +25,15 @@ import Privileges,{PrivilegeOptions,PrivilegeOptionsDetails} from './models/priv
 import Notification from './models/notification/Notification';
 import CrashReport from './models/crash_report/CrashReport';
 import Archive from './models/archive/Archive';
+import WorkTime from './models/response_time/WorkTime';
+import Reservation,{ReservationCancellation,ReservationOffer,ReservationRequest} from './models/reservation/Reservation';
 
 export {
+    Reservation,
+    ReservationRequest,
+    ReservationOffer,
+    ReservationCancellation,
+    WorkTime,
     Archive,
     CrashReport,
     Notification,
