@@ -10,7 +10,7 @@ export default interface ServiceRequest{
     request_date: number,
     details: string,
     trackingCode: string,
-    status:'CHECKING' | 'PAID' | 'WAITING_PAYMENT' | 'PROCESSING' | 'ENDED' | 'NOT_SEEN',
+    status:'CHECKING' | 'PAID' | 'WAITING_PAYMENT' | 'CANCELLED' | 'PROCESSING' | 'ENDED' | 'NOT_SEEN',
     app:'matap' | 'hamrah-darman'
     price:number
 }
