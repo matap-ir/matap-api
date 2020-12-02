@@ -1,4 +1,5 @@
 import { ObjectId } from 'mongoose';
+import {WorkTime} from '../../index';
 const dbModel = {
     mobile: {type: String,index:true,unique:true, required: true},
     type:{type: String,require:true},
@@ -18,6 +19,31 @@ const dbModel = {
     os: {type: String,required: false},
     details:{
         type:{
+            reservationInfo:{
+                type:{
+                    enabled: Boolean,
+                    phone: String,
+                    address: String,
+                    gapMinutes: Number,
+                    coordinates:{
+                        type:{lat: Number,lng: Number},
+                        required: false
+                    },
+                    workTimes: {
+                        type:{
+                            saturday:{type:[{from:String,to:String,exceptions:[String]}],required: true},
+                            sunday:{type:[{from:String,to:String,exceptions:[String]}],required: true},
+                            monday:{type:[{from:String,to:String,exceptions:[String]}],required: true},
+                            tuesday:{type:[{from:String,to:String,exceptions:[String]}],required: true},
+                            wednesday:{type:[{from:String,to:String,exceptions:[String]}],required: true},
+                            thursday:{type:[{from:String,to:String,exceptions:[String]}],required: true},
+                            friday:{type:[{from:String,to:String,exceptions:[String]}],required: true},
+                        },
+                        required: true
+                    }
+                },
+                required: true
+            },
             phone: {type: String,required: true},
             address: {type: String,required: true},
             videoCallAllowed: {type: Boolean,required: true},

@@ -22,10 +22,11 @@ export default interface User {
     notificationQueuePatients: string[],
     os?: string,
     details:{
-        reservationInfo?:{
+        reservationInfo:{
             enabled: boolean,
             phone: string,
             address: string,
+            gapMinutes: number,
             coordinates?:{lat: number,lng: number}
             workTimes: {
                 saturday:WorkTime[],

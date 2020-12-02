@@ -2,6 +2,7 @@ import createValidator from '../createValidator';
 import Joi, {phone} from '../Joi';
 import {GeneratedValidator} from '../Validator';
 import User from './User';
+import {WorkTime} from '../../index';
 
 const validator : GeneratedValidator<User> = {
   db:{
@@ -20,6 +21,25 @@ const validator : GeneratedValidator<User> = {
                 notificationQueuePatients: Joi.array().items(Joi.string()).optional(),
                 os: Joi.string().optional().allow(null),
                 details:Joi.object().required().keys({
+                    reservationInfo:Joi.object().keys({
+                        enabled: Joi.boolean().required(),
+                        phone: Joi.string().required(),
+                        gapMinutes: Joi.number().min(10).required(),
+                        address: Joi.string().required(),
+                        coordinates:Joi.object().keys({
+                            lat: Joi.number().required(),
+                            lng: Joi.number().required()
+                        }).optional(),
+                        workTimes: Joi.object().keys({
+                            saturday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                            sunday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                            monday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                            tuesday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                            wednesday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                            thursday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                            friday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                        }).required()
+                    }).required(),
                     phone: Joi.string().required().allow(''),
                     address: Joi.string().required().allow(''),
                     videoCallAllowed: Joi.boolean().required(),
@@ -70,6 +90,25 @@ const validator : GeneratedValidator<User> = {
               notificationQueuePatients: Joi.array().items(Joi.string()).optional(),
               os: Joi.string().optional().allow(null),
               details:Joi.object().keys({
+                  reservationInfo:Joi.object().keys({
+                      enabled: Joi.boolean().required(),
+                      phone: Joi.string().required(),
+                      gapMinutes: Joi.number().min(10).required(),
+                      address: Joi.string().required(),
+                      coordinates:Joi.object().keys({
+                          lat: Joi.number().required(),
+                          lng: Joi.number().required()
+                      }).optional(),
+                      workTimes: Joi.object().keys({
+                          saturday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                          sunday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                          monday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                          tuesday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                          wednesday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                          thursday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                          friday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                      }).required()
+                  }).required(),
                   phone: Joi.string().required().allow(''),
                   address: Joi.string().required().allow(''),
                   videoCallAllowed: Joi.boolean().required(),
@@ -116,6 +155,25 @@ const validator : GeneratedValidator<User> = {
                   gender:Joi.string().optional().allow('','male','female'),
                   specialization:require('../specialization/Validators').default.public.patch.validator.required(),
                   details:Joi.object().required().keys({
+                      reservationInfo:Joi.object().keys({
+                          enabled: Joi.boolean().required(),
+                          phone: Joi.string().required(),
+                          gapMinutes: Joi.number().min(10).required(),
+                          address: Joi.string().required(),
+                          coordinates:Joi.object().keys({
+                              lat: Joi.number().required(),
+                              lng: Joi.number().required()
+                          }).optional(),
+                          workTimes: Joi.object().keys({
+                              saturday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                              sunday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                              monday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                              tuesday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                              wednesday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                              thursday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                              friday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                          }).required()
+                      }).required(),
                       phone: Joi.string().required().allow(''),
                       address: Joi.string().required().allow(''),
                       videoCallAllowed: Joi.boolean().required(),
@@ -163,6 +221,25 @@ const validator : GeneratedValidator<User> = {
               gender:Joi.string().optional().allow('','male','female'),
               finalizable_visits: Joi.array().items(Joi.string()),
               details:Joi.object().optional().keys({
+                  reservationInfo:Joi.object().keys({
+                      enabled: Joi.boolean().required(),
+                      phone: Joi.string().required(),
+                      gapMinutes: Joi.number().min(10).required(),
+                      address: Joi.string().required(),
+                      coordinates:Joi.object().keys({
+                          lat: Joi.number().required(),
+                          lng: Joi.number().required()
+                      }).optional(),
+                      workTimes: Joi.object().keys({
+                          saturday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                          sunday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                          monday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                          tuesday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                          wednesday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                          thursday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                          friday:Joi.array().items(Joi.object().keys({from: Joi.string(),to: Joi.string(),exceptions:Joi.array().items(Joi.string())})).required(),
+                      }).required()
+                  }).required(),
                   phone: Joi.string().required().allow(''),
                   address: Joi.string().required().allow(''),
                   videoCallAllowed: Joi.boolean().required(),
