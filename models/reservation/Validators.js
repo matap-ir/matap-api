@@ -59,7 +59,7 @@ exports.default = {
     },
     db: {
         insert: createValidator_1.default(Object.assign(Object.assign({}, general), { _id: null })),
-        patch: createValidator_1.default(general)
+        update: createValidator_1.default(general)
     },
     offer: {
         public: {

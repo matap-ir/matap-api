@@ -73,7 +73,7 @@ export default {
             ...general,
             _id: null
         }),
-        patch: createValidator(general)
+        update: createValidator(general)
     },
     offer:{
         public:{
