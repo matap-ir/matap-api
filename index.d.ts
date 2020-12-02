@@ -24,8 +24,10 @@ import AdminLog from 'models/admin_log/AdminLog';
 import Privileges,{PrivilegeOptions,PrivilegeOptionsDetails} from './models/privileges/Privileges';
 import Notification from './models/notification/Notification';
 import CrashReport from './models/crash_report/CrashReport';
+import Archive from './models/archive/Archive';
 
 export {
+    Archive,
     CrashReport,
     Notification,
     PrivilegeOptionsDetails,

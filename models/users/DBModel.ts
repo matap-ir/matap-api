@@ -15,6 +15,7 @@ const dbModel = {
     finalizable_visits:{type: [String],default:[]},
     gender:{type:String,default:''},
     notificationQueuePatients: {type:[String],required:true,default:[]},
+    os: {type: String,required: false},
     details:{
         type:{
             displayInList: {type:Boolean,required:true,default:true},

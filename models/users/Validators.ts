@@ -18,6 +18,7 @@ const validator : GeneratedValidator<User> = {
                 specialization:require('../specialization/Validators').default.db.update.validator.required(),
                 gender:Joi.string().optional().allow('','male','female'),
                 notificationQueuePatients: Joi.array().items(Joi.string()).optional(),
+                os: Joi.string().optional().allow(null),
                 details:Joi.object().required().keys({
                     displayInList: Joi.boolean().required(),
                     maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
@@ -63,6 +64,7 @@ const validator : GeneratedValidator<User> = {
               fcmtoken:Joi.string().optional().allow(null),
               gender:Joi.string().optional().allow('','male','female'),
               notificationQueuePatients: Joi.array().items(Joi.string()).optional(),
+              os: Joi.string().optional().allow(null),
               details:Joi.object().keys({
                   displayInList: Joi.boolean().required(),
                   maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
