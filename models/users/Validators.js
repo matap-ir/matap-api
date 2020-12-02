@@ -21,9 +21,9 @@ const validator = {
                 details: Joi_1.default.object().required().keys({
                     reservationInfo: Joi_1.default.object().keys({
                         enabled: Joi_1.default.boolean().required(),
-                        phone: Joi_1.default.string().required(),
+                        phone: Joi_1.default.string().required().allow(''),
                         gapMinutes: Joi_1.default.number().min(10).required(),
-                        address: Joi_1.default.string().required(),
+                        address: Joi_1.default.string().required().allow(''),
                         coordinates: Joi_1.default.object().keys({
                             lat: Joi_1.default.number().required(),
                             lng: Joi_1.default.number().required()
