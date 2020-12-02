@@ -5,6 +5,15 @@ export default interface Archive {
     patient: User,
     doctor: User,
     note: string,
-    fileUrl?: string,
+    file?:{
+        file_size:number,
+        file_name: string,
+        mediaInfo:{
+            width:number,
+            height:number,
+            duration:number,
+            orientation:number
+        }
+    },
     createdAt: number
 };
