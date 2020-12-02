@@ -22,6 +22,7 @@ export default interface User {
     notificationQueuePatients: string[],
     os?: string,
     details:{
+        bio: string,
         displayInList: boolean,
         maxVisitDurationMillisec: number,
         city:string,

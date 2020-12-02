@@ -20,6 +20,7 @@ const validator : GeneratedValidator<User> = {
                 notificationQueuePatients: Joi.array().items(Joi.string()).optional(),
                 os: Joi.string().optional().allow(null),
                 details:Joi.object().required().keys({
+                    bio: Joi.string().required().allow(''),
                     displayInList: Joi.boolean().required(),
                     maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                     city:Joi.string().required(),
@@ -66,6 +67,7 @@ const validator : GeneratedValidator<User> = {
               notificationQueuePatients: Joi.array().items(Joi.string()).optional(),
               os: Joi.string().optional().allow(null),
               details:Joi.object().keys({
+                  bio: Joi.string().required().allow(''),
                   displayInList: Joi.boolean().required(),
                   maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                   city:Joi.string().required(),
@@ -108,6 +110,7 @@ const validator : GeneratedValidator<User> = {
                   gender:Joi.string().optional().allow('','male','female'),
                   specialization:require('../specialization/Validators').default.public.patch.validator.required(),
                   details:Joi.object().required().keys({
+                      bio: Joi.string().required().allow(''),
                       displayInList: Joi.boolean().required(),
                       maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                       city:Joi.string().required(),
@@ -151,6 +154,7 @@ const validator : GeneratedValidator<User> = {
               gender:Joi.string().optional().allow('','male','female'),
               finalizable_visits: Joi.array().items(Joi.string()),
               details:Joi.object().optional().keys({
+                  bio: Joi.string().required().allow(''),
                   displayInList: Joi.boolean().required(),
                   maxVisitDurationMillisec:Joi.number().required().positive().min(5 * 60 * 1000).max(2 * 60 * 60 * 1000),
                   city:Joi.string().required(),
