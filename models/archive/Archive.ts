@@ -4,6 +4,7 @@ export default interface Archive {
     _id: string,
     patient: User,
     doctor: User,
+    title: string,
     note: string,
     file?:{
         url: string,
