@@ -6,6 +6,7 @@ export default interface Archive {
     doctor: User,
     note: string,
     file?:{
+        url: string,
         file_size:number,
         file_name: string,
         mediaInfo:{
