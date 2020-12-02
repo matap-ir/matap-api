@@ -5,6 +5,6 @@ export default interface Archive {
     patient: User,
     doctor: User,
     note: string,
-    attachments: string[],
+    fileUrl?: string,
     createdAt: number
 };

@@ -4,7 +4,7 @@ const dbModel = {
     patient: {type: ObjectId,ref:'users',required:true,index:true},
     doctor: {type: ObjectId,ref:'users',required:true,index:true},
     note: {type: String,required:true},
-    attachments: {type: [String],required: true,default: []},
+    fileUrl: {type: [String],required: false},
     createdAt: {type: Number,required: true},
 };
 

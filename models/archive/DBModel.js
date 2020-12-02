@@ -5,7 +5,7 @@ const dbModel = {
     patient: { type: mongoose_1.ObjectId, ref: 'users', required: true, index: true },
     doctor: { type: mongoose_1.ObjectId, ref: 'users', required: true, index: true },
     note: { type: String, required: true },
-    attachments: { type: [String], required: true, default: [] },
+    fileUrl: { type: [String], required: false },
     createdAt: { type: Number, required: true },
 };
 exports.default = dbModel;
