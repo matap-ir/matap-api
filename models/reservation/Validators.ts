@@ -59,7 +59,9 @@ const general = {
             to: Joi.number().required()
         }).required(),
         message: Joi.string().required().allow('')
-    }).optional()
+    }).optional(),
+    type: Joi.string().required(),
+    otherInfos: Joi.any().optional().allow(null)
 };
 
 export default {

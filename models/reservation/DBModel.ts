@@ -6,6 +6,8 @@ const dbModel = {
     doctor: {type:ObjectId,required: true,ref:'users'},
     state: {type: String,required: true},
     timeLine: {type: [Schema.Types.Mixed],required: true,default:[]},
+    type: {type: String,required: true},
+    otherInfos: {type: Schema.Types.Mixed,required: false},
     due:{
         type:{
             date:{

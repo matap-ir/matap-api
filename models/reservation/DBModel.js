@@ -7,6 +7,8 @@ const dbModel = {
     doctor: { type: mongoose_1.ObjectId, required: true, ref: 'users' },
     state: { type: String, required: true },
     timeLine: { type: [mongoose_1.Schema.Types.Mixed], required: true, default: [] },
+    type: { type: String, required: true },
+    otherInfos: { type: mongoose_1.Schema.Types.Mixed, required: false },
     due: {
         type: {
             date: {

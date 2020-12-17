@@ -37,9 +37,13 @@ export default interface Reservation {
     patient: User,
     doctor: User,
     state: ReservationState,
-    timeLine: (ReservationOffer | ReservationRequest | ReservationCancellation)[]
+    timeLine: (ReservationOffer | ReservationRequest | ReservationCancellation)[],
+    type : 'manual' | 'normal',
     due: {
         date: {from:number,to:number},
         message: string
+    },
+    otherInfos:{
+        [key: string]: string
     }
 }

@@ -49,7 +49,9 @@ const general = {
             to: Joi_1.default.number().required()
         }).required(),
         message: Joi_1.default.string().required().allow('')
-    }).optional()
+    }).optional(),
+    type: Joi_1.default.string().required(),
+    otherInfos: Joi_1.default.any().optional().allow(null)
 };
 exports.default = {
     general: createValidator_1.default(general),
