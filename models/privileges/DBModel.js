@@ -33,6 +33,7 @@ const dbModel = {
     medicalServices: createPrivilegeOptions('medical_services'),
     healthCenters: createPrivilegeOptions('healthcenters'),
     adminLogs: createPrivilegeOptions('admin-logs'),
+    reservations: createPrivilegeOptions('reservations'),
     discounts: createPrivilegeOptions('discount_coupons'),
     serverConfigs: createPrivilegeOptions('server_config'),
     serviceRequests: createPrivilegeOptions('service_requests'),

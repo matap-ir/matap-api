@@ -18,6 +18,7 @@ export default interface Privileges{
     medicalServices:PrivilegeOptions,
     healthCenters:PrivilegeOptions,
     adminLogs:PrivilegeOptions,
+    reservations: PrivilegeOptions,
     discounts:PrivilegeOptions,
     serverConfigs:PrivilegeOptions,
     serviceRequests:PrivilegeOptions,

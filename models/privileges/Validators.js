@@ -23,6 +23,7 @@ const general = createValidator_1.default({
     medicalServices: privilegeOptions,
     healthCenters: privilegeOptions,
     adminLogs: privilegeOptions,
+    reservations: privilegeOptions,
     discounts: privilegeOptions,
     serverConfigs: privilegeOptions,
     serviceRequests: privilegeOptions,
