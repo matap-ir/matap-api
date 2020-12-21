@@ -2,7 +2,7 @@ import {ObjectId, Schema} from 'mongoose';
 
 const dbModel = {
     requestDate: {type: Number,required: true},
-    patient: {type:ObjectId,required: true,ref:'users'},
+    patient: {type:ObjectId,required: false,ref:'users'},
     doctor: {type:ObjectId,required: true,ref:'users'},
     state: {type: String,required: true},
     timeLine: {type: [Schema.Types.Mixed],required: true,default:[]},
