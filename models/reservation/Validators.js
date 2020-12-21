@@ -42,7 +42,7 @@ const general = {
     patient: Joi_1.default.any().optional().allow(null),
     doctor: Joi_1.default.any().required(),
     state: Joi_1.default.string().required(),
-    timeLine: Joi_1.default.array().items(Joi_1.default.alternatives().try(Joi_1.default.object().keys(offer), Joi_1.default.object().keys(request), Joi_1.default.object().keys(cancellation))).required(),
+    timeLine: Joi_1.default.array().items(Joi_1.default.any()).required(),
     due: Joi_1.default.object().keys({
         date: Joi_1.default.object().keys({
             from: Joi_1.default.number().required(),

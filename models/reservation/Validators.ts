@@ -48,11 +48,7 @@ const general = {
     patient: Joi.any().optional().allow(null),
     doctor: Joi.any().required(),
     state: Joi.string().required(),
-    timeLine: Joi.array().items(Joi.alternatives().try(
-        Joi.object().keys(offer),
-        Joi.object().keys(request),
-        Joi.object().keys(cancellation)
-    )).required(),
+    timeLine: Joi.array().items(Joi.any()).required(),
     due:Joi.object().keys({
         date:Joi.object().keys({
             from: Joi.number().required(),
