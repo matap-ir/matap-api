@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
 const dbModel = {
     requestDate: { type: Number, required: true },
-    patient: { type: mongoose_1.ObjectId, required: true, ref: 'users' },
+    patient: { type: mongoose_1.ObjectId, required: false, ref: 'users' },
     doctor: { type: mongoose_1.ObjectId, required: true, ref: 'users' },
     state: { type: String, required: true },
     timeLine: { type: [mongoose_1.Schema.Types.Mixed], required: true, default: [] },
