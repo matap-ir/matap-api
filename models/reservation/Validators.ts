@@ -15,7 +15,7 @@ const request = {
     ).required(),
     rejection: Joi.object().keys({
         reason: Joi.string().required().allow('')
-    }).optional()
+    }).optional().allow(null)
 };
 
 const offer = {
@@ -45,8 +45,8 @@ const cancellation = {
 const general = {
     _id: Joi.any().required(),
     requestDate: Joi.number().required(),
-    patient: Joi.any().required(),
-    doctor: Joi.any(),
+    patient: Joi.any().optional().allow(null),
+    doctor: Joi.any().required(),
     state: Joi.string().required(),
     timeLine: Joi.array().items(Joi.alternatives().try(
         Joi.object().keys(offer),
