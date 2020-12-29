@@ -6,7 +6,7 @@ export const hourMinuteFormat = 'HH:mm';
 const formats = [
     'HH:mm',
     'YYYY/MM/DD HH:mm',
-    'YYYY/MM/DD',
+    'YYYY/MM/DD'
 ]
 
 const getDayName = (date: number | string | moment.Moment): string=>{

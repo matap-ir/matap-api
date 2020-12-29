@@ -18,7 +18,7 @@ const validator : GeneratedValidator<User> = {
                 creationDate:Joi.number().required(),
                 specialization:require('../specialization/Validators').default.db.update.validator.required(),
                 gender:Joi.string().optional().allow('','male','female'),
-                notificationQueuePatients: Joi.array().items(Joi.string()).optional(),
+                notificationQueuePatients: Joi.array().items(Joi.string()).optional().allow(null),
                 os: Joi.string().optional().allow(null),
                 details:Joi.object().required().keys({
                     reservationInfo:Joi.object().keys({

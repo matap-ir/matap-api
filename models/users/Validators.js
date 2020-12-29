@@ -16,7 +16,7 @@ const validator = {
                 creationDate: Joi_1.default.number().required(),
                 specialization: require('../specialization/Validators').default.db.update.validator.required(),
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
-                notificationQueuePatients: Joi_1.default.array().items(Joi_1.default.string()).optional(),
+                notificationQueuePatients: Joi_1.default.array().items(Joi_1.default.string()).optional().allow(null),
                 os: Joi_1.default.string().optional().allow(null),
                 details: Joi_1.default.object().required().keys({
                     reservationInfo: Joi_1.default.object().keys({
