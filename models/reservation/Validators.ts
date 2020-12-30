@@ -87,6 +87,8 @@ export default {
         public:{
             post:createValidator({
                 ...offer,
+                type: null,
+                rejection: null,
                 date: null,
                 _id: null
             })
@@ -96,6 +98,7 @@ export default {
         public:{
             post:createValidator({
                 ...request,
+                type: null,
                 rejection: null,
                 date: null,
                 _id: null

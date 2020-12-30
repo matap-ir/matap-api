@@ -74,12 +74,12 @@ exports.default = {
     },
     offer: {
         public: {
-            post: createValidator_1.default(Object.assign(Object.assign({}, offer), { date: null, _id: null }))
+            post: createValidator_1.default(Object.assign(Object.assign({}, offer), { type: null, rejection: null, date: null, _id: null }))
         }
     },
     request: {
         public: {
-            post: createValidator_1.default(Object.assign(Object.assign({}, request), { rejection: null, date: null, _id: null }))
+            post: createValidator_1.default(Object.assign(Object.assign({}, request), { type: null, rejection: null, date: null, _id: null }))
         }
     },
     cancellation: {
