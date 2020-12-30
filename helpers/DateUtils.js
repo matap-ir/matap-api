@@ -57,7 +57,16 @@ const isInMiddle = (from, middle, to, offset = 0) => {
     const fromTime = convertToMoment(toYYYYMMDDHHmm(from)).toDate().getTime() - offset;
     const middleTime = convertToMoment(toYYYYMMDDHHmm(middle)).toDate().getTime();
     const toTime = convertToMoment(toYYYYMMDDHHmm(to)).toDate().getTime() + offset;
-    return fromTime < middleTime && toTime > middleTime;
+    return fromTime <= middleTime && toTime >= middleTime;
+};
+const findConflict = (ranges, offset = 0) => {
+    return ranges.find(r => {
+        return ranges.find(r2 => r2 !== r &&
+            (isInMiddle(r.from, r2.from, r.to, offset) ||
+                isInMiddle(r.from, r2.to, r.to, offset) ||
+                isInMiddle(r2.from, r.from, r2.to, offset) ||
+                isInMiddle(r2.from, r.to, r2.to, offset)));
+    });
 };
 const findOptions = (fromTime, toTime, reserved, workTimes, gapMinutes) => {
     const nowDate = moment_1.default(fromTime);
@@ -74,9 +83,7 @@ const findOptions = (fromTime, toTime, reserved, workTimes, gapMinutes) => {
             const gapMilli = gapMinutes * 60 * 1000;
             while (timeIndex + gapMilli <= toMoment.toDate().getTime()) {
                 const res = reserved.find((r) => {
-                    if (isInMiddle(r.from, timeIndex, r.to) || isInMiddle(r.from, timeIndex + gapMilli, r.to)) {
-                        return true;
-                    }
+                    return findConflict([r, { from: timeIndex, to: timeIndex + gapMilli }]);
                 });
                 if (!res) {
                     options.push({ from: timeIndex, to: timeIndex + gapMilli });

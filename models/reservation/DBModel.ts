@@ -3,7 +3,7 @@ import IssuerModel from '../issuer/DBModel';
 
 const dbModel = {
     requestDate: {type: Number,required: true},
-    issuer: {type:IssuerModel,required: true},
+    issuer: IssuerModel,
     doctor: {type:ObjectId,required: true,ref:'users'},
     state: {type: String,required: true},
     timeLine: {type: [Schema.Types.Mixed],required: true,default:[]},

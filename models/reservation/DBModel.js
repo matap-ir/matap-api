@@ -5,7 +5,7 @@ const mongoose_1 = require("mongoose");
 const DBModel_1 = tslib_1.__importDefault(require("../issuer/DBModel"));
 const dbModel = {
     requestDate: { type: Number, required: true },
-    issuer: { type: DBModel_1.default, required: true },
+    issuer: DBModel_1.default,
     doctor: { type: mongoose_1.ObjectId, required: true, ref: 'users' },
     state: { type: String, required: true },
     timeLine: { type: [mongoose_1.Schema.Types.Mixed], required: true, default: [] },
