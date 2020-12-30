@@ -81,7 +81,7 @@ const findOptions = (fromTime: number, toTime: number, reserved: {from: number, 
     while (nowDate.toDate().getTime() < toTime) {
         const dayString = getDayName(nowDate);
         workTimes[dayString].forEach((workTime) => {
-            if (workTime.exceptions.length > 0 && workTime.exceptions.includes(toYYYYMMDD(nowDate))) {
+            if (workTime.exceptions && workTime.exceptions.length > 0 && workTime.exceptions.includes(toYYYYMMDD(nowDate))) {
                 return;
             }
             const fromMoment = moment(nowDate.toDate().getTime()).hour(convertToMoment(workTime.from).hour()).minutes(convertToMoment(workTime.from).minutes());
