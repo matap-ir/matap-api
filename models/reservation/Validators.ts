@@ -1,12 +1,22 @@
 import Joi from '../Joi';
 import {GeneratedValidator} from '../Validator';
 import createValidator from '../createValidator';
+import IssuerValidator from '../issuer/Validators';
 
 const request = {
     _id: Joi.any().required(),
     type: Joi.string().required(),
     message: Joi.string().required().allow(''),
     date: Joi.number().required(),
+    extras: Joi.object().keys({
+        for: Joi.string().allow('self','other'),
+        name: Joi.string().required(),
+        mobile: Joi.string().required(),
+        age: Joi.number().required(),
+        gender:Joi.string().required().allow('male','female'),
+        nationalCode: Joi.string().required(),
+        attendReason: Joi.string().required().allow('')
+    }).required(),
     selection: Joi.array().items(
         Joi.object().keys({
             from: Joi.number().required(),
@@ -45,7 +55,7 @@ const cancellation = {
 const general = {
     _id: Joi.any().required(),
     requestDate: Joi.number().required(),
-    patient: Joi.any().optional().allow(null),
+    issuer: Joi.any().required(),
     doctor: Joi.any().required(),
     state: Joi.string().required(),
     timeLine: Joi.array().items(Joi.any()).required(),
@@ -86,6 +96,7 @@ export default {
         public:{
             post:createValidator({
                 ...request,
+                rejection: null,
                 date: null,
                 _id: null
             })

@@ -8,6 +8,15 @@ const request = {
     type: Joi_1.default.string().required(),
     message: Joi_1.default.string().required().allow(''),
     date: Joi_1.default.number().required(),
+    extras: Joi_1.default.object().keys({
+        for: Joi_1.default.string().allow('self', 'other'),
+        name: Joi_1.default.string().required(),
+        mobile: Joi_1.default.string().required(),
+        age: Joi_1.default.number().required(),
+        gender: Joi_1.default.string().required().allow('male', 'female'),
+        nationalCode: Joi_1.default.string().required(),
+        attendReason: Joi_1.default.string().required().allow('')
+    }).required(),
     selection: Joi_1.default.array().items(Joi_1.default.object().keys({
         from: Joi_1.default.number().required(),
         to: Joi_1.default.number().required()
@@ -39,7 +48,7 @@ const cancellation = {
 const general = {
     _id: Joi_1.default.any().required(),
     requestDate: Joi_1.default.number().required(),
-    patient: Joi_1.default.any().optional().allow(null),
+    issuer: Joi_1.default.any().required(),
     doctor: Joi_1.default.any().required(),
     state: Joi_1.default.string().required(),
     timeLine: Joi_1.default.array().items(Joi_1.default.any()).required(),
@@ -70,7 +79,7 @@ exports.default = {
     },
     request: {
         public: {
-            post: createValidator_1.default(Object.assign(Object.assign({}, request), { date: null, _id: null }))
+            post: createValidator_1.default(Object.assign(Object.assign({}, request), { rejection: null, date: null, _id: null }))
         }
     },
     cancellation: {

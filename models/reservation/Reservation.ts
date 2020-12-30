@@ -1,5 +1,6 @@
 import {User} from '../../index';
 import {ReservationState} from '../Enums';
+import Issuer from '../issuer/Issuer';
 
 export interface ReservationCancellation {
     _id: string,
@@ -14,7 +15,16 @@ export interface ReservationRequest {
     type:'request',
     message: string,
     date: number,
-    selection: {from:number,to:number}[] // YYYY/MM/DD HH:mm
+    selection: {from:number,to:number}[],
+    extras:{
+        for: 'self' | 'other',
+        name: string,
+        mobile: string,
+        age: number,
+        gender: 'male' | 'female',
+        nationalCode: string,
+        attendReason: string
+    },
     rejection?: {
         reason: string
     }
@@ -34,7 +44,7 @@ export interface ReservationOffer {
 export default interface Reservation {
     _id: string,
     requestDate: number,
-    patient: User,
+    issuer: Issuer,
     doctor: User,
     state: ReservationState,
     timeLine: (ReservationOffer | ReservationRequest | ReservationCancellation)[],

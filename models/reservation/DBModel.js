@@ -1,9 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
 const mongoose_1 = require("mongoose");
+const DBModel_1 = tslib_1.__importDefault(require("../issuer/DBModel"));
 const dbModel = {
     requestDate: { type: Number, required: true },
-    patient: { type: mongoose_1.ObjectId, required: false, ref: 'users' },
+    issuer: { type: DBModel_1.default, required: true },
     doctor: { type: mongoose_1.ObjectId, required: true, ref: 'users' },
     state: { type: String, required: true },
     timeLine: { type: [mongoose_1.Schema.Types.Mixed], required: true, default: [] },

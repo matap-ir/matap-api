@@ -27,12 +27,14 @@ import CrashReport from './models/crash_report/CrashReport';
 import Archive from './models/archive/Archive';
 import WorkTime from './models/response_time/WorkTime';
 import Reservation,{ReservationCancellation,ReservationOffer,ReservationRequest} from './models/reservation/Reservation';
+import Issuer from './models/issuer/Issuer';
 
 export {
     Reservation,
     ReservationRequest,
     ReservationOffer,
     ReservationCancellation,
+    Issuer,
     WorkTime,
     Archive,
     CrashReport,
