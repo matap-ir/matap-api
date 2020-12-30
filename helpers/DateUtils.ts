@@ -61,7 +61,7 @@ const isInMiddle = (from: string | moment.Moment | number,middle: string | momen
     return fromTime <= middleTime && toTime >= middleTime;
 };
 
-const findConflict = (ranges:{from: number | string | moment.Moment,to: number | string | moment.Moment}[],offset = 0)=>{
+const findConflict = (ranges:{from: number | string | moment.Moment,to: number | string | moment.Moment}[],offset = 0,ignoreEdges = true)=>{
     return ranges.find(r => {
         return ranges.find(r2 =>
             r2 !== r &&
@@ -69,7 +69,8 @@ const findConflict = (ranges:{from: number | string | moment.Moment,to: number |
                 isInMiddle(r.from,r2.from,r.to,offset) ||
                 isInMiddle(r.from,r2.to,r.to,offset) ||
                 isInMiddle(r2.from,r.from,r2.to,offset) ||
-                isInMiddle(r2.from,r.to,r2.to,offset)
+                isInMiddle(r2.from,r.to,r2.to,offset) ||
+                r2.from === r.from && r2.to === r.to
             )
         );
     });
@@ -90,10 +91,9 @@ const findOptions = (fromTime: number, toTime: number, reserved: {from: number, 
             const gapMilli = gapMinutes * 60 * 1000;
             while (timeIndex + gapMilli <= toMoment.toDate().getTime()) {
                 const res = reserved.find((r) => {
-                    return findConflict([r,{from:timeIndex,to:timeIndex + gapMilli}]);
-                    /*if (isInMiddle(r.from, timeIndex, r.to) || isInMiddle(r.from, timeIndex + gapMilli, r.to)) {
+                    if (isInMiddle(r.from, timeIndex, r.to) || isInMiddle(r.from, timeIndex + gapMilli, r.to)) {
                         return true;
-                    }*/
+                    }
                 });
                 if (!res) {
                     options.push({ from: timeIndex, to: timeIndex + gapMilli });

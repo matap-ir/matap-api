@@ -59,13 +59,14 @@ const isInMiddle = (from, middle, to, offset = 0) => {
     const toTime = convertToMoment(toYYYYMMDDHHmm(to)).toDate().getTime() + offset;
     return fromTime <= middleTime && toTime >= middleTime;
 };
-const findConflict = (ranges, offset = 0) => {
+const findConflict = (ranges, offset = 0, ignoreEdges = true) => {
     return ranges.find(r => {
         return ranges.find(r2 => r2 !== r &&
             (isInMiddle(r.from, r2.from, r.to, offset) ||
                 isInMiddle(r.from, r2.to, r.to, offset) ||
                 isInMiddle(r2.from, r.from, r2.to, offset) ||
-                isInMiddle(r2.from, r.to, r2.to, offset)));
+                isInMiddle(r2.from, r.to, r2.to, offset) ||
+                r2.from === r.from && r2.to === r.to));
     });
 };
 const findOptions = (fromTime, toTime, reserved, workTimes, gapMinutes) => {
@@ -83,7 +84,9 @@ const findOptions = (fromTime, toTime, reserved, workTimes, gapMinutes) => {
             const gapMilli = gapMinutes * 60 * 1000;
             while (timeIndex + gapMilli <= toMoment.toDate().getTime()) {
                 const res = reserved.find((r) => {
-                    return findConflict([r, { from: timeIndex, to: timeIndex + gapMilli }]);
+                    if (isInMiddle(r.from, timeIndex, r.to) || isInMiddle(r.from, timeIndex + gapMilli, r.to)) {
+                        return true;
+                    }
                 });
                 if (!res) {
                     options.push({ from: timeIndex, to: timeIndex + gapMilli });
