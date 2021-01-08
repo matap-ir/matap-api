@@ -52,6 +52,7 @@ const general = {
     doctor: Joi_1.default.any().required(),
     state: Joi_1.default.string().required(),
     timeLine: Joi_1.default.array().items(Joi_1.default.any()).required(),
+    trackingCode: Joi_1.default.string().required(),
     due: Joi_1.default.object().keys({
         date: Joi_1.default.object().keys({
             from: Joi_1.default.number().required(),

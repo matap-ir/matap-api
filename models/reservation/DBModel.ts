@@ -9,6 +9,7 @@ const dbModel = {
     timeLine: {type: [Schema.Types.Mixed],required: true,default:[]},
     type: {type: String,required: true},
     otherInfos: {type: Schema.Types.Mixed,required: false},
+    trackingCode: {type: String,required: true,unique: true},
     due:{
         type:{
             date:{

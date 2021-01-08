@@ -49,6 +49,7 @@ export default interface Reservation {
     state: ReservationState,
     timeLine: (ReservationOffer | ReservationRequest | ReservationCancellation)[],
     type : 'manual' | 'normal',
+    trackingCode: string,
     due: {
         date: {from:number,to:number},
         message: string
