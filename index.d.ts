@@ -28,6 +28,7 @@ import Archive from './models/archive/Archive';
 import WorkTime from './models/response_time/WorkTime';
 import Reservation,{ReservationCancellation,ReservationOffer,ReservationRequest} from './models/reservation/Reservation';
 import Issuer from './models/issuer/Issuer';
+import WorkTimes from './models/users/WorkTimes';
 
 export {
     Reservation,
@@ -51,6 +52,7 @@ export {
     User,
     Chat,
     Enums,
+    WorkTimes,
     DoctorStatus,
     PatientStatus,
     Specialization,
