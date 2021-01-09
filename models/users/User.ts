@@ -2,6 +2,7 @@ import {UserType} from '../Enums';
 import {ResponseTime, Specialization, WorkTime} from '../../index';
 import HealthCenter from '../health_center/HealthCenter';
 import Visit from '../visit/Visit';
+import WorkTimes from './WorkTimes';
 
 export default interface User {
     _id: string;
@@ -28,15 +29,7 @@ export default interface User {
             address: string,
             gapMinutes: number,
             coordinates?:{lat: number,lng: number}
-            workTimes: {
-                saturday:WorkTime[],
-                sunday:WorkTime[],
-                monday:WorkTime[],
-                tuesday:WorkTime[],
-                wednesday:WorkTime[],
-                thursday:WorkTime[],
-                friday:WorkTime[]
-            }
+            workTimes: WorkTimes
         },
         phone: string,
         address: string,
