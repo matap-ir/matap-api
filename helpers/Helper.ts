@@ -43,27 +43,28 @@ const dayNumberToString = (day: string,lang = 'fa'): string => {
     }
 };
 
-const findWorktimeIntervals = (fromTime: smartDate.SmartDate, toTime: smartDate.SmartDate, reserved: {from: number, to: number}[], workTimes: WorkTimes, gapMinutes: number): string[] => {
+const findWorktimeIntervals = (fromTime, toTime, reserved, workTimes, gapMinutes) => {
     const nowDate = smartDate(fromTime);
+    const minimumDate = smartDate(fromTime).getTime();
     const options: string[] = [];
     const toTimeMillis = toTime.getTime();
     while (nowDate.getTime() < toTimeMillis) {
+        const nowDateString = nowDate.formatGregorian('YYYY/MM/DD');
         workTimes[nowDate.dayName()].forEach((workTime) => {
+            const fromMoment = smartDate(nowDateString+' '+workTime.from);
             if (workTime.exceptions && workTime.exceptions.length > 0 && workTime.exceptions.includes(nowDate.toYMD())) {
                 return;
             }
-            const fromMoment = smartDate(workTime.from);
-            const toMoment = smartDate(workTime.to);
+            const toMoment = smartDate(nowDateString+' '+workTime.to);
             let timeIndex = fromMoment.getTime();
             const gapMilli = gapMinutes * 60 * 1000;
             while (timeIndex + gapMilli <= toMoment.getTime()) {
-                if (!Kit.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMilli }, reserved, 60 * 1000)){
+                if (timeIndex > minimumDate && !Kit.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMilli }, reserved, 60 * 1000)) {
                     options.push(smartDate(timeIndex).toHM() + ' - ' + smartDate(timeIndex + gapMilli).toHM());
                 }
                 timeIndex += gapMilli;
             }
         });
-        nowDate.add(1, 'day');
     }
     return options;
 };

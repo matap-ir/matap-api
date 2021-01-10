@@ -42,25 +42,26 @@ const dayNumberToString = (day, lang = 'fa') => {
 };
 const findWorktimeIntervals = (fromTime, toTime, reserved, workTimes, gapMinutes) => {
     const nowDate = javascript_dev_kit_1.smartDate(fromTime);
+    const minimumDate = javascript_dev_kit_1.smartDate(fromTime).getTime();
     const options = [];
     const toTimeMillis = toTime.getTime();
     while (nowDate.getTime() < toTimeMillis) {
+        const nowDateString = nowDate.formatGregorian('YYYY/MM/DD');
         workTimes[nowDate.dayName()].forEach((workTime) => {
+            const fromMoment = javascript_dev_kit_1.smartDate(nowDateString + ' ' + workTime.from);
             if (workTime.exceptions && workTime.exceptions.length > 0 && workTime.exceptions.includes(nowDate.toYMD())) {
                 return;
             }
-            const fromMoment = javascript_dev_kit_1.smartDate(workTime.from);
-            const toMoment = javascript_dev_kit_1.smartDate(workTime.to);
+            const toMoment = javascript_dev_kit_1.smartDate(nowDateString + ' ' + workTime.to);
             let timeIndex = fromMoment.getTime();
             const gapMilli = gapMinutes * 60 * 1000;
             while (timeIndex + gapMilli <= toMoment.getTime()) {
-                if (!javascript_dev_kit_1.default.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMilli }, reserved, 60 * 1000)) {
+                if (timeIndex > minimumDate && !javascript_dev_kit_1.default.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMilli }, reserved, 60 * 1000)) {
                     options.push(javascript_dev_kit_1.smartDate(timeIndex).toHM() + ' - ' + javascript_dev_kit_1.smartDate(timeIndex + gapMilli).toHM());
                 }
                 timeIndex += gapMilli;
             }
         });
-        nowDate.add(1, 'day');
     }
     return options;
 };
