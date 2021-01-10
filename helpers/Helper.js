@@ -62,6 +62,7 @@ const findWorktimeIntervals = (fromTime, toTime, reserved, workTimes, gapMinutes
                 timeIndex += gapMilli;
             }
         });
+        nowDate.add(1, 'day');
     }
     return options;
 };
