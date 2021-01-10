@@ -2,8 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.findWorktimeOptions = void 0;
 const tslib_1 = require("tslib");
-const javascript_dev_kit_1 = require("javascript-dev-kit");
-const javascript_dev_kit_2 = tslib_1.__importDefault(require("javascript-dev-kit"));
+const javascript_dev_kit_1 = tslib_1.__importStar(require("javascript-dev-kit"));
 const findWorktimeOptions = (fromTime, toTime, reserved, workTimes, gapMinutes) => {
     const nowDate = javascript_dev_kit_1.smartDate(fromTime);
     const options = [];
@@ -18,7 +17,7 @@ const findWorktimeOptions = (fromTime, toTime, reserved, workTimes, gapMinutes) 
             let timeIndex = fromMoment.getTime();
             const gapMilli = gapMinutes * 60 * 1000;
             while (timeIndex + gapMilli <= toMoment.getTime()) {
-                if (!javascript_dev_kit_2.default.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMilli }, reserved, 60 * 1000)) {
+                if (!javascript_dev_kit_1.default.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMilli }, reserved, 60 * 1000)) {
                     options.push(javascript_dev_kit_1.smartDate(timeIndex).toHM() + ' - ' + javascript_dev_kit_1.smartDate(timeIndex + gapMilli).toHM());
                 }
                 timeIndex += gapMilli;

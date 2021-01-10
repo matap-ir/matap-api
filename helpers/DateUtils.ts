@@ -1,7 +1,5 @@
-import {smartDate} from 'javascript-dev-kit';
-import WorkTime from '../models/response_time/WorkTime';
 import WorkTimes from '../models/users/WorkTimes';
-import Kit from 'javascript-dev-kit';
+import Kit,{smartDate} from 'javascript-dev-kit';
 
 const findWorktimeOptions = (fromTime: smartDate.SmartDate, toTime: smartDate.SmartDate, reserved: {from: number, to: number}[], workTimes: WorkTimes, gapMinutes: number): string[] => {
     const nowDate = smartDate(fromTime);
