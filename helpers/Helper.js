@@ -53,23 +53,31 @@ const isReserveValid = (request, workTimes, reserved) => {
         return javascript_dev_kit_1.smartDate(ymd + ' ' + workTime.from).getTime() <= request.from && javascript_dev_kit_1.smartDate(ymd + ' ' + workTime.to).getTime() >= request.to;
     }) !== undefined;
 };
-const calculateWorkTimeIntervals = (day, reserved, workTimes, gapMinutes) => {
+const calculateWorkTimeIntervals = (fromTime, toTime, reserved, workTimes, gapMinutes) => {
+    const minimumDate = javascript_dev_kit_1.smartDate(fromTime).getTime();
+    const maximumDate = javascript_dev_kit_1.smartDate(toTime).getTime();
     const gapMillis = gapMinutes * 60 * 1000;
+    const now = javascript_dev_kit_1.smartDate(fromTime);
     const options = [];
-    workTimes[day].forEach((workTime) => {
-        if (workTime.exceptions && workTime.exceptions.length > 0 && workTime.exceptions.includes(now.toYMD())) {
-            return;
-        }
-        const workTimeBeginning = javascript_dev_kit_1.smartDate(workTime.from);
-        const workTimeEnd = javascript_dev_kit_1.smartDate(workTime.to);
-        let timeIndex = workTimeBeginning.getTime();
-        while (timeIndex + gapMillis <= workTimeEnd.getTime()) {
-            if (!javascript_dev_kit_1.default.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMillis }, reserved, 60 * 1000)) {
-                options.push(javascript_dev_kit_1.smartDate(timeIndex).toHM() + ' - ' + javascript_dev_kit_1.smartDate(timeIndex + gapMillis).toHM());
+    while (now.getTime() < maximumDate) {
+        const nowDateString = now.formatGregorian('YYYY/MM/DD');
+        const todayWorkTimes = workTimes[now.dayName()];
+        todayWorkTimes.forEach((workTime) => {
+            if (workTime.exceptions && workTime.exceptions.length > 0 && workTime.exceptions.includes(now.toYMD())) {
+                return;
             }
-            timeIndex += gapMillis;
-        }
-    });
+            const workTimeBeginning = javascript_dev_kit_1.smartDate(nowDateString + ' ' + workTime.from);
+            const workTimeEnd = javascript_dev_kit_1.smartDate(nowDateString + ' ' + workTime.to);
+            let timeIndex = workTimeBeginning.getTime();
+            while (timeIndex + gapMillis <= workTimeEnd.getTime() && timeIndex + gapMillis <= maximumDate && timeIndex >= minimumDate) {
+                if (!javascript_dev_kit_1.default.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMillis }, reserved, 60 * 1000)) {
+                    options.push(javascript_dev_kit_1.smartDate(timeIndex).toHM() + ' - ' + javascript_dev_kit_1.smartDate(timeIndex + gapMillis).toHM());
+                }
+                timeIndex += gapMillis;
+            }
+        });
+        now.add(1, 'day').toBeginningOfDay();
+    }
     return options;
 };
 exports.default = {

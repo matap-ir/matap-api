@@ -57,28 +57,7 @@ const isReserveValid = (request:{from: number,to: number},workTimes: WorkTimes,r
     }) !== undefined;
 };
 
-const calculateWorkTimeIntervals = (day: DayId, reserved: {from: number,to: number}[], workTimes: WorkTimes, gapMinutes: number) => {
-    const gapMillis = gapMinutes * 60 * 1000;
-    const options: string[] = [];
-
-    workTimes[day].forEach((workTime) => {
-            if (workTime.exceptions && workTime.exceptions.length > 0 && workTime.exceptions.includes(now.toYMD())) {
-                return;
-            }
-            const workTimeBeginning = smartDate(workTime.from);
-            const workTimeEnd = smartDate(workTime.to);
-            let timeIndex = workTimeBeginning.getTime();
-            while (timeIndex + gapMillis <= workTimeEnd.getTime()) {
-                if (!Kit.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMillis }, reserved, 60 * 1000)) {
-                    options.push(smartDate(timeIndex).toHM() + ' - ' + smartDate(timeIndex + gapMillis).toHM());
-                }
-                timeIndex += gapMillis;
-            }
-        });
-    return options;
-};
-
-/*const findWorkTimeIntervals = (fromTime: DateInputTypes, toTime: DateInputTypes, reserved: {from: number,to: number}[], workTimes: WorkTimes, gapMinutes: number) => {
+const calculateWorkTimeIntervals = (fromTime: DateInputTypes, toTime: DateInputTypes, reserved: {from: number,to: number}[], workTimes: WorkTimes, gapMinutes: number) => {
     const minimumDate = smartDate(fromTime).getTime();
     const maximumDate = smartDate(toTime).getTime();
     const gapMillis = gapMinutes * 60 * 1000;
@@ -105,7 +84,7 @@ const calculateWorkTimeIntervals = (day: DayId, reserved: {from: number,to: numb
         now.add(1, 'day').toBeginningOfDay();
     }
     return options;
-};*/
+};
 
 export default {
     generateUUID,
