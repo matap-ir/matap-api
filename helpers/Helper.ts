@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import {ResponseTime} from '../index';
-import Kit, {smartDate} from 'javascript-dev-kit';
+import Kit, {DateInputTypes, DayId, smartDate} from 'javascript-dev-kit';
 import WorkTimes from '../models/users/WorkTimes';
 
 const generateUUID = () => {
@@ -43,36 +43,74 @@ const dayNumberToString = (day: string,lang = 'fa'): string => {
     }
 };
 
-const findWorktimeIntervals = (fromTime, toTime, reserved, workTimes, gapMinutes) => {
-    const nowDate = smartDate(fromTime);
-    const minimumDate = smartDate(fromTime).getTime();
+const isReserveValid = (request:{from: number,to: number},workTimes: WorkTimes,reserved: {from: number,to: number}[]): boolean=>{
+    const smd = smartDate(request.from);
+    const ymd = smd.toYMD();
+    if (Kit.datesRangesConflict(request, reserved, 60 * 1000)) {
+        return false;
+    }
+    return workTimes[smd.dayName()].find((workTime)=>{
+        if (workTime.exceptions && workTime.exceptions.length > 0 && workTime.exceptions.includes(ymd)) {
+            return false;
+        }
+        return smartDate(ymd+' '+workTime.from).getTime() <= request.from && smartDate(ymd+' '+workTime.to).getTime() >= request.to;
+    }) !== undefined;
+};
+
+const calculateWorkTimeIntervals = (day: DayId, reserved: {from: number,to: number}[], workTimes: WorkTimes, gapMinutes: number) => {
+    const gapMillis = gapMinutes * 60 * 1000;
     const options: string[] = [];
-    const toTimeMillis = toTime.getTime();
-    while (nowDate.getTime() < toTimeMillis) {
-        const nowDateString = nowDate.formatGregorian('YYYY/MM/DD');
-        workTimes[nowDate.dayName()].forEach((workTime) => {
-            const fromMoment = smartDate(nowDateString+' '+workTime.from);
-            if (workTime.exceptions && workTime.exceptions.length > 0 && workTime.exceptions.includes(nowDate.toYMD())) {
+
+    workTimes[day].forEach((workTime) => {
+            if (workTime.exceptions && workTime.exceptions.length > 0 && workTime.exceptions.includes(now.toYMD())) {
                 return;
             }
-            const toMoment = smartDate(nowDateString+' '+workTime.to);
-            let timeIndex = fromMoment.getTime();
-            const gapMilli = gapMinutes * 60 * 1000;
-            while (timeIndex + gapMilli <= toMoment.getTime()) {
-                if (timeIndex > minimumDate && !Kit.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMilli }, reserved, 60 * 1000)) {
-                    options.push(smartDate(timeIndex).toHM() + ' - ' + smartDate(timeIndex + gapMilli).toHM());
+            const workTimeBeginning = smartDate(workTime.from);
+            const workTimeEnd = smartDate(workTime.to);
+            let timeIndex = workTimeBeginning.getTime();
+            while (timeIndex + gapMillis <= workTimeEnd.getTime()) {
+                if (!Kit.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMillis }, reserved, 60 * 1000)) {
+                    options.push(smartDate(timeIndex).toHM() + ' - ' + smartDate(timeIndex + gapMillis).toHM());
                 }
-                timeIndex += gapMilli;
+                timeIndex += gapMillis;
             }
         });
-        nowDate.add(1, 'day');
-    }
     return options;
 };
+
+/*const findWorkTimeIntervals = (fromTime: DateInputTypes, toTime: DateInputTypes, reserved: {from: number,to: number}[], workTimes: WorkTimes, gapMinutes: number) => {
+    const minimumDate = smartDate(fromTime).getTime();
+    const maximumDate = smartDate(toTime).getTime();
+    const gapMillis = gapMinutes * 60 * 1000;
+    const now = smartDate(fromTime);
+    const options: string[] = [];
+    while (now.getTime() < maximumDate) {
+        const nowDateString = now.formatGregorian('YYYY/MM/DD');
+        const todayWorkTimes = workTimes[now.dayName()];
+
+        todayWorkTimes.forEach((workTime) => {
+            if (workTime.exceptions && workTime.exceptions.length > 0 && workTime.exceptions.includes(now.toYMD())) {
+                return;
+            }
+            const workTimeBeginning = smartDate(nowDateString+' '+workTime.from);
+            const workTimeEnd = smartDate(nowDateString+' '+workTime.to);
+            let timeIndex = workTimeBeginning.getTime();
+            while (timeIndex + gapMillis <= workTimeEnd.getTime() && timeIndex + gapMillis <= maximumDate && timeIndex >= minimumDate) {
+                if (!Kit.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMillis }, reserved, 60 * 1000)) {
+                    options.push(smartDate(timeIndex).toHM() + ' - ' + smartDate(timeIndex + gapMillis).toHM());
+                }
+                timeIndex += gapMillis;
+            }
+        });
+        now.add(1, 'day').toBeginningOfDay();
+    }
+    return options;
+};*/
 
 export default {
     generateUUID,
     dayNumberToString,
     createResponsiveDaysText,
-    findWorktimeIntervals
+    calculateWorkTimeIntervals,
+    isReserveValid
 };
