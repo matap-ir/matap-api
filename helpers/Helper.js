@@ -43,6 +43,9 @@ const dayNumberToString = (day, lang = 'fa') => {
 const isReserveValid = (request, workTimes, reserved) => {
     const smd = javascript_dev_kit_1.smartDate(request.from);
     const ymd = smd.toYMD();
+    if (request.from < javascript_dev_kit_1.smartDate().getTime()) {
+        return false;
+    }
     if (javascript_dev_kit_1.default.datesRangesConflict(request, reserved, 60 * 1000)) {
         return false;
     }

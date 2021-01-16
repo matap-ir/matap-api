@@ -46,6 +46,9 @@ const dayNumberToString = (day: string,lang = 'fa'): string => {
 const isReserveValid = (request:{from: number,to: number},workTimes: WorkTimes,reserved: {from: number,to: number}[]): boolean=>{
     const smd = smartDate(request.from);
     const ymd = smd.toYMD();
+    if(request.from < smartDate().getTime()){
+        return false;
+    }
     if (Kit.datesRangesConflict(request, reserved, 60 * 1000)) {
         return false;
     }
