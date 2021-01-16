@@ -25,6 +25,7 @@
       ]
     }
   },
+  "compileOnSave": true,
   "include": [
     "./**/*.ts"
   ],

@@ -69,8 +69,8 @@ const calculateWorkTimeIntervals = (fromTime, toTime, reserved, workTimes, gapMi
             const workTimeBeginning = javascript_dev_kit_1.smartDate(nowDateString + ' ' + workTime.from);
             const workTimeEnd = javascript_dev_kit_1.smartDate(nowDateString + ' ' + workTime.to);
             let timeIndex = workTimeBeginning.getTime();
-            while (timeIndex + gapMillis <= workTimeEnd.getTime() && timeIndex + gapMillis <= maximumDate && timeIndex >= minimumDate) {
-                if (!javascript_dev_kit_1.default.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMillis }, reserved, 60 * 1000)) {
+            while (timeIndex + gapMillis <= workTimeEnd.getTime() && timeIndex + gapMillis <= maximumDate) {
+                if (timeIndex >= minimumDate && !javascript_dev_kit_1.default.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMillis }, reserved, 60 * 1000)) {
                     options.push(javascript_dev_kit_1.smartDate(timeIndex).toHM() + ' - ' + javascript_dev_kit_1.smartDate(timeIndex + gapMillis).toHM());
                 }
                 timeIndex += gapMillis;

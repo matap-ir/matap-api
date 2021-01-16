@@ -74,8 +74,8 @@ const calculateWorkTimeIntervals = (fromTime: DateInputTypes, toTime: DateInputT
             const workTimeBeginning = smartDate(nowDateString+' '+workTime.from);
             const workTimeEnd = smartDate(nowDateString+' '+workTime.to);
             let timeIndex = workTimeBeginning.getTime();
-            while (timeIndex + gapMillis <= workTimeEnd.getTime() && timeIndex + gapMillis <= maximumDate && timeIndex >= minimumDate) {
-                if (!Kit.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMillis }, reserved, 60 * 1000)) {
+            while (timeIndex + gapMillis <= workTimeEnd.getTime() && timeIndex + gapMillis <= maximumDate) {
+                if (timeIndex >= minimumDate && !Kit.datesRangesConflict({ from: timeIndex, to: timeIndex + gapMillis }, reserved, 60 * 1000)) {
                     options.push(smartDate(timeIndex).toHM() + ' - ' + smartDate(timeIndex + gapMillis).toHM());
                 }
                 timeIndex += gapMillis;
