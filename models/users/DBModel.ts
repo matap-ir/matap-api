@@ -1,11 +1,11 @@
-import { ObjectId } from 'mongoose';
+import {Mongoose, ObjectId,SchemaOptions,SchemaDefinition} from 'mongoose';
 import {WorkTime} from '../../index';
-const dbModel = {
-    mobile: {type: String,index:true,unique:true, required: true},
+const dbModel: SchemaDefinition = {
+    mobile: {type: String,index:true,unique:true,text: true, required: true},
     type:{type: String,require:true},
-    name:{type:String,required:false,default:''},
+    name:{type:String,required:false,default:'',text: true},
     imageUrl:{type:String},
-    code:{type:Number,index:true,unique:true,sparse:true},
+    code:{type:Number,index:true,unique:true,sparse:true,text: true},
     specialization:{type:ObjectId,ref:'specializations'},
     price:{type:Number},
     currency:{type:Number,default:0,required:true},

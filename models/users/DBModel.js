@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
 const dbModel = {
-    mobile: { type: String, index: true, unique: true, required: true },
+    mobile: { type: String, index: true, unique: true, text: true, required: true },
     type: { type: String, require: true },
-    name: { type: String, required: false, default: '' },
+    name: { type: String, required: false, default: '', text: true },
     imageUrl: { type: String },
-    code: { type: Number, index: true, unique: true, sparse: true },
+    code: { type: Number, index: true, unique: true, sparse: true, text: true },
     specialization: { type: mongoose_1.ObjectId, ref: 'specializations' },
     price: { type: Number },
     currency: { type: Number, default: 0, required: true },
