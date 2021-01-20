@@ -1,10 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const uuid_1 = require("uuid");
 const javascript_dev_kit_1 = tslib_1.__importStar(require("javascript-dev-kit"));
 const generateUUID = () => {
-    return uuid_1.v4();
+    return javascript_dev_kit_1.default.generateUUID();
 };
 const createResponsiveDaysText = (responseDays, lang = 'fa') => {
     if (!responseDays || responseDays === '') {

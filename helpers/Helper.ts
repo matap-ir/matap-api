@@ -1,10 +1,9 @@
-import { v4 as uuidv4 } from 'uuid';
 import {ResponseTime} from '../index';
 import Kit, {DateInputTypes, DayId, smartDate} from 'javascript-dev-kit';
 import WorkTimes from '../models/users/WorkTimes';
 
 const generateUUID = () => {
-    return uuidv4();
+    return Kit.generateUUID();
 };
 
 const createResponsiveDaysText = (responseDays: {},lang = 'fa'): string=>{
