@@ -1,8 +1,8 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "main": "index",
-  "types": "index.d.ts",
+  "main": "index.js",
+  "types": "index.ts",
   "scripts": {
     "start": "babel-node index.js",
     "upgradeLatest": "yarn upgrade-interactive --latest"

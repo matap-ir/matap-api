@@ -89,10 +89,3 @@ export interface ValidatorFields {
     [key: string]: ValidatorField;
 }
 
-declare module 'Api' {
-
-
-
-}
-
-
