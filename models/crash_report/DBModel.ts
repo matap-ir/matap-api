@@ -1,4 +1,4 @@
-import { ObjectId,Schema } from 'mongoose';
+import { Schema } from 'mongoose';
 
 const dbModel = {
     os:{type: String,required:false},

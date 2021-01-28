@@ -1,4 +1,5 @@
-import { ObjectId } from 'mongoose';
+import {ObjectId} from '../../index';
+
 const dbModel = {
     title:{type:String,required:true},
     body:{type:String,required:true},

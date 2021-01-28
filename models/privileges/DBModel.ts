@@ -1,4 +1,5 @@
-import { ObjectId,Schema } from 'mongoose';
+import { Schema } from 'mongoose';
+import { ObjectId } from '../..';
 
 const createPrivilegeOptionsDetails =(ref?: string) => {
     return{

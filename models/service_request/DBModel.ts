@@ -1,5 +1,6 @@
-import { ObjectId } from 'mongoose';
+
 import Joi from '../Joi';
+import { ObjectId } from '../..';
 const dbModel = {
     age:{type:Number,required:true},
     mobile:{type:String,required:true},

@@ -1,4 +1,4 @@
-import Joi from 'joi';
+import Joi from '@hapi/joi';
 
 const general = Joi.alternatives().try(
     Joi.object().keys({

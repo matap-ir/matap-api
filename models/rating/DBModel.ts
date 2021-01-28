@@ -1,4 +1,3 @@
-import { ObjectId } from 'mongoose';
 const dbModel = {
     visitId: {type: String,required:true},
     service_quality:{type:Number,required:true},

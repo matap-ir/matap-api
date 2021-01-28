@@ -1,3 +1,4 @@
+// @ts-nocheck
 import createValidator from '../createValidator';
 import Joi from '../Joi';
 import {GeneratedValidator} from '../Validator';

@@ -1,22 +1,19 @@
-// https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities/61305579#61305579
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Node 14",
-
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": false,
-    "lib": ["es2020"],
     "module": "commonjs",
-    "target": "es2020",
-
     "strict": true,
+    "baseUrl": "./",
+    "removeComments": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-
-    "baseUrl": "/",
-    "rootDir": "./",
+    "target": "es6",
+    "outDir": "dist",
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "noUnusedParameters": false,
+    "importHelpers": true,
+    "sourceMap": false,
     "types": [
       "node"
     ],
@@ -31,12 +28,9 @@
   },
   "compileOnSave": true,
   "include": [
-    "./*.ts",
-    "./**/*.ts",
-    "./index.ts",
-    "./index.d.js"
+    "./**/*.ts"
   ],
   "exclude": [
-    "./node_modules/*"
+
   ]
 }

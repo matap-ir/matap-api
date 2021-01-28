@@ -29,8 +29,12 @@ import WorkTime from './models/response_time/WorkTime';
 import Reservation,{ReservationCancellation,ReservationOffer,ReservationRequest} from './models/reservation/Reservation';
 import Issuer from './models/issuer/Issuer';
 import WorkTimes from './models/users/WorkTimes';
+import * as mongoose from 'mongoose';
+
+const ObjectId = mongoose.Types.ObjectId;
 
 export {
+    ObjectId,
     Reservation,
     ReservationRequest,
     ReservationOffer,

@@ -1,11 +1,13 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "types": "index.ts",
   "scripts": {
     "start": "babel-node index.js",
-    "upgradeLatest": "yarn upgrade-interactive --latest"
+    "upgradeLatest": "yarn upgrade-interactive --latest",
+    "generate-dist": "yarn delete_dist && tsc --p ./tsconfig.json --declaration --declarationDir dist --outDir dist --pretty",
+    "delete_dist": "if exist \"./dist*\" Rmdir /S /Q \"./dist\""
   },
   "dependencies": {
     "javascript-dev-kit": "^0.23.5"
@@ -17,6 +19,6 @@
     "@types/node": "^13.7.0",
     "mongoose": "^5.10.14",
     "tslint": "^6.0.0",
-    "typescript": "^3.7.5"
+    "typescript": "*"
   }
 }

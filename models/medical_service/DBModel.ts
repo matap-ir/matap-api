@@ -1,4 +1,3 @@
-import { ObjectId } from 'mongoose';
 const dbModel = {
     logoUrl:{type:String},
     title:{type:String,required:true},

@@ -1,4 +1,4 @@
-import { ObjectId } from 'mongoose';
+import {ObjectId} from '../../index';
 
 const dbModel = {
     url: {type:String,required:true},

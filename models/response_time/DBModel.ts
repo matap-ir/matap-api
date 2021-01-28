@@ -1,4 +1,5 @@
-import { ObjectId } from 'mongoose';
+import {ObjectId} from '../../index';
+
 const dbModel = {
     from: {type: {hour:String, minute:String},required:true},
     to: {type: {hour:String, minute:String},required:true},

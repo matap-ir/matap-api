@@ -1,5 +1,6 @@
-import { ObjectId,SchemaDefinition } from 'mongoose';
+import { SchemaDefinition } from 'mongoose';
 import {VisitStatus} from '../Enums';
+import {ObjectId} from '../../index';
 
 export default{
     patient:{type:ObjectId,ref:'users',required:true},

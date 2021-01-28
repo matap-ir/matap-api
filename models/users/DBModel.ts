@@ -1,5 +1,5 @@
-import {Mongoose, ObjectId,SchemaOptions,SchemaDefinition} from 'mongoose';
-import {WorkTime} from '../../index';
+import {Mongoose,SchemaOptions,SchemaDefinition} from 'mongoose';
+import {ObjectId, WorkTime} from '../../index';
 const dbModel: SchemaDefinition = {
     mobile: {type: String,index:true,unique:true, required: true},
     type:{type: String,require:true},

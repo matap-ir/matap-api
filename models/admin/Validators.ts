@@ -4,6 +4,7 @@ import {GeneratedValidator} from '../Validator';
 import Admin from './Admin';
 
 
+
 const validator : GeneratedValidator<Admin> = {
   db:{
       insert:createValidator({
@@ -37,6 +38,7 @@ const validator : GeneratedValidator<Admin> = {
           privileges:require('../privileges/Validators').default.public.patch.validator.required()
       })
   },
+    // @ts-ignore
     signin:createValidator({
         username:Joi.string().required(),
         password:Joi.string().required()
