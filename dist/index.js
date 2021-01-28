@@ -9,8 +9,7 @@ Object.defineProperty(exports, "UserType", { enumerable: true, get: function () 
 Object.defineProperty(exports, "HealthCenterType", { enumerable: true, get: function () { return Enums_1.HealthCenterType; } });
 Object.defineProperty(exports, "VisitStatus", { enumerable: true, get: function () { return Enums_1.VisitStatus; } });
 Object.defineProperty(exports, "TransactionType", { enumerable: true, get: function () { return Enums_1.TransactionType; } });
-const Enums = tslib_1.__importStar(require("./models/Enums"));
-exports.Enums = Enums;
+tslib_1.__exportStar(require("./models/Enums"), exports);
 const Helper_1 = tslib_1.__importDefault(require("./helpers/Helper"));
 exports.Helper = Helper_1.default;
 const mongoose = tslib_1.__importStar(require("mongoose"));

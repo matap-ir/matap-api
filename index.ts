@@ -2,7 +2,7 @@ import FileAddresses from './constants/FileAddresses';
 import User from './models/users/User';
 import {UserType, HealthCenterType, VisitStatus, TransactionType, TypingStatus} from './models/Enums';
 import Chat from './models/chat/Chat';
-import * as Enums from './models/Enums';
+export * from './models/Enums';
 import CallOffer from './models/CallOffer';
 import Specialization from './models/specialization/Specialization';
 import HealthCenter from './models/health_center/HealthCenter';
