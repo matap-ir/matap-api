@@ -8,8 +8,6 @@
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "target": "es6",
-    "declaration": true,
-    "declarationDir": "dist",
     "outDir": "dist",
     "noImplicitAny": false,
     "moduleResolution": "node",
