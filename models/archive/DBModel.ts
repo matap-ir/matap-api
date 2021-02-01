@@ -1,4 +1,4 @@
-import {User, ObjectId} from '../../index';
+import {ObjectId} from '../../mongoose-types';
 const dbModel = {
     patient: {type: ObjectId,ref:'users',required:true,index:true},
     doctor: {type: ObjectId,ref:'users',required:true,index:true},

@@ -1,4 +1,4 @@
-import { ObjectId } from '../..';
+import {ObjectId} from '../../mongoose-types';
 
 const dbModel = {
     amount:{type:Number,required:true},

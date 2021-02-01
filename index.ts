@@ -1,8 +1,6 @@
 import FileAddresses from './constants/FileAddresses';
 import User from './models/users/User';
-import {UserType, HealthCenterType, VisitStatus, TransactionType, TypingStatus} from './models/Enums';
 import Chat from './models/chat/Chat';
-export * from './models/Enums';
 import CallOffer from './models/CallOffer';
 import Specialization from './models/specialization/Specialization';
 import HealthCenter from './models/health_center/HealthCenter';
@@ -29,12 +27,9 @@ import WorkTime from './models/response_time/WorkTime';
 import Reservation,{ReservationCancellation,ReservationOffer,ReservationRequest} from './models/reservation/Reservation';
 import Issuer from './models/issuer/Issuer';
 import WorkTimes from './models/users/WorkTimes';
-import * as mongoose from 'mongoose';
-
-const ObjectId = mongoose.Types.ObjectId;
+export * from './models/Enums';
 
 export {
-    ObjectId,
     Reservation,
     ReservationRequest,
     ReservationOffer,
@@ -50,12 +45,9 @@ export {
     AdminLog,
     ResponseTime,
     CallOffer,
-    UserType,
-    HealthCenterType,
     FileAddresses,
     User,
     Chat,
-    Enums,
     WorkTimes,
     DoctorStatus,
     PatientStatus,
@@ -66,10 +58,8 @@ export {
     DiscountCoupon,
     Transaction,
     Visit,
-    VisitStatus,
     Admin,
     FinancialAudit,
-    TransactionType,
     QueryResponse,
     Rating,
     ServerConfig,

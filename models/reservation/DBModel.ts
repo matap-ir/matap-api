@@ -1,6 +1,6 @@
 import {Schema} from 'mongoose';
 import IssuerModel from '../issuer/DBModel';
-import {ObjectId} from '../../index';
+import {ObjectId} from '../../mongoose-types';
 
 const dbModel = {
     requestDate: {type: Number,required: true},
