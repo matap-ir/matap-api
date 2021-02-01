@@ -10,10 +10,10 @@
     "delete_dist": "if exist \"./dist*\" Rmdir /S /Q \"./dist\""
   },
   "dependencies": {
-    "mongoose": "*",
     "javascript-dev-kit": "^0.24.3"
   },
   "devDependencies": {
+    "mongoose": "*",
     "@hapi/joi": "^17.1.0",
     "@types/hapi__joi": "^16.0.9",
     "@types/mongoose": "^5.7.37",
