@@ -1,9 +1,9 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "main": "index.d.js",
+  "main": "index.js",
   "scripts": {
-    "start": "babel-node index.d.js",
+    "start": "babel-node index.js",
     "upgradeLatest": "yarn upgrade-interactive --latest",
     "generate-dist": "yarn delete_dist && tsc --p ./tsconfig.json --declaration --declarationDir dist --outDir dist --pretty",
     "delete_dist": "if exist \"./dist*\" Rmdir /S /Q \"./dist\""
