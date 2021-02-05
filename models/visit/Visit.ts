@@ -3,9 +3,9 @@ import {VisitStatus} from '../Enums';
 
 interface Visit {
     _id: string,
-    patient: User | string,
-    doctor: User | string,
-    discount?: DiscountCoupon | string,
+    patient: User,
+    doctor: User,
+    discount?: DiscountCoupon,
     state: VisitStatus,
     initiate_date: number,
     start_date: number,
