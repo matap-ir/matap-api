@@ -1,9 +1,22 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const Joi_1 = tslib_1.__importDefault(require("../Joi"));
-const createValidator_1 = tslib_1.__importDefault(require("../createValidator"));
-const request = {
+var Joi_1 = __importDefault(require("../Joi"));
+var createValidator_1 = __importDefault(require("../createValidator"));
+var request = {
     _id: Joi_1.default.any().required(),
     type: Joi_1.default.string().required(),
     message: Joi_1.default.string().required().allow(''),
@@ -25,7 +38,7 @@ const request = {
         reason: Joi_1.default.string().required().allow('')
     }).optional().allow(null)
 };
-const offer = {
+var offer = {
     _id: Joi_1.default.any().required(),
     type: Joi_1.default.string().required(),
     message: Joi_1.default.string().required().allow(''),
@@ -38,14 +51,14 @@ const offer = {
         reason: Joi_1.default.string().required().allow('')
     }).optional()
 };
-const cancellation = {
+var cancellation = {
     _id: Joi_1.default.any().required(),
     type: Joi_1.default.string().required(),
     date: Joi_1.default.number().required(),
     cancellerId: Joi_1.default.any().required(),
     reason: Joi_1.default.string().required().allow('')
 };
-const general = {
+var general = {
     _id: Joi_1.default.any().required(),
     requestDate: Joi_1.default.number().required(),
     issuer: Joi_1.default.any().required(),
@@ -70,22 +83,22 @@ exports.default = {
         patch: createValidator_1.default(general)
     },
     db: {
-        insert: createValidator_1.default(Object.assign(Object.assign({}, general), { _id: null })),
+        insert: createValidator_1.default(__assign(__assign({}, general), { _id: null })),
         update: createValidator_1.default(general)
     },
     offer: {
         public: {
-            post: createValidator_1.default(Object.assign(Object.assign({}, offer), { type: null, rejection: null, date: null, _id: null }))
+            post: createValidator_1.default(__assign(__assign({}, offer), { type: null, rejection: null, date: null, _id: null }))
         }
     },
     request: {
         public: {
-            post: createValidator_1.default(Object.assign(Object.assign({}, request), { type: null, rejection: null, date: null, _id: null }))
+            post: createValidator_1.default(__assign(__assign({}, request), { type: null, rejection: null, date: null, _id: null }))
         }
     },
     cancellation: {
         public: {
-            post: createValidator_1.default(Object.assign(Object.assign({}, cancellation), { _id: null, cancellerId: null, message: null }))
+            post: createValidator_1.default(__assign(__assign({}, cancellation), { _id: null, cancellerId: null, message: null }))
         }
     }
 };

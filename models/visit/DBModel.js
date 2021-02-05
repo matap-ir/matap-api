@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Enums_1 = require("../Enums");
-const mongoose_types_1 = require("../../mongoose-types");
+var Enums_1 = require("../Enums");
+var mongoose_types_1 = require("../../mongoose-types");
 exports.default = {
     patient: { type: mongoose_types_1.ObjectId, ref: 'users', required: true },
     doctor: { type: mongoose_types_1.ObjectId, ref: 'users', required: true },

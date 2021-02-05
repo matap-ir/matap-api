@@ -1,9 +1,11 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const createValidator_1 = tslib_1.__importDefault(require("../createValidator"));
-const Joi_1 = tslib_1.__importDefault(require("../Joi"));
-const general = createValidator_1.default({
+var createValidator_1 = __importDefault(require("../createValidator"));
+var Joi_1 = __importDefault(require("../Joi"));
+var general = createValidator_1.default({
     from: Joi_1.default.object().keys({
         hour: Joi_1.default.string().required(),
         minute: Joi_1.default.string().required(),
@@ -14,7 +16,7 @@ const general = createValidator_1.default({
     }),
     healthCenter: Joi_1.default.any().optional().allow(null),
 });
-const validator = {
+var validator = {
     db: {
         insert: general,
         update: general

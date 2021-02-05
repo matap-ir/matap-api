@@ -1,14 +1,16 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const createValidator_1 = tslib_1.__importDefault(require("../createValidator"));
-const Joi_1 = tslib_1.__importDefault(require("../Joi"));
-const privilegeOptionsDetails = Joi_1.default.object().keys({
+var createValidator_1 = __importDefault(require("../createValidator"));
+var Joi_1 = __importDefault(require("../Joi"));
+var privilegeOptionsDetails = Joi_1.default.object().keys({
     allowed: Joi_1.default.boolean().required(),
     whiteList: Joi_1.default.array().items(Joi_1.default.any()).required(),
     test: Joi_1.default.string().optional().allow(null)
 });
-const privilegeOptions = Joi_1.default.object({
+var privilegeOptions = Joi_1.default.object({
     post: privilegeOptionsDetails,
     patch: privilegeOptionsDetails,
     delete: privilegeOptionsDetails,
@@ -16,7 +18,7 @@ const privilegeOptions = Joi_1.default.object({
     put: privilegeOptionsDetails,
     menuVisible: Joi_1.default.boolean().required()
 });
-const general = createValidator_1.default({
+var general = createValidator_1.default({
     users: privilegeOptions,
     admins: privilegeOptions,
     visits: privilegeOptions,
@@ -31,7 +33,7 @@ const general = createValidator_1.default({
     transactions: privilegeOptions,
     notifications: privilegeOptions
 });
-const validator = {
+var validator = {
     db: {
         insert: general,
         update: general

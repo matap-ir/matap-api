@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_types_1 = require("../../mongoose-types");
-const dbModel = {
+var mongoose_types_1 = require("../../mongoose-types");
+var dbModel = {
     amount: { type: Number, required: true },
     type: { type: String, required: true },
     tracking_code: { type: String },
@@ -23,3 +23,13 @@ const dbModel = {
     }
 };
 exports.default = dbModel;
+/*
+const { Sequelize, DataTypes } = require('sequelize');
+const dbModel = {
+    amount:{type:DataTypes.STRING,allowNull: false},
+    type:{type:DataTypes.STRING,allowNull: false},
+    tracking_code:{type:DataTypes.STRING,allowNull:true},
+    date:{type:DataTypes.NUMBER,allowNull:false},
+    hint:{type:String,allowNull:false,defaultValue:''},
+    issuer:{}
+};*/

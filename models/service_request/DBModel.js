@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_types_1 = require("../../mongoose-types");
-const dbModel = {
+var mongoose_types_1 = require("../../mongoose-types");
+var dbModel = {
     age: { type: Number, required: true },
     mobile: { type: String, required: true },
     service: { type: mongoose_types_1.ObjectId, ref: 'medical_services', required: true },

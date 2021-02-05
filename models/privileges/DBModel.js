@@ -1,18 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_types_1 = require("../../mongoose-types");
-const createPrivilegeOptionsDetails = (ref) => {
+var mongoose_types_1 = require("../../mongoose-types");
+var createPrivilegeOptionsDetails = function (ref) {
     return {
         type: {
             allowed: { type: Boolean, required: true, default: true },
-            whiteList: [{ type: mongoose_types_1.ObjectId, ref, required: true, default: [] }],
+            whiteList: [{ type: mongoose_types_1.ObjectId, ref: ref, required: true, default: [] }],
             test: { type: String, required: false }
         },
         required: true,
         default: []
     };
 };
-const createPrivilegeOptions = (ref) => {
+var createPrivilegeOptions = function (ref) {
     return {
         type: {
             post: createPrivilegeOptionsDetails(ref),
@@ -26,7 +26,7 @@ const createPrivilegeOptions = (ref) => {
         default: {}
     };
 };
-const dbModel = {
+var dbModel = {
     users: createPrivilegeOptions('users'),
     admins: createPrivilegeOptions('admins'),
     visits: createPrivilegeOptions('visits'),

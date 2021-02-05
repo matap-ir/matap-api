@@ -1,10 +1,13 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.phone = void 0;
-const tslib_1 = require("tslib");
-const joi_1 = tslib_1.__importDefault(require("@hapi/joi"));
+var joi_1 = __importDefault(require("@hapi/joi"));
+// customJoi.string().phoneNumber({ defaultCountry: 'IR', format: 'international', strict: true })
 exports.default = joi_1.default;
-const phone = () => {
+var phone = function () {
     return joi_1.default.string();
 };
 exports.phone = phone;

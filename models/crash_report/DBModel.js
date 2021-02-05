@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = require("mongoose");
-const dbModel = {
+var mongoose_1 = require("mongoose");
+var dbModel = {
     os: { type: String, required: false },
     fatal: { type: Boolean, required: false },
     type: { type: String, required: false },

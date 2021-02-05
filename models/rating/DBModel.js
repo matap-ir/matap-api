@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const dbModel = {
+var dbModel = {
     visitId: { type: String, required: true },
     service_quality: { type: Number, required: true },
     video_call_satisfaction: { type: Number, required: true },

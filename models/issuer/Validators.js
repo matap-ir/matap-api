@@ -1,8 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const joi_1 = tslib_1.__importDefault(require("@hapi/joi"));
-const general = joi_1.default.alternatives().try(joi_1.default.object().keys({
+var joi_1 = __importDefault(require("@hapi/joi"));
+var general = joi_1.default.alternatives().try(joi_1.default.object().keys({
     type: joi_1.default.string().required(),
     user: joi_1.default.any().required()
 }), joi_1.default.object().keys({
@@ -10,5 +12,5 @@ const general = joi_1.default.alternatives().try(joi_1.default.object().keys({
     admin: joi_1.default.any().required()
 }));
 exports.default = {
-    general
+    general: general
 };

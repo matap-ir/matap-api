@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const dbModel = {
+var dbModel = {
     id: { type: String, required: true },
     sender: { type: String, required: true },
     text: String,
