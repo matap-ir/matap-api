@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const COLLECTIONS = {
+var COLLECTIONS = {
     BUSINESS: {
         MODEL_NAME: 'business.summary.model',
         DISCOUNTS: {
@@ -30,5 +30,5 @@ const COLLECTIONS = {
     },
 };
 exports.default = {
-    COLLECTIONS,
+    COLLECTIONS: COLLECTIONS,
 };
