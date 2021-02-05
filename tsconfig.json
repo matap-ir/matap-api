@@ -8,7 +8,6 @@
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "target": "es6",
-    "outDir": "dist",
     "noImplicitAny": false,
     "moduleResolution": "node",
     "noUnusedParameters": false,
@@ -31,6 +30,6 @@
     "./**/*.ts"
   ],
   "exclude": [
-    "./node_modules/*"
+
   ]
 }
