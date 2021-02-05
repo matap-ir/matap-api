@@ -1,8 +1,7 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "types": "index.ts",
+  "main": "index.js",
   "scripts": {
     "start": "babel-node index.js",
     "upgradeLatest": "yarn upgrade-interactive --latest",
@@ -10,7 +9,7 @@
     "delete_dist": "if exist \"./dist*\" Rmdir /S /Q \"./dist\""
   },
   "dependencies": {
-    "javascript-dev-kit": "^0.24.4"
+    "javascript-dev-kit": "^0.24.5"
   },
   "devDependencies": {
     "mongoose": "*",
