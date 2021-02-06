@@ -10,18 +10,18 @@ declare const dbModel: {
             required: boolean;
         };
         user: {
-            type: typeof Schema.Types.ObjectId;
+            type: import("mongoose").Types.ObjectIdConstructor;
             ref: string;
             required: boolean;
         };
         admin: {
-            type: typeof Schema.Types.ObjectId;
+            type: import("mongoose").Types.ObjectIdConstructor;
             ref: string;
             required: boolean;
         };
     };
     doctor: {
-        type: typeof Schema.Types.ObjectId;
+        type: import("mongoose").Types.ObjectIdConstructor;
         required: boolean;
         ref: string;
     };

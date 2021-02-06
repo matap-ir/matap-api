@@ -1,3 +1,3 @@
-import * as mongoose from 'mongoose';
-declare const ObjectId: typeof mongoose.Schema.Types.ObjectId;
+import mongoose from 'mongoose';
+declare const ObjectId: mongoose.Types.ObjectIdConstructor;
 export { ObjectId, };

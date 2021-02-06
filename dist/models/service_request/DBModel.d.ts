@@ -9,7 +9,7 @@ declare const dbModel: {
         required: boolean;
     };
     service: {
-        type: typeof import("mongoose").Schema.Types.ObjectId;
+        type: import("mongoose").Types.ObjectIdConstructor;
         ref: string;
         required: boolean;
     };
@@ -39,7 +39,7 @@ declare const dbModel: {
         required: boolean;
     };
     requester: {
-        type: typeof import("mongoose").Schema.Types.ObjectId;
+        type: import("mongoose").Types.ObjectIdConstructor;
         ref: string;
         required: boolean;
     };

@@ -14,7 +14,7 @@ declare const dbModel: {
         default: never[];
     };
     user: {
-        type: typeof import("mongoose").Schema.Types.ObjectId;
+        type: import("mongoose").Types.ObjectIdConstructor;
         required: boolean;
         ref: string;
     };

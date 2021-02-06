@@ -17,7 +17,7 @@ declare const dbModel: {
         required: boolean;
     };
     sender: {
-        type: typeof import("mongoose").Schema.Types.ObjectId;
+        type: import("mongoose").Types.ObjectIdConstructor;
         required: boolean;
         ref: string;
     };

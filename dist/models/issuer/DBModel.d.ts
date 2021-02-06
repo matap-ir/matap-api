@@ -5,12 +5,12 @@ declare const dbModel: {
         required: boolean;
     };
     user: {
-        type: typeof import("mongoose").Schema.Types.ObjectId;
+        type: import("mongoose").Types.ObjectIdConstructor;
         ref: string;
         required: boolean;
     };
     admin: {
-        type: typeof import("mongoose").Schema.Types.ObjectId;
+        type: import("mongoose").Types.ObjectIdConstructor;
         ref: string;
         required: boolean;
     };

@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose';
+/// <reference types="mongoose" />
 declare const dbModel: {
     users: {
         type: {
@@ -10,7 +10,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -31,7 +31,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -52,7 +52,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -73,7 +73,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -94,7 +94,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -126,7 +126,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -147,7 +147,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -168,7 +168,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -189,7 +189,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -210,7 +210,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -242,7 +242,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -263,7 +263,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -284,7 +284,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -305,7 +305,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -326,7 +326,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -358,7 +358,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -379,7 +379,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -400,7 +400,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -421,7 +421,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -442,7 +442,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -474,7 +474,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -495,7 +495,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -516,7 +516,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -537,7 +537,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -558,7 +558,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -590,7 +590,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -611,7 +611,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -632,7 +632,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -653,7 +653,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -674,7 +674,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -706,7 +706,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -727,7 +727,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -748,7 +748,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -769,7 +769,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -790,7 +790,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -822,7 +822,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -843,7 +843,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -864,7 +864,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -885,7 +885,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -906,7 +906,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -938,7 +938,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -959,7 +959,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -980,7 +980,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1001,7 +1001,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1022,7 +1022,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1054,7 +1054,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1075,7 +1075,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1096,7 +1096,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1117,7 +1117,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1138,7 +1138,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1170,7 +1170,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1191,7 +1191,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1212,7 +1212,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1233,7 +1233,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1254,7 +1254,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1286,7 +1286,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1307,7 +1307,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1328,7 +1328,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1349,7 +1349,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1370,7 +1370,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1402,7 +1402,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1423,7 +1423,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1444,7 +1444,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1465,7 +1465,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];
@@ -1486,7 +1486,7 @@ declare const dbModel: {
                         default: boolean;
                     };
                     whiteList: {
-                        type: typeof Schema.Types.ObjectId;
+                        type: import("mongoose").Types.ObjectIdConstructor;
                         ref: string | undefined;
                         required: boolean;
                         default: never[];

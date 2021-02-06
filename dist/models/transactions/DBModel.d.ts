@@ -32,7 +32,7 @@ declare const dbModel: {
         required: boolean;
     };
     healthCenter: {
-        type: typeof import("mongoose").Schema.Types.ObjectId;
+        type: import("mongoose").Types.ObjectIdConstructor;
         required: boolean;
         ref: string;
     };

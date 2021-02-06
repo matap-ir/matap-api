@@ -1,13 +1,13 @@
 /// <reference types="mongoose" />
 declare const dbModel: {
     patient: {
-        type: typeof import("mongoose").Schema.Types.ObjectId;
+        type: import("mongoose").Types.ObjectIdConstructor;
         ref: string;
         required: boolean;
         index: boolean;
     };
     doctor: {
-        type: typeof import("mongoose").Schema.Types.ObjectId;
+        type: import("mongoose").Types.ObjectIdConstructor;
         ref: string;
         required: boolean;
         index: boolean;
