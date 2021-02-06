@@ -13,11 +13,11 @@
     "javascript-dev-kit": "^0.24.7"
   },
   "devDependencies": {
-    "mongoose": "*",
     "@hapi/joi": "^17.1.0",
     "@types/hapi__joi": "^16.0.9",
-    "@types/mongoose": "^5.7.37",
+    "@types/mongoose": "^5.10.3",
     "@types/node": "^13.7.0",
+    "mongoose": "*",
     "tslint": "^6.0.0",
     "typescript": "*"
   }

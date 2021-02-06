@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 
-const ObjectId = mongoose.Types.ObjectId;
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
 export {
     ObjectId,
