@@ -10,7 +10,7 @@ interface CallOffer{
     mediaConstraints:{},
     retryThreshold: number,
     forceSpeaker: boolean,
-    newTech: boolean
+    techVersion: string
 }
 
 export default CallOffer;
