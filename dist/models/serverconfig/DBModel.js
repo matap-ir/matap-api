@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = require("mongoose");
 const dbModel = {
     iceServers: {
         type: [{ username: String, credential: String, urls: [String] }]
@@ -8,6 +9,14 @@ const dbModel = {
     forceSpeaker: Boolean,
     termsandconditions: String,
     retryThreshold: Number,
+    maxBitrate: {
+        type: mongoose_1.Schema.Types.Mixed,
+        required: false
+    },
+    preferredCodecs: {
+        type: [String],
+        required: false
+    },
     android: {
         forceUpdate: { type: Boolean, required: true },
         versionCode: { type: String, required: true },

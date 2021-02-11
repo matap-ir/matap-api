@@ -1,3 +1,4 @@
+import {Schema} from 'mongoose';
 
 const dbModel = {
     iceServers:{
@@ -7,6 +8,14 @@ const dbModel = {
     forceSpeaker:Boolean,
     termsandconditions: String,
     retryThreshold: Number,
+    maxBitrate:{
+      type: Schema.Types.Mixed,
+      required: false
+    },
+    preferredCodecs:{
+      type: [String],
+      required: false
+    },
     android:{
         forceUpdate:{type:Boolean,required:true},
         versionCode:{type:String,required:true},
