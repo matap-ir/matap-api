@@ -8,9 +8,13 @@ const dbModel = {
     forceSpeaker:Boolean,
     termsandconditions: String,
     retryThreshold: Number,
-    maxBitrate:{
+    videoMaxBitrate:{
       type: Schema.Types.Mixed,
       required: false
+    },
+    audioMaxBitrate:{
+        type: Schema.Types.Mixed,
+        required: false
     },
     preferredCodecs:{
       type: [String],

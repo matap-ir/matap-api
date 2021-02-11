@@ -11,7 +11,8 @@ interface CallOffer{
     retryThreshold: number,
     forceSpeaker: boolean,
     videoCallVersion: number,
-    maxBitrate: number | 'unlimited',
+    videoMaxBitrate: number | 'unlimited',
+    audioMaxBitrate: number | 'unlimited',
     preferredCodecs: string[],
 }
 
