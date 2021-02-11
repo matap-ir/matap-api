@@ -6,6 +6,8 @@ export default interface ServerConfig {
     forceSpeaker: boolean,
     termsandconditions: string,
     retryThreshold: number,
+    maxBitrate: number | 'unlimited',
+    preferredCodecs: string[],
     android:{
         forceUpdate:boolean,
         versionCode:string,
