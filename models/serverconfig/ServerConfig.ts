@@ -9,6 +9,7 @@ export default interface ServerConfig {
     videoMaxBitrate: number | 'unlimited',
     audioMaxBitrate: number | 'unlimited',
     preferredCodecs: string[],
+    trickleIce: boolean,
     android:{
         forceUpdate:boolean,
         versionCode:string,

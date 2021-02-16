@@ -21,6 +21,10 @@ const dbModel = {
         type: [String],
         required: false
     },
+    trickleIce: {
+        type: Boolean,
+        required: false
+    },
     android: {
         forceUpdate: { type: Boolean, required: true },
         versionCode: { type: String, required: true },
