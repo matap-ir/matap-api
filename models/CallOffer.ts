@@ -14,6 +14,7 @@ interface CallOffer{
     videoMaxBitrate: number | 'unlimited',
     audioMaxBitrate: number | 'unlimited',
     preferredCodecs: string[],
+    trickleIce: boolean
 }
 
 export default CallOffer;
