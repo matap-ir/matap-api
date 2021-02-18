@@ -72,7 +72,6 @@ export enum IOStatus {
    IN_UPLOAD_QUEUE = 'IN_UPLOAD_QUEUE'
 }
 
-
 export enum EventType {
    REQUEST_VISIT = 'REQUEST_VISIT',
    REQUEST_END_VISIT = 'REQUEST_END_VISIT',
