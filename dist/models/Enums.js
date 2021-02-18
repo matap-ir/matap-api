@@ -72,6 +72,8 @@ var IOStatus;
     IOStatus["UPLOADING"] = "UPLOADING";
     IOStatus["WAITING_FOR_UPLOAD"] = "WAITING_FOR_UPLOAD";
     IOStatus["WAITING_FOR_DOWNLOAD"] = "WAITING_FOR_DOWNLOAD";
+    IOStatus["IN_DOWNLOAD_QUEUE"] = "IN_DOWNLOAD_QUEUE";
+    IOStatus["IN_UPLOAD_QUEUE"] = "IN_UPLOAD_QUEUE";
 })(IOStatus = exports.IOStatus || (exports.IOStatus = {}));
 var EventType;
 (function (EventType) {
