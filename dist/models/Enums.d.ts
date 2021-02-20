@@ -53,6 +53,12 @@ export declare enum SendStatus {
     DELIVERED = "DELIVERED",
     READEN = "READEN"
 }
+export declare enum DebugType {
+    outgoing = "outgoing",
+    incoming = "incoming",
+    presence = "presence",
+    all = "all"
+}
 export declare enum IOStatus {
     READY = "READY",
     DOWNLOADING = "DOWNLOADING",
