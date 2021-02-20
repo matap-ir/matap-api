@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChatType = exports.EventType = exports.IOStatus = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.ReservationState = exports.AdminType = exports.TypingStatus = exports.UserType = void 0;
+exports.ChatType = exports.EventType = exports.IOStatus = exports.DebugType = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.ReservationState = exports.AdminType = exports.TypingStatus = exports.UserType = void 0;
 var UserType;
 (function (UserType) {
     UserType["PATIENT"] = "PATIENT";
@@ -65,6 +65,13 @@ var SendStatus;
     SendStatus["DELIVERED"] = "DELIVERED";
     SendStatus["READEN"] = "READEN";
 })(SendStatus = exports.SendStatus || (exports.SendStatus = {}));
+var DebugType;
+(function (DebugType) {
+    DebugType["outgoing"] = "outgoing";
+    DebugType["incoming"] = "incoming";
+    DebugType["presence"] = "presence";
+    DebugType["all"] = "all";
+})(DebugType = exports.DebugType || (exports.DebugType = {}));
 var IOStatus;
 (function (IOStatus) {
     IOStatus["READY"] = "READY";

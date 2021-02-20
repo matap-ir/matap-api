@@ -62,6 +62,13 @@ export enum SendStatus{
    READEN = 'READEN'
 }
 
+export enum DebugType{
+   outgoing = 'outgoing',
+   incoming = 'incoming',
+   presence = 'presence',
+   all = 'all'
+}
+
 export enum IOStatus {
    READY = 'READY',
    DOWNLOADING = 'DOWNLOADING',
