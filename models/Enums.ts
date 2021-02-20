@@ -66,6 +66,7 @@ export enum DebugType{
    outgoing = 'outgoing',
    incoming = 'incoming',
    presence = 'presence',
+   remote_logs = 'remote_logs',
    all = 'all'
 }
 
