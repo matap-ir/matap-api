@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChatType = exports.EventType = exports.IOStatus = exports.DebugType = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.ReservationState = exports.AdminType = exports.TypingStatus = exports.UserType = void 0;
+exports.ChatType = exports.EventType = exports.IOStatus = exports.ConferenceRoomEventTypes = exports.ConferenceParticipantPresenceEventTypes = exports.ConferenceParticipantConnectionEventTypes = exports.ConferenceTrackEventTypes = exports.ConferenceMediaDevicesEventTypes = exports.ConferenceFeaturesEventTypes = exports.ConferenceDetectionEventTypes = exports.SocketEventTypes = exports.NetworkEventTypes = exports.DebugType = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.ReservationState = exports.AdminType = exports.TypingStatus = exports.UserType = void 0;
 var UserType;
 (function (UserType) {
     UserType["PATIENT"] = "PATIENT";
@@ -72,6 +72,68 @@ var DebugType;
     DebugType["presence"] = "presence";
     DebugType["remote_logs"] = "remote_logs";
 })(DebugType = exports.DebugType || (exports.DebugType = {}));
+var NetworkEventTypes;
+(function (NetworkEventTypes) {
+    NetworkEventTypes["CHANGE"] = "network.change";
+    NetworkEventTypes["DISCONNECTED"] = "network.disconnected";
+    NetworkEventTypes["CONNECTED"] = "network.connected";
+})(NetworkEventTypes = exports.NetworkEventTypes || (exports.NetworkEventTypes = {}));
+var SocketEventTypes;
+(function (SocketEventTypes) {
+    SocketEventTypes["CONNECTED"] = "socket.connected";
+    SocketEventTypes["DISCONNECTED"] = "socket.disconnected";
+    SocketEventTypes["RECONNECTING"] = "socket.reconnecting";
+    SocketEventTypes["RECONNECTION_FAILED"] = "socket.reconnection_failed";
+    SocketEventTypes["WILL_NOT_RECONNECT"] = "socket.will_not_reconnect";
+})(SocketEventTypes = exports.SocketEventTypes || (exports.SocketEventTypes = {}));
+var ConferenceDetectionEventTypes;
+(function (ConferenceDetectionEventTypes) {
+    ConferenceDetectionEventTypes["MIC_INPUT_STATE"] = "conference.detection.mic.input_state";
+    ConferenceDetectionEventTypes["TALK_WHILE_MUTED"] = "conference.detection.talk_while_muted";
+})(ConferenceDetectionEventTypes = exports.ConferenceDetectionEventTypes || (exports.ConferenceDetectionEventTypes = {}));
+var ConferenceFeaturesEventTypes;
+(function (ConferenceFeaturesEventTypes) {
+    ConferenceFeaturesEventTypes["MIC_MUTE"] = "conference.feature.mic.mute";
+    ConferenceFeaturesEventTypes["MIC_NOISE"] = "conference.feature.mic.noise";
+})(ConferenceFeaturesEventTypes = exports.ConferenceFeaturesEventTypes || (exports.ConferenceFeaturesEventTypes = {}));
+var ConferenceMediaDevicesEventTypes;
+(function (ConferenceMediaDevicesEventTypes) {
+    ConferenceMediaDevicesEventTypes["LIST_CHANGED"] = "conference.media_devices.list_changed";
+    ConferenceMediaDevicesEventTypes["PERMISSION_STATE_UPDATE"] = "conference.media_devices.permission_state_update";
+    ConferenceMediaDevicesEventTypes["SLOW_GET"] = "conference.media_devices.slow_get";
+    ConferenceMediaDevicesEventTypes["PERMISSION_DENIED"] = "conference.media_devices.permission_denied";
+    ConferenceMediaDevicesEventTypes["ERROR_GETTING"] = "conference.media_devices.error_getting";
+})(ConferenceMediaDevicesEventTypes = exports.ConferenceMediaDevicesEventTypes || (exports.ConferenceMediaDevicesEventTypes = {}));
+var ConferenceTrackEventTypes;
+(function (ConferenceTrackEventTypes) {
+    ConferenceTrackEventTypes["ADDED"] = "conference.track.added";
+    ConferenceTrackEventTypes["REMOVED"] = "conference.track.removed";
+    ConferenceTrackEventTypes["AUDIO_LEVEL_CHANGED"] = "conference.track.audio_level_changed";
+    ConferenceTrackEventTypes["SOURCE_DATA_STATE"] = "conference.track.source_data_state";
+    ConferenceTrackEventTypes["NO_STREAM"] = "conference.track.no_stream";
+    ConferenceTrackEventTypes["UNSUPPORTED_RESOLUTION"] = "conference.track.unsupported_resolution";
+})(ConferenceTrackEventTypes = exports.ConferenceTrackEventTypes || (exports.ConferenceTrackEventTypes = {}));
+var ConferenceParticipantConnectionEventTypes;
+(function (ConferenceParticipantConnectionEventTypes) {
+    ConferenceParticipantConnectionEventTypes["INTERRUPTED"] = "conference.participant.connection.interrupted";
+    ConferenceParticipantConnectionEventTypes["RESTORING"] = "conference.participant.connection.restoring";
+    ConferenceParticipantConnectionEventTypes["RESTORED"] = "conference.participant.connection.restored";
+    ConferenceParticipantConnectionEventTypes["ESTABLISHED"] = "conference.participant.connection.established";
+    ConferenceParticipantConnectionEventTypes["QUALITY_STATE"] = "conference.participant.connection.quality_state";
+    ConferenceParticipantConnectionEventTypes["GET_STATS_UPDATE"] = "conference.participant.connection.get_stats_update";
+    ConferenceParticipantConnectionEventTypes["PING"] = "conference.participant.connection.ping";
+})(ConferenceParticipantConnectionEventTypes = exports.ConferenceParticipantConnectionEventTypes || (exports.ConferenceParticipantConnectionEventTypes = {}));
+var ConferenceParticipantPresenceEventTypes;
+(function (ConferenceParticipantPresenceEventTypes) {
+    ConferenceParticipantPresenceEventTypes["JOINED"] = "conference.participant.presence.joined";
+    ConferenceParticipantPresenceEventTypes["LEFT"] = "conference.participant.presence.left";
+})(ConferenceParticipantPresenceEventTypes = exports.ConferenceParticipantPresenceEventTypes || (exports.ConferenceParticipantPresenceEventTypes = {}));
+var ConferenceRoomEventTypes;
+(function (ConferenceRoomEventTypes) {
+    ConferenceRoomEventTypes["FAILED_CREATING"] = "conference.room.failed_creating";
+    ConferenceRoomEventTypes["AVAILABLE"] = "conference.room.available";
+    ConferenceRoomEventTypes["DESTROYED"] = "conference.room.destroyed";
+})(ConferenceRoomEventTypes = exports.ConferenceRoomEventTypes || (exports.ConferenceRoomEventTypes = {}));
 var IOStatus;
 (function (IOStatus) {
     IOStatus["READY"] = "READY";

@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "target": "es6",
     "outDir": "dist",
+    "declarationDir": "dist",
     "noImplicitAny": false,
     "moduleResolution": "node",
     "noUnusedParameters": false,

@@ -1,7 +1,7 @@
 import FileAddresses from './constants/FileAddresses';
 import User from './models/users/User';
 import Chat from './models/chat/Chat';
-import CallOffer from './models/CallOffer';
+import CallOffer from './models/conference/CallOffer';
 import Specialization from './models/specialization/Specialization';
 import HealthCenter from './models/health_center/HealthCenter';
 import DiscountCoupon from './models/discount/DiscountCoupon';
@@ -27,9 +27,42 @@ import WorkTime from './models/response_time/WorkTime';
 import Reservation,{ReservationCancellation,ReservationOffer,ReservationRequest} from './models/reservation/Reservation';
 import Issuer from './models/issuer/Issuer';
 import WorkTimes from './models/users/WorkTimes';
+import {
+    ConferenceParticipantConnectionEventTypes,
+    ConferenceDetectionEventTypes,
+    ConferenceFeaturesEventTypes,
+    ConferenceMediaDevicesEventTypes,
+    ConferenceParticipantPresenceEventTypes,
+    ConferenceTrackEventTypes,
+    NetworkEventTypes,
+    SocketEventTypes, ConferenceRoomEventTypes, VisitStatus, EventType
+} from './models/Enums';
 export * from './models/Enums';
 
+class Events{
+    public static conference = {
+        detection: ConferenceDetectionEventTypes,
+        features: ConferenceFeaturesEventTypes,
+        mediaDevices: ConferenceMediaDevicesEventTypes,
+        track: ConferenceTrackEventTypes,
+        room: ConferenceRoomEventTypes,
+        participants:{
+            presence: ConferenceParticipantPresenceEventTypes,
+            connection: ConferenceParticipantConnectionEventTypes,
+        },
+        visit: {
+            status: VisitStatus,
+            events: EventType
+        }
+    };
+
+    public static network = NetworkEventTypes;
+
+    public static socket = SocketEventTypes;
+}
+
 export {
+    Events,
     Reservation,
     ReservationRequest,
     ReservationOffer,

@@ -69,6 +69,103 @@ export enum DebugType{
    remote_logs = 'remote_logs'
 }
 
+export enum NetworkEventTypes{
+
+   CHANGE = 'network.change',
+
+   DISCONNECTED = 'network.disconnected',
+
+   CONNECTED = 'network.connected',
+}
+export enum SocketEventTypes{
+
+   CONNECTED = 'socket.connected',
+
+   DISCONNECTED = 'socket.disconnected',
+
+   RECONNECTING = 'socket.reconnecting',
+
+   RECONNECTION_FAILED = 'socket.reconnection_failed',
+
+   WILL_NOT_RECONNECT = 'socket.will_not_reconnect',
+}
+export enum ConferenceDetectionEventTypes{
+   /** Event triggered by {@link NoAudioSignalDetector} when the local audio device associated with a JitsiConference
+    * starts receiving audio levels with the value of 0 meaning no audio is being captured on that device, or when
+    * it starts receiving audio levels !== 0 after being in a state of no audio.
+    * @event
+    * @type {boolean} - true when the current conference audio track has audio input false otherwise.
+    */
+   MIC_INPUT_STATE = 'conference.detection.mic.input_state',
+
+   TALK_WHILE_MUTED = 'conference.detection.talk_while_muted'
+}
+
+export enum ConferenceFeaturesEventTypes{
+
+   MIC_MUTE = 'conference.feature.mic.mute',
+
+   MIC_NOISE = 'conference.feature.mic.noise',
+}
+export enum ConferenceMediaDevicesEventTypes{
+
+   LIST_CHANGED = 'conference.media_devices.list_changed',
+
+   PERMISSION_STATE_UPDATE = 'conference.media_devices.permission_state_update',
+
+   SLOW_GET = 'conference.media_devices.slow_get',
+
+   PERMISSION_DENIED = 'conference.media_devices.permission_denied',
+
+   ERROR_GETTING = 'conference.media_devices.error_getting'
+}
+export enum ConferenceTrackEventTypes{
+
+   ADDED = 'conference.track.added',
+
+   REMOVED = 'conference.track.removed',
+
+   AUDIO_LEVEL_CHANGED = 'conference.track.audio_level_changed',
+
+   SOURCE_DATA_STATE = 'conference.track.source_data_state',
+
+   NO_STREAM = 'conference.track.no_stream',
+
+   UNSUPPORTED_RESOLUTION = 'conference.track.unsupported_resolution'
+}
+export enum ConferenceParticipantConnectionEventTypes{
+
+   INTERRUPTED = 'conference.participant.connection.interrupted',
+
+   RESTORING = 'conference.participant.connection.restoring',
+
+   RESTORED = 'conference.participant.connection.restored',
+   /**
+    * difference is this will be fired only after the first time connecting
+    */
+   ESTABLISHED = 'conference.participant.connection.established',
+
+   QUALITY_STATE = 'conference.participant.connection.quality_state',
+
+   GET_STATS_UPDATE = 'conference.participant.connection.get_stats_update',
+
+   PING = 'conference.participant.connection.ping'
+}
+export enum ConferenceParticipantPresenceEventTypes{
+
+   JOINED = 'conference.participant.presence.joined',
+
+   LEFT = 'conference.participant.presence.left',
+}
+export enum ConferenceRoomEventTypes{
+
+   FAILED_CREATING = 'conference.room.failed_creating',
+
+   AVAILABLE = 'conference.room.available',
+
+   DESTROYED = 'conference.room.destroyed',
+}
+
 export enum IOStatus {
    READY = 'READY',
    DOWNLOADING = 'DOWNLOADING',
