@@ -69,15 +69,10 @@ export enum DebugType{
    remote_logs = 'remote_logs'
 }
 
-export enum NetworkEventTypes{
-
+export enum NetworkEventTypes {
    CHANGE = 'network.change',
-
-   DISCONNECTED = 'network.disconnected',
-
-   CONNECTED = 'network.connected',
 }
-export enum SocketEventTypes{
+export enum SocketEventTypes {
 
    CONNECTED = 'socket.connected',
 
@@ -89,7 +84,7 @@ export enum SocketEventTypes{
 
    WILL_NOT_RECONNECT = 'socket.will_not_reconnect',
 }
-export enum ConferenceDetectionEventTypes{
+export enum ConferenceDetectionEventTypes {
    /** Event triggered by {@link NoAudioSignalDetector} when the local audio device associated with a JitsiConference
     * starts receiving audio levels with the value of 0 meaning no audio is being captured on that device, or when
     * it starts receiving audio levels !== 0 after being in a state of no audio.
@@ -101,13 +96,13 @@ export enum ConferenceDetectionEventTypes{
    TALK_WHILE_MUTED = 'conference.detection.talk_while_muted'
 }
 
-export enum ConferenceFeaturesEventTypes{
+export enum ConferenceFeaturesEventTypes {
 
    MIC_MUTE = 'conference.feature.mic.mute',
 
    MIC_NOISE = 'conference.feature.mic.noise',
 }
-export enum ConferenceMediaDevicesEventTypes{
+export enum ConferenceMediaDevicesEventTypes {
 
    LIST_CHANGED = 'conference.media_devices.list_changed',
 
@@ -119,7 +114,7 @@ export enum ConferenceMediaDevicesEventTypes{
 
    ERROR_GETTING = 'conference.media_devices.error_getting'
 }
-export enum ConferenceTrackEventTypes{
+export enum ConferenceTrackEventTypes {
 
    ADDED = 'conference.track.added',
 
@@ -133,7 +128,7 @@ export enum ConferenceTrackEventTypes{
 
    UNSUPPORTED_RESOLUTION = 'conference.track.unsupported_resolution'
 }
-export enum ConferenceParticipantConnectionEventTypes{
+export enum ConferenceParticipantConnectionEventTypes {
 
    INTERRUPTED = 'conference.participant.connection.interrupted',
 
@@ -151,13 +146,13 @@ export enum ConferenceParticipantConnectionEventTypes{
 
    PING = 'conference.participant.connection.ping'
 }
-export enum ConferenceParticipantPresenceEventTypes{
+export enum ConferenceParticipantPresenceEventTypes {
 
    JOINED = 'conference.participant.presence.joined',
 
    LEFT = 'conference.participant.presence.left',
 }
-export enum ConferenceRoomEventTypes{
+export enum ConferenceRoomEventTypes {
 
    FAILED_CREATING = 'conference.room.failed_creating',
 

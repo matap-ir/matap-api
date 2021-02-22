@@ -4,6 +4,8 @@
     "max-line-length": {
       "options": [250]
     },
+    "no-namespace": false,
+    "max-classes-per-file": false,
     "member-ordering": false,
     "no-consecutive-blank-lines": false,
     "object-literal-sort-keys": false,
@@ -12,6 +14,8 @@
     "variable-name": [true, "allow-leading-underscore"],
     "interface-name" : [true, "never-prefix"],
     "no-unused-variable": false,
-    "indent": false
+    "indent": false,
+    "no-console": false,
+    "no-unused-expression": false
   }
 }

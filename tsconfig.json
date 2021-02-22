@@ -10,11 +10,13 @@
     "target": "es6",
     "outDir": "dist",
     "declarationDir": "dist",
+    "declaration": true,
     "noImplicitAny": false,
     "moduleResolution": "node",
     "noUnusedParameters": false,
     "importHelpers": true,
     "sourceMap": false,
+    "lib": ["dom"],
     "types": [
       "node"
     ],

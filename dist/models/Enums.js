@@ -75,8 +75,6 @@ var DebugType;
 var NetworkEventTypes;
 (function (NetworkEventTypes) {
     NetworkEventTypes["CHANGE"] = "network.change";
-    NetworkEventTypes["DISCONNECTED"] = "network.disconnected";
-    NetworkEventTypes["CONNECTED"] = "network.connected";
 })(NetworkEventTypes = exports.NetworkEventTypes || (exports.NetworkEventTypes = {}));
 var SocketEventTypes;
 (function (SocketEventTypes) {

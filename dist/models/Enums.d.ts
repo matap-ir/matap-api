@@ -59,6 +59,57 @@ export declare enum DebugType {
     presence = "presence",
     remote_logs = "remote_logs"
 }
+export declare enum NetworkEventTypes {
+    CHANGE = "network.change"
+}
+export declare enum SocketEventTypes {
+    CONNECTED = "socket.connected",
+    DISCONNECTED = "socket.disconnected",
+    RECONNECTING = "socket.reconnecting",
+    RECONNECTION_FAILED = "socket.reconnection_failed",
+    WILL_NOT_RECONNECT = "socket.will_not_reconnect"
+}
+export declare enum ConferenceDetectionEventTypes {
+    MIC_INPUT_STATE = "conference.detection.mic.input_state",
+    TALK_WHILE_MUTED = "conference.detection.talk_while_muted"
+}
+export declare enum ConferenceFeaturesEventTypes {
+    MIC_MUTE = "conference.feature.mic.mute",
+    MIC_NOISE = "conference.feature.mic.noise"
+}
+export declare enum ConferenceMediaDevicesEventTypes {
+    LIST_CHANGED = "conference.media_devices.list_changed",
+    PERMISSION_STATE_UPDATE = "conference.media_devices.permission_state_update",
+    SLOW_GET = "conference.media_devices.slow_get",
+    PERMISSION_DENIED = "conference.media_devices.permission_denied",
+    ERROR_GETTING = "conference.media_devices.error_getting"
+}
+export declare enum ConferenceTrackEventTypes {
+    ADDED = "conference.track.added",
+    REMOVED = "conference.track.removed",
+    AUDIO_LEVEL_CHANGED = "conference.track.audio_level_changed",
+    SOURCE_DATA_STATE = "conference.track.source_data_state",
+    NO_STREAM = "conference.track.no_stream",
+    UNSUPPORTED_RESOLUTION = "conference.track.unsupported_resolution"
+}
+export declare enum ConferenceParticipantConnectionEventTypes {
+    INTERRUPTED = "conference.participant.connection.interrupted",
+    RESTORING = "conference.participant.connection.restoring",
+    RESTORED = "conference.participant.connection.restored",
+    ESTABLISHED = "conference.participant.connection.established",
+    QUALITY_STATE = "conference.participant.connection.quality_state",
+    GET_STATS_UPDATE = "conference.participant.connection.get_stats_update",
+    PING = "conference.participant.connection.ping"
+}
+export declare enum ConferenceParticipantPresenceEventTypes {
+    JOINED = "conference.participant.presence.joined",
+    LEFT = "conference.participant.presence.left"
+}
+export declare enum ConferenceRoomEventTypes {
+    FAILED_CREATING = "conference.room.failed_creating",
+    AVAILABLE = "conference.room.available",
+    DESTROYED = "conference.room.destroyed"
+}
 export declare enum IOStatus {
     READY = "READY",
     DOWNLOADING = "DOWNLOADING",

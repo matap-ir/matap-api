@@ -27,41 +27,14 @@ import WorkTime from './models/response_time/WorkTime';
 import Reservation,{ReservationCancellation,ReservationOffer,ReservationRequest} from './models/reservation/Reservation';
 import Issuer from './models/issuer/Issuer';
 import WorkTimes from './models/users/WorkTimes';
-import {
-    ConferenceParticipantConnectionEventTypes,
-    ConferenceDetectionEventTypes,
-    ConferenceFeaturesEventTypes,
-    ConferenceMediaDevicesEventTypes,
-    ConferenceParticipantPresenceEventTypes,
-    ConferenceTrackEventTypes,
-    NetworkEventTypes,
-    SocketEventTypes, ConferenceRoomEventTypes, VisitStatus, EventType
-} from './models/Enums';
+import Events from './models/events/Events';
 export * from './models/Enums';
-
-class Events{
-    public static conference = {
-        detection: ConferenceDetectionEventTypes,
-        features: ConferenceFeaturesEventTypes,
-        mediaDevices: ConferenceMediaDevicesEventTypes,
-        track: ConferenceTrackEventTypes,
-        room: ConferenceRoomEventTypes,
-        participants:{
-            presence: ConferenceParticipantPresenceEventTypes,
-            connection: ConferenceParticipantConnectionEventTypes,
-        },
-        visit: {
-            status: VisitStatus,
-            events: EventType
-        }
-    };
-
-    public static network = NetworkEventTypes;
-
-    public static socket = SocketEventTypes;
-}
+import GeneralEvent from './models/events/GeneralEvent';
+import ConferenceEvent from './models/events/ConferenceEvent';
 
 export {
+    ConferenceEvent,
+    GeneralEvent,
     Events,
     Reservation,
     ReservationRequest,
