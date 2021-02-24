@@ -3,12 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const javascript_dev_kit_1 = tslib_1.__importDefault(require("javascript-dev-kit"));
 class Conference {
-    constructor(visitId, type, version, config) {
+    constructor(visitId, type, version, config, videoEnabled) {
         this.relations = [];
         this.participants = [];
         this._id = javascript_dev_kit_1.default.generateUUID();
         this.visitId = visitId;
         this.createdAt = Date.now();
+        this.videoEnabled = videoEnabled;
         this.type = type;
         this.mediaConstraints = config.mediaConstraints;
         this.version = version;

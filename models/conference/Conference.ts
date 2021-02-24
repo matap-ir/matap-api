@@ -25,6 +25,7 @@ export default class Conference{
     public visitId: string;
     public createdAt: number;
     public type: ConferenceType;
+    public videoEnabled: boolean;
     public iceServers: {username: string,credential:string,urls:string[]}[];
     public mediaConstraints: MediaConstraints;
     public version: string;
@@ -37,10 +38,11 @@ export default class Conference{
     public pingTimeout: number;
     public participants: Participant[] = [];
 
-    constructor(visitId: string,type: ConferenceType,version: string,config: ServerConfig) {
+    constructor(visitId: string,type: ConferenceType,version: string,config: ServerConfig,videoEnabled: boolean) {
         this._id = Kit.generateUUID();
         this.visitId = visitId;
         this.createdAt = Date.now();
+        this.videoEnabled = videoEnabled;
         this.type = type;
         this.mediaConstraints = config.mediaConstraints;
         this.version = version;
