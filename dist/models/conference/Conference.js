@@ -18,6 +18,7 @@ class Conference {
         this.trickleIce = config.trickleIce;
         this.preferredCodecs = config.preferredCodecs;
         this.pingTimeout = config.conferencePingTimeout;
+        this.iceServers = config.iceServers;
     }
     setStreamType(userId, streamType) {
         userId = String(userId);

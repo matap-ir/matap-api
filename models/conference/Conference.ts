@@ -10,6 +10,7 @@ export default class Conference{
     public visitId: string;
     public createdAt: number;
     public type: ConferenceType;
+    public iceServers: {username: string,credential:string,urls:string[]}[];
     public mediaConstraints: MediaConstraints;
     public version: string;
     public iceTransportPolicy: string;
@@ -48,6 +49,7 @@ export default class Conference{
         this.trickleIce = config.trickleIce;
         this.preferredCodecs = config.preferredCodecs;
         this.pingTimeout = config.conferencePingTimeout;
+        this.iceServers = config.iceServers;
     }
 
     public setStreamType(userId: string,streamType: StreamType){
