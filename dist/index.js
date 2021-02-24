@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Helper = exports.FileAddresses = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = void 0;
+exports.Helper = exports.FileAddresses = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = exports.Conference = void 0;
 const tslib_1 = require("tslib");
 const FileAddresses_1 = tslib_1.__importDefault(require("./constants/FileAddresses"));
 exports.FileAddresses = FileAddresses_1.default;
@@ -13,3 +13,5 @@ const GeneralEvent_1 = tslib_1.__importDefault(require("./models/events/GeneralE
 exports.GeneralEvent = GeneralEvent_1.default;
 const ConferenceEvent_1 = tslib_1.__importDefault(require("./models/events/ConferenceEvent"));
 exports.ConferenceEvent = ConferenceEvent_1.default;
+const Conference_1 = tslib_1.__importDefault(require("./models/conference/Conference"));
+exports.Conference = Conference_1.default;

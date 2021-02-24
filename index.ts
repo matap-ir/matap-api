@@ -31,8 +31,10 @@ import Events from './models/events/Events';
 export * from './models/Enums';
 import GeneralEvent from './models/events/GeneralEvent';
 import ConferenceEvent from './models/events/ConferenceEvent';
+import Conference from './models/conference/Conference';
 
 export {
+    Conference,
     ConferenceEvent,
     GeneralEvent,
     Events,
