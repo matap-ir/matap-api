@@ -129,7 +129,7 @@ var ConferenceParticipantPresenceEventTypes;
 })(ConferenceParticipantPresenceEventTypes = exports.ConferenceParticipantPresenceEventTypes || (exports.ConferenceParticipantPresenceEventTypes = {}));
 var ConferenceRoomEventTypes;
 (function (ConferenceRoomEventTypes) {
-    ConferenceRoomEventTypes["FAILED_CREATING"] = "conference.room.failed_creating";
+    ConferenceRoomEventTypes["FAILED"] = "conference.room.failed";
     ConferenceRoomEventTypes["CREATE"] = "conference.room.create";
     ConferenceRoomEventTypes["REJECTED"] = "conference.room.rejected";
     ConferenceRoomEventTypes["DESTROYED"] = "conference.room.destroyed";

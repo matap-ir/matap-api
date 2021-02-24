@@ -107,7 +107,7 @@ export declare enum ConferenceParticipantPresenceEventTypes {
     LEFT = "conference.participant.presence.left"
 }
 export declare enum ConferenceRoomEventTypes {
-    FAILED_CREATING = "conference.room.failed_creating",
+    FAILED = "conference.room.failed",
     CREATE = "conference.room.create",
     REJECTED = "conference.room.rejected",
     DESTROYED = "conference.room.destroyed"

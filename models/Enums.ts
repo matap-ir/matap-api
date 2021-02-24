@@ -156,7 +156,7 @@ export enum ConferenceParticipantPresenceEventTypes {
 }
 export enum ConferenceRoomEventTypes {
 
-   FAILED_CREATING = 'conference.room.failed_creating',
+   FAILED = 'conference.room.failed',
 
    CREATE = 'conference.room.create',
 
