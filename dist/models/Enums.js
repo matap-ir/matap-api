@@ -142,7 +142,7 @@ var ConferenceType;
 var StreamType;
 (function (StreamType) {
     StreamType["audio"] = "audio";
-    StreamType["video"] = "video";
+    StreamType["video_audio"] = "video/audio";
     StreamType["stream_receiver"] = "stream_receiver";
     StreamType["stream_sender"] = "stream_sender";
     StreamType["desktop"] = "desktop";

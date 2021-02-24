@@ -174,7 +174,7 @@ export enum ConferenceType{
 
 export enum StreamType{
    audio = 'audio',
-   video = 'video',
+   video_audio = 'video/audio',
    stream_receiver = 'stream_receiver',
    stream_sender = 'stream_sender',
    desktop = 'desktop'
