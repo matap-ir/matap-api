@@ -158,13 +158,17 @@ export enum ConferenceRoomEventTypes {
 
    FAILED_CREATING = 'conference.room.failed_creating',
 
-   AVAILABLE = 'conference.room.available',
+   CREATE = 'conference.room.created',
 
-   DESTROYED = 'conference.room.destroyed',
+   REJECTED = 'conference.room.rejected',
+
+   DESTROYED = 'conference.room.destroyed'
 }
 
 export enum ConferenceType{
+
    P2P = 'p2p',
+
    STREAM = 'stream'
 }
 
