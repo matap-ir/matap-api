@@ -12,6 +12,7 @@ class Conference {
         this.type = type;
         this.mediaConstraints = config.mediaConstraints;
         this.version = version;
+        this.iceTransportPolicy = config.iceTransportPolicy;
         this.videoMaxBitrate = config.videoMaxBitrate;
         this.audioMaxBitrate = config.audioMaxBitrate;
         this.trickleIce = config.trickleIce;
