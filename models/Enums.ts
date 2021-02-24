@@ -158,7 +158,7 @@ export enum ConferenceRoomEventTypes {
 
    FAILED_CREATING = 'conference.room.failed_creating',
 
-   CREATE = 'conference.room.created',
+   CREATE = 'conference.room.create',
 
    REJECTED = 'conference.room.rejected',
 
