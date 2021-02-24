@@ -7,6 +7,7 @@ export interface MediaConstraints{
 }
 export default class Conference{
     public _id: string;
+    public visitId: string;
     public createdAt: number;
     public type: ConferenceType;
     public mediaConstraints: MediaConstraints;
@@ -33,8 +34,9 @@ export default class Conference{
         }
     }[] = [];
 
-    constructor(type: ConferenceType,version: string,config: ServerConfig) {
+    constructor(visitId: string,type: ConferenceType,version: string,config: ServerConfig) {
         this._id = Kit.generateUUID();
+        this.visitId = visitId;
         this.createdAt = Date.now();
         this.type = type;
         this.mediaConstraints = config.mediaConstraints;

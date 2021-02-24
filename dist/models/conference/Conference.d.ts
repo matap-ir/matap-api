@@ -6,6 +6,7 @@ export interface MediaConstraints {
 }
 export default class Conference {
     _id: string;
+    visitId: string;
     createdAt: number;
     type: ConferenceType;
     mediaConstraints: MediaConstraints;
@@ -31,7 +32,7 @@ export default class Conference {
             signalerLastPingDate?: number;
         };
     }[];
-    constructor(type: ConferenceType, version: string, config: ServerConfig);
+    constructor(visitId: string, type: ConferenceType, version: string, config: ServerConfig);
     setStreamType(userId: string, streamType: StreamType): boolean;
     setClientInfo(userId: string, info: string, connectionType: string, transportType: 'udp' | 'tcp'): boolean;
     getParticipant(userId: string): {
