@@ -1,11 +1,13 @@
 import {Chat, DiscountCoupon, User, Rating} from '../../index';
 import {VisitStatus} from '../Enums';
+import Conference from '../conference/Conference';
 
 interface Visit {
     _id: string,
     patient: User,
     doctor: User,
     discount?: DiscountCoupon,
+    conference?: Conference,
     state: VisitStatus,
     initiate_date: number,
     start_date: number,

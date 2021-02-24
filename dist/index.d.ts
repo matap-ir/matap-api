@@ -31,7 +31,8 @@ import Events from './models/events/Events';
 export * from './models/Enums';
 import GeneralEvent from './models/events/GeneralEvent';
 import ConferenceEvent from './models/events/ConferenceEvent';
-export { ConferenceEvent, GeneralEvent, Events, Reservation, ReservationRequest, ReservationOffer, ReservationCancellation, Issuer, WorkTime, Archive, CrashReport, Notification, PrivilegeOptionsDetails, PrivilegeOptions, Privileges, AdminLog, ResponseTime, CallOffer, FileAddresses, User, Chat, WorkTimes, DoctorStatus, PatientStatus, Specialization, ServiceRequest, MedicalService, HealthCenter, DiscountCoupon, Transaction, Visit, Admin, FinancialAudit, QueryResponse, Rating, ServerConfig, Helper };
+import Conference from './models/conference/Conference';
+export { Conference, ConferenceEvent, GeneralEvent, Events, Reservation, ReservationRequest, ReservationOffer, ReservationCancellation, Issuer, WorkTime, Archive, CrashReport, Notification, PrivilegeOptionsDetails, PrivilegeOptions, Privileges, AdminLog, ResponseTime, CallOffer, FileAddresses, User, Chat, WorkTimes, DoctorStatus, PatientStatus, Specialization, ServiceRequest, MedicalService, HealthCenter, DiscountCoupon, Transaction, Visit, Admin, FinancialAudit, QueryResponse, Rating, ServerConfig, Helper };
 export declare type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';
 export interface ValidatorField {
     validator: any;
