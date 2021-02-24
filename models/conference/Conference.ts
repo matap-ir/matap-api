@@ -75,21 +75,22 @@ export default class Conference{
 
     public addParticipant(userId: string,streamType: StreamType){
         userId = String(userId);
-        const participant = this.getParticipant(userId);
+        let participant = this.getParticipant(userId);
         if(!participant){
-            this.participants.push({
+            participant = {
                 _id: userId,
                 state: 'connecting',
                 joinedAt: Date.now(),
                 streamType,
                 pingInfo:{}
-            })
+            }
+            this.participants.push(participant)
             this.participants.forEach((p)=>{
                 if(p._id !== userId && !this.isInitiator(p._id,userId) && !this.isInitiator(userId,p._id)){
                     this.setInitiator(userId,p._id);
                 }
             })
-            return true;
+            return participant;
         }
         return false;
     }
