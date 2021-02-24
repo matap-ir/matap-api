@@ -5,6 +5,21 @@ export interface MediaConstraints{
     video: any,
     audio: any
 }
+export interface Participant{
+    _id: string,
+    streamType: StreamType,
+    state: 'connecting' | 'reconnecting' | 'connected' | 'interrupted' | 'paused',
+    joinedAt: number,
+    clientInfo?: string,
+    transportType?: 'udp' | 'tcp',
+    connectionType?: string,
+    pingInfo:{
+        turn?: number | 'timeout';
+        signaler?: number | 'timeout',
+        turnLastPingDate?: number,
+        signalerLastPingDate?: number,
+    }
+}
 export default class Conference{
     public _id: string;
     public visitId: string;
@@ -13,28 +28,14 @@ export default class Conference{
     public iceServers: {username: string,credential:string,urls:string[]}[];
     public mediaConstraints: MediaConstraints;
     public version: string;
-    public iceTransportPolicy: string;
+    public iceTransportPolicy: 'relay' | 'all';
     public videoMaxBitrate: number | 'unlimited';
     public audioMaxBitrate: number | 'unlimited';
     public preferredCodecs: string[];
     public trickleIce: boolean;
     public relations: string[] = [];
     public pingTimeout: number;
-    public participants: {
-        _id: string,
-        streamType: StreamType,
-        state: 'connecting' | 'reconnecting' | 'connected' | 'interrupted' | 'paused',
-        joinedAt: number,
-        clientInfo?: string,
-        transportType?: 'udp' | 'tcp',
-        connectionType?: string,
-        pingInfo:{
-            turn?: number | 'timeout';
-            signaler?: number | 'timeout',
-            turnLastPingDate?: number,
-            signalerLastPingDate?: number,
-        }
-    }[] = [];
+    public participants: Participant[] = [];
 
     constructor(visitId: string,type: ConferenceType,version: string,config: ServerConfig) {
         this._id = Kit.generateUUID();
