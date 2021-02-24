@@ -82,6 +82,17 @@ export default class Conference{
         return this.participants.find(m => m._id === userId);
     }
 
+    public currentState(userId: string): 'initiator' | 'invited' | 'transmitting'{
+        const participant = this.getParticipant(String(userId));
+        if(!participant){
+            return 'invited';
+        }
+        if(this.participants.length === 1){
+            return 'initiator';
+        }
+        return 'transmitting';
+    }
+
     public addParticipant(userId: string,streamType: StreamType){
         userId = String(userId);
         let participant = this.getParticipant(userId);

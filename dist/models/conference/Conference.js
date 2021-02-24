@@ -45,6 +45,16 @@ class Conference {
         userId = String(userId);
         return this.participants.find(m => m._id === userId);
     }
+    currentState(userId) {
+        const participant = this.getParticipant(String(userId));
+        if (!participant) {
+            return 'invited';
+        }
+        if (this.participants.length === 1) {
+            return 'initiator';
+        }
+        return 'transmitting';
+    }
     addParticipant(userId, streamType) {
         userId = String(userId);
         let participant = this.getParticipant(userId);
