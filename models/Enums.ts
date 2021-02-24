@@ -130,6 +130,8 @@ export enum ConferenceTrackEventTypes {
 }
 export enum ConferenceParticipantConnectionEventTypes {
 
+   CONNECTING = 'conference.participant.connection.connecting',
+
    INTERRUPTED = 'conference.participant.connection.interrupted',
 
    RESTORING = 'conference.participant.connection.restoring',
@@ -159,6 +161,19 @@ export enum ConferenceRoomEventTypes {
    AVAILABLE = 'conference.room.available',
 
    DESTROYED = 'conference.room.destroyed',
+}
+
+export enum ConferenceType{
+   P2P = 'p2p',
+   STREAM = 'stream'
+}
+
+export enum StreamType{
+   audio = 'audio',
+   video = 'video',
+   stream_receiver = 'stream_receiver',
+   stream_sender = 'stream_sender',
+   desktop = 'desktop'
 }
 
 export enum IOStatus {

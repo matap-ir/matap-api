@@ -8,10 +8,10 @@ import {
     ConferenceTrackEventTypes, EventType, NetworkEventTypes, SocketEventTypes, VisitStatus
 } from '../Enums';
 
-namespace Events{
+
     const listeners: {[event: string]: ((args: any)=>void)[]} = {};
 
-    export class Conference{
+    class Conference{
         public static readonly detection = ConferenceDetectionEventTypes;
         public static readonly features = ConferenceFeaturesEventTypes;
         public static readonly mediaDevices = ConferenceMediaDevicesEventTypes;
@@ -21,7 +21,7 @@ namespace Events{
         public static readonly presence = ConferenceParticipantPresenceEventTypes;
     }
 
-    export class Visit {
+    class Visit {
         status = VisitStatus
         events = EventType
     }
@@ -30,18 +30,24 @@ namespace Events{
 
     export const socket = SocketEventTypes;
 
-    export function on(events: string | string[], cb: (data: any)=>void){
-        [...events].forEach((e: string) => {
+    function on(event: string | string[], cb: (data: any)=>void){
+        [...event].forEach((e: string) => {
             listeners[e] = listeners[e] || [];
             !listeners[e].includes(cb) && listeners[e].push(cb);
         })
     }
 
-    export function off<T extends any>(cb: (args: T)=>void){
+    function off<T extends any>(cb: (args: T)=>void){
         Object.keys(listeners).forEach((k)=>{
             listeners[k].removeValue(cb);
         })
     }
-}
 
-export default Events;
+export default {
+    Conference,
+    Visit,
+    network,
+    socket,
+    on,
+    off
+};
