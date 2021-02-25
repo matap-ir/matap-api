@@ -1,4 +1,4 @@
-import {ConferenceMode, ConferenceType} from '../Enums';
+import {ConferenceMode, ConferenceType, ParticipantState} from '../Enums';
 import Kit from 'javascript-dev-kit';
 import ServerConfig from '../serverconfig/ServerConfig';
 export interface MediaConstraints{
@@ -7,7 +7,7 @@ export interface MediaConstraints{
 }
 export interface Participant{
     id: string,
-    state: 'connecting' | 'reconnecting' | 'connected' | 'interrupted' | 'paused',
+    state: ParticipantState,
     joinedAt: number,
     clientInfo?: string,
     transportType?: 'udp' | 'tcp',
