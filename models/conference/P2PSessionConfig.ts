@@ -24,6 +24,7 @@ export default class P2PSessionConfig {
     public pingTimeout: number;
 
     constructor(type: ConferenceType,version: number,config: ServerConfig,initiator: Participant,receiver: Participant,host: string) {
+        this.state = 'initiating';
         this.id = Kit.generateUUID();
         this.retryThreshold = config.retryThreshold;
         this.forceSpeaker = config.forceSpeaker;
