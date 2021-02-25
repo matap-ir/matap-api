@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChatType = exports.EventType = exports.IOStatus = exports.ConferenceType = exports.ConferenceMode = exports.ConferenceRoomEventTypes = exports.ConferenceParticipantPresenceEventTypes = exports.ConferenceParticipantConnectionEventTypes = exports.ConferenceTrackEventTypes = exports.ConferenceMediaDevicesEventTypes = exports.ConferenceFeaturesEventTypes = exports.ConferenceDetectionEventTypes = exports.SocketEventTypes = exports.NetworkEventTypes = exports.DebugType = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.ReservationState = exports.AdminType = exports.TypingStatus = exports.UserType = void 0;
+exports.ChatType = exports.EventType = exports.IOStatus = exports.ParticipantState = exports.ConferenceType = exports.ConferenceMode = exports.ConferenceRoomEventTypes = exports.ConferenceParticipantPresenceEventTypes = exports.ConferenceParticipantConnectionEventTypes = exports.ConferenceTrackEventTypes = exports.ConferenceMediaDevicesEventTypes = exports.ConferenceFeaturesEventTypes = exports.ConferenceDetectionEventTypes = exports.SocketEventTypes = exports.NetworkEventTypes = exports.DebugType = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.ReservationState = exports.AdminType = exports.TypingStatus = exports.UserType = void 0;
 var UserType;
 (function (UserType) {
     UserType["PATIENT"] = "PATIENT";
@@ -144,7 +144,14 @@ var ConferenceType;
     ConferenceType["audio"] = "audio";
     ConferenceType["video_audio"] = "video/audio";
 })(ConferenceType = exports.ConferenceType || (exports.ConferenceType = {}));
-;
+var ParticipantState;
+(function (ParticipantState) {
+    ParticipantState["connecting"] = "connecting";
+    ParticipantState["reconnecting"] = "reconnecting";
+    ParticipantState["connected"] = "connected";
+    ParticipantState["interrupted"] = "interrupted";
+    ParticipantState["paused"] = "paused";
+})(ParticipantState = exports.ParticipantState || (exports.ParticipantState = {}));
 var IOStatus;
 (function (IOStatus) {
     IOStatus["READY"] = "READY";

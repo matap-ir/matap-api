@@ -102,6 +102,7 @@ export enum ConferenceFeaturesEventTypes {
 
    MIC_NOISE = 'conference.feature.mic.noise',
 }
+
 export enum ConferenceMediaDevicesEventTypes {
 
    LIST_CHANGED = 'conference.media_devices.list_changed',
@@ -114,6 +115,7 @@ export enum ConferenceMediaDevicesEventTypes {
 
    ERROR_GETTING = 'conference.media_devices.error_getting'
 }
+
 export enum ConferenceTrackEventTypes {
 
    ADDED = 'conference.track.added',
@@ -128,6 +130,7 @@ export enum ConferenceTrackEventTypes {
 
    UNSUPPORTED_RESOLUTION = 'conference.track.unsupported_resolution'
 }
+
 export enum ConferenceParticipantConnectionEventTypes {
 
    CONNECTING = 'conference.participant.connection.connecting',
@@ -148,12 +151,14 @@ export enum ConferenceParticipantConnectionEventTypes {
 
    PING = 'conference.participant.connection.ping'
 }
+
 export enum ConferenceParticipantPresenceEventTypes {
 
    JOINED = 'conference.participant.presence.joined',
 
    LEFT = 'conference.participant.presence.left',
 }
+
 export enum ConferenceRoomEventTypes {
 
    FAILED = 'conference.room.failed',
@@ -177,7 +182,15 @@ export enum ConferenceType{
    audio = 'audio',
 
    video_audio = 'video/audio',
-};
+}
+
+export enum ParticipantState {
+   connecting= 'connecting' ,
+   reconnecting = 'reconnecting' ,
+   connected = 'connected' ,
+   interrupted = 'interrupted' ,
+   paused = 'paused'
+}
 
 /*export enum StreamType{
    audio = 'audio',
