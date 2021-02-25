@@ -23,10 +23,10 @@ export default class P2PSession {
     public trickleIce: boolean;
     public pingTimeout: number;
 
-    constructor(type: ConferenceType,version: number,config: ServerConfig,initiator: Participant,receiver: Participant,retryThreshold: number,forceSpeaker: boolean,host: string) {
+    constructor(type: ConferenceType,version: number,config: ServerConfig,initiator: Participant,receiver: Participant,host: string) {
         this.id = Kit.generateUUID();
-        this.retryThreshold = retryThreshold;
-        this.forceSpeaker = forceSpeaker;
+        this.retryThreshold = config.retryThreshold;
+        this.forceSpeaker = config.forceSpeaker;
         this.host = host;
         this.initiator = initiator;
         this.receiver = receiver;
