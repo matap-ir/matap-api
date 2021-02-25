@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChatType = exports.EventType = exports.IOStatus = exports.StreamType = exports.ConferenceType = exports.ConferenceRoomEventTypes = exports.ConferenceParticipantPresenceEventTypes = exports.ConferenceParticipantConnectionEventTypes = exports.ConferenceTrackEventTypes = exports.ConferenceMediaDevicesEventTypes = exports.ConferenceFeaturesEventTypes = exports.ConferenceDetectionEventTypes = exports.SocketEventTypes = exports.NetworkEventTypes = exports.DebugType = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.ReservationState = exports.AdminType = exports.TypingStatus = exports.UserType = void 0;
+exports.ChatType = exports.EventType = exports.IOStatus = exports.ConferenceType = exports.ConferenceMode = exports.ConferenceRoomEventTypes = exports.ConferenceParticipantPresenceEventTypes = exports.ConferenceParticipantConnectionEventTypes = exports.ConferenceTrackEventTypes = exports.ConferenceMediaDevicesEventTypes = exports.ConferenceFeaturesEventTypes = exports.ConferenceDetectionEventTypes = exports.SocketEventTypes = exports.NetworkEventTypes = exports.DebugType = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.ReservationState = exports.AdminType = exports.TypingStatus = exports.UserType = void 0;
 var UserType;
 (function (UserType) {
     UserType["PATIENT"] = "PATIENT";
@@ -134,19 +134,17 @@ var ConferenceRoomEventTypes;
     ConferenceRoomEventTypes["REJECTED"] = "conference.room.rejected";
     ConferenceRoomEventTypes["DESTROYED"] = "conference.room.destroyed";
 })(ConferenceRoomEventTypes = exports.ConferenceRoomEventTypes || (exports.ConferenceRoomEventTypes = {}));
+var ConferenceMode;
+(function (ConferenceMode) {
+    ConferenceMode["P2P"] = "p2p";
+    ConferenceMode["STREAM"] = "stream";
+})(ConferenceMode = exports.ConferenceMode || (exports.ConferenceMode = {}));
 var ConferenceType;
 (function (ConferenceType) {
-    ConferenceType["P2P"] = "p2p";
-    ConferenceType["STREAM"] = "stream";
+    ConferenceType["audio"] = "audio";
+    ConferenceType["video_audio"] = "video/audio";
 })(ConferenceType = exports.ConferenceType || (exports.ConferenceType = {}));
-var StreamType;
-(function (StreamType) {
-    StreamType["audio"] = "audio";
-    StreamType["video_audio"] = "video/audio";
-    StreamType["stream_receiver"] = "stream_receiver";
-    StreamType["stream_sender"] = "stream_sender";
-    StreamType["desktop"] = "desktop";
-})(StreamType = exports.StreamType || (exports.StreamType = {}));
+;
 var IOStatus;
 (function (IOStatus) {
     IOStatus["READY"] = "READY";

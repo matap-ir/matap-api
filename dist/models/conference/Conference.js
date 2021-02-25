@@ -3,13 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const javascript_dev_kit_1 = tslib_1.__importDefault(require("javascript-dev-kit"));
 class Conference {
-    constructor(visitId, type, version, config, videoEnabled) {
+    constructor(visitId, type, mode, version, config) {
         this.relations = [];
         this.participants = [];
-        this._id = javascript_dev_kit_1.default.generateUUID();
+        this.id = javascript_dev_kit_1.default.generateUUID();
         this.visitId = visitId;
         this.createdAt = Date.now();
-        this.videoEnabled = videoEnabled;
+        this.mode = mode;
         this.type = type;
         this.mediaConstraints = config.mediaConstraints;
         this.version = version;
@@ -20,15 +20,6 @@ class Conference {
         this.preferredCodecs = config.preferredCodecs;
         this.pingTimeout = config.conferencePingTimeout;
         this.iceServers = config.iceServers;
-    }
-    setStreamType(userId, streamType) {
-        userId = String(userId);
-        const participant = this.getParticipant(userId);
-        if (participant) {
-            participant.streamType = streamType;
-            return true;
-        }
-        return false;
     }
     setClientInfo(userId, info, connectionType, transportType) {
         userId = String(userId);
@@ -55,7 +46,7 @@ class Conference {
         }
         return 'transmitting';
     }
-    addParticipant(userId, streamType) {
+    addParticipant(userId) {
         userId = String(userId);
         let participant = this.getParticipant(userId);
         if (!participant) {
@@ -63,7 +54,6 @@ class Conference {
                 _id: userId,
                 state: 'connecting',
                 joinedAt: Date.now(),
-                streamType,
                 pingInfo: {}
             };
             this.participants.push(participant);

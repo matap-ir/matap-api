@@ -165,20 +165,27 @@ export enum ConferenceRoomEventTypes {
    DESTROYED = 'conference.room.destroyed'
 }
 
-export enum ConferenceType{
+export enum ConferenceMode{
 
    P2P = 'p2p',
 
    STREAM = 'stream'
 }
 
-export enum StreamType{
+export enum ConferenceType{
+
+   audio = 'audio',
+
+   video_audio = 'video/audio',
+};
+
+/*export enum StreamType{
    audio = 'audio',
    video_audio = 'video/audio',
    stream_receiver = 'stream_receiver',
    stream_sender = 'stream_sender',
    desktop = 'desktop'
-}
+}*/
 
 export enum IOStatus {
    READY = 'READY',

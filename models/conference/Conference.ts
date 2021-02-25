@@ -1,4 +1,4 @@
-import {ConferenceType, StreamType} from '../Enums';
+import {ConferenceMode, ConferenceType} from '../Enums';
 import Kit from 'javascript-dev-kit';
 import ServerConfig from '../serverconfig/ServerConfig';
 export interface MediaConstraints{
@@ -7,7 +7,6 @@ export interface MediaConstraints{
 }
 export interface Participant{
     _id: string,
-    streamType: StreamType,
     state: 'connecting' | 'reconnecting' | 'connected' | 'interrupted' | 'paused',
     joinedAt: number,
     clientInfo?: string,
@@ -21,11 +20,11 @@ export interface Participant{
     }
 }
 export default class Conference{
-    public _id: string;
+    public id: string;
     public visitId: string;
     public createdAt: number;
     public type: ConferenceType;
-    public videoEnabled: boolean;
+    public mode: ConferenceMode;
     public iceServers: {username: string,credential:string,urls:string[]}[];
     public mediaConstraints: MediaConstraints;
     public version: string;
@@ -38,11 +37,11 @@ export default class Conference{
     public pingTimeout: number;
     public participants: Participant[] = [];
 
-    constructor(visitId: string,type: ConferenceType,version: string,config: ServerConfig,videoEnabled: boolean) {
-        this._id = Kit.generateUUID();
+    constructor(visitId: string,type: ConferenceType,mode: ConferenceMode,version: string,config: ServerConfig) {
+        this.id = Kit.generateUUID();
         this.visitId = visitId;
         this.createdAt = Date.now();
-        this.videoEnabled = videoEnabled;
+        this.mode = mode;
         this.type = type;
         this.mediaConstraints = config.mediaConstraints;
         this.version = version;
@@ -55,7 +54,7 @@ export default class Conference{
         this.iceServers = config.iceServers;
     }
 
-    public setStreamType(userId: string,streamType: StreamType){
+    /*public setStreamType(userId: string,streamType: StreamType){
         userId = String(userId);
         const participant = this.getParticipant(userId);
         if(participant){
@@ -63,7 +62,7 @@ export default class Conference{
             return true;
         }
         return false;
-    }
+    }*/
 
     public setClientInfo(userId: string,info: string,connectionType: string,transportType: 'udp' | 'tcp'){
         userId = String(userId);
@@ -93,7 +92,7 @@ export default class Conference{
         return 'transmitting';
     }
 
-    public addParticipant(userId: string,streamType: StreamType){
+    public addParticipant(userId: string){
         userId = String(userId);
         let participant = this.getParticipant(userId);
         if(!participant){
@@ -101,7 +100,6 @@ export default class Conference{
                 _id: userId,
                 state: 'connecting',
                 joinedAt: Date.now(),
-                streamType,
                 pingInfo:{}
             }
             this.participants.push(participant)
