@@ -6,7 +6,7 @@ export interface MediaConstraints{
     audio: any
 }
 export interface Participant{
-    _id: string,
+    id: string,
     state: 'connecting' | 'reconnecting' | 'connected' | 'interrupted' | 'paused',
     joinedAt: number,
     clientInfo?: string,
@@ -27,7 +27,7 @@ export default class Conference{
     public mode: ConferenceMode;
     public iceServers: {username: string,credential:string,urls:string[]}[];
     public mediaConstraints: MediaConstraints;
-    public version: string;
+    public videoCallVersion: string;
     public iceTransportPolicy: 'relay' | 'all';
     public videoMaxBitrate: number | 'unlimited';
     public audioMaxBitrate: number | 'unlimited';
@@ -44,7 +44,7 @@ export default class Conference{
         this.mode = mode;
         this.type = type;
         this.mediaConstraints = config.mediaConstraints;
-        this.version = version;
+        this.videoCallVersion = version;
         this.iceTransportPolicy = config.iceTransportPolicy;
         this.videoMaxBitrate = config.videoMaxBitrate;
         this.audioMaxBitrate = config.audioMaxBitrate;
@@ -78,7 +78,7 @@ export default class Conference{
 
     public getParticipant(userId: string){
         userId = String(userId);
-        return this.participants.find(m => m._id === userId);
+        return this.participants.find(m => m.id === userId);
     }
 
     public currentState(userId: string): 'initiator' | 'invited' | 'transmitting'{
@@ -97,15 +97,15 @@ export default class Conference{
         let participant = this.getParticipant(userId);
         if(!participant){
             participant = {
-                _id: userId,
+                id: userId,
                 state: 'connecting',
                 joinedAt: Date.now(),
                 pingInfo:{}
             }
             this.participants.push(participant)
             this.participants.forEach((p)=>{
-                if(p._id !== userId && !this.isInitiator(p._id,userId) && !this.isInitiator(userId,p._id)){
-                    this.setInitiator(userId,p._id);
+                if(p.id !== userId && !this.isInitiator(p.id,userId) && !this.isInitiator(userId,p.id)){
+                    this.setInitiator(userId,p.id);
                 }
             })
             return participant;
@@ -119,9 +119,9 @@ export default class Conference{
         if(participant){
             this.participants.removeValue(participant);
             this.participants.forEach((p)=>{
-                if(p._id !== userId && !this.isInitiator(p._id,userId) && !this.isInitiator(userId,p._id)){
-                    this.relations.removeValue(p._id+'>'+userId);
-                    this.relations.removeValue(userId+'>'+p._id);
+                if(p.id !== userId && !this.isInitiator(p.id,userId) && !this.isInitiator(userId,p.id)){
+                    this.relations.removeValue(p.id+'>'+userId);
+                    this.relations.removeValue(userId+'>'+p.id);
                 }
             })
             return true;
