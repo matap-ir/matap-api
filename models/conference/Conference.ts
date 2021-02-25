@@ -98,7 +98,7 @@ export default class Conference{
         if(!participant){
             participant = {
                 id: userId,
-                state: 'connecting',
+                state: ParticipantState.connecting,
                 joinedAt: Date.now(),
                 pingInfo:{}
             }
