@@ -1,7 +1,7 @@
 import FileAddresses from './constants/FileAddresses';
 import User from './models/users/User';
 import Chat from './models/chat/Chat';
-import P2PSession from './models/conference/P2PSession';
+import P2PSessionConfig from './models/conference/P2PSessionConfig';
 import Specialization from './models/specialization/Specialization';
 import HealthCenter from './models/health_center/HealthCenter';
 import DiscountCoupon from './models/discount/DiscountCoupon';
@@ -53,7 +53,7 @@ export {
     Privileges,
     AdminLog,
     ResponseTime,
-    P2PSession,
+    P2PSessionConfig,
     FileAddresses,
     User,
     Chat,

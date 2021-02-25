@@ -1,13 +1,13 @@
 import {MediaConstraints, Participant} from './Conference';
-import {ConferenceType} from '../Enums';
+import {ConferenceType, ParticipantState} from '../Enums';
 import ServerConfig from '../serverconfig/ServerConfig';
 import Kit from 'javascript-dev-kit';
 
-export default class P2PSession {
+export default class P2PSessionConfig {
     public id: string;
     public host: string;
     public type: ConferenceType;
-    public state: 'initiating' | 'transmitting' | 'ended' = 'initiating';
+    public state: ParticipantState = ParticipantState.connecting;
     public iceTransportPolicy: 'relay' | 'all';
     public createdAt: number;
     public iceServers:{username: string,credential:string,urls:string[]}[];
