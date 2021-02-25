@@ -7,7 +7,7 @@ export default class P2PSessionConfig {
     public id: string;
     public host: string;
     public type: ConferenceType;
-    public state: ParticipantState = ParticipantState.connecting;
+    public state: 'initiating' | 'transmitting' | 'ended';
     public iceTransportPolicy: 'relay' | 'all';
     public createdAt: number;
     public iceServers:{username: string,credential:string,urls:string[]}[];
