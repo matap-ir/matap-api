@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
+var String = module;
 const dbModel = {
     iceServers: {
         type: [{ username: String, credential: String, urls: [String] }]
@@ -16,6 +17,10 @@ const dbModel = {
     audioMaxBitrate: {
         type: mongoose_1.Schema.Types.Mixed,
         required: false
+    },
+    iceTransportPolicy: {
+        type: String,
+        require: true,
     },
     preferredCodecs: {
         type: [String],

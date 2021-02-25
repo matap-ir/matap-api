@@ -1,4 +1,5 @@
 import {Schema} from 'mongoose';
+import String = module
 
 const dbModel = {
     iceServers:{
@@ -15,6 +16,10 @@ const dbModel = {
     audioMaxBitrate:{
         type: Schema.Types.Mixed,
         required: false
+    },
+    iceTransportPolicy:{
+        type: String,
+        require: true,
     },
     preferredCodecs:{
       type: [String],
