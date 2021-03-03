@@ -1,5 +1,4 @@
 import {Schema} from 'mongoose';
-import String = module
 
 const dbModel = {
     iceServers:{

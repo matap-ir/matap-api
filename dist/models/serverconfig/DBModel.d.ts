@@ -19,6 +19,10 @@ declare const dbModel: {
         type: typeof Schema.Types.Mixed;
         required: boolean;
     };
+    iceTransportPolicy: {
+        type: StringConstructor;
+        require: boolean;
+    };
     preferredCodecs: {
         type: StringConstructor[];
         required: boolean;

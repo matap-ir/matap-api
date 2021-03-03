@@ -1,11 +1,11 @@
 import { MediaConstraints, Participant } from './Conference';
-import { ConferenceType, ParticipantState } from '../Enums';
+import { ConferenceType } from '../Enums';
 import ServerConfig from '../serverconfig/ServerConfig';
 export default class P2PSessionConfig {
     id: string;
     host: string;
     type: ConferenceType;
-    state: ParticipantState;
+    state: 'initiating' | 'transmitting' | 'ended';
     iceTransportPolicy: 'relay' | 'all';
     createdAt: number;
     iceServers: {
