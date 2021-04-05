@@ -10,7 +10,7 @@
     "delete_dist": "if exist \"./dist*\" Rmdir /S /Q \"./dist\""
   },
   "dependencies": {
-    "javascript-dev-kit": "^0.26.0"
+    "javascript-dev-kit": "^0.26.1"
   },
   "devDependencies": {
     "@hapi/joi": "^17.1.0",
