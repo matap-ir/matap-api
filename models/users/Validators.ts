@@ -52,8 +52,8 @@ const validator : GeneratedValidator<User> = {
                     shaba:Joi.string().required(),
                     nezam_pezeshki_code:Joi.string().required(),
                     cut:Joi.number().required(),
-                    clinics:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
-                    hospitals:Joi.array().items(require('../health_center/Validators').default.db.update.validator).required(),
+                    clinics:Joi.array().items(Joi.any()).required(),
+                    hospitals:Joi.array().items(Joi.any()).required(),
                     response_days:Joi.object({
                         0: Joi.array().items(require('../response_time/Validators').default.db.insert.validator),
                         1: Joi.array().items(require('../response_time/Validators').default.db.insert.validator),
