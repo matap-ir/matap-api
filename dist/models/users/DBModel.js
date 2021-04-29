@@ -33,6 +33,10 @@ const dbModel = {
                     workTimeEnded: {
                         notification: Boolean,
                         sms: Boolean
+                    },
+                    workTimeStarted: {
+                        notification: Boolean,
+                        sms: Boolean
                     }
                 },
                 required: true

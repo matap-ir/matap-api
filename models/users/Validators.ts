@@ -35,6 +35,10 @@ const validator : GeneratedValidator<User> = {
                         workTimeEnded:Joi.object().keys({
                             notification: Joi.boolean().required(),
                             sms: Joi.boolean().required()
+                        }).required(),
+                        workTimeStarted:Joi.object().keys({
+                            notification: Joi.boolean().required(),
+                            sms: Joi.boolean().required()
                         }).required()
                     }).required()
                 }).required(),
@@ -120,6 +124,10 @@ const validator : GeneratedValidator<User> = {
                       workTimeEnded:Joi.object().keys({
                           notification: Joi.boolean().required(),
                           sms: Joi.boolean().required()
+                      }).required(),
+                      workTimeStarted:Joi.object().keys({
+                          notification: Joi.boolean().required(),
+                          sms: Joi.boolean().required()
                       }).required()
                   }).required()
               }).required(),
@@ -199,6 +207,10 @@ const validator : GeneratedValidator<User> = {
                               sms: Joi.boolean().required()
                           }).required(),
                           workTimeEnded:Joi.object().keys({
+                              notification: Joi.boolean().required(),
+                              sms: Joi.boolean().required()
+                          }).required(),
+                          workTimeStarted:Joi.object().keys({
                               notification: Joi.boolean().required(),
                               sms: Joi.boolean().required()
                           }).required()
@@ -281,6 +293,10 @@ const validator : GeneratedValidator<User> = {
                           sms: Joi.boolean().required()
                       }).required(),
                       workTimeEnded:Joi.object().keys({
+                          notification: Joi.boolean().required(),
+                          sms: Joi.boolean().required()
+                      }).required(),
+                      workTimeStarted:Joi.object().keys({
                           notification: Joi.boolean().required(),
                           sms: Joi.boolean().required()
                       }).required()

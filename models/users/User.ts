@@ -26,6 +26,7 @@ export default interface User {
         notifications:{
             newPatient:{notification:boolean,sms:boolean},
             workTimeClose:{notification:boolean,sms:boolean},
+            workTimeStarted:{notification:boolean,sms:boolean},
             workTimeEnded:{notification:boolean,sms:boolean}
         }
     },

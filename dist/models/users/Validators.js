@@ -31,6 +31,10 @@ const validator = {
                         workTimeEnded: Joi_1.default.object().keys({
                             notification: Joi_1.default.boolean().required(),
                             sms: Joi_1.default.boolean().required()
+                        }).required(),
+                        workTimeStarted: Joi_1.default.object().keys({
+                            notification: Joi_1.default.boolean().required(),
+                            sms: Joi_1.default.boolean().required()
                         }).required()
                     }).required()
                 }).required(),
@@ -113,6 +117,10 @@ const validator = {
                     workTimeEnded: Joi_1.default.object().keys({
                         notification: Joi_1.default.boolean().required(),
                         sms: Joi_1.default.boolean().required()
+                    }).required(),
+                    workTimeStarted: Joi_1.default.object().keys({
+                        notification: Joi_1.default.boolean().required(),
+                        sms: Joi_1.default.boolean().required()
                     }).required()
                 }).required()
             }).required(),
@@ -189,6 +197,10 @@ const validator = {
                             sms: Joi_1.default.boolean().required()
                         }).required(),
                         workTimeEnded: Joi_1.default.object().keys({
+                            notification: Joi_1.default.boolean().required(),
+                            sms: Joi_1.default.boolean().required()
+                        }).required(),
+                        workTimeStarted: Joi_1.default.object().keys({
                             notification: Joi_1.default.boolean().required(),
                             sms: Joi_1.default.boolean().required()
                         }).required()
@@ -268,6 +280,10 @@ const validator = {
                         sms: Joi_1.default.boolean().required()
                     }).required(),
                     workTimeEnded: Joi_1.default.object().keys({
+                        notification: Joi_1.default.boolean().required(),
+                        sms: Joi_1.default.boolean().required()
+                    }).required(),
+                    workTimeStarted: Joi_1.default.object().keys({
                         notification: Joi_1.default.boolean().required(),
                         sms: Joi_1.default.boolean().required()
                     }).required()
