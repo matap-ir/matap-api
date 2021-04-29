@@ -41,7 +41,7 @@ const dbModel: SchemaDefinition = {
                 required: true
             }
         },
-        required:true,
+        required:false,
     },
     details:{
         type:{

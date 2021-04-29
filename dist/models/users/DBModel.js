@@ -42,7 +42,7 @@ const dbModel = {
                 required: true
             }
         },
-        required: true,
+        required: false,
     },
     details: {
         type: {
