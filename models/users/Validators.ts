@@ -22,24 +22,24 @@ const validator : GeneratedValidator<User> = {
                 gender:Joi.string().optional().allow('','male','female'),
                 notificationQueuePatients: Joi.array().items(Joi.string()).optional().allow(null),
                 os: Joi.string().optional().allow(null),
+                settings:Joi.object().keys({
+                    notifications:Joi.object().keys({
+                        newPatient:Joi.object().keys({
+                            notification: Joi.boolean().required(),
+                            sms: Joi.boolean().required()
+                        }).required(),
+                        workTimeClose:Joi.object().keys({
+                            notification: Joi.boolean().required(),
+                            sms: Joi.boolean().required()
+                        }).required(),
+                        workTimeEnded:Joi.object().keys({
+                            notification: Joi.boolean().required(),
+                            sms: Joi.boolean().required()
+                        }).required()
+                    }).required()
+                }).required(),
                 details:Joi.object().required().keys({
                     reservationInfo:Joi.object().keys({
-                        settings:Joi.object().keys({
-                            notifications:Joi.object().keys({
-                                newPatient:Joi.object().keys({
-                                    notification: Joi.boolean().required(),
-                                    sms: Joi.boolean().required()
-                                }).required(),
-                                workTimeClose:Joi.object().keys({
-                                    notification: Joi.boolean().required(),
-                                    sms: Joi.boolean().required()
-                                }).required(),
-                                workTimeEnded:Joi.object().keys({
-                                    notification: Joi.boolean().required(),
-                                    sms: Joi.boolean().required()
-                                }).required()
-                            }).required()
-                        }).required(),
                         enabled: Joi.boolean().required(),
                         phone: Joi.string().required().allow(''),
                         address: Joi.string().required().allow(''),
@@ -107,6 +107,22 @@ const validator : GeneratedValidator<User> = {
               gender:Joi.string().optional().allow('','male','female'),
               notificationQueuePatients: Joi.array().items(Joi.string()).optional(),
               os: Joi.string().optional().allow(null),
+              settings:Joi.object().keys({
+                  notifications:Joi.object().keys({
+                      newPatient:Joi.object().keys({
+                          notification: Joi.boolean().required(),
+                          sms: Joi.boolean().required()
+                      }).required(),
+                      workTimeClose:Joi.object().keys({
+                          notification: Joi.boolean().required(),
+                          sms: Joi.boolean().required()
+                      }).required(),
+                      workTimeEnded:Joi.object().keys({
+                          notification: Joi.boolean().required(),
+                          sms: Joi.boolean().required()
+                      }).required()
+                  }).required()
+              }).required(),
               details:Joi.object().keys({
                   reservationInfo:Joi.object().keys({
                       enabled: Joi.boolean().required(),
@@ -172,6 +188,22 @@ const validator : GeneratedValidator<User> = {
                   fcmtoken:Joi.string().optional().allow(null),
                   gender:Joi.string().optional().allow('','male','female'),
                   specialization:require('../specialization/Validators').default.public.patch.validator.required(),
+                  settings:Joi.object().keys({
+                      notifications:Joi.object().keys({
+                          newPatient:Joi.object().keys({
+                              notification: Joi.boolean().required(),
+                              sms: Joi.boolean().required()
+                          }).required(),
+                          workTimeClose:Joi.object().keys({
+                              notification: Joi.boolean().required(),
+                              sms: Joi.boolean().required()
+                          }).required(),
+                          workTimeEnded:Joi.object().keys({
+                              notification: Joi.boolean().required(),
+                              sms: Joi.boolean().required()
+                          }).required()
+                      }).required()
+                  }).required(),
                   details:Joi.object().required().keys({
                       reservationInfo:Joi.object().keys({
                           enabled: Joi.boolean().required(),
@@ -238,6 +270,22 @@ const validator : GeneratedValidator<User> = {
               fcmtoken:Joi.string().optional().allow(null),
               gender:Joi.string().optional().allow('','male','female'),
               finalizable_visits: Joi.array().items(Joi.string()),
+              settings:Joi.object().keys({
+                  notifications:Joi.object().keys({
+                      newPatient:Joi.object().keys({
+                          notification: Joi.boolean().required(),
+                          sms: Joi.boolean().required()
+                      }).required(),
+                      workTimeClose:Joi.object().keys({
+                          notification: Joi.boolean().required(),
+                          sms: Joi.boolean().required()
+                      }).required(),
+                      workTimeEnded:Joi.object().keys({
+                          notification: Joi.boolean().required(),
+                          sms: Joi.boolean().required()
+                      }).required()
+                  }).required()
+              }).required(),
               details:Joi.object().optional().keys({
                   reservationInfo:Joi.object().keys({
                       enabled: Joi.boolean().required(),

@@ -22,14 +22,14 @@ export default interface User {
     gender:'male' | 'female' | '',
     notificationQueuePatients: string[],
     os?: string,
+    settings:{
+        notifications:{
+            newPatient:{notification:boolean,sms:boolean},
+            workTimeClose:{notification:boolean,sms:boolean},
+            workTimeEnded:{notification:boolean,sms:boolean}
+        }
+    },
     details:{
-        settings:{
-            notifications:{
-                newPatient:{notification:boolean,sms:boolean},
-                workTimeClose:{notification:boolean,sms:boolean},
-                workTimeEnded:{notification:boolean,sms:boolean}
-            }
-        },
         reservationInfo:{
             enabled: boolean,
             phone: string,

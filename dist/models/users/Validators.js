@@ -18,24 +18,24 @@ const validator = {
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
                 notificationQueuePatients: Joi_1.default.array().items(Joi_1.default.string()).optional().allow(null),
                 os: Joi_1.default.string().optional().allow(null),
+                settings: Joi_1.default.object().keys({
+                    notifications: Joi_1.default.object().keys({
+                        newPatient: Joi_1.default.object().keys({
+                            notification: Joi_1.default.boolean().required(),
+                            sms: Joi_1.default.boolean().required()
+                        }).required(),
+                        workTimeClose: Joi_1.default.object().keys({
+                            notification: Joi_1.default.boolean().required(),
+                            sms: Joi_1.default.boolean().required()
+                        }).required(),
+                        workTimeEnded: Joi_1.default.object().keys({
+                            notification: Joi_1.default.boolean().required(),
+                            sms: Joi_1.default.boolean().required()
+                        }).required()
+                    }).required()
+                }).required(),
                 details: Joi_1.default.object().required().keys({
                     reservationInfo: Joi_1.default.object().keys({
-                        settings: Joi_1.default.object().keys({
-                            notifications: Joi_1.default.object().keys({
-                                newPatient: Joi_1.default.object().keys({
-                                    notification: Joi_1.default.boolean().required(),
-                                    sms: Joi_1.default.boolean().required()
-                                }).required(),
-                                workTimeClose: Joi_1.default.object().keys({
-                                    notification: Joi_1.default.boolean().required(),
-                                    sms: Joi_1.default.boolean().required()
-                                }).required(),
-                                workTimeEnded: Joi_1.default.object().keys({
-                                    notification: Joi_1.default.boolean().required(),
-                                    sms: Joi_1.default.boolean().required()
-                                }).required()
-                            }).required()
-                        }).required(),
                         enabled: Joi_1.default.boolean().required(),
                         phone: Joi_1.default.string().required().allow(''),
                         address: Joi_1.default.string().required().allow(''),
@@ -100,6 +100,22 @@ const validator = {
             gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
             notificationQueuePatients: Joi_1.default.array().items(Joi_1.default.string()).optional(),
             os: Joi_1.default.string().optional().allow(null),
+            settings: Joi_1.default.object().keys({
+                notifications: Joi_1.default.object().keys({
+                    newPatient: Joi_1.default.object().keys({
+                        notification: Joi_1.default.boolean().required(),
+                        sms: Joi_1.default.boolean().required()
+                    }).required(),
+                    workTimeClose: Joi_1.default.object().keys({
+                        notification: Joi_1.default.boolean().required(),
+                        sms: Joi_1.default.boolean().required()
+                    }).required(),
+                    workTimeEnded: Joi_1.default.object().keys({
+                        notification: Joi_1.default.boolean().required(),
+                        sms: Joi_1.default.boolean().required()
+                    }).required()
+                }).required()
+            }).required(),
             details: Joi_1.default.object().keys({
                 reservationInfo: Joi_1.default.object().keys({
                     enabled: Joi_1.default.boolean().required(),
@@ -162,6 +178,22 @@ const validator = {
                 fcmtoken: Joi_1.default.string().optional().allow(null),
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
                 specialization: require('../specialization/Validators').default.public.patch.validator.required(),
+                settings: Joi_1.default.object().keys({
+                    notifications: Joi_1.default.object().keys({
+                        newPatient: Joi_1.default.object().keys({
+                            notification: Joi_1.default.boolean().required(),
+                            sms: Joi_1.default.boolean().required()
+                        }).required(),
+                        workTimeClose: Joi_1.default.object().keys({
+                            notification: Joi_1.default.boolean().required(),
+                            sms: Joi_1.default.boolean().required()
+                        }).required(),
+                        workTimeEnded: Joi_1.default.object().keys({
+                            notification: Joi_1.default.boolean().required(),
+                            sms: Joi_1.default.boolean().required()
+                        }).required()
+                    }).required()
+                }).required(),
                 details: Joi_1.default.object().required().keys({
                     reservationInfo: Joi_1.default.object().keys({
                         enabled: Joi_1.default.boolean().required(),
@@ -225,6 +257,22 @@ const validator = {
             fcmtoken: Joi_1.default.string().optional().allow(null),
             gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
             finalizable_visits: Joi_1.default.array().items(Joi_1.default.string()),
+            settings: Joi_1.default.object().keys({
+                notifications: Joi_1.default.object().keys({
+                    newPatient: Joi_1.default.object().keys({
+                        notification: Joi_1.default.boolean().required(),
+                        sms: Joi_1.default.boolean().required()
+                    }).required(),
+                    workTimeClose: Joi_1.default.object().keys({
+                        notification: Joi_1.default.boolean().required(),
+                        sms: Joi_1.default.boolean().required()
+                    }).required(),
+                    workTimeEnded: Joi_1.default.object().keys({
+                        notification: Joi_1.default.boolean().required(),
+                        sms: Joi_1.default.boolean().required()
+                    }).required()
+                }).required()
+            }).required(),
             details: Joi_1.default.object().optional().keys({
                 reservationInfo: Joi_1.default.object().keys({
                     enabled: Joi_1.default.boolean().required(),
