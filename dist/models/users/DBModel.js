@@ -20,6 +20,28 @@ const dbModel = {
     os: { type: String, required: false },
     details: {
         type: {
+            settings: {
+                type: {
+                    notifications: {
+                        type: {
+                            newPatient: {
+                                notification: Boolean,
+                                sms: Boolean
+                            },
+                            workTimeClose: {
+                                notification: Boolean,
+                                sms: Boolean
+                            },
+                            workTimeEnded: {
+                                notification: Boolean,
+                                sms: Boolean
+                            }
+                        },
+                        required: true
+                    }
+                },
+                required: true,
+            },
             reservationInfo: {
                 type: {
                     enabled: Boolean,

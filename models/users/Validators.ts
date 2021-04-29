@@ -24,6 +24,22 @@ const validator : GeneratedValidator<User> = {
                 os: Joi.string().optional().allow(null),
                 details:Joi.object().required().keys({
                     reservationInfo:Joi.object().keys({
+                        settings:Joi.object().keys({
+                            notifications:Joi.object().keys({
+                                newPatient:Joi.object().keys({
+                                    notification: Joi.boolean().required(),
+                                    sms: Joi.boolean().required()
+                                }).required(),
+                                workTimeClose:Joi.object().keys({
+                                    notification: Joi.boolean().required(),
+                                    sms: Joi.boolean().required()
+                                }).required(),
+                                workTimeEnded:Joi.object().keys({
+                                    notification: Joi.boolean().required(),
+                                    sms: Joi.boolean().required()
+                                }).required()
+                            }).required()
+                        }).required(),
                         enabled: Joi.boolean().required(),
                         phone: Joi.string().required().allow(''),
                         address: Joi.string().required().allow(''),

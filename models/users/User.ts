@@ -23,6 +23,13 @@ export default interface User {
     notificationQueuePatients: string[],
     os?: string,
     details:{
+        settings:{
+            notifications:{
+                newPatient:{notification:boolean,sms:boolean},
+                workTimeClose:{notification:boolean,sms:boolean},
+                workTimeEnded:{notification:boolean,sms:boolean}
+            }
+        },
         reservationInfo:{
             enabled: boolean,
             phone: string,
