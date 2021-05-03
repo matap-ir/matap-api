@@ -226,6 +226,7 @@ export enum EventType {
 }
 
 export enum ChatType {
+   NOTIFICATION = 'NOTIFICATION',
    TEXT= 'TEXT',
    IMAGE = 'IMAGE',
    VIDEO = 'VIDEO',

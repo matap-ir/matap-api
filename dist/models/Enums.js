@@ -179,6 +179,7 @@ var EventType;
 })(EventType = exports.EventType || (exports.EventType = {}));
 var ChatType;
 (function (ChatType) {
+    ChatType["NOTIFICATION"] = "NOTIFICATION";
     ChatType["TEXT"] = "TEXT";
     ChatType["IMAGE"] = "IMAGE";
     ChatType["VIDEO"] = "VIDEO";
