@@ -6,7 +6,7 @@ const createValidator_1 = tslib_1.__importDefault(require("../createValidator"))
 const request = {
     _id: Joi_1.default.any().required(),
     type: Joi_1.default.string().required(),
-    message: Joi_1.default.string().required().allow(''),
+    message: Joi_1.default.string().optional().allow(null),
     date: Joi_1.default.number().required(),
     extras: Joi_1.default.object().keys({
         for: Joi_1.default.string().allow('self', 'other'),

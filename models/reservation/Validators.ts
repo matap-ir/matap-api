@@ -4,7 +4,7 @@ import createValidator from '../createValidator';
 const request = {
     _id: Joi.any().required(),
     type: Joi.string().required(),
-    message: Joi.string().required().allow(''),
+    message: Joi.string().optional().allow(null),
     date: Joi.number().required(),
     extras: Joi.object().keys({
         for: Joi.string().allow('self','other'),

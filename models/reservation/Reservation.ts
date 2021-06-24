@@ -5,7 +5,7 @@ import Issuer from '../issuer/Issuer';
 export interface ReservationRequest {
     _id: string,
     type:'request',
-    message: string,
+    // message: string,
     date: number,
     selection: {from:number,to:number}[],
     extras:{

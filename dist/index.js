@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Helper = exports.FileAddresses = exports.P2PSessionConfig = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = exports.Conference = void 0;
+exports.Helper = exports.FileAddresses = exports.P2PSessionConfig = exports.ReservationCancellation = exports.ReservationOffer = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = exports.Conference = void 0;
 const tslib_1 = require("tslib");
 const FileAddresses_1 = tslib_1.__importDefault(require("./constants/FileAddresses"));
 exports.FileAddresses = FileAddresses_1.default;
@@ -8,6 +8,9 @@ const P2PSessionConfig_1 = tslib_1.__importDefault(require("./models/conference/
 exports.P2PSessionConfig = P2PSessionConfig_1.default;
 const Helper_1 = tslib_1.__importDefault(require("./helpers/Helper"));
 exports.Helper = Helper_1.default;
+const Reservation_1 = require("./models/reservation/Reservation");
+Object.defineProperty(exports, "ReservationCancellation", { enumerable: true, get: function () { return Reservation_1.ReservationCancellation; } });
+Object.defineProperty(exports, "ReservationOffer", { enumerable: true, get: function () { return Reservation_1.ReservationOffer; } });
 const Events_1 = tslib_1.__importDefault(require("./models/events/Events"));
 exports.Events = Events_1.default;
 tslib_1.__exportStar(require("./models/Enums"), exports);
