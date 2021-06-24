@@ -1,7 +1,5 @@
 import Joi from '../Joi';
-import {GeneratedValidator} from '../Validator';
 import createValidator from '../createValidator';
-import IssuerValidator from '../issuer/Validators';
 
 const request = {
     _id: Joi.any().required(),
@@ -28,37 +26,13 @@ const request = {
     }).optional().allow(null)
 };
 
-const offer = {
-    _id: Joi.any().required(),
-    type: Joi.string().required(),
-    message: Joi.string().required().allow(''),
-    date: Joi.number().required(),
-    offers: Joi.array().items(
-        Joi.object().keys({
-            from: Joi.number().required(),
-            to: Joi.number().required()
-        })
-    ).required(),
-    rejection: Joi.object().keys({
-        reason: Joi.string().required().allow('')
-    }).optional()
-};
-
-const cancellation = {
-    _id: Joi.any().required(),
-    type: Joi.string().required(),
-    date: Joi.number().required(),
-    cancellerId: Joi.any().required(),
-    reason: Joi.string().required().allow('')
-};
-
 const general = {
     _id: Joi.any().required(),
     requestDate: Joi.number().required(),
     issuer: Joi.any().required(),
     doctor: Joi.any().required(),
     state: Joi.string().required(),
-    timeLine: Joi.array().items(Joi.any()).required(),
+    type: Joi.string().required(),
     trackingCode: Joi.string().required(),
     due:Joi.object().keys({
         date:Joi.object().keys({
@@ -67,8 +41,7 @@ const general = {
         }).required(),
         message: Joi.string().required().allow('')
     }).optional(),
-    type: Joi.string().required(),
-    otherInfos: Joi.any().optional().allow(null)
+    info: Joi.any().required()
 };
 
 export default {
@@ -84,17 +57,6 @@ export default {
         }),
         update: createValidator(general)
     },
-    offer:{
-        public:{
-            post:createValidator({
-                ...offer,
-                type: null,
-                rejection: null,
-                date: null,
-                _id: null
-            })
-        }
-    },
     request:{
         public:{
             post:createValidator({
@@ -103,16 +65,6 @@ export default {
                 rejection: null,
                 date: null,
                 _id: null
-            })
-        }
-    },
-    cancellation:{
-        public:{
-            post:createValidator({
-                ...cancellation,
-                _id: null,
-                cancellerId: null,
-                message: null
             })
         }
     }

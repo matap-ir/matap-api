@@ -17,11 +17,12 @@ export enum AdminType{
 }
 
 export enum ReservationState {
-   WAITING_FOR_OFFERS = 'WAITING_FOR_OFFERS',
-   WAITING_FOR_REQUEST = 'WAITING_FOR_CONFIRM',
-   WAITING_FOR_OFFER_CONFIRM = 'WAITING_FOR_OFFER_CONFIRM',
    CONFIRMED = 'CONFIRMED',
-   CANCELLED = 'CANCELLED'
+   CANCELLED = 'CANCELLED',
+   REJECTED = 'REJECTED',
+   NEW = 'NEW',
+   DONE = 'DONE',
+   TIME_PAST = 'TIME_PAST'
 }
 
 export enum TransactionType {

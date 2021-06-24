@@ -21,11 +21,12 @@ var AdminType;
 })(AdminType = exports.AdminType || (exports.AdminType = {}));
 var ReservationState;
 (function (ReservationState) {
-    ReservationState["WAITING_FOR_OFFERS"] = "WAITING_FOR_OFFERS";
-    ReservationState["WAITING_FOR_REQUEST"] = "WAITING_FOR_CONFIRM";
-    ReservationState["WAITING_FOR_OFFER_CONFIRM"] = "WAITING_FOR_OFFER_CONFIRM";
     ReservationState["CONFIRMED"] = "CONFIRMED";
     ReservationState["CANCELLED"] = "CANCELLED";
+    ReservationState["REJECTED"] = "REJECTED";
+    ReservationState["NEW"] = "NEW";
+    ReservationState["DONE"] = "DONE";
+    ReservationState["TIME_PAST"] = "TIME_PAST";
 })(ReservationState = exports.ReservationState || (exports.ReservationState = {}));
 var TransactionType;
 (function (TransactionType) {

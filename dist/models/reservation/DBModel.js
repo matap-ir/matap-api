@@ -9,9 +9,8 @@ const dbModel = {
     issuer: DBModel_1.default,
     doctor: { type: mongoose_types_1.ObjectId, required: true, ref: 'users' },
     state: { type: String, required: true },
-    timeLine: { type: [mongoose_1.Schema.Types.Mixed], required: true, default: [] },
     type: { type: String, required: true },
-    otherInfos: { type: mongoose_1.Schema.Types.Mixed, required: false },
+    info: { type: mongoose_1.Schema.Types.Mixed, required: true },
     trackingCode: { type: String, required: true, unique: true },
     due: {
         type: {

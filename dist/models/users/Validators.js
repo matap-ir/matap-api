@@ -183,7 +183,7 @@ const validator = {
                 type: Joi_1.default.string().required().allow('DOCTOR'),
                 code: Joi_1.default.number().required(),
                 price: Joi_1.default.number().required(),
-                fcmtoken: Joi_1.default.string().optional().allow(null),
+                fcmtoken: null,
                 gender: Joi_1.default.string().optional().allow('', 'male', 'female'),
                 specialization: require('../specialization/Validators').default.public.patch.validator.required(),
                 settings: Joi_1.default.object().keys({

@@ -193,7 +193,7 @@ const validator : GeneratedValidator<User> = {
                   type:Joi.string().required().allow('DOCTOR'),
                   code:Joi.number().required(),
                   price:Joi.number().required(),
-                  fcmtoken:Joi.string().optional().allow(null),
+                  fcmtoken: null,
                   gender:Joi.string().optional().allow('','male','female'),
                   specialization:require('../specialization/Validators').default.public.patch.validator.required(),
                   settings:Joi.object().keys({
