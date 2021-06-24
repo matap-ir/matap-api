@@ -23,7 +23,6 @@ var ReservationState;
 (function (ReservationState) {
     ReservationState["CONFIRMED"] = "CONFIRMED";
     ReservationState["CANCELLED"] = "CANCELLED";
-    ReservationState["REJECTED"] = "REJECTED";
     ReservationState["NEW"] = "NEW";
     ReservationState["DONE"] = "DONE";
     ReservationState["TIME_PAST"] = "TIME_PAST";

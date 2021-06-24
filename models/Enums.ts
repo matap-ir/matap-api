@@ -19,7 +19,6 @@ export enum AdminType{
 export enum ReservationState {
    CONFIRMED = 'CONFIRMED',
    CANCELLED = 'CANCELLED',
-   REJECTED = 'REJECTED',
    NEW = 'NEW',
    DONE = 'DONE',
    TIME_PAST = 'TIME_PAST'
