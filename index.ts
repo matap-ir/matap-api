@@ -24,8 +24,10 @@ import Notification from './models/notification/Notification';
 import CrashReport from './models/crash_report/CrashReport';
 import Archive from './models/archive/Archive';
 import WorkTime from './models/response_time/WorkTime';
-import Reservation,{ReservationCancellation,ReservationOffer,ReservationRequest} from './models/reservation/Reservation';
+import Reservation,{ReservationRequest} from './models/reservation/Reservation';
 import Issuer from './models/issuer/Issuer';
+import Translations from './constants/translations';
+import Colors from './constants/colors';
 import WorkTimes from './models/users/WorkTimes';
 import Events from './models/events/Events';
 export * from './models/Enums';
@@ -41,8 +43,8 @@ export {
     Events,
     Reservation,
     ReservationRequest,
-    ReservationOffer,
-    ReservationCancellation,
+    Translations,
+    Colors,
     Issuer,
     WorkTime,
     Archive,
