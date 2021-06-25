@@ -39,5 +39,6 @@ export default interface Reservation {
         gender: 'male' | 'female',
         nationalCode: string,
         attendReason: string
-    }
+    },
+    tag: string
 }

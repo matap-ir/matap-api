@@ -41,7 +41,8 @@ const general = {
         }).required(),
         message: Joi.string().optional().allow(null)
     }).optional(),
-    info: Joi.any().required()
+    info: Joi.any().required(),
+    tag: Joi.string().required()
 };
 
 export default {

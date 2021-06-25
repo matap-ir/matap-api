@@ -40,7 +40,8 @@ const general = {
         }).required(),
         message: Joi_1.default.string().optional().allow(null)
     }).optional(),
-    info: Joi_1.default.any().required()
+    info: Joi_1.default.any().required(),
+    tag: Joi_1.default.string().required()
 };
 exports.default = {
     general: createValidator_1.default(general),

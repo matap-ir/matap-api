@@ -12,6 +12,7 @@ const dbModel = {
     type: { type: String, required: true },
     info: { type: mongoose_1.Schema.Types.Mixed, required: true },
     trackingCode: { type: String, required: true, unique: true },
+    tag: { type: String, required: true },
     due: {
         type: {
             date: {
