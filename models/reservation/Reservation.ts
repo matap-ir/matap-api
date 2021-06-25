@@ -29,7 +29,7 @@ export default interface Reservation {
     trackingCode: string,
     due: {
         date: {from:number,to:number},
-        message: string
+        message?: string
     },
     info:{
         for: 'self' | 'other',
