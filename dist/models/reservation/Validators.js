@@ -38,7 +38,7 @@ const general = {
             from: Joi_1.default.number().required(),
             to: Joi_1.default.number().required()
         }).required(),
-        message: Joi_1.default.string().required().allow('')
+        message: Joi_1.default.string().optional().allow(null)
     }).optional(),
     info: Joi_1.default.any().required()
 };

@@ -39,7 +39,7 @@ const general = {
             from: Joi.number().required(),
             to: Joi.number().required()
         }).required(),
-        message: Joi.string().required().allow('')
+        message: Joi.string().optional().allow(null)
     }).optional(),
     info: Joi.any().required()
 };
