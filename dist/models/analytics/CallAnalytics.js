@@ -134,16 +134,6 @@ class Error extends AbstractCallMetric {
         super(sessionId, Enums_1.CallMetricsEvent.ERROR, { info, error });
     }
 }
-class CameraSwitchClicked extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.CAMERA_SWITCH_CLICKED, data);
-    }
-}
-class MuteClicked extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.MUTE_CLICKED, data);
-    }
-}
 class AudioRouteChanged extends AbstractCallMetric {
     constructor(sessionId, data) {
         super(sessionId, Enums_1.CallMetricsEvent.AUDIO_ROUTE_CHANGED, data);
@@ -248,8 +238,6 @@ exports.default = {
     AbstractCallMetric,
     Stats,
     Error,
-    CameraSwitchClicked,
-    MuteClicked,
     AudioRouteChanged,
     TrackStateChange,
     CallStateChange,

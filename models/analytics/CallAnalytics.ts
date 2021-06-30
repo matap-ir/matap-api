@@ -160,18 +160,6 @@ class Error extends AbstractCallMetric<{ info: string,error: any }>{
         }
 }
 
-class CameraSwitchClicked extends AbstractCallMetric<{ currentDirection:'front' | 'back' }>{
-    constructor(sessionId: string,data: { currentDirection:'front' | 'back' }) {
-        super(sessionId,CallMetricsEvent.CAMERA_SWITCH_CLICKED,data);
-    }
-}
-
-class MuteClicked extends AbstractCallMetric<{ isMuted: boolean }>{
-    constructor(sessionId: string,data: { isMuted:boolean }) {
-        super(sessionId,CallMetricsEvent.MUTE_CLICKED,data);
-    }
-}
-
 class AudioRouteChanged extends AbstractCallMetric<{ availableDevices: string[],selectedRoute: string }>{
     constructor(sessionId: string,data: { availableDevices: string[],selectedRoute: string }) {
         super(sessionId,CallMetricsEvent.AUDIO_ROUTE_CHANGED,data);
@@ -349,8 +337,6 @@ export default {
     AbstractCallMetric,
     Stats,
     Error,
-    CameraSwitchClicked,
-    MuteClicked,
     AudioRouteChanged,
     TrackStateChange,
     CallStateChange,
