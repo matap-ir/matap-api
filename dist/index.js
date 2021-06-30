@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Helper = exports.FileAddresses = exports.P2PSessionConfig = exports.Colors = exports.Translations = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = exports.Conference = void 0;
+exports.Helper = exports.FileAddresses = exports.P2PSessionConfig = exports.Colors = exports.Translations = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = exports.Conference = exports.CallMetrics = void 0;
 const tslib_1 = require("tslib");
 const FileAddresses_1 = tslib_1.__importDefault(require("./constants/FileAddresses"));
 exports.FileAddresses = FileAddresses_1.default;
@@ -14,6 +14,8 @@ const colors_1 = tslib_1.__importDefault(require("./constants/colors"));
 exports.Colors = colors_1.default;
 const Events_1 = tslib_1.__importDefault(require("./models/events/Events"));
 exports.Events = Events_1.default;
+const CallMetrics_1 = tslib_1.__importDefault(require("./models/call-metrics/CallMetrics"));
+exports.CallMetrics = CallMetrics_1.default;
 tslib_1.__exportStar(require("./models/Enums"), exports);
 const GeneralEvent_1 = tslib_1.__importDefault(require("./models/events/GeneralEvent"));
 exports.GeneralEvent = GeneralEvent_1.default;

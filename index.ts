@@ -30,12 +30,14 @@ import Translations from './constants/translations';
 import Colors from './constants/colors';
 import WorkTimes from './models/users/WorkTimes';
 import Events from './models/events/Events';
+import CallMetrics from './models/call-metrics/CallMetrics';
 export * from './models/Enums';
 import GeneralEvent from './models/events/GeneralEvent';
 import ConferenceEvent from './models/events/ConferenceEvent';
 import Conference,{Participant} from './models/conference/Conference';
 
 export {
+    CallMetrics,
     Participant,
     Conference,
     ConferenceEvent,
