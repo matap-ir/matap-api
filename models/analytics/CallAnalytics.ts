@@ -178,20 +178,20 @@ class AudioRouteChanged extends AbstractCallMetric<{ availableDevices: string[],
     }
 }
 
-class TrackStateChange extends AbstractCallMetric<{ enabled: boolean }>{
-    constructor(sessionId: string,data: { enabled: boolean }) {
+class TrackStateChange extends AbstractCallMetric<{ enabled: boolean, local: boolean }>{
+    constructor(sessionId: string,data: { enabled: boolean, local: boolean }) {
         super(sessionId,CallMetricsEvent.TRACK_STATE_CHANGED,data);
     }
 }
 
-class TrackCreated extends AbstractCallMetric<{ kind: 'audio' | 'video' }>{
-    constructor(sessionId: string,data: { kind: 'audio' | 'video' }) {
+class TrackCreated extends AbstractCallMetric<{ kind: 'audio' | 'video', local: boolean }>{
+    constructor(sessionId: string,data: { kind: 'audio' | 'video', local: boolean }) {
         super(sessionId,CallMetricsEvent.TRACK_CREATED,data);
     }
 }
 
-class TrackStopped extends AbstractCallMetric<{ kind: 'audio' | 'video' }>{
-    constructor(sessionId: string,data: { kind: 'audio' | 'video' }) {
+class TrackStopped extends AbstractCallMetric<{ kind: 'audio' | 'video', local: boolean }>{
+    constructor(sessionId: string,data: { kind: 'audio' | 'video', local: boolean }) {
         super(sessionId,CallMetricsEvent.TRACK_STOPPED,data);
     }
 }
