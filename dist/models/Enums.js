@@ -32,6 +32,8 @@ var CallMetricsEvent;
     CallMetricsEvent["SPEAKER_CLICKED"] = "SPEAKER_CLICKED";
     CallMetricsEvent["AUDIO_ROUTE_CHANGED"] = "AUDIO_ROUTE_CHANGED";
     CallMetricsEvent["TRACK_STATE_CHANGED"] = "TRACK_STATE_CHANGED";
+    CallMetricsEvent["TRACK_CREATED"] = "TRACK_CREATED";
+    CallMetricsEvent["TRACK_STOPPED"] = "TRACK_STOPPED";
     CallMetricsEvent["CALL_STATE_CHANGED"] = "CALL_STATE_CHANGED";
     CallMetricsEvent["RTC_CONNECTION_STATE_CHANGED"] = "RTC_CONNECTION_STATE_CHANGED";
     CallMetricsEvent["RTC_ICE_CANDIDATE"] = "RTC_ICE_CANDIDATE";

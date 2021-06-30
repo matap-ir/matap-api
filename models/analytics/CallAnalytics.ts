@@ -178,9 +178,21 @@ class AudioRouteChanged extends AbstractCallMetric<{ availableDevices: string[],
     }
 }
 
-class TrackStateChange extends AbstractCallMetric<{ kind: 'audio' | 'video',enabled: boolean,stopped: boolean }>{
-    constructor(sessionId: string,data: { kind: 'audio' | 'video',enabled: boolean,stopped: boolean }) {
+class TrackStateChange extends AbstractCallMetric<{ enabled: boolean }>{
+    constructor(sessionId: string,data: { enabled: boolean }) {
         super(sessionId,CallMetricsEvent.TRACK_STATE_CHANGED,data);
+    }
+}
+
+class TrackCreated extends AbstractCallMetric<{ kind: 'audio' | 'video' }>{
+    constructor(sessionId: string,data: { kind: 'audio' | 'video' }) {
+        super(sessionId,CallMetricsEvent.TRACK_CREATED,data);
+    }
+}
+
+class TrackStopped extends AbstractCallMetric<{ kind: 'audio' | 'video' }>{
+    constructor(sessionId: string,data: { kind: 'audio' | 'video' }) {
+        super(sessionId,CallMetricsEvent.TRACK_STOPPED,data);
     }
 }
 
@@ -339,7 +351,7 @@ export default {
     Error,
     CameraSwitchClicked,
     MuteClicked,
-    SpeakerClicked: AudioRouteChanged,
+    AudioRouteChanged,
     TrackStateChange,
     CallStateChange,
     RTCRemovedFromElement,
@@ -356,6 +368,8 @@ export default {
     CallClosed,
     Log,
     LocalStreamsGathered,
-    NetworkStateChanged
+    NetworkStateChanged,
+    TrackStopped,
+    TrackCreated
 }
 
