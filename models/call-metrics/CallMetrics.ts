@@ -1,11 +1,13 @@
 import {CallMetricsEvent, UserType} from '../Enums';
 
 class AbstractCallMetric<T extends any>{
+    public readonly sessionId: string;
     public readonly userId!: string;
-    public readonly userType!: UserType;
     public readonly event: CallMetricsEvent;
     public readonly data?: T;
     public readonly timeStamp = Date.now();
+    /*
+    public readonly userType!: UserType;
     public readonly browser?:{
         platform: string,
         version: string
@@ -13,9 +15,10 @@ class AbstractCallMetric<T extends any>{
     public readonly mobile?:{
         platform: string,
         osVersion: string
-    }
+    }*/
 
-    constructor(event: CallMetricsEvent, data?: T) {
+    constructor(sessionId: string,event: CallMetricsEvent, data?: T) {
+        this.sessionId = sessionId;
         this.event = event;
         this.data = data;
     }
@@ -31,8 +34,8 @@ class Stats extends AbstractCallMetric<{
         video:{ inbound: InBoundVideoType[], outbound: OutBoundVideoType[] }
     } }>{
 
-    constructor(stats) {
-        super(CallMetricsEvent.STATS,{
+    constructor(sessionId: string,stats) {
+        super(sessionId,CallMetricsEvent.STATS,{
             local: {
                 audio: {
                     inbound: stats.data.audio.inbound.map((s) => {
@@ -152,98 +155,128 @@ class Stats extends AbstractCallMetric<{
 }
 
 class Error extends AbstractCallMetric<{ info: string,error: any }>{
-        constructor(info: string,error: Error) {
-            super(CallMetricsEvent.ERROR,{info, error});
+        constructor(sessionId: string,info: string,error: Error) {
+            super(sessionId,CallMetricsEvent.ERROR,{info, error});
         }
 }
 
 class CameraSwitchClicked extends AbstractCallMetric<{ currentDirection:'front' | 'back' }>{
-    constructor(data: { currentDirection:'front' | 'back' }) {
-        super(CallMetricsEvent.CAMERA_SWITCH_CLICKED,data);
+    constructor(sessionId: string,data: { currentDirection:'front' | 'back' }) {
+        super(sessionId,CallMetricsEvent.CAMERA_SWITCH_CLICKED,data);
     }
 }
 
 class MuteClicked extends AbstractCallMetric<{ isMuted: boolean }>{
-    constructor(data: { isMuted:boolean }) {
-        super(CallMetricsEvent.MUTE_CLICKED,data);
+    constructor(sessionId: string,data: { isMuted:boolean }) {
+        super(sessionId,CallMetricsEvent.MUTE_CLICKED,data);
     }
 }
 
-class SpeakerClicked extends AbstractCallMetric<{ availableDevices: string[],selectedRoute: string }>{
-    constructor(data: { availableDevices: string[],selectedRoute: string }) {
-        super(CallMetricsEvent.SPEAKER_CLICKED,data);
+class AudioRouteChanged extends AbstractCallMetric<{ availableDevices: string[],selectedRoute: string }>{
+    constructor(sessionId: string,data: { availableDevices: string[],selectedRoute: string }) {
+        super(sessionId,CallMetricsEvent.AUDIO_ROUTE_CHANGED,data);
     }
 }
 
-class TrackStateChange extends AbstractCallMetric<{ kind: 'audio' | 'video',enabled: boolean,removed: boolean }>{
-    constructor(data: { kind: 'audio' | 'video',enabled: boolean,removed: boolean }) {
-        super(CallMetricsEvent.TRACK_STATE_CHANGED,data);
+class TrackStateChange extends AbstractCallMetric<{ kind: 'audio' | 'video',enabled: boolean,stopped: boolean }>{
+    constructor(sessionId: string,data: { kind: 'audio' | 'video',enabled: boolean,stopped: boolean }) {
+        super(sessionId,CallMetricsEvent.TRACK_STATE_CHANGED,data);
     }
 }
 
 class CallStateChange extends AbstractCallMetric<{ before: 'connecting' | 'connected' | 'reconnecting',new: 'connecting' | 'connected' | 'reconnecting'}>{
-    constructor(data: { before: 'connecting' | 'connected' | 'reconnecting',new: 'connecting' | 'connected' | 'reconnecting'}) {
-        super(CallMetricsEvent.CALL_STATE_CHANGED,data);
+    constructor(sessionId: string,data: { before: 'connecting' | 'connected' | 'reconnecting',new: 'connecting' | 'connected' | 'reconnecting'}) {
+        super(sessionId,CallMetricsEvent.CALL_STATE_CHANGED,data);
     }
 }
 
 class RTCConnectionStateChange extends AbstractCallMetric<{ from: string,to: string }>{
-    constructor(data: { from: string,to: string }) {
-        super(CallMetricsEvent.RTC_CONNECTION_STATE_CHANGED,data);
+    constructor(sessionId: string,data: { from: string,to: string }) {
+        super(sessionId,CallMetricsEvent.RTC_CONNECTION_STATE_CHANGED,data);
     }
 }
 
 class RTCIceCandidate extends AbstractCallMetric<{ candidate: string }>{
-    constructor(data: { candidate: string }) {
-        super(CallMetricsEvent.RTC_ICE_CANDIDATE,data);
+    constructor(sessionId: string,data: { candidate: string }) {
+        super(sessionId,CallMetricsEvent.RTC_ICE_CANDIDATE,data);
     }
 }
 
 class RTCIceCandidateError extends AbstractCallMetric<{ error: string }>{
-    constructor(data: { error: string }) {
-        super(CallMetricsEvent.RTC_ICE_CANDIDATE_ERROR,data);
+    constructor(sessionId: string,data: { error: string }) {
+        super(sessionId,CallMetricsEvent.RTC_ICE_CANDIDATE_ERROR,data);
     }
 }
 
 class RTCIceConnectionStateChange extends AbstractCallMetric<{ from: string,to: string }>{
-    constructor(data: { from: string,to: string }) {
-        super(CallMetricsEvent.RTC_ICE_CONNECTION_STATE_CHANGED,data);
+    constructor(sessionId: string,data: { from: string,to: string }) {
+        super(sessionId,CallMetricsEvent.RTC_ICE_CONNECTION_STATE_CHANGED,data);
     }
 }
 
 class RTCIceGatheringStateChange extends AbstractCallMetric<{ from: string,to: string }>{
-    constructor(data: { from: string,to: string }) {
-        super(CallMetricsEvent.RTC_ICE_GATHERING_STATE_CHANGED,data);
+    constructor(sessionId: string,data: { from: string,to: string }) {
+        super(sessionId,CallMetricsEvent.RTC_ICE_GATHERING_STATE_CHANGED,data);
     }
 }
 
 class RTCNegotiationNeeded extends AbstractCallMetric<any>{
-    constructor(data: any) {
-        super(CallMetricsEvent.RTC_NEGOTIATION_NEEDED,data);
+    constructor(sessionId: string,data: any) {
+        super(sessionId,CallMetricsEvent.RTC_NEGOTIATION_NEEDED,data);
     }
 }
 
 class RTCSignalingStateChanged extends AbstractCallMetric<{ from: string,to: string }>{
-    constructor(data: any) {
-        super(CallMetricsEvent.RTC_SIGNALING_STATE_CHANGED,data);
+    constructor(sessionId: string,data: any) {
+        super(sessionId,CallMetricsEvent.RTC_SIGNALING_STATE_CHANGED,data);
     }
 }
 
 class RTCTrack extends AbstractCallMetric<any>{
-    constructor(data: any) {
-        super(CallMetricsEvent.RTC_TRACK,data);
+    constructor(sessionId: string,data: any) {
+        super(sessionId,CallMetricsEvent.RTC_TRACK,data);
     }
 }
 
 class RTCRemovedFromElement extends AbstractCallMetric<{ reason: string }>{
-    constructor(data: any) {
-        super(CallMetricsEvent.STREAM_REMOVED_FROM_ELEMENT,data);
+    constructor(sessionId: string,data: any) {
+        super(sessionId,CallMetricsEvent.STREAM_REMOVED_FROM_ELEMENT,data);
     }
 }
 
 class SocketStateChange extends AbstractCallMetric<{ connected: boolean }>{
-    constructor(data: any) {
-        super(CallMetricsEvent.SOCKET_STATE_CHANGED,data);
+    constructor(sessionId: string,data: any) {
+        super(sessionId,CallMetricsEvent.SOCKET_STATE_CHANGED,data);
+    }
+}
+
+class RingStateChange extends AbstractCallMetric<{ ringing: boolean,isInitiator: boolean }>{
+    constructor(sessionId: string,data: any) {
+        super(sessionId,CallMetricsEvent.RING_STATE_CHANGED,data);
+    }
+}
+
+class CallClosed extends AbstractCallMetric<{ reason: string }>{
+    constructor(sessionId: string,data: { reason: string }) {
+        super(sessionId,CallMetricsEvent.CALL_CLOSED,data);
+    }
+}
+
+class Log extends AbstractCallMetric<string>{
+    constructor(sessionId: string,data: string) {
+        super(sessionId,CallMetricsEvent.LOG,data);
+    }
+}
+
+class LocalStreamsGathered extends AbstractCallMetric<{ audio: boolean,video: boolean }>{
+    constructor(sessionId: string,data: { audio: boolean,video: boolean }) {
+        super(sessionId,CallMetricsEvent.LOCAL_STREAMS_GATHERED,data);
+    }
+}
+
+class NetworkStateChanged extends AbstractCallMetric<{ connected: boolean }>{
+    constructor(sessionId: string,data: { connected: boolean }) {
+        super(sessionId,CallMetricsEvent.NETWORK_STATE_CHANGED,data);
     }
 }
 
@@ -306,7 +339,7 @@ export default {
     Error,
     CameraSwitchClicked,
     MuteClicked,
-    SpeakerClicked,
+    SpeakerClicked: AudioRouteChanged,
     TrackStateChange,
     CallStateChange,
     RTCRemovedFromElement,
@@ -318,6 +351,11 @@ export default {
     RTCIceCandidate,
     RTCIceConnectionStateChange,
     RTCConnectionStateChange,
-    SocketStateChange
+    SocketStateChange,
+    RingStateChange,
+    CallClosed,
+    Log,
+    LocalStreamsGathered,
+    NetworkStateChanged
 }
 
