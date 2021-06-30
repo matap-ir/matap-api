@@ -178,8 +178,8 @@ class AudioRouteChanged extends AbstractCallMetric<{ availableDevices: string[],
     }
 }
 
-class TrackStateChange extends AbstractCallMetric<{ enabled: boolean, local: boolean }>{
-    constructor(sessionId: string,data: { enabled: boolean, local: boolean }) {
+class TrackStateChange extends AbstractCallMetric<{ kind: 'video' | 'audio',enabled: boolean, local: boolean }>{
+    constructor(sessionId: string,data: { kind: 'video' | 'audio',enabled: boolean, local: boolean }) {
         super(sessionId,CallMetricsEvent.TRACK_STATE_CHANGED,data);
     }
 }
