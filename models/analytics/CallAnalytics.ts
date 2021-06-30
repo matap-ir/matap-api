@@ -263,7 +263,7 @@ class SocketStateChange extends AbstractCallMetric<{ connected: boolean }>{
 }
 
 class RingStateChange extends AbstractCallMetric<{ ringing: boolean,isInitiator: boolean }>{
-    constructor(sessionId: string,data: any) {
+    constructor(sessionId: string,data: { ringing: boolean,isInitiator: boolean }) {
         super(sessionId,CallMetricsEvent.RING_STATE_CHANGED,data);
     }
 }
