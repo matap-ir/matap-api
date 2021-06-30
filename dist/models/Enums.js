@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChatType = exports.EventType = exports.IOStatus = exports.ParticipantState = exports.ConferenceType = exports.ConferenceMode = exports.ConferenceRoomEventTypes = exports.ConferenceParticipantPresenceEventTypes = exports.ConferenceParticipantConnectionEventTypes = exports.ConferenceTrackEventTypes = exports.ConferenceMediaDevicesEventTypes = exports.ConferenceFeaturesEventTypes = exports.ConferenceDetectionEventTypes = exports.SocketEventTypes = exports.NetworkEventTypes = exports.DebugType = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.ReservationState = exports.AdminType = exports.TypingStatus = exports.UserType = void 0;
+exports.ChatType = exports.EventType = exports.IOStatus = exports.ParticipantState = exports.ConferenceType = exports.ConferenceMode = exports.ConferenceRoomEventTypes = exports.ConferenceParticipantPresenceEventTypes = exports.ConferenceParticipantConnectionEventTypes = exports.ConferenceTrackEventTypes = exports.ConferenceMediaDevicesEventTypes = exports.ConferenceFeaturesEventTypes = exports.ConferenceDetectionEventTypes = exports.SocketEventTypes = exports.NetworkEventTypes = exports.DebugType = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.ReservationState = exports.AdminType = exports.CallStatEvent = exports.TypingStatus = exports.UserType = void 0;
 var UserType;
 (function (UserType) {
     UserType["PATIENT"] = "PATIENT";
@@ -13,6 +13,30 @@ var TypingStatus;
     TypingStatus["SENDING_MEDIA"] = "SENDING_MEDIA";
     TypingStatus["RECORDING_VOICE"] = "RECORDING_VOICE";
 })(TypingStatus = exports.TypingStatus || (exports.TypingStatus = {}));
+var CallStatEvent;
+(function (CallStatEvent) {
+    CallStatEvent["REQUEST_RECEIVED"] = "REQUEST_RECEIVED";
+    CallStatEvent["REQUEST_REJECTED"] = "REQUEST_REJECTED";
+    CallStatEvent["REQUEST_ACCEPTED"] = "REQUEST_ACCEPTED";
+    CallStatEvent["CAMERA_STATE_CHANGED"] = "CAMERA_STATE_CHANGED";
+    CallStatEvent["MIC_STATE_CHANGED"] = "MIC_STATE_CHANGED";
+    CallStatEvent["AUDIO_STATE_CHANGED"] = "AUDIO_STATE_CHANGED";
+    CallStatEvent["LOCAL_STREAMS_CAPTURED"] = "LOCAL_STREAMS_CAPTURED";
+    CallStatEvent["REMOTE_STREAM_AVAILABLE"] = "REMOTE_STREAM_AVAILABLE";
+    CallStatEvent["EVENT_STREAM_STATE_CHANGED"] = "EVENT_STREAM_STATE_CHANGED";
+    CallStatEvent["EVENT_CONNECTION_STATE_CHANGED"] = "EVENT_CONNECTION_STATE_CHANGED";
+    CallStatEvent["EVENT_ICE_CANDIDATE"] = "EVENT_ICE_CANDIDATE";
+    CallStatEvent["EVENT_ICE_CANDIDATE_ERROR"] = "EVENT_ICE_CANDIDATE_ERROR";
+    CallStatEvent["EVENT_ICE_CONNECTION_STATE_CHANGED"] = "EVENT_ICE_CONNECTION_STATE_CHANGED";
+    CallStatEvent["EVENT_ICE_GATHERING_STATE_CHANGED"] = "EVENT_ICE_GATHERING_STATE_CHANGED";
+    CallStatEvent["EVENT_NEGOTIATION_NEEDED"] = "EVENT_NEGOTIATION_NEEDED";
+    CallStatEvent["EVENT_SIGNALING_STATE_CHANGED"] = "EVENT_SIGNALING_STATE_CHANGED";
+    CallStatEvent["EVENT_TRACK"] = "EVENT_TRACK";
+    CallStatEvent["STREAM_INJECTED_TO_ELEMENT"] = "STREAM_INJECTED_TO_ELEMENT";
+    CallStatEvent["STREAM_REMOVED_FROM_ELEMENT"] = "STREAM_REMOVED_FROM_ELEMENT";
+    CallStatEvent["STATS"] = "STATS";
+    CallStatEvent["ERROR"] = "ERROR";
+})(CallStatEvent = exports.CallStatEvent || (exports.CallStatEvent = {}));
 var AdminType;
 (function (AdminType) {
     AdminType["MANAGER"] = "MANAGER";
