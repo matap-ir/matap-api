@@ -268,8 +268,8 @@ class RingStateChange extends AbstractCallMetric<{ ringing: boolean,isInitiator:
     }
 }
 
-class CallClosed extends AbstractCallMetric<{ reason: string }>{
-    constructor(sessionId: string,data: { reason: string }) {
+class CallClosed extends AbstractCallMetric<{ reason: string, isFromOtherSide: boolean }>{
+    constructor(sessionId: string,data: { reason: string, isFromOtherSide: boolean }) {
         super(sessionId,CallMetricsEvent.CALL_CLOSED,data);
     }
 }
