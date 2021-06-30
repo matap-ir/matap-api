@@ -47,7 +47,7 @@ var CallMetricsEvent;
     CallMetricsEvent["STREAM_REMOVED_FROM_ELEMENT"] = "STREAM_REMOVED_FROM_ELEMENT";
     CallMetricsEvent["STATS"] = "STATS";
     CallMetricsEvent["OTHER_SIDE_READY"] = "OTHER_SIDE_READY";
-    CallMetricsEvent["BOTH_SIDES_READY"] = "BOTH_SIDES_READY";
+    CallMetricsEvent["READY_ACKNOWLEDGED"] = "READY_ACKNOWLEDGED";
     CallMetricsEvent["ERROR"] = "ERROR";
     CallMetricsEvent["LOG"] = "LOG";
     CallMetricsEvent["NETWORK_STATE_CHANGED"] = "NETWORK_STATE_CHANGED";
