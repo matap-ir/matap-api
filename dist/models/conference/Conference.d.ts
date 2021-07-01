@@ -43,8 +43,6 @@ export default class Conference {
     preferredCodecs: string[];
     trickleIce: boolean;
     pingTimeout: number;
-    participants: Participant[];
     forceSpeaker: boolean;
     constructor(visitId: string, host: string, type: ConferenceType, videoCallVersion: string, config: ServerConfig, initiator: Participant, receiver: Participant);
-    getParticipant(userId: string): Participant | undefined;
 }
