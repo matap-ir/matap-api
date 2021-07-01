@@ -238,8 +238,8 @@ class RTCTrack extends AbstractCallMetric<any>{
     }
 }
 
-class SocketStateChange extends AbstractCallMetric<{ connected: boolean }>{
-    constructor(sessionId: string,data: any) {
+class SocketStateChange extends AbstractCallMetric<{state: string}>{
+    constructor(sessionId: string,data: {state: string}) {
         super(sessionId,CallMetricsEvent.SOCKET_STATE_CHANGED,data);
     }
 }
@@ -334,7 +334,6 @@ export default {
     AudioRouteChanged,
     TrackStateChange,
     CallStateChange,
-    RTCRemovedFromElement,
     RTCTrack,
     RTCSignalingStateChanged,
     RTCNegotiationNeeded,

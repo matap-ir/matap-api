@@ -236,7 +236,6 @@ exports.default = {
     AudioRouteChanged,
     TrackStateChange,
     CallStateChange,
-    RTCRemovedFromElement,
     RTCTrack,
     RTCSignalingStateChanged,
     RTCNegotiationNeeded,
