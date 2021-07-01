@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Helper = exports.FileAddresses = exports.P2PSessionConfig = exports.Colors = exports.Translations = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = exports.Conference = exports.CallAnalytics = void 0;
+exports.Helper = exports.FileAddresses = exports.P2PSessionConfig = exports.Colors = exports.Translations = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = exports.Conference = exports.CallAnalytics = exports.AbstractCallMetric = void 0;
 const tslib_1 = require("tslib");
 const FileAddresses_1 = tslib_1.__importDefault(require("./constants/FileAddresses"));
 exports.FileAddresses = FileAddresses_1.default;
@@ -14,8 +14,9 @@ const colors_1 = tslib_1.__importDefault(require("./constants/colors"));
 exports.Colors = colors_1.default;
 const Events_1 = tslib_1.__importDefault(require("./models/events/Events"));
 exports.Events = Events_1.default;
-const CallAnalytics_1 = tslib_1.__importDefault(require("./models/analytics/CallAnalytics"));
+const CallAnalytics_1 = tslib_1.__importStar(require("./models/analytics/call-analytics/CallAnalytics"));
 exports.CallAnalytics = CallAnalytics_1.default;
+Object.defineProperty(exports, "AbstractCallMetric", { enumerable: true, get: function () { return CallAnalytics_1.AbstractCallMetric; } });
 tslib_1.__exportStar(require("./models/Enums"), exports);
 const GeneralEvent_1 = tslib_1.__importDefault(require("./models/events/GeneralEvent"));
 exports.GeneralEvent = GeneralEvent_1.default;

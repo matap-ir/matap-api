@@ -1,21 +1,11 @@
-import {CallMetricsEvent, UserType} from '../Enums';
+import {CallMetricsEvent, UserType} from '../../Enums';
 
-class AbstractCallMetric<T extends any>{
+export class AbstractCallMetric<T extends any>{
     public readonly sessionId: string;
     public readonly userId!: string;
     public readonly event: CallMetricsEvent;
     public readonly data?: T;
     public readonly timeStamp = Date.now();
-    /*
-    public readonly userType!: UserType;
-    public readonly browser?:{
-        platform: string,
-        version: string
-    }
-    public readonly mobile?:{
-        platform: string,
-        osVersion: string
-    }*/
 
     constructor(sessionId: string,event: CallMetricsEvent, data?: T) {
         this.sessionId = sessionId;
