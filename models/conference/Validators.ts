@@ -45,7 +45,7 @@ const validator : GeneratedValidator<Conference> = {
             audioMaxBitrate: Joi.any().optional().allow(null),
             preferredCodecs: Joi.any().required(),
             trickleIce: Joi.boolean().required(),
-            pingTimeout: Joi.number().required(),
+            pingTimeout: Joi.number().optional().allow(null),
             forceSpeaker: Joi.boolean().required(),
             events: Joi.any().required()
         })

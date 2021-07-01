@@ -13,13 +13,13 @@ const dbModel = {
     mediaConstraints: { type: mongoose_1.Schema.Types.Mixed, required: true },
     videoCallVersion: { type: String, required: true },
     retryThreshold: { type: Number, required: true },
-    state: { type: String, required: true },
+    state: { type: String, required: true, index: true },
     iceTransportPolicy: { type: String, required: true },
     videoMaxBitrate: { type: mongoose_1.Schema.Types.Mixed, required: false },
     audioMaxBitrate: { type: mongoose_1.Schema.Types.Mixed, required: false },
     preferredCodecs: { type: mongoose_1.Schema.Types.Mixed, required: true },
     trickleIce: { type: Boolean, required: true },
-    pingTimeout: { type: Number, required: true },
+    pingTimeout: { type: Number, required: false },
     forceSpeaker: { type: Boolean, required: true },
     events: { type: mongoose_1.Schema.Types.Mixed, required: true }
 };

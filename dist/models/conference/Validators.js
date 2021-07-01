@@ -45,7 +45,7 @@ const validator = {
             audioMaxBitrate: Joi_1.default.any().optional().allow(null),
             preferredCodecs: Joi_1.default.any().required(),
             trickleIce: Joi_1.default.boolean().required(),
-            pingTimeout: Joi_1.default.number().required(),
+            pingTimeout: Joi_1.default.number().optional().allow(null),
             forceSpeaker: Joi_1.default.boolean().required(),
             events: Joi_1.default.any().required()
         })
