@@ -4,7 +4,6 @@ const tslib_1 = require("tslib");
 const javascript_dev_kit_1 = tslib_1.__importDefault(require("javascript-dev-kit"));
 class Conference {
     constructor(visitId, host, type, videoCallVersion, config, initiator, receiver) {
-        this.participants = [];
         this.id = javascript_dev_kit_1.default.generateUUID();
         this.initiator = initiator;
         this.host = host;
@@ -24,10 +23,6 @@ class Conference {
         this.forceSpeaker = config.forceSpeaker;
         this.retryThreshold = config.retryThreshold;
         this.state = 'initiating';
-    }
-    getParticipant(userId) {
-        userId = String(userId);
-        return this.participants.find(m => m.id === userId);
     }
 }
 exports.default = Conference;

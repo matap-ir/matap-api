@@ -34,7 +34,6 @@ export default class Conference{
     public preferredCodecs: string[];
     public trickleIce: boolean;
     public pingTimeout: number;
-    public participants: Participant[] = [];
     public forceSpeaker: boolean;
 
     constructor(visitId: string,host: string,type: ConferenceType,videoCallVersion: string,config: ServerConfig,initiator: Participant,receiver: Participant) {
@@ -57,10 +56,5 @@ export default class Conference{
         this.forceSpeaker = config.forceSpeaker;
         this.retryThreshold = config.retryThreshold;
         this.state ='initiating';
-    }
-
-    public getParticipant(userId: string){
-        userId = String(userId);
-        return this.participants.find(m => m.id === userId);
     }
 }
