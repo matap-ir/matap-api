@@ -184,8 +184,8 @@ class TrackStopped extends AbstractCallMetric<{ kind: 'audio' | 'video', local: 
     }
 }
 
-class CallStateChange extends AbstractCallMetric<{ before: 'connecting' | 'connected' | 'reconnecting',new: 'connecting' | 'connected' | 'reconnecting'}>{
-    constructor(sessionId: string,data: { before: 'connecting' | 'connected' | 'reconnecting',new: 'connecting' | 'connected' | 'reconnecting'}) {
+class CallStateChange extends AbstractCallMetric<{ from: 'connecting' | 'connected' | 'reconnecting',to: 'connecting' | 'connected' | 'reconnecting'}>{
+    constructor(sessionId: string,data: { from: 'connecting' | 'connected' | 'reconnecting',to: 'connecting' | 'connected' | 'reconnecting'}) {
         super(sessionId,CallMetricsEvent.CALL_STATE_CHANGED,data);
     }
 }
