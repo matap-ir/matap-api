@@ -25,5 +25,6 @@ export default interface Privileges{
     specializations:PrivilegeOptions,
     transactions:PrivilegeOptions,
     notifications: PrivilegeOptions,
+    analytics: PrivilegeOptions,
     defaultTestFunction: string
 }

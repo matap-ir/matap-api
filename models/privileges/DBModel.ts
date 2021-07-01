@@ -41,7 +41,8 @@ const dbModel = {
     serviceRequests: createPrivilegeOptions('service_requests'),
     specializations: createPrivilegeOptions('specializations'),
     transactions: createPrivilegeOptions('transactions'),
-    notifications: createPrivilegeOptions('notifications')
+    notifications: createPrivilegeOptions('notifications'),
+    analytics: createPrivilegeOptions('analytics')
 }
 
 export default dbModel;

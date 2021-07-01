@@ -29,7 +29,8 @@ const general = createValidator_1.default({
     serviceRequests: privilegeOptions,
     specializations: privilegeOptions,
     transactions: privilegeOptions,
-    notifications: privilegeOptions
+    notifications: privilegeOptions,
+    analytics: privilegeOptions
 });
 const validator = {
     db: {
