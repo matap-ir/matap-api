@@ -30,7 +30,8 @@ const general = createValidator_1.default({
     specializations: privilegeOptions,
     transactions: privilegeOptions,
     notifications: privilegeOptions,
-    analytics: privilegeOptions
+    analytics: privilegeOptions,
+    calls: privilegeOptions
 });
 const validator = {
     db: {

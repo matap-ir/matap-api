@@ -32,7 +32,8 @@ const general = createValidator({
     specializations: privilegeOptions,
     transactions: privilegeOptions,
     notifications: privilegeOptions,
-    analytics: privilegeOptions
+    analytics: privilegeOptions,
+    calls: privilegeOptions
 })
 
 const validator : GeneratedValidator<Privileges> = {

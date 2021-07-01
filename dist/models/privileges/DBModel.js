@@ -40,6 +40,7 @@ const dbModel = {
     specializations: createPrivilegeOptions('specializations'),
     transactions: createPrivilegeOptions('transactions'),
     notifications: createPrivilegeOptions('notifications'),
-    analytics: createPrivilegeOptions('analytics')
+    analytics: createPrivilegeOptions('analytics'),
+    calls: createPrivilegeOptions('calls')
 };
 exports.default = dbModel;
