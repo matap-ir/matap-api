@@ -175,23 +175,6 @@ declare class NetworkStateChanged extends AbstractCallMetric<{
         connected: boolean;
     });
 }
-declare class ClientInfo extends AbstractCallMetric<{
-    os: string;
-    version: string;
-    browser?: {
-        platform: string;
-        version: string;
-    };
-}> {
-    constructor(sessionId: string, data: {
-        os: string;
-        version: string;
-        browser?: {
-            platform: string;
-            version: string;
-        };
-    });
-}
 interface InBoundAudioType {
     lastPacketReceivedTimestamp: number;
     bytesReceived: number;
@@ -262,6 +245,5 @@ declare const _default: {
     NetworkStateChanged: typeof NetworkStateChanged;
     TrackStopped: typeof TrackStopped;
     TrackCreated: typeof TrackCreated;
-    ClientInfo: typeof ClientInfo;
 };
 export default _default;
