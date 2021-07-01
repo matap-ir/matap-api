@@ -21,6 +21,7 @@ export default class Conference{
     public host: string;
     public visitId: string;
     public createdAt: number;
+    public endedAt!: number;
     public type: ConferenceType;
     public initiator: Participant;
     public receiver: Participant;

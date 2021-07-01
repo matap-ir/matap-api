@@ -1,11 +1,13 @@
 import Joi from '../Joi';
 import {Schema} from 'mongoose';
+import Number = module
 
 const dbModel = {
     id: {type: String,required: true,index: true,unique: true},
     host: {type: String,required: true},
     visitId:{type: String,required: true,index: true},
     createdAt: {type: Number,required: true},
+    endedAt: {type: Number,required: false},
     type:{type: String,required: true},
     initiator: {type: Schema.Types.Mixed,required: true},
     receiver: {type: Schema.Types.Mixed,required: true},
