@@ -4,6 +4,7 @@ const tslib_1 = require("tslib");
 const javascript_dev_kit_1 = tslib_1.__importDefault(require("javascript-dev-kit"));
 class Conference {
     constructor(visitId, host, type, videoCallVersion, config, initiator, receiver) {
+        this.events = [];
         this.id = javascript_dev_kit_1.default.generateUUID();
         this.initiator = initiator;
         this.host = host;

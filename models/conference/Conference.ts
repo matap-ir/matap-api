@@ -1,6 +1,7 @@
 import {ConferenceMode, ConferenceType, ParticipantState, UserType} from '../Enums';
 import Kit from 'javascript-dev-kit';
 import ServerConfig from '../serverconfig/ServerConfig';
+import {AbstractCallMetric} from '../analytics/call-analytics/CallAnalytics';
 export interface MediaConstraints{
     video: any,
     audio: any
@@ -35,6 +36,7 @@ export default class Conference{
     public trickleIce: boolean;
     public pingTimeout: number;
     public forceSpeaker: boolean;
+    public events: AbstractCallMetric<any>[] = [];
 
     constructor(visitId: string,host: string,type: ConferenceType,videoCallVersion: string,config: ServerConfig,initiator: Participant,receiver: Participant) {
         this.id = Kit.generateUUID();

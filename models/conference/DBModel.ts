@@ -21,6 +21,7 @@ const dbModel = {
     trickleIce: {type: Boolean,required: true},
     pingTimeout: {type: Number,required: true},
     forceSpeaker: {type: Boolean,required: true},
+    events: {type: Schema.Types.Mixed,required: true}
 };
 
 export default dbModel;

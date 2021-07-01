@@ -24,7 +24,8 @@ const validator : GeneratedValidator<Conference> = {
             preferredCodecs: Joi.any().required(),
             trickleIce: Joi.boolean().required(),
             pingTimeout: Joi.number().required(),
-            forceSpeaker: Joi.boolean().required()
+            forceSpeaker: Joi.boolean().required(),
+            events: Joi.any().required()
         }),
         update:createValidator({
             id:Joi.string().required(),
@@ -45,7 +46,8 @@ const validator : GeneratedValidator<Conference> = {
             preferredCodecs: Joi.any().required(),
             trickleIce: Joi.boolean().required(),
             pingTimeout: Joi.number().required(),
-            forceSpeaker: Joi.boolean().required()
+            forceSpeaker: Joi.boolean().required(),
+            events: Joi.any().required()
         })
     }
 };
