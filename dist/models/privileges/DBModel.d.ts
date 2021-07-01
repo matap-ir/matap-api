@@ -1624,5 +1624,121 @@ declare const dbModel: {
         required: boolean;
         default: {};
     };
+    calls: {
+        type: {
+            post: {
+                type: {
+                    allowed: {
+                        type: BooleanConstructor;
+                        required: boolean;
+                        default: boolean;
+                    };
+                    whiteList: {
+                        type: import("mongoose").Types.ObjectIdConstructor;
+                        ref: string | undefined;
+                        required: boolean;
+                        default: never[];
+                    }[];
+                    test: {
+                        type: StringConstructor;
+                        required: boolean;
+                    };
+                };
+                required: boolean;
+                default: never[];
+            };
+            patch: {
+                type: {
+                    allowed: {
+                        type: BooleanConstructor;
+                        required: boolean;
+                        default: boolean;
+                    };
+                    whiteList: {
+                        type: import("mongoose").Types.ObjectIdConstructor;
+                        ref: string | undefined;
+                        required: boolean;
+                        default: never[];
+                    }[];
+                    test: {
+                        type: StringConstructor;
+                        required: boolean;
+                    };
+                };
+                required: boolean;
+                default: never[];
+            };
+            delete: {
+                type: {
+                    allowed: {
+                        type: BooleanConstructor;
+                        required: boolean;
+                        default: boolean;
+                    };
+                    whiteList: {
+                        type: import("mongoose").Types.ObjectIdConstructor;
+                        ref: string | undefined;
+                        required: boolean;
+                        default: never[];
+                    }[];
+                    test: {
+                        type: StringConstructor;
+                        required: boolean;
+                    };
+                };
+                required: boolean;
+                default: never[];
+            };
+            get: {
+                type: {
+                    allowed: {
+                        type: BooleanConstructor;
+                        required: boolean;
+                        default: boolean;
+                    };
+                    whiteList: {
+                        type: import("mongoose").Types.ObjectIdConstructor;
+                        ref: string | undefined;
+                        required: boolean;
+                        default: never[];
+                    }[];
+                    test: {
+                        type: StringConstructor;
+                        required: boolean;
+                    };
+                };
+                required: boolean;
+                default: never[];
+            };
+            put: {
+                type: {
+                    allowed: {
+                        type: BooleanConstructor;
+                        required: boolean;
+                        default: boolean;
+                    };
+                    whiteList: {
+                        type: import("mongoose").Types.ObjectIdConstructor;
+                        ref: string | undefined;
+                        required: boolean;
+                        default: never[];
+                    }[];
+                    test: {
+                        type: StringConstructor;
+                        required: boolean;
+                    };
+                };
+                required: boolean;
+                default: never[];
+            };
+            menuVisible: {
+                type: BooleanConstructor;
+                required: boolean;
+                default: boolean;
+            };
+        };
+        required: boolean;
+        default: {};
+    };
 };
 export default dbModel;
