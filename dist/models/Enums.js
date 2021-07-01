@@ -22,7 +22,6 @@ var CallMetricsEvent;
     CallMetricsEvent["RING_STATE_CHANGED"] = "RING_STATE_CHANGED";
     CallMetricsEvent["END_CALL_CLICKED"] = "END_CALL_CLICKED";
     CallMetricsEvent["OTHER_SIDE_BUSY"] = "OTHER_SIDE_BUSY";
-    CallMetricsEvent["LOCAL_STREAMS_GATHERED"] = "LOCAL_STREAMS_GATHERED";
     CallMetricsEvent["PIP_CLICKED"] = "PIP_CLICKED";
     CallMetricsEvent["FULLSCREEN_CLICKED"] = "FULLSCREEN_CLICKED";
     CallMetricsEvent["SOCKET_STATE_CHANGED"] = "SOCKET_STATE_CHANGED";

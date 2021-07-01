@@ -219,11 +219,6 @@ class Log extends AbstractCallMetric {
         super(sessionId, Enums_1.CallMetricsEvent.LOG, data);
     }
 }
-class LocalStreamsGathered extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.LOCAL_STREAMS_GATHERED, data);
-    }
-}
 class NetworkStateChanged extends AbstractCallMetric {
     constructor(sessionId, data) {
         super(sessionId, Enums_1.CallMetricsEvent.NETWORK_STATE_CHANGED, data);
@@ -248,7 +243,6 @@ exports.default = {
     RingStateChange,
     CallClosed,
     Log,
-    LocalStreamsGathered,
     NetworkStateChanged,
     TrackStopped,
     TrackCreated

@@ -262,12 +262,6 @@ class Log extends AbstractCallMetric<string>{
     }
 }
 
-class LocalStreamsGathered extends AbstractCallMetric<{ audio: boolean,video: boolean }>{
-    constructor(sessionId: string,data: { audio: boolean,video: boolean }) {
-        super(sessionId,CallMetricsEvent.LOCAL_STREAMS_GATHERED,data);
-    }
-}
-
 class NetworkStateChanged extends AbstractCallMetric<{ connected: boolean }>{
     constructor(sessionId: string,data: { connected: boolean }) {
         super(sessionId,CallMetricsEvent.NETWORK_STATE_CHANGED,data);
@@ -346,7 +340,6 @@ export default {
     RingStateChange,
     CallClosed,
     Log,
-    LocalStreamsGathered,
     NetworkStateChanged,
     TrackStopped,
     TrackCreated
