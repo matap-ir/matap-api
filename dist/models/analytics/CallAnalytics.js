@@ -194,11 +194,6 @@ class RTCSignalingStateChanged extends AbstractCallMetric {
         super(sessionId, Enums_1.CallMetricsEvent.RTC_SIGNALING_STATE_CHANGED, data);
     }
 }
-class RTCTrack extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.RTC_TRACK, data);
-    }
-}
 class SocketStateChange extends AbstractCallMetric {
     constructor(sessionId, data) {
         super(sessionId, Enums_1.CallMetricsEvent.SOCKET_STATE_CHANGED, data);
@@ -224,6 +219,11 @@ class NetworkStateChanged extends AbstractCallMetric {
         super(sessionId, Enums_1.CallMetricsEvent.NETWORK_STATE_CHANGED, data);
     }
 }
+class ClientInfo extends AbstractCallMetric {
+    constructor(sessionId, data) {
+        super(sessionId, Enums_1.CallMetricsEvent.CLIENT_INFO, data);
+    }
+}
 exports.default = {
     AbstractCallMetric,
     Stats,
@@ -231,7 +231,6 @@ exports.default = {
     AudioRouteChanged,
     TrackStateChange,
     CallStateChange,
-    RTCTrack,
     RTCSignalingStateChanged,
     RTCNegotiationNeeded,
     RTCIceGatheringStateChange,
@@ -245,5 +244,6 @@ exports.default = {
     Log,
     NetworkStateChanged,
     TrackStopped,
-    TrackCreated
+    TrackCreated,
+    ClientInfo
 };

@@ -15,6 +15,7 @@ var TypingStatus;
 })(TypingStatus = exports.TypingStatus || (exports.TypingStatus = {}));
 var CallMetricsEvent;
 (function (CallMetricsEvent) {
+    CallMetricsEvent["CLIENT_INFO"] = "CLIENT_INFO";
     CallMetricsEvent["REQUEST_RECEIVED"] = "REQUEST_RECEIVED";
     CallMetricsEvent["REQUEST_CANCELLED_BY_OTHER"] = "REQUEST_CANCELLED_BY_OTHER";
     CallMetricsEvent["REJECT_CLICKED"] = "REJECT_CLICKED";
@@ -41,7 +42,6 @@ var CallMetricsEvent;
     CallMetricsEvent["RTC_ICE_GATHERING_STATE_CHANGED"] = "RTC_ICE_GATHERING_STATE_CHANGED";
     CallMetricsEvent["RTC_NEGOTIATION_NEEDED"] = "RTC_NEGOTIATION_NEEDED";
     CallMetricsEvent["RTC_SIGNALING_STATE_CHANGED"] = "RTC_SIGNALING_STATE_CHANGED";
-    CallMetricsEvent["RTC_TRACK"] = "RTC_TRACK";
     CallMetricsEvent["STREAM_INJECTED_TO_ELEMENT"] = "STREAM_INJECTED_TO_ELEMENT";
     CallMetricsEvent["STREAM_REMOVED_FROM_ELEMENT"] = "STREAM_REMOVED_FROM_ELEMENT";
     CallMetricsEvent["STATS"] = "STATS";
