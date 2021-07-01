@@ -165,7 +165,7 @@ class RTCConnectionStateChange extends AbstractCallMetric {
     }
 }
 class RTCIceCandidate extends AbstractCallMetric {
-    constructor(sessionId) {
+    constructor(sessionId, data) {
         super(sessionId, Enums_1.CallMetricsEvent.RTC_ICE_CANDIDATE, data);
     }
 }

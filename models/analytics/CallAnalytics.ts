@@ -196,14 +196,14 @@ class RTCConnectionStateChange extends AbstractCallMetric<{ from: string,to: str
     }
 }
 
-class RTCIceCandidate extends AbstractCallMetric<any>{
-    constructor(sessionId: string) {
+class RTCIceCandidate extends AbstractCallMetric<{ candidate: any }>{
+    constructor(sessionId: string,data: { candidate: any }) {
         super(sessionId,CallMetricsEvent.RTC_ICE_CANDIDATE,data);
     }
 }
 
-class RTCIceCandidateError extends AbstractCallMetric<{ error: string }>{
-    constructor(sessionId: string,data: { error: string }) {
+class RTCIceCandidateError extends AbstractCallMetric<{ errorCode: string,errorText: string,hostCandidate: string,url: string }>{
+    constructor(sessionId: string,data: { errorCode: string,errorText: string,hostCandidate: string,url: string }) {
         super(sessionId,CallMetricsEvent.RTC_ICE_CANDIDATE_ERROR,data);
     }
 }
