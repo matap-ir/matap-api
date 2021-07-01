@@ -29,16 +29,11 @@ declare const dbModel: {
         type: StringConstructor;
         required: boolean;
     };
-    timeLine: {
-        type: (typeof Schema.Types.Mixed)[];
-        required: boolean;
-        default: never[];
-    };
     type: {
         type: StringConstructor;
         required: boolean;
     };
-    otherInfos: {
+    info: {
         type: typeof Schema.Types.Mixed;
         required: boolean;
     };
@@ -46,6 +41,10 @@ declare const dbModel: {
         type: StringConstructor;
         required: boolean;
         unique: boolean;
+    };
+    tag: {
+        type: StringConstructor;
+        required: boolean;
     };
     due: {
         type: {

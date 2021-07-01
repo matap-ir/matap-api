@@ -1,4 +1,4 @@
-import { ConferenceMode, ConferenceType, ParticipantState } from '../Enums';
+import { ConferenceType, ParticipantState, UserType } from '../Enums';
 import ServerConfig from '../serverconfig/ServerConfig';
 export interface MediaConstraints {
     video: any;
@@ -7,23 +7,27 @@ export interface MediaConstraints {
 export interface Participant {
     id: string;
     state: ParticipantState;
-    joinedAt: number;
-    clientInfo?: string;
-    transportType?: 'udp' | 'tcp';
-    connectionType?: string;
-    pingInfo: {
-        turn?: number | 'timeout';
-        signaler?: number | 'timeout';
-        turnLastPingDate?: number;
-        signalerLastPingDate?: number;
+    name: string;
+    userType: UserType;
+    clientInfo: {
+        device: {
+            os: string;
+            version: string;
+        };
+        browser?: {
+            platform: string;
+            version: string;
+        };
     };
 }
 export default class Conference {
     id: string;
+    host: string;
     visitId: string;
     createdAt: number;
     type: ConferenceType;
-    mode: ConferenceMode;
+    initiator: Participant;
+    receiver: Participant;
     iceServers: {
         username: string;
         credential: string;
@@ -31,22 +35,16 @@ export default class Conference {
     }[];
     mediaConstraints: MediaConstraints;
     videoCallVersion: string;
+    retryThreshold: number;
+    state: 'initiating' | 'transmitting' | 'ended';
     iceTransportPolicy: 'relay' | 'all';
     videoMaxBitrate: number | 'unlimited';
     audioMaxBitrate: number | 'unlimited';
     preferredCodecs: string[];
     trickleIce: boolean;
-    relations: string[];
     pingTimeout: number;
     participants: Participant[];
-    constructor(visitId: string, type: ConferenceType, mode: ConferenceMode, version: string, config: ServerConfig);
-    setClientInfo(userId: string, info: string, connectionType: string, transportType: 'udp' | 'tcp'): boolean;
+    forceSpeaker: boolean;
+    constructor(visitId: string, host: string, type: ConferenceType, videoCallVersion: string, config: ServerConfig, initiator: Participant, receiver: Participant);
     getParticipant(userId: string): Participant | undefined;
-    currentState(userId: string): 'initiator' | 'invited' | 'transmitting';
-    addParticipant(userId: string): false | Participant;
-    removeParticipant(userId: string): boolean;
-    setTurnPing(userId: string, ping: number | 'timeout'): boolean;
-    setSignalerPing(userId: string, ping: number | 'timeout'): boolean;
-    setInitiator(initiatorId: string, targetId: string): this;
-    isInitiator(myId: string, otherId: string): boolean;
 }

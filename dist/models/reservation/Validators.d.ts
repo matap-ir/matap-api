@@ -8,17 +8,7 @@ declare const _default: {
         insert: import("../..").ValidatorModel;
         update: import("../..").ValidatorModel;
     };
-    offer: {
-        public: {
-            post: import("../..").ValidatorModel;
-        };
-    };
     request: {
-        public: {
-            post: import("../..").ValidatorModel;
-        };
-    };
-    cancellation: {
         public: {
             post: import("../..").ValidatorModel;
         };
