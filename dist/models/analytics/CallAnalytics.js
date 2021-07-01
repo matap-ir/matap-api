@@ -199,11 +199,6 @@ class RTCTrack extends AbstractCallMetric {
         super(sessionId, Enums_1.CallMetricsEvent.RTC_TRACK, data);
     }
 }
-class RTCRemovedFromElement extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.STREAM_REMOVED_FROM_ELEMENT, data);
-    }
-}
 class SocketStateChange extends AbstractCallMetric {
     constructor(sessionId, data) {
         super(sessionId, Enums_1.CallMetricsEvent.SOCKET_STATE_CHANGED, data);

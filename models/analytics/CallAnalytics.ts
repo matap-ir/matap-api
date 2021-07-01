@@ -238,12 +238,6 @@ class RTCTrack extends AbstractCallMetric<any>{
     }
 }
 
-class RTCRemovedFromElement extends AbstractCallMetric<{ reason: string }>{
-    constructor(sessionId: string,data: any) {
-        super(sessionId,CallMetricsEvent.STREAM_REMOVED_FROM_ELEMENT,data);
-    }
-}
-
 class SocketStateChange extends AbstractCallMetric<{ connected: boolean }>{
     constructor(sessionId: string,data: any) {
         super(sessionId,CallMetricsEvent.SOCKET_STATE_CHANGED,data);
