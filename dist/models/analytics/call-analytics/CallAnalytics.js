@@ -221,11 +221,6 @@ class NetworkStateChanged extends AbstractCallMetric {
         super(sessionId, Enums_1.CallMetricsEvent.NETWORK_STATE_CHANGED, data);
     }
 }
-class ClientInfo extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.CLIENT_INFO, data);
-    }
-}
 exports.default = {
     AbstractCallMetric,
     Stats,
@@ -246,6 +241,5 @@ exports.default = {
     Log,
     NetworkStateChanged,
     TrackStopped,
-    TrackCreated,
-    ClientInfo
+    TrackCreated
 };

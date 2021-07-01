@@ -252,12 +252,6 @@ class NetworkStateChanged extends AbstractCallMetric<{ connected: boolean }>{
     }
 }
 
-class ClientInfo extends AbstractCallMetric<{ os: string,version: string, browser?: { platform: string,version: string } }>{
-    constructor(sessionId: string,data: { os: string,version: string, browser?: { platform: string,version: string } }) {
-        super(sessionId,CallMetricsEvent.CLIENT_INFO,data);
-    }
-}
-
 interface InBoundAudioType{
     lastPacketReceivedTimestamp: number,
     bytesReceived: number,
@@ -331,7 +325,6 @@ export default {
     Log,
     NetworkStateChanged,
     TrackStopped,
-    TrackCreated,
-    ClientInfo
+    TrackCreated
 }
 

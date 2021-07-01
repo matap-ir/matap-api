@@ -15,7 +15,6 @@ var TypingStatus;
 })(TypingStatus = exports.TypingStatus || (exports.TypingStatus = {}));
 var CallMetricsEvent;
 (function (CallMetricsEvent) {
-    CallMetricsEvent["CLIENT_INFO"] = "CLIENT_INFO";
     CallMetricsEvent["REQUEST_RECEIVED"] = "REQUEST_RECEIVED";
     CallMetricsEvent["REQUEST_CANCELLED_BY_OTHER"] = "REQUEST_CANCELLED_BY_OTHER";
     CallMetricsEvent["REJECT_CLICKED"] = "REJECT_CLICKED";
