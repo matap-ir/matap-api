@@ -10,6 +10,7 @@ export interface Participant{
     id: string,
     state: ParticipantState,
     name: string,
+    mobile: string,
     userType: UserType,
     deviceInfo: {
         brand: string,
