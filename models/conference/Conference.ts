@@ -12,8 +12,19 @@ export interface Participant{
     name: string,
     userType: UserType,
     deviceInfo: {
-        device:{os: string,version: string},
-        browser?: { platform: string,version: string }
+        brand: string,
+        designName: string,
+        deviceName: string,
+        deviceYearClass: string,
+        isDevice: boolean,
+        deviceType: string,
+        manufacturer: string,
+        modelId: string,
+        modelName: string,
+        osName: string,
+        osVersion: string,
+        platformApiLevel: number,
+        supportedCpuArchitectures: string[]
     }
 }
 export default class Conference{
