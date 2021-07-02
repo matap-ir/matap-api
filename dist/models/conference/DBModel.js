@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
-var Number = module;
 const dbModel = {
     id: { type: String, required: true, index: true, unique: true },
     host: { type: String, required: true },

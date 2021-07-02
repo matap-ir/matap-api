@@ -1,6 +1,5 @@
 import Joi from '../Joi';
 import {Schema} from 'mongoose';
-import Number = module
 
 const dbModel = {
     id: {type: String,required: true,index: true,unique: true},
