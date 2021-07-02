@@ -11,7 +11,7 @@ export interface Participant{
     state: ParticipantState,
     name: string,
     userType: UserType,
-    clientInfo: {
+    deviceInfo: {
         device:{os: string,version: string},
         browser?: { platform: string,version: string }
     }
