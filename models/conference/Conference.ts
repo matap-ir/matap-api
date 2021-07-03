@@ -52,7 +52,7 @@ export default class Conference{
     public events: AbstractCallMetric<any>[] = [];
 
     constructor(visitId: string,host: string,type: ConferenceType,videoCallVersion: string,config: ServerConfig,initiator: Participant,receiver: Participant) {
-        this.id = Kit.generateUUID();
+        this.id = String(Kit.generateUUID());
         this.initiator = initiator;
         this.host = host;
         this.receiver = receiver;
