@@ -156,6 +156,12 @@ class AudioRouteChanged extends AbstractCallMetric<{ availableDevices: string[],
     }
 }
 
+class Ping extends AbstractCallMetric<{ server: string,result: number | false }>{
+    constructor(sessionId: string,data: { server: string,result: number | false }) {
+        super(sessionId,CallMetricsEvent.PING,data);
+    }
+}
+
 class TrackStateChange extends AbstractCallMetric<{ kind: 'video' | 'audio',enabled: boolean, local: boolean }>{
     constructor(sessionId: string,data: { kind: 'video' | 'audio',enabled: boolean, local: boolean }) {
         super(sessionId,CallMetricsEvent.TRACK_STATE_CHANGED,data);
@@ -325,6 +331,7 @@ export default {
     Log,
     NetworkStateChanged,
     TrackStopped,
-    TrackCreated
+    TrackCreated,
+    Ping
 }
 

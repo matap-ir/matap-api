@@ -49,6 +49,7 @@ var CallMetricsEvent;
     CallMetricsEvent["ERROR"] = "ERROR";
     CallMetricsEvent["LOG"] = "LOG";
     CallMetricsEvent["NETWORK_STATE_CHANGED"] = "NETWORK_STATE_CHANGED";
+    CallMetricsEvent["PING"] = "PING";
 })(CallMetricsEvent = exports.CallMetricsEvent || (exports.CallMetricsEvent = {}));
 var AdminType;
 (function (AdminType) {

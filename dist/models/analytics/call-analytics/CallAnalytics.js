@@ -141,6 +141,11 @@ class AudioRouteChanged extends AbstractCallMetric {
         super(sessionId, Enums_1.CallMetricsEvent.AUDIO_ROUTE_CHANGED, data);
     }
 }
+class Ping extends AbstractCallMetric {
+    constructor(sessionId, data) {
+        super(sessionId, Enums_1.CallMetricsEvent.PING, data);
+    }
+}
 class TrackStateChange extends AbstractCallMetric {
     constructor(sessionId, data) {
         super(sessionId, Enums_1.CallMetricsEvent.TRACK_STATE_CHANGED, data);
@@ -241,5 +246,6 @@ exports.default = {
     Log,
     NetworkStateChanged,
     TrackStopped,
-    TrackCreated
+    TrackCreated,
+    Ping
 };
