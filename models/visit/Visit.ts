@@ -11,6 +11,7 @@ interface Visit {
     state: VisitStatus,
     initiate_date: number,
     start_date: number,
+    startDateUTC: string,
     end_date: number,
     conversations : {delivered:string[],chat:Chat}[],
     rating: Rating,

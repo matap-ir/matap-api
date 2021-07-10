@@ -9,6 +9,7 @@ export default{
     state:{type:String,required:true,default:VisitStatus.IN_QUEUE,index: true},
     initiate_date:{type:Number,required: true},
     start_date:{type:Number,index:true},
+    startDateUTC: {type: String,index: true,required: false},
     end_date:{type:Number,index:true},
     conversations:[{delivered:{type:[String],default: []},chat:require('../chat/DBModel').default}],
     rating:{type:require('../rating/DBModel').default,required:false},
