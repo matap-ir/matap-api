@@ -44,6 +44,7 @@ const validator = {
                         phone: Joi_1.default.string().required().allow(''),
                         address: Joi_1.default.string().required().allow(''),
                         gapMinutes: Joi_1.default.number().min(10).required(),
+                        cost: Joi_1.default.string().required().allow(''),
                         coordinates: Joi_1.default.object().keys({
                             lat: Joi_1.default.number().required(),
                             lng: Joi_1.default.number().required()
@@ -130,6 +131,7 @@ const validator = {
                     phone: Joi_1.default.string().required().allow(''),
                     address: Joi_1.default.string().required().allow(''),
                     gapMinutes: Joi_1.default.number().min(10).required(),
+                    cost: Joi_1.default.string().required().allow(''),
                     coordinates: Joi_1.default.object().keys({
                         lat: Joi_1.default.number().required(),
                         lng: Joi_1.default.number().required()
@@ -212,6 +214,7 @@ const validator = {
                         phone: Joi_1.default.string().required().allow(''),
                         address: Joi_1.default.string().required().allow(''),
                         gapMinutes: Joi_1.default.number().min(10).required(),
+                        cost: Joi_1.default.string().required().allow(''),
                         coordinates: Joi_1.default.object().keys({
                             lat: Joi_1.default.number().required(),
                             lng: Joi_1.default.number().required()
@@ -295,6 +298,7 @@ const validator = {
                     gapMinutes: Joi_1.default.number().min(10).required(),
                     phone: Joi_1.default.string().required().allow(''),
                     address: Joi_1.default.string().required().allow(''),
+                    cost: Joi_1.default.string().required().allow(''),
                     coordinates: Joi_1.default.object().keys({
                         lat: Joi_1.default.number().required(),
                         lng: Joi_1.default.number().required()

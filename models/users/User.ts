@@ -35,6 +35,7 @@ export default interface User {
             enabled: boolean,
             phone: string,
             address: string,
+            cost: string,
             gapMinutes: number,
             coordinates?:{lat: number,lng: number}
             workTimes: WorkTimes

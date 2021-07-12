@@ -51,6 +51,7 @@ const dbModel: SchemaDefinition = {
                     phone: String,
                     address: String,
                     gapMinutes: Number,
+                    cost: String,
                     coordinates:{
                         type:{lat: Number,lng: Number},
                         required: false

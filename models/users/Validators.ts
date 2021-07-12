@@ -48,6 +48,7 @@ const validator : GeneratedValidator<User> = {
                         phone: Joi.string().required().allow(''),
                         address: Joi.string().required().allow(''),
                         gapMinutes: Joi.number().min(10).required(),
+                        cost: Joi.string().required().allow(''),
                         coordinates:Joi.object().keys({
                             lat: Joi.number().required(),
                             lng: Joi.number().required()
@@ -137,6 +138,7 @@ const validator : GeneratedValidator<User> = {
                       phone: Joi.string().required().allow(''),
                       address: Joi.string().required().allow(''),
                       gapMinutes: Joi.number().min(10).required(),
+                      cost: Joi.string().required().allow(''),
                       coordinates:Joi.object().keys({
                           lat: Joi.number().required(),
                           lng: Joi.number().required()
@@ -222,6 +224,7 @@ const validator : GeneratedValidator<User> = {
                           phone: Joi.string().required().allow(''),
                           address: Joi.string().required().allow(''),
                           gapMinutes: Joi.number().min(10).required(),
+                          cost: Joi.string().required().allow(''),
                           coordinates:Joi.object().keys({
                               lat: Joi.number().required(),
                               lng: Joi.number().required()
@@ -308,6 +311,7 @@ const validator : GeneratedValidator<User> = {
                       gapMinutes: Joi.number().min(10).required(),
                       phone: Joi.string().required().allow(''),
                       address: Joi.string().required().allow(''),
+                      cost: Joi.string().required().allow(''),
                       coordinates:Joi.object().keys({
                           lat: Joi.number().required(),
                           lng: Joi.number().required()
