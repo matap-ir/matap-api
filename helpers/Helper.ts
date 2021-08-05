@@ -70,7 +70,7 @@ const calculateWorkTimeIntervals = (fromTime: DateInputTypes, toTime: DateInputT
         const todayWorkTimes = workTimes[now.dayName()];
 
         todayWorkTimes.forEach((workTime) => {
-            if (workTime.exceptions && workTime.exceptions.length > 0 && workTime.exceptions.includes(now.toYMD())) {
+            if (workTime.exceptions && workTime.exceptions.length > 0 && workTime.exceptions.includes(now.formatGregorian('jYYYY/jMM/jDD'))) {
                 return;
             }
             const workTimeBeginning = smartDate(nowDateString+' '+workTime.from);
