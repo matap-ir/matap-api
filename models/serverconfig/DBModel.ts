@@ -14,7 +14,7 @@ const dbModel = {
       required: false
     },
     excludedReservationDates: {
-        type: String,
+        type: [String],
         required: true
     },
     audioMaxBitrate:{
