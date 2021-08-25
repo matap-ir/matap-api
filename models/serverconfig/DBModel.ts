@@ -1,4 +1,5 @@
 import {Schema} from 'mongoose';
+import {string} from '@hapi/joi';
 
 const dbModel = {
     iceServers:{
@@ -11,6 +12,10 @@ const dbModel = {
     videoMaxBitrate:{
       type: Schema.Types.Mixed,
       required: false
+    },
+    excludedReservationDates: {
+        type: String,
+        required: true
     },
     audioMaxBitrate:{
         type: Schema.Types.Mixed,

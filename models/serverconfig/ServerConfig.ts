@@ -6,6 +6,7 @@ export default interface ServerConfig {
     mediaConstraints: MediaConstraints,
     forceSpeaker: boolean,
     termsandconditions: string,
+    excludedReservationDates: string[],
     retryThreshold: number,
     videoMaxBitrate: number | 'unlimited',
     audioMaxBitrate: number | 'unlimited',

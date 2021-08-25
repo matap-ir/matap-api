@@ -13,6 +13,10 @@ const dbModel = {
         type: mongoose_1.Schema.Types.Mixed,
         required: false
     },
+    excludedReservationDates: {
+        type: String,
+        required: true
+    },
     audioMaxBitrate: {
         type: mongoose_1.Schema.Types.Mixed,
         required: false
