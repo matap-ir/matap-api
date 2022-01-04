@@ -1,16 +1,19 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "skipLibCheck": true,
+    "jsx": "react",
+    "module": "CommonJS",
+    "declaration": true,
     "strict": true,
     "baseUrl": "./",
+    "resolveJsonModule": true,
     "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "target": "es6",
-    "outDir": "dist",
-    "declarationDir": "dist",
-    "declaration": true,
     "noImplicitAny": false,
     "moduleResolution": "node",
     "noUnusedParameters": false,
@@ -31,7 +34,7 @@
   },
   "compileOnSave": true,
   "include": [
-    "./**/*.ts"
+    "src"
   ],
   "exclude": [
     "./node_modules/*"
