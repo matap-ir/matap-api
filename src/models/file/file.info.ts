@@ -34,6 +34,9 @@ export default class FileInfo {
     public metadata!: FileMetaData;
 
     @Prop()
+    public oldUrl?: string;
+
+    @Prop()
     public url!: string
 
     public uploader!: string;

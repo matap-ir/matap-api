@@ -16,6 +16,7 @@ export default class FileInfo {
     md5: string;
     contentType: string;
     metadata: FileMetaData;
+    oldUrl?: string;
     url: string;
     uploader: string;
 }
