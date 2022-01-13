@@ -2,7 +2,7 @@ import {TransactionType} from '../Enums';
 import {HealthCenter} from '../../../index';
 import {Schema} from '@nestjs/mongoose/';
 import {Prop} from '@nestjs/mongoose';
-import {ObjectId} from '../../../mongoose-types';
+import {ObjectId} from '../../mongoose-types';
 
 class IssuerType{
     @Prop({required: true})

@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const mongoose_1 = require("@nestjs/mongoose");
-const mongoose_types_1 = require("../../../mongoose-types");
+const mongoose_types_1 = require("../../mongoose-types");
 const fromToType = { from: String, to: String };
 let ResponseTime = class ResponseTime {
     constructor(from, to) {

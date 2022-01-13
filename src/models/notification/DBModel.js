@@ -1,7 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_types_1 = require("../../../mongoose-types");
-const dbModel = {
+exports.__esModule = true;
+var mongoose_types_1 = require("../../mongoose-types");
+var dbModel = {
     title: { type: String, required: true },
     body: { type: String, required: true },
     successCount: { type: Number, required: true },
@@ -10,4 +10,5 @@ const dbModel = {
     state: { type: String, required: true },
     link: { type: String, required: false }
 };
-exports.default = dbModel;
+exports["default"] = dbModel;
+//# sourceMappingURL=DBModel.js.map

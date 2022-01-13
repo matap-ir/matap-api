@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const mongoose_1 = require("@nestjs/mongoose");
-const mongoose_types_1 = require("../../../mongoose-types");
+const mongoose_types_1 = require("../../mongoose-types");
 class Notification {
     constructor(title, body, date, sender, state, link) {
         this.title = title;

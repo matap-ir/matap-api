@@ -1,6 +1,6 @@
 import {HealthCenter} from '../../../index';
 import { Prop, Schema } from '@nestjs/mongoose';
-import {ObjectId} from '../../../mongoose-types';
+import {ObjectId} from '../../mongoose-types';
 
 const fromToType = {from: String,to: String};
 

@@ -5,7 +5,7 @@ const Enums_1 = require("../Enums");
 const index_1 = require("../../../index");
 const WorkTimes_1 = tslib_1.__importDefault(require("./WorkTimes"));
 const mongoose_1 = require("@nestjs/mongoose");
-const mongoose_types_1 = require("../../../mongoose-types");
+const mongoose_types_1 = require("../../mongoose-types");
 const class_transformer_1 = require("class-transformer/");
 class NotificationSettings {
 }

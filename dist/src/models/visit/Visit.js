@@ -5,7 +5,7 @@ const index_1 = require("../../../index");
 const Enums_1 = require("../Enums");
 const mongoose_1 = require("@nestjs/mongoose/");
 const mongoose_2 = require("@nestjs/mongoose");
-const mongoose_types_1 = require("../../../mongoose-types");
+const mongoose_types_1 = require("../../mongoose-types");
 class ConversationType {
 }
 tslib_1.__decorate([

@@ -1,6 +1,6 @@
 import {Admin} from '../../../index';
 import {Prop} from '@nestjs/mongoose';
-import {ObjectId} from '../../../mongoose-types';
+import {ObjectId} from '../../mongoose-types';
 
 export default class Notification{
     _id!: string;

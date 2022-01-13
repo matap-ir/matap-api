@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.ChatType = exports.EventType = exports.IOStatus = exports.ParticipantState = exports.ConferenceType = exports.ConferenceMode = exports.ConferenceRoomEventTypes = exports.ConferenceParticipantPresenceEventTypes = exports.ConferenceParticipantConnectionEventTypes = exports.ConferenceTrackEventTypes = exports.ConferenceMediaDevicesEventTypes = exports.ConferenceFeaturesEventTypes = exports.ConferenceDetectionEventTypes = exports.SocketEventTypes = exports.NetworkEventTypes = exports.DebugType = exports.SendStatus = exports.ReceiveStatus = exports.VisitStatus = exports.HealthCenterType = exports.TransactionType = exports.ReservationState = exports.AdminType = exports.CallMetricsEvent = exports.TypingStatus = exports.UserType = void 0;
 var UserType;
 (function (UserType) {
@@ -124,6 +124,12 @@ var SocketEventTypes;
 })(SocketEventTypes = exports.SocketEventTypes || (exports.SocketEventTypes = {}));
 var ConferenceDetectionEventTypes;
 (function (ConferenceDetectionEventTypes) {
+    /** Event triggered by {@link NoAudioSignalDetector} when the local audio device associated with a JitsiConference
+     * starts receiving audio levels with the value of 0 meaning no audio is being captured on that device, or when
+     * it starts receiving audio levels !== 0 after being in a state of no audio.
+     * @event
+     * @type {boolean} - true when the current conference audio track has audio input false otherwise.
+     */
     ConferenceDetectionEventTypes["MIC_INPUT_STATE"] = "conference.detection.mic.input_state";
     ConferenceDetectionEventTypes["TALK_WHILE_MUTED"] = "conference.detection.talk_while_muted";
 })(ConferenceDetectionEventTypes = exports.ConferenceDetectionEventTypes || (exports.ConferenceDetectionEventTypes = {}));
@@ -155,6 +161,9 @@ var ConferenceParticipantConnectionEventTypes;
     ConferenceParticipantConnectionEventTypes["INTERRUPTED"] = "conference.participant.connection.interrupted";
     ConferenceParticipantConnectionEventTypes["RESTORING"] = "conference.participant.connection.restoring";
     ConferenceParticipantConnectionEventTypes["RESTORED"] = "conference.participant.connection.restored";
+    /**
+     * difference is this will be fired only after the first time connecting
+     */
     ConferenceParticipantConnectionEventTypes["ESTABLISHED"] = "conference.participant.connection.established";
     ConferenceParticipantConnectionEventTypes["QUALITY_STATE"] = "conference.participant.connection.quality_state";
     ConferenceParticipantConnectionEventTypes["GET_STATS_UPDATE"] = "conference.participant.connection.get_stats_update";
@@ -190,6 +199,13 @@ var ParticipantState;
     ParticipantState["interrupted"] = "interrupted";
     ParticipantState["paused"] = "paused";
 })(ParticipantState = exports.ParticipantState || (exports.ParticipantState = {}));
+/*export enum StreamType{
+   audio = 'audio',
+   video_audio = 'video/audio',
+   stream_receiver = 'stream_receiver',
+   stream_sender = 'stream_sender',
+   desktop = 'desktop'
+}*/
 var IOStatus;
 (function (IOStatus) {
     IOStatus["READY"] = "READY";
@@ -226,3 +242,4 @@ var ChatType;
     ChatType["GIF"] = "GIF";
     ChatType["PDF"] = "PDF";
 })(ChatType = exports.ChatType || (exports.ChatType = {}));
+//# sourceMappingURL=Enums.js.map

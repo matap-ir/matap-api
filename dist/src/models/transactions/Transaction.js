@@ -4,7 +4,7 @@ const tslib_1 = require("tslib");
 const Enums_1 = require("../Enums");
 const mongoose_1 = require("@nestjs/mongoose/");
 const mongoose_2 = require("@nestjs/mongoose");
-const mongoose_types_1 = require("../../../mongoose-types");
+const mongoose_types_1 = require("../../mongoose-types");
 class IssuerType {
 }
 tslib_1.__decorate([

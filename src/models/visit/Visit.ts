@@ -3,7 +3,7 @@ import {VisitStatus} from '../Enums';
 import Conference from '../conference/Conference';
 import {Schema} from '@nestjs/mongoose/';
 import {Prop} from '@nestjs/mongoose';
-import {ObjectId} from '../../../mongoose-types';
+import {ObjectId} from '../../mongoose-types';
 import {Type} from 'class-transformer/';
 
 class ConversationType{

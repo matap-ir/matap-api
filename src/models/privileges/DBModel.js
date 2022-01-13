@@ -1,32 +1,32 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_types_1 = require("../../../mongoose-types");
-const createPrivilegeOptionsDetails = (ref) => {
+exports.__esModule = true;
+var mongoose_types_1 = require("../../mongoose-types");
+var createPrivilegeOptionsDetails = function (ref) {
     return {
         type: {
-            allowed: { type: Boolean, required: true, default: true },
-            whiteList: [{ type: mongoose_types_1.ObjectId, ref, required: true, default: [] }],
+            allowed: { type: Boolean, required: true, "default": true },
+            whiteList: [{ type: mongoose_types_1.ObjectId, ref: ref, required: true, "default": [] }],
             test: { type: String, required: false }
         },
         required: true,
-        default: []
+        "default": []
     };
 };
-const createPrivilegeOptions = (ref) => {
+var createPrivilegeOptions = function (ref) {
     return {
         type: {
             post: createPrivilegeOptionsDetails(ref),
             patch: createPrivilegeOptionsDetails(ref),
-            delete: createPrivilegeOptionsDetails(ref),
+            "delete": createPrivilegeOptionsDetails(ref),
             get: createPrivilegeOptionsDetails(ref),
             put: createPrivilegeOptionsDetails(ref),
-            menuVisible: { type: Boolean, required: true, default: false }
+            menuVisible: { type: Boolean, required: true, "default": false }
         },
         required: true,
-        default: {}
+        "default": {}
     };
 };
-const dbModel = {
+var dbModel = {
     users: createPrivilegeOptions('users'),
     admins: createPrivilegeOptions('admins'),
     visits: createPrivilegeOptions('visits'),
@@ -43,4 +43,5 @@ const dbModel = {
     analytics: createPrivilegeOptions('analytics'),
     calls: createPrivilegeOptions('calls')
 };
-exports.default = dbModel;
+exports["default"] = dbModel;
+//# sourceMappingURL=DBModel.js.map

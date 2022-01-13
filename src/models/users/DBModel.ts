@@ -1,5 +1,5 @@
 import {Mongoose,SchemaOptions,SchemaDefinition} from 'mongoose';
-import {ObjectId} from '../../../mongoose-types';
+import {ObjectId} from '../../mongoose-types';
 const dbModel: SchemaDefinition = {
     mobile: {type: String,index:true,unique:true, required: true},
     type:{type: String,require:true},

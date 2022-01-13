@@ -1,7 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_types_1 = require("../../../mongoose-types");
-const dbModel = {
+exports.__esModule = true;
+var mongoose_types_1 = require("../../mongoose-types");
+var dbModel = {
     age: { type: Number, required: true },
     mobile: { type: String, required: true },
     service: { type: mongoose_types_1.ObjectId, ref: 'medical_services', required: true },
@@ -14,4 +14,5 @@ const dbModel = {
     requester: { type: mongoose_types_1.ObjectId, ref: 'users', required: true },
     app: { type: String, required: false }
 };
-exports.default = dbModel;
+exports["default"] = dbModel;
+//# sourceMappingURL=DBModel.js.map

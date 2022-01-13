@@ -1,10 +1,11 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.phone = void 0;
-const tslib_1 = require("tslib");
-const joi_1 = tslib_1.__importDefault(require("@hapi/joi"));
-exports.default = joi_1.default;
-const phone = () => {
-    return joi_1.default.string();
+var joi_1 = require("@hapi/joi");
+// customJoi.string().phoneNumber({ defaultCountry: 'IR', format: 'international', strict: true })
+exports["default"] = joi_1["default"];
+var phone = function () {
+    return joi_1["default"].string();
 };
 exports.phone = phone;
+//# sourceMappingURL=Joi.js.map

@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
+    "strict": false,
     "skipLibCheck": true,
     "jsx": "react",
     "module": "CommonJS",
     "declaration": true,
-    "strict": true,
+    "outDir": "dist",
+    "declarationDir": "dist",
     "baseUrl": "./",
     "resolveJsonModule": true,
     "removeComments": true,
@@ -19,7 +21,7 @@
     "noUnusedParameters": false,
     "importHelpers": true,
     "sourceMap": false,
-    "lib": ["dom"],
+    "lib": ["ES6"],
     "types": [
       "node"
     ],
@@ -34,7 +36,9 @@
   },
   "compileOnSave": true,
   "include": [
-    "src"
+    "src/*",
+    "index.ts",
+    "index.js"
   ],
   "exclude": [
     "./node_modules/*"
