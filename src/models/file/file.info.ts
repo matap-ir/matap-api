@@ -1,5 +1,5 @@
 import {ChatType} from '../Enums';
-import {Prop, Schema} from '@nestjs/mongoose';
+import {ObjectId, Prop, Schema} from '../../mongoose-types';
 
 export class FileMetaData {
     fileType!: ChatType

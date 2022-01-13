@@ -3,8 +3,7 @@ import {ResponseTime, Specialization} from '../../../index';
 import HealthCenter from '../health_center/HealthCenter';
 import Visit from '../visit/Visit';
 import WorkTimes from './WorkTimes';
-import { Prop, Schema } from '@nestjs/mongoose';
-import {ObjectId} from '../../mongoose-types';
+import {ObjectId, Prop, Schema} from '../../mongoose-types';
 import {Exclude} from 'class-transformer/';
 import WorkTime from '../response_time/WorkTime';
 

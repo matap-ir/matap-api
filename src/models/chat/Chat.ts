@@ -1,5 +1,5 @@
 import {ChatType, ReceiveStatus, SendStatus} from '../Enums';
-import {Prop} from '@nestjs/mongoose';
+import {ObjectId, Prop, Schema} from '../../mongoose-types';
 
 class MediaInfoType{
 

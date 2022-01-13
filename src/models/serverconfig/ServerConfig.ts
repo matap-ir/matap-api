@@ -1,5 +1,5 @@
 import {MediaConstraints} from '../conference/Conference';
-import {Prop, Schema} from '@nestjs/mongoose';
+import {ObjectId, Prop, Schema} from '../../mongoose-types';
 import mongoose from 'mongoose';
 
 class IceServer{

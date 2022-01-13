@@ -2,7 +2,7 @@ import {ConferenceMode, ConferenceType, ParticipantState, UserType} from '../Enu
 import Kit from 'javascript-dev-kit';
 import ServerConfig from '../serverconfig/ServerConfig';
 import {AbstractCallMetric} from '../analytics/call-analytics/CallAnalytics';
-import {Prop, Schema} from '@nestjs/mongoose';
+import {ObjectId, Prop, Schema} from '../../mongoose-types';
 import  mongoose from 'mongoose';
 
 export class MediaConstraints{

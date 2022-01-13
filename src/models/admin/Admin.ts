@@ -1,6 +1,6 @@
 import {AdminType} from '../Enums';
 import {Privileges} from '../../../index';
-import {Prop, Schema} from '@nestjs/mongoose';
+import {ObjectId, Prop, Schema} from '../../mongoose-types';
 
 @Schema()
 export default class Admin {
