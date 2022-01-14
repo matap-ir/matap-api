@@ -1,20 +1,11 @@
 import mongoose from 'mongoose';
-import { PropOptions } from '@nestjs/mongoose/dist/decorators/prop.decorator';
-import { SchemaOptions } from '@nestjs/mongoose/dist/decorators/schema.decorator';
+import { Schema,Prop } from '@nestjs/mongoose';
 
 const ObjectId = mongoose.Types.ObjectId;
-
-
-export function Prop (props?: PropOptions): any {
-    console.log('IS NODE')
-    return require('@nestjs/mongoose').Prop(props);
-}
-
-export function Schema (options?: SchemaOptions): any {
-    console.log('IS NODE')
-    return require('@nestjs/mongoose').Schema(options);
-}
+console.log('IS NODE')
 
 export {
-    ObjectId
+    ObjectId,
+    Schema,
+    Prop
 };
