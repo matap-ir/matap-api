@@ -1,26 +1,30 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+exports.__esModule = true;
 exports.MediaConstraints = void 0;
-const tslib_1 = require("tslib");
-const Enums_1 = require("../Enums");
-const javascript_dev_kit_1 = tslib_1.__importDefault(require("javascript-dev-kit"));
-const ServerConfig_1 = tslib_1.__importDefault(require("../serverconfig/ServerConfig"));
-const mongoose_1 = require("@nestjs/mongoose");
-class MediaConstraints {
-}
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: {} }),
-    tslib_1.__metadata("design:type", Object)
-], MediaConstraints.prototype, "video", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: {} }),
-    tslib_1.__metadata("design:type", Object)
-], MediaConstraints.prototype, "audio", void 0);
+var javascript_dev_kit_1 = require("javascript-dev-kit");
+var mongoose_types_1 = require("../../mongoose-types");
+var MediaConstraints = /** @class */ (function () {
+    function MediaConstraints() {
+    }
+    __decorate([
+        mongoose_types_1.Prop({ type: {} })
+    ], MediaConstraints.prototype, "video");
+    __decorate([
+        mongoose_types_1.Prop({ type: {} })
+    ], MediaConstraints.prototype, "audio");
+    return MediaConstraints;
+}());
 exports.MediaConstraints = MediaConstraints;
-let Conference = class Conference {
-    constructor(visitId, host, type, videoCallVersion, config, initiator, receiver) {
+var Conference = /** @class */ (function () {
+    function Conference(visitId, host, type, videoCallVersion, config, initiator, receiver) {
         this.events = [];
-        this.id = String(javascript_dev_kit_1.default.generateUUID());
+        this.id = String(javascript_dev_kit_1["default"].generateUUID());
         this.initiator = initiator;
         this.host = host;
         this.receiver = receiver;
@@ -40,93 +44,73 @@ let Conference = class Conference {
         this.retryThreshold = config.retryThreshold;
         this.state = 'initiating';
     }
-};
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true, index: true, unique: true }),
-    tslib_1.__metadata("design:type", String)
-], Conference.prototype, "id", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", String)
-], Conference.prototype, "host", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true, index: true }),
-    tslib_1.__metadata("design:type", String)
-], Conference.prototype, "visitId", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", Number)
-], Conference.prototype, "createdAt", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], Conference.prototype, "endedAt", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", String)
-], Conference.prototype, "type", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: {}, required: true }),
-    tslib_1.__metadata("design:type", Object)
-], Conference.prototype, "initiator", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: {}, required: true }),
-    tslib_1.__metadata("design:type", Object)
-], Conference.prototype, "receiver", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: {}, required: true }),
-    tslib_1.__metadata("design:type", Array)
-], Conference.prototype, "iceServers", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: {}, required: true }),
-    tslib_1.__metadata("design:type", MediaConstraints)
-], Conference.prototype, "mediaConstraints", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", String)
-], Conference.prototype, "videoCallVersion", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", Number)
-], Conference.prototype, "retryThreshold", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true, index: true }),
-    tslib_1.__metadata("design:type", String)
-], Conference.prototype, "state", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", String)
-], Conference.prototype, "iceTransportPolicy", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: {} }),
-    tslib_1.__metadata("design:type", Object)
-], Conference.prototype, "videoMaxBitrate", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: {} }),
-    tslib_1.__metadata("design:type", Object)
-], Conference.prototype, "audioMaxBitrate", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: {}, required: true }),
-    tslib_1.__metadata("design:type", Array)
-], Conference.prototype, "preferredCodecs", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", Boolean)
-], Conference.prototype, "trickleIce", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], Conference.prototype, "pingTimeout", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", Boolean)
-], Conference.prototype, "forceSpeaker", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: {}, required: true }),
-    tslib_1.__metadata("design:type", Array)
-], Conference.prototype, "events", void 0);
-Conference = tslib_1.__decorate([
-    mongoose_1.Schema(),
-    tslib_1.__metadata("design:paramtypes", [String, String, String, String, ServerConfig_1.default, Object, Object])
-], Conference);
-exports.default = Conference;
+    __decorate([
+        mongoose_types_1.Prop({ required: true, index: true, unique: true })
+    ], Conference.prototype, "id");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], Conference.prototype, "host");
+    __decorate([
+        mongoose_types_1.Prop({ required: true, index: true })
+    ], Conference.prototype, "visitId");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], Conference.prototype, "createdAt");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Conference.prototype, "endedAt");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], Conference.prototype, "type");
+    __decorate([
+        mongoose_types_1.Prop({ type: {}, required: true })
+    ], Conference.prototype, "initiator");
+    __decorate([
+        mongoose_types_1.Prop({ type: {}, required: true })
+    ], Conference.prototype, "receiver");
+    __decorate([
+        mongoose_types_1.Prop({ type: {}, required: true })
+    ], Conference.prototype, "iceServers");
+    __decorate([
+        mongoose_types_1.Prop({ type: {}, required: true })
+    ], Conference.prototype, "mediaConstraints");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], Conference.prototype, "videoCallVersion");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], Conference.prototype, "retryThreshold");
+    __decorate([
+        mongoose_types_1.Prop({ required: true, index: true })
+    ], Conference.prototype, "state");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], Conference.prototype, "iceTransportPolicy");
+    __decorate([
+        mongoose_types_1.Prop({ type: {} })
+    ], Conference.prototype, "videoMaxBitrate");
+    __decorate([
+        mongoose_types_1.Prop({ type: {} })
+    ], Conference.prototype, "audioMaxBitrate");
+    __decorate([
+        mongoose_types_1.Prop({ type: {}, required: true })
+    ], Conference.prototype, "preferredCodecs");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], Conference.prototype, "trickleIce");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Conference.prototype, "pingTimeout");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], Conference.prototype, "forceSpeaker");
+    __decorate([
+        mongoose_types_1.Prop({ type: {}, required: true })
+    ], Conference.prototype, "events");
+    Conference = __decorate([
+        mongoose_types_1.Schema()
+    ], Conference);
+    return Conference;
+}());
+exports["default"] = Conference;
+//# sourceMappingURL=Conference.js.map

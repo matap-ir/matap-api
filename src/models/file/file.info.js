@@ -1,22 +1,32 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.FileMetaData = void 0;
-const tslib_1 = require("tslib");
-const mongoose_1 = require("@nestjs/mongoose");
-class FileMetaData {
-}
-exports.FileMetaData = FileMetaData;
-let FileInfo = class FileInfo {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], FileInfo.prototype, "oldUrl", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], FileInfo.prototype, "url", void 0);
-FileInfo = tslib_1.__decorate([
-    mongoose_1.Schema()
-], FileInfo);
-exports.default = FileInfo;
+exports.__esModule = true;
+exports.FileMetaData = void 0;
+var mongoose_types_1 = require("../../mongoose-types");
+var FileMetaData = /** @class */ (function () {
+    function FileMetaData() {
+    }
+    return FileMetaData;
+}());
+exports.FileMetaData = FileMetaData;
+var FileInfo = /** @class */ (function () {
+    function FileInfo() {
+    }
+    __decorate([
+        mongoose_types_1.Prop()
+    ], FileInfo.prototype, "oldUrl");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], FileInfo.prototype, "url");
+    FileInfo = __decorate([
+        mongoose_types_1.Schema()
+    ], FileInfo);
+    return FileInfo;
+}());
+exports["default"] = FileInfo;
+//# sourceMappingURL=file.info.js.map

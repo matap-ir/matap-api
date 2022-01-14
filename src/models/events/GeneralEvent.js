@@ -1,10 +1,11 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class GeneralEvent {
-    constructor(type, payload) {
+exports.__esModule = true;
+var GeneralEvent = /** @class */ (function () {
+    function GeneralEvent(type, payload) {
         this.type = type;
         this.payload = payload;
         if (payload && payload instanceof Error) {
+            // @ts-ignore
             this.payload = {
                 name: payload.name,
                 message: payload.message,
@@ -12,5 +13,7 @@ class GeneralEvent {
             };
         }
     }
-}
-exports.default = GeneralEvent;
+    return GeneralEvent;
+}());
+exports["default"] = GeneralEvent;
+//# sourceMappingURL=GeneralEvent.js.map

@@ -1,11 +1,13 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const img_type = 'jpg';
-const chats = {
-    folder_chat: (roomId) => '/chats/' + roomId + '/'
+exports.__esModule = true;
+// const base_path = 'D:/LifeMate/';
+var img_type = 'jpg';
+var chats = {
+    folder_chat: function (roomId) { return '/chats/' + roomId + '/'; }
 };
-const folder_medical_services = () => '/medical_services/';
-exports.default = {
-    chats,
-    folder_medical_services
+var folder_medical_services = function () { return '/medical_services/'; };
+exports["default"] = {
+    chats: chats,
+    folder_medical_services: folder_medical_services
 };
+//# sourceMappingURL=FileAddresses.js.map

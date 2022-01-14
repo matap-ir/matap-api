@@ -1,72 +1,67 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const Enums_1 = require("../Enums");
-const mongoose_1 = require("@nestjs/mongoose");
-class MediaInfoType {
-}
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], MediaInfoType.prototype, "width", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], MediaInfoType.prototype, "height", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], MediaInfoType.prototype, "duration", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], MediaInfoType.prototype, "orientation", void 0);
-class Chat {
-    constructor(text, sendStatus, type, date) {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+exports.__esModule = true;
+var mongoose_types_1 = require("../../mongoose-types");
+var MediaInfoType = /** @class */ (function () {
+    function MediaInfoType() {
+    }
+    __decorate([
+        mongoose_types_1.Prop()
+    ], MediaInfoType.prototype, "width");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], MediaInfoType.prototype, "height");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], MediaInfoType.prototype, "duration");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], MediaInfoType.prototype, "orientation");
+    return MediaInfoType;
+}());
+var Chat = /** @class */ (function () {
+    function Chat(text, sendStatus, type, date) {
         this.text = text;
         this.sendStatus = sendStatus;
         this.type = type;
         this.date = date;
     }
-}
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", String)
-], Chat.prototype, "id", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", String)
-], Chat.prototype, "sender", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], Chat.prototype, "text", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", String)
-], Chat.prototype, "sendStatus", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", String)
-], Chat.prototype, "type", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], Chat.prototype, "date", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], Chat.prototype, "url", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], Chat.prototype, "file_size", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], Chat.prototype, "file_name", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: () => MediaInfoType }),
-    tslib_1.__metadata("design:type", MediaInfoType)
-], Chat.prototype, "mediaInfo", void 0);
-exports.default = Chat;
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], Chat.prototype, "id");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], Chat.prototype, "sender");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Chat.prototype, "text");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], Chat.prototype, "sendStatus");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], Chat.prototype, "type");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Chat.prototype, "date");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Chat.prototype, "url");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Chat.prototype, "file_size");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Chat.prototype, "file_name");
+    __decorate([
+        mongoose_types_1.Prop({ type: function () { return MediaInfoType; } })
+    ], Chat.prototype, "mediaInfo");
+    return Chat;
+}());
+exports["default"] = Chat;
+//# sourceMappingURL=Chat.js.map

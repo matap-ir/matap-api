@@ -1,5 +1,9 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class WorkTimes {
-}
-exports.default = WorkTimes;
+exports.__esModule = true;
+var WorkTimes = /** @class */ (function () {
+    function WorkTimes() {
+    }
+    return WorkTimes;
+}());
+exports["default"] = WorkTimes;
+//# sourceMappingURL=WorkTimes.js.map

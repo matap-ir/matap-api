@@ -8,4 +8,4 @@ Object.defineProperty(exports, "Schema", { enumerable: true, get: function () { 
 Object.defineProperty(exports, "Prop", { enumerable: true, get: function () { return mongoose_2.Prop; } });
 const ObjectId = mongoose_1.default.Types.ObjectId;
 exports.ObjectId = ObjectId;
-console.log('IS NODE');
+console.log('TYPE', ObjectId);

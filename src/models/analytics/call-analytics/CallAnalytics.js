@@ -1,22 +1,37 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+exports.__esModule = true;
 exports.AbstractCallMetric = void 0;
-const Enums_1 = require("../../Enums");
-class AbstractCallMetric {
-    constructor(sessionId, event, data) {
+var Enums_1 = require("../../Enums");
+var AbstractCallMetric = /** @class */ (function () {
+    function AbstractCallMetric(sessionId, event, data) {
         this.timeStamp = Date.now();
         this.sessionId = sessionId;
         this.event = event;
         this.data = data;
     }
-}
+    return AbstractCallMetric;
+}());
 exports.AbstractCallMetric = AbstractCallMetric;
-class Stats extends AbstractCallMetric {
-    constructor(sessionId, stats) {
-        super(sessionId, Enums_1.CallMetricsEvent.STATS, {
+var Stats = /** @class */ (function (_super) {
+    __extends(Stats, _super);
+    function Stats(sessionId, stats) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.STATS, {
             local: {
                 audio: {
-                    inbound: stats.data.audio.inbound.map((s) => {
+                    inbound: stats.data.audio.inbound.map(function (s) {
                         return {
                             lastPacketReceivedTimestamp: s.lastPacketReceivedTimestamp,
                             bytesReceived: s.bytesReceived,
@@ -30,7 +45,7 @@ class Stats extends AbstractCallMetric {
                             kind: s.kind
                         };
                     }),
-                    outbound: stats.data.audio.outbound.map((s) => {
+                    outbound: stats.data.audio.outbound.map(function (s) {
                         return {
                             packetsSent: s.packetsSent,
                             bytesSent: s.bytesSent,
@@ -41,7 +56,7 @@ class Stats extends AbstractCallMetric {
                     })
                 },
                 video: {
-                    inbound: stats.data.video.inbound.map((s) => {
+                    inbound: stats.data.video.inbound.map(function (s) {
                         return {
                             lastPacketReceivedTimestamp: s.lastPacketReceivedTimestamp,
                             bytesReceived: s.bytesReceived,
@@ -55,7 +70,7 @@ class Stats extends AbstractCallMetric {
                             kind: s.kind
                         };
                     }),
-                    outbound: stats.data.video.outbound.map((s) => {
+                    outbound: stats.data.video.outbound.map(function (s) {
                         return {
                             frameHeight: s.frameHeight,
                             frameWidth: s.frameWidth,
@@ -73,7 +88,7 @@ class Stats extends AbstractCallMetric {
             },
             remote: {
                 audio: {
-                    inbound: stats.data.remote.audio.inbound.map((s) => {
+                    inbound: stats.data.remote.audio.inbound.map(function (s) {
                         return {
                             lastPacketReceivedTimestamp: s.lastPacketReceivedTimestamp,
                             bytesReceived: s.bytesReceived,
@@ -87,7 +102,7 @@ class Stats extends AbstractCallMetric {
                             kind: s.kind
                         };
                     }),
-                    outbound: stats.data.remote.audio.outbound.map((s) => {
+                    outbound: stats.data.remote.audio.outbound.map(function (s) {
                         return {
                             packetsSent: s.packetsSent,
                             bytesSent: s.bytesSent,
@@ -98,7 +113,7 @@ class Stats extends AbstractCallMetric {
                     })
                 },
                 video: {
-                    inbound: stats.data.remote.video.inbound.map((s) => {
+                    inbound: stats.data.remote.video.inbound.map(function (s) {
                         return {
                             lastPacketReceivedTimestamp: s.lastPacketReceivedTimestamp,
                             bytesReceived: s.bytesReceived,
@@ -112,7 +127,7 @@ class Stats extends AbstractCallMetric {
                             kind: s.kind
                         };
                     }),
-                    outbound: stats.data.remote.video.outbound.map((s) => {
+                    outbound: stats.data.remote.video.outbound.map(function (s) {
                         return {
                             frameHeight: s.frameHeight,
                             frameWidth: s.frameWidth,
@@ -128,124 +143,164 @@ class Stats extends AbstractCallMetric {
                     })
                 }
             }
-        });
+        }) || this;
     }
-}
-class Error extends AbstractCallMetric {
-    constructor(sessionId, info, error) {
-        super(sessionId, Enums_1.CallMetricsEvent.ERROR, { info, error });
+    return Stats;
+}(AbstractCallMetric));
+var Error = /** @class */ (function (_super) {
+    __extends(Error, _super);
+    function Error(sessionId, info, error) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.ERROR, { info: info, error: error }) || this;
     }
-}
-class AudioRouteChanged extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.AUDIO_ROUTE_CHANGED, data);
+    return Error;
+}(AbstractCallMetric));
+var AudioRouteChanged = /** @class */ (function (_super) {
+    __extends(AudioRouteChanged, _super);
+    function AudioRouteChanged(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.AUDIO_ROUTE_CHANGED, data) || this;
     }
-}
-class Ping extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.PING, data);
+    return AudioRouteChanged;
+}(AbstractCallMetric));
+var Ping = /** @class */ (function (_super) {
+    __extends(Ping, _super);
+    function Ping(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.PING, data) || this;
     }
-}
-class TrackStateChange extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.TRACK_STATE_CHANGED, data);
+    return Ping;
+}(AbstractCallMetric));
+var TrackStateChange = /** @class */ (function (_super) {
+    __extends(TrackStateChange, _super);
+    function TrackStateChange(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.TRACK_STATE_CHANGED, data) || this;
     }
-}
-class TrackCreated extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.TRACK_CREATED, data);
+    return TrackStateChange;
+}(AbstractCallMetric));
+var TrackCreated = /** @class */ (function (_super) {
+    __extends(TrackCreated, _super);
+    function TrackCreated(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.TRACK_CREATED, data) || this;
     }
-}
-class TrackStopped extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.TRACK_STOPPED, data);
+    return TrackCreated;
+}(AbstractCallMetric));
+var TrackStopped = /** @class */ (function (_super) {
+    __extends(TrackStopped, _super);
+    function TrackStopped(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.TRACK_STOPPED, data) || this;
     }
-}
-class CallStateChange extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.CALL_STATE_CHANGED, data);
+    return TrackStopped;
+}(AbstractCallMetric));
+var CallStateChange = /** @class */ (function (_super) {
+    __extends(CallStateChange, _super);
+    function CallStateChange(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.CALL_STATE_CHANGED, data) || this;
     }
-}
-class RTCConnectionStateChange extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.RTC_CONNECTION_STATE_CHANGED, data);
+    return CallStateChange;
+}(AbstractCallMetric));
+var RTCConnectionStateChange = /** @class */ (function (_super) {
+    __extends(RTCConnectionStateChange, _super);
+    function RTCConnectionStateChange(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.RTC_CONNECTION_STATE_CHANGED, data) || this;
     }
-}
-class RTCIceCandidate extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.RTC_ICE_CANDIDATE, data);
+    return RTCConnectionStateChange;
+}(AbstractCallMetric));
+var RTCIceCandidate = /** @class */ (function (_super) {
+    __extends(RTCIceCandidate, _super);
+    function RTCIceCandidate(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.RTC_ICE_CANDIDATE, data) || this;
     }
-}
-class RTCIceCandidateError extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.RTC_ICE_CANDIDATE_ERROR, data);
+    return RTCIceCandidate;
+}(AbstractCallMetric));
+var RTCIceCandidateError = /** @class */ (function (_super) {
+    __extends(RTCIceCandidateError, _super);
+    function RTCIceCandidateError(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.RTC_ICE_CANDIDATE_ERROR, data) || this;
     }
-}
-class RTCIceConnectionStateChange extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.RTC_ICE_CONNECTION_STATE_CHANGED, data);
+    return RTCIceCandidateError;
+}(AbstractCallMetric));
+var RTCIceConnectionStateChange = /** @class */ (function (_super) {
+    __extends(RTCIceConnectionStateChange, _super);
+    function RTCIceConnectionStateChange(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.RTC_ICE_CONNECTION_STATE_CHANGED, data) || this;
     }
-}
-class RTCIceGatheringStateChange extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.RTC_ICE_GATHERING_STATE_CHANGED, data);
+    return RTCIceConnectionStateChange;
+}(AbstractCallMetric));
+var RTCIceGatheringStateChange = /** @class */ (function (_super) {
+    __extends(RTCIceGatheringStateChange, _super);
+    function RTCIceGatheringStateChange(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.RTC_ICE_GATHERING_STATE_CHANGED, data) || this;
     }
-}
-class RTCNegotiationNeeded extends AbstractCallMetric {
-    constructor(sessionId) {
-        super(sessionId, Enums_1.CallMetricsEvent.RTC_NEGOTIATION_NEEDED);
+    return RTCIceGatheringStateChange;
+}(AbstractCallMetric));
+var RTCNegotiationNeeded = /** @class */ (function (_super) {
+    __extends(RTCNegotiationNeeded, _super);
+    function RTCNegotiationNeeded(sessionId) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.RTC_NEGOTIATION_NEEDED) || this;
     }
-}
-class RTCSignalingStateChanged extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.RTC_SIGNALING_STATE_CHANGED, data);
+    return RTCNegotiationNeeded;
+}(AbstractCallMetric));
+var RTCSignalingStateChanged = /** @class */ (function (_super) {
+    __extends(RTCSignalingStateChanged, _super);
+    function RTCSignalingStateChanged(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.RTC_SIGNALING_STATE_CHANGED, data) || this;
     }
-}
-class SocketStateChange extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.SOCKET_STATE_CHANGED, data);
+    return RTCSignalingStateChanged;
+}(AbstractCallMetric));
+var SocketStateChange = /** @class */ (function (_super) {
+    __extends(SocketStateChange, _super);
+    function SocketStateChange(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.SOCKET_STATE_CHANGED, data) || this;
     }
-}
-class RingStateChange extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.RING_STATE_CHANGED, data);
+    return SocketStateChange;
+}(AbstractCallMetric));
+var RingStateChange = /** @class */ (function (_super) {
+    __extends(RingStateChange, _super);
+    function RingStateChange(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.RING_STATE_CHANGED, data) || this;
     }
-}
-class CallClosed extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.CALL_CLOSED, data);
+    return RingStateChange;
+}(AbstractCallMetric));
+var CallClosed = /** @class */ (function (_super) {
+    __extends(CallClosed, _super);
+    function CallClosed(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.CALL_CLOSED, data) || this;
     }
-}
-class Log extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.LOG, data);
+    return CallClosed;
+}(AbstractCallMetric));
+var Log = /** @class */ (function (_super) {
+    __extends(Log, _super);
+    function Log(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.LOG, data) || this;
     }
-}
-class NetworkStateChanged extends AbstractCallMetric {
-    constructor(sessionId, data) {
-        super(sessionId, Enums_1.CallMetricsEvent.NETWORK_STATE_CHANGED, data);
+    return Log;
+}(AbstractCallMetric));
+var NetworkStateChanged = /** @class */ (function (_super) {
+    __extends(NetworkStateChanged, _super);
+    function NetworkStateChanged(sessionId, data) {
+        return _super.call(this, sessionId, Enums_1.CallMetricsEvent.NETWORK_STATE_CHANGED, data) || this;
     }
-}
-exports.default = {
-    AbstractCallMetric,
-    Stats,
-    Error,
-    AudioRouteChanged,
-    TrackStateChange,
-    CallStateChange,
-    RTCSignalingStateChanged,
-    RTCNegotiationNeeded,
-    RTCIceGatheringStateChange,
-    RTCIceCandidateError,
-    RTCIceCandidate,
-    RTCIceConnectionStateChange,
-    RTCConnectionStateChange,
-    SocketStateChange,
-    RingStateChange,
-    CallClosed,
-    Log,
-    NetworkStateChanged,
-    TrackStopped,
-    TrackCreated,
-    Ping
+    return NetworkStateChanged;
+}(AbstractCallMetric));
+exports["default"] = {
+    AbstractCallMetric: AbstractCallMetric,
+    Stats: Stats,
+    Error: Error,
+    AudioRouteChanged: AudioRouteChanged,
+    TrackStateChange: TrackStateChange,
+    CallStateChange: CallStateChange,
+    RTCSignalingStateChanged: RTCSignalingStateChanged,
+    RTCNegotiationNeeded: RTCNegotiationNeeded,
+    RTCIceGatheringStateChange: RTCIceGatheringStateChange,
+    RTCIceCandidateError: RTCIceCandidateError,
+    RTCIceCandidate: RTCIceCandidate,
+    RTCIceConnectionStateChange: RTCIceConnectionStateChange,
+    RTCConnectionStateChange: RTCConnectionStateChange,
+    SocketStateChange: SocketStateChange,
+    RingStateChange: RingStateChange,
+    CallClosed: CallClosed,
+    Log: Log,
+    NetworkStateChanged: NetworkStateChanged,
+    TrackStopped: TrackStopped,
+    TrackCreated: TrackCreated,
+    Ping: Ping
 };
+//# sourceMappingURL=CallAnalytics.js.map

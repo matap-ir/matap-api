@@ -1,114 +1,104 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+exports.__esModule = true;
 exports.PrivilegeOptions = exports.PrivilegeOptionsDetails = void 0;
-const tslib_1 = require("tslib");
-const mongoose_1 = require("@nestjs/mongoose");
-class PrivilegeOptionsDetails {
-}
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Boolean)
-], PrivilegeOptionsDetails.prototype, "allowed", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Array)
-], PrivilegeOptionsDetails.prototype, "whiteList", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], PrivilegeOptionsDetails.prototype, "test", void 0);
+var mongoose_types_1 = require("../../mongoose-types");
+var PrivilegeOptionsDetails = /** @class */ (function () {
+    function PrivilegeOptionsDetails() {
+    }
+    __decorate([
+        mongoose_types_1.Prop()
+    ], PrivilegeOptionsDetails.prototype, "allowed");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], PrivilegeOptionsDetails.prototype, "whiteList");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], PrivilegeOptionsDetails.prototype, "test");
+    return PrivilegeOptionsDetails;
+}());
 exports.PrivilegeOptionsDetails = PrivilegeOptionsDetails;
-class PrivilegeOptions {
-}
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptionsDetails)
-], PrivilegeOptions.prototype, "post", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptionsDetails)
-], PrivilegeOptions.prototype, "patch", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptionsDetails)
-], PrivilegeOptions.prototype, "delete", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptionsDetails)
-], PrivilegeOptions.prototype, "get", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptionsDetails)
-], PrivilegeOptions.prototype, "put", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Boolean)
-], PrivilegeOptions.prototype, "menuVisible", void 0);
+var PrivilegeOptions = /** @class */ (function () {
+    function PrivilegeOptions() {
+    }
+    __decorate([
+        mongoose_types_1.Prop()
+    ], PrivilegeOptions.prototype, "post");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], PrivilegeOptions.prototype, "patch");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], PrivilegeOptions.prototype, "delete");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], PrivilegeOptions.prototype, "get");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], PrivilegeOptions.prototype, "put");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], PrivilegeOptions.prototype, "menuVisible");
+    return PrivilegeOptions;
+}());
 exports.PrivilegeOptions = PrivilegeOptions;
-class Privileges {
-}
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "users", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "admins", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "visits", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "medicalServices", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "healthCenters", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "adminLogs", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "reservations", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "discounts", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "serverConfigs", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "serviceRequests", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "specializations", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "transactions", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "notifications", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "analytics", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", PrivilegeOptions)
-], Privileges.prototype, "calls", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], Privileges.prototype, "defaultTestFunction", void 0);
-exports.default = Privileges;
+var Privileges = /** @class */ (function () {
+    function Privileges() {
+    }
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "users");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "admins");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "visits");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "medicalServices");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "healthCenters");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "adminLogs");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "reservations");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "discounts");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "serverConfigs");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "serviceRequests");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "specializations");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "transactions");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "notifications");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "analytics");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "calls");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], Privileges.prototype, "defaultTestFunction");
+    return Privileges;
+}());
+exports["default"] = Privileges;
+//# sourceMappingURL=Privileges.js.map

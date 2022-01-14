@@ -1,7 +1,8 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 function default_1(validator, htmlType, placeHolders) {
     validator.metadata.type = htmlType;
     validator.metadata.placeholders = placeHolders;
 }
-exports.default = default_1;
+exports["default"] = default_1;
+//# sourceMappingURL=setValidatorMetaData.js.map

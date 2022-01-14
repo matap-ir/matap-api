@@ -1,237 +1,213 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const Enums_1 = require("../Enums");
-const index_1 = require("../../../index");
-const WorkTimes_1 = tslib_1.__importDefault(require("./WorkTimes"));
-const mongoose_1 = require("@nestjs/mongoose");
-const mongoose_types_1 = require("../../../mongoose-types");
-const class_transformer_1 = require("class-transformer/");
-class NotificationSettings {
-}
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Boolean)
-], NotificationSettings.prototype, "notification", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Boolean)
-], NotificationSettings.prototype, "sms", void 0);
-class SettingsType {
-}
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: { newPatient: () => NotificationSettings, workTimeClose: () => NotificationSettings, workTimeEnded: () => NotificationSettings, workTimeStarted: () => NotificationSettings } }),
-    tslib_1.__metadata("design:type", Object)
-], SettingsType.prototype, "notifications", void 0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+exports.__esModule = true;
+var mongoose_types_1 = require("../../mongoose-types");
+var class_transformer_1 = require("class-transformer/");
+var NotificationSettings = /** @class */ (function () {
+    function NotificationSettings() {
+    }
+    __decorate([
+        mongoose_types_1.Prop()
+    ], NotificationSettings.prototype, "notification");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], NotificationSettings.prototype, "sms");
+    return NotificationSettings;
+}());
+var SettingsType = /** @class */ (function () {
+    function SettingsType() {
+    }
+    __decorate([
+        mongoose_types_1.Prop({ type: { newPatient: function () { return NotificationSettings; }, workTimeClose: function () { return NotificationSettings; }, workTimeEnded: function () { return NotificationSettings; }, workTimeStarted: function () { return NotificationSettings; } } })
+    ], SettingsType.prototype, "notifications");
+    return SettingsType;
+}());
 ;
-class ReservationCoordinatesType {
-}
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], ReservationCoordinatesType.prototype, "lat", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], ReservationCoordinatesType.prototype, "lng", void 0);
-class WorkTimesType {
-}
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], WorkTimesType.prototype, "from", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], WorkTimesType.prototype, "to", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: [String] }),
-    tslib_1.__metadata("design:type", Array)
-], WorkTimesType.prototype, "exceptions", void 0);
-class ReservationInfoDetailsType {
-}
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Boolean)
-], ReservationInfoDetailsType.prototype, "enabled", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], ReservationInfoDetailsType.prototype, "phone", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], ReservationInfoDetailsType.prototype, "address", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], ReservationInfoDetailsType.prototype, "gapMinutes", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], ReservationInfoDetailsType.prototype, "cost", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: false }),
-    tslib_1.__metadata("design:type", ReservationCoordinatesType)
-], ReservationInfoDetailsType.prototype, "coordinates", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true, type: {
-            saturday: { type: WorkTimesType, required: true },
-            sunday: { type: WorkTimesType, required: true },
-            monday: { type: WorkTimesType, required: true },
-            tuesday: { type: WorkTimesType, required: true },
-            wednesday: { type: WorkTimesType, required: true },
-            thursday: { type: WorkTimesType, required: true },
-            friday: { type: WorkTimesType, required: true }
-        } }),
-    tslib_1.__metadata("design:type", WorkTimes_1.default)
-], ReservationInfoDetailsType.prototype, "workTimes", void 0);
-class ResponseDaysDetailsType {
-}
-class DetailsType {
-}
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", ReservationInfoDetailsType)
-], DetailsType.prototype, "reservationInfo", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", String)
-], DetailsType.prototype, "phone", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", String)
-], DetailsType.prototype, "address", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", Boolean)
-], DetailsType.prototype, "videoCallAllowed", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", String)
-], DetailsType.prototype, "bio", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true, default: true }),
-    tslib_1.__metadata("design:type", Boolean)
-], DetailsType.prototype, "displayInList", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", Number)
-], DetailsType.prototype, "maxVisitDurationMillisec", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], DetailsType.prototype, "city", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], DetailsType.prototype, "shaba", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], DetailsType.prototype, "nezam_pezeshki_code", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], DetailsType.prototype, "cut", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: [{ type: mongoose_types_1.ObjectId, ref: 'healthcenters' }] }),
-    tslib_1.__metadata("design:type", Array)
-], DetailsType.prototype, "clinics", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: [{ type: mongoose_types_1.ObjectId, ref: 'healthcenters' }] }),
-    tslib_1.__metadata("design:type", Array)
-], DetailsType.prototype, "hospitals", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: () => ResponseDaysDetailsType }),
-    tslib_1.__metadata("design:type", Object)
-], DetailsType.prototype, "response_days", void 0);
-let User = class User {
-    constructor(type, mobile) {
+var ReservationCoordinatesType = /** @class */ (function () {
+    function ReservationCoordinatesType() {
+    }
+    __decorate([
+        mongoose_types_1.Prop()
+    ], ReservationCoordinatesType.prototype, "lat");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], ReservationCoordinatesType.prototype, "lng");
+    return ReservationCoordinatesType;
+}());
+var WorkTimesType = /** @class */ (function () {
+    function WorkTimesType() {
+    }
+    __decorate([
+        mongoose_types_1.Prop()
+    ], WorkTimesType.prototype, "from");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], WorkTimesType.prototype, "to");
+    __decorate([
+        mongoose_types_1.Prop({ type: [String] })
+    ], WorkTimesType.prototype, "exceptions");
+    return WorkTimesType;
+}());
+var ReservationInfoDetailsType = /** @class */ (function () {
+    function ReservationInfoDetailsType() {
+    }
+    __decorate([
+        mongoose_types_1.Prop()
+    ], ReservationInfoDetailsType.prototype, "enabled");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], ReservationInfoDetailsType.prototype, "phone");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], ReservationInfoDetailsType.prototype, "address");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], ReservationInfoDetailsType.prototype, "gapMinutes");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], ReservationInfoDetailsType.prototype, "cost");
+    __decorate([
+        mongoose_types_1.Prop({ required: false })
+    ], ReservationInfoDetailsType.prototype, "coordinates");
+    __decorate([
+        mongoose_types_1.Prop({ required: true, type: {
+                saturday: { type: WorkTimesType, required: true },
+                sunday: { type: WorkTimesType, required: true },
+                monday: { type: WorkTimesType, required: true },
+                tuesday: { type: WorkTimesType, required: true },
+                wednesday: { type: WorkTimesType, required: true },
+                thursday: { type: WorkTimesType, required: true },
+                friday: { type: WorkTimesType, required: true }
+            } })
+    ], ReservationInfoDetailsType.prototype, "workTimes");
+    return ReservationInfoDetailsType;
+}());
+var ResponseDaysDetailsType = /** @class */ (function () {
+    function ResponseDaysDetailsType() {
+    }
+    return ResponseDaysDetailsType;
+}());
+var DetailsType = /** @class */ (function () {
+    function DetailsType() {
+    }
+    __decorate([
+        mongoose_types_1.Prop()
+    ], DetailsType.prototype, "reservationInfo");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], DetailsType.prototype, "phone");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], DetailsType.prototype, "address");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], DetailsType.prototype, "videoCallAllowed");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], DetailsType.prototype, "bio");
+    __decorate([
+        mongoose_types_1.Prop({ required: true, "default": true })
+    ], DetailsType.prototype, "displayInList");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], DetailsType.prototype, "maxVisitDurationMillisec");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], DetailsType.prototype, "city");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], DetailsType.prototype, "shaba");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], DetailsType.prototype, "nezam_pezeshki_code");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], DetailsType.prototype, "cut");
+    __decorate([
+        mongoose_types_1.Prop({ type: [{ type: mongoose_types_1.ObjectId, ref: 'healthcenters' }] })
+    ], DetailsType.prototype, "clinics");
+    __decorate([
+        mongoose_types_1.Prop({ type: [{ type: mongoose_types_1.ObjectId, ref: 'healthcenters' }] })
+    ], DetailsType.prototype, "hospitals");
+    __decorate([
+        mongoose_types_1.Prop({ type: function () { return ResponseDaysDetailsType; } })
+    ], DetailsType.prototype, "response_days");
+    return DetailsType;
+}());
+var User = /** @class */ (function () {
+    function User(type, mobile) {
         this.name = '';
         this.currency = 0;
         this.gender = '';
         this.type = type;
         this.mobile = mobile;
     }
-};
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true, index: true, unique: true }),
-    tslib_1.__metadata("design:type", String)
-], User.prototype, "mobile", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: true }),
-    tslib_1.__metadata("design:type", String)
-], User.prototype, "type", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: false, default: '' }),
-    tslib_1.__metadata("design:type", String)
-], User.prototype, "name", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], User.prototype, "imageUrl", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], User.prototype, "code", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: mongoose_types_1.ObjectId, ref: 'specializations' }),
-    tslib_1.__metadata("design:type", index_1.Specialization)
-], User.prototype, "specialization", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ required: false }),
-    tslib_1.__metadata("design:type", Number)
-], User.prototype, "price", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ default: 0 }),
-    tslib_1.__metadata("design:type", Number)
-], User.prototype, "currency", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Boolean)
-], User.prototype, "ready", void 0);
-tslib_1.__decorate([
-    class_transformer_1.Exclude(),
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], User.prototype, "sms_code", void 0);
-tslib_1.__decorate([
-    class_transformer_1.Exclude(),
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], User.prototype, "fcmtoken", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", Number)
-], User.prototype, "creationDate", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: [String] }),
-    tslib_1.__metadata("design:type", Array)
-], User.prototype, "finalizable_visits", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], User.prototype, "gender", void 0);
-tslib_1.__decorate([
-    class_transformer_1.Exclude(),
-    mongoose_1.Prop({ type: [String], default: [] }),
-    tslib_1.__metadata("design:type", Array)
-], User.prototype, "notificationQueuePatients", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop(),
-    tslib_1.__metadata("design:type", String)
-], User.prototype, "os", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: () => SettingsType }),
-    tslib_1.__metadata("design:type", SettingsType)
-], User.prototype, "settings", void 0);
-tslib_1.__decorate([
-    mongoose_1.Prop({ type: () => DetailsType }),
-    tslib_1.__metadata("design:type", DetailsType)
-], User.prototype, "details", void 0);
-User = tslib_1.__decorate([
-    mongoose_1.Schema(),
-    tslib_1.__metadata("design:paramtypes", [String, String])
-], User);
-exports.default = User;
+    __decorate([
+        mongoose_types_1.Prop({ required: true, index: true, unique: true })
+    ], User.prototype, "mobile");
+    __decorate([
+        mongoose_types_1.Prop({ required: true })
+    ], User.prototype, "type");
+    __decorate([
+        mongoose_types_1.Prop({ required: false, "default": '' })
+    ], User.prototype, "name");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], User.prototype, "imageUrl");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], User.prototype, "code");
+    __decorate([
+        mongoose_types_1.Prop({ type: mongoose_types_1.ObjectId, ref: 'specializations' })
+    ], User.prototype, "specialization");
+    __decorate([
+        mongoose_types_1.Prop({ required: false })
+    ], User.prototype, "price");
+    __decorate([
+        mongoose_types_1.Prop({ "default": 0 })
+    ], User.prototype, "currency");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], User.prototype, "ready");
+    __decorate([
+        class_transformer_1.Exclude(),
+        mongoose_types_1.Prop()
+    ], User.prototype, "sms_code");
+    __decorate([
+        class_transformer_1.Exclude(),
+        mongoose_types_1.Prop()
+    ], User.prototype, "fcmtoken");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], User.prototype, "creationDate");
+    __decorate([
+        mongoose_types_1.Prop({ type: [String] })
+    ], User.prototype, "finalizable_visits");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], User.prototype, "gender");
+    __decorate([
+        class_transformer_1.Exclude(),
+        mongoose_types_1.Prop({ type: [String], "default": [] })
+    ], User.prototype, "notificationQueuePatients");
+    __decorate([
+        mongoose_types_1.Prop()
+    ], User.prototype, "os");
+    __decorate([
+        mongoose_types_1.Prop({ type: function () { return SettingsType; } })
+    ], User.prototype, "settings");
+    __decorate([
+        mongoose_types_1.Prop({ type: function () { return DetailsType; } })
+    ], User.prototype, "details");
+    User = __decorate([
+        mongoose_types_1.Schema()
+    ], User);
+    return User;
+}());
+exports["default"] = User;
+//# sourceMappingURL=User.js.map

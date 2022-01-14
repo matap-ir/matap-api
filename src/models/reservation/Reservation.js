@@ -1,9 +1,16 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.ReservationRequest = void 0;
-class ReservationRequest {
-}
+var ReservationRequest = /** @class */ (function () {
+    function ReservationRequest() {
+    }
+    return ReservationRequest;
+}());
 exports.ReservationRequest = ReservationRequest;
-class Reservation {
-}
-exports.default = Reservation;
+var Reservation = /** @class */ (function () {
+    function Reservation() {
+    }
+    return Reservation;
+}());
+exports["default"] = Reservation;
+//# sourceMappingURL=Reservation.js.map
