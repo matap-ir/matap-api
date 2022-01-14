@@ -111,6 +111,6 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", ReceiptType)
 ], Visit.prototype, "receipt", void 0);
 Visit = tslib_1.__decorate([
-    mongoose_types_1.Schema()
+    mongoose_types_1.Schema({})
 ], Visit);
 exports.default = Visit;

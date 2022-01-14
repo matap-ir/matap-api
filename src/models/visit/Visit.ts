@@ -44,7 +44,7 @@ class ReceiptType{
     healthCenterSettled:boolean
 }
 
-@Schema()
+@Schema({})
 class Visit {
     _id!: string;
 
