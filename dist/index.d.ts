@@ -32,10 +32,11 @@ import Events from './src/models/events/Events';
 import CallAnalytics, { AbstractCallMetric } from './src/models/analytics/call-analytics/CallAnalytics';
 import FileInfo, { FileMetaData } from './src/models/file/file.info';
 export * from './src/models/Enums';
+import * as Tamin from './src/models/tamin/tamin';
 import GeneralEvent from './src/models/events/GeneralEvent';
 import ConferenceEvent from './src/models/events/ConferenceEvent';
 import Conference, { Participant } from './src/models/conference/Conference';
-export { AbstractCallMetric, FileInfo, FileMetaData, CallAnalytics, Participant, Conference, ConferenceEvent, GeneralEvent, Events, Reservation, ReservationRequest, Translations, Colors, Issuer, WorkTime, Archive, CrashReport, Notification, PrivilegeOptionsDetails, PrivilegeOptions, Privileges, AdminLog, ResponseTime, FileAddresses, User, Chat, WorkTimes, DoctorStatus, PatientStatus, Specialization, ServiceRequest, MedicalService, HealthCenter, DiscountCoupon, Transaction, Visit, Admin, FinancialAudit, QueryResponse, Rating, ServerConfig, Helper };
+export { Tamin, AbstractCallMetric, FileInfo, FileMetaData, CallAnalytics, Participant, Conference, ConferenceEvent, GeneralEvent, Events, Reservation, ReservationRequest, Translations, Colors, Issuer, WorkTime, Archive, CrashReport, Notification, PrivilegeOptionsDetails, PrivilegeOptions, Privileges, AdminLog, ResponseTime, FileAddresses, User, Chat, WorkTimes, DoctorStatus, PatientStatus, Specialization, ServiceRequest, MedicalService, HealthCenter, DiscountCoupon, Transaction, Visit, Admin, FinancialAudit, QueryResponse, Rating, ServerConfig, Helper };
 export declare type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';
 export interface ValidatorField {
     validator: any;

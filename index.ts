@@ -32,11 +32,13 @@ import Events from './src/models/events/Events';
 import CallAnalytics, {AbstractCallMetric} from './src/models/analytics/call-analytics/CallAnalytics';
 import FileInfo, {FileMetaData} from './src/models/file/file.info';
 export * from './src/models/Enums';
+import * as Tamin from './src/models/tamin/tamin';
 import GeneralEvent from './src/models/events/GeneralEvent';
 import ConferenceEvent from './src/models/events/ConferenceEvent';
 import Conference,{Participant} from './src/models/conference/Conference';
 
 export {
+    Tamin,
     AbstractCallMetric,
     FileInfo,
     FileMetaData,

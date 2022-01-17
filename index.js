@@ -10,7 +10,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 exports.__esModule = true;
-exports.Helper = exports.ServerConfig = exports.Rating = exports.Admin = exports.Visit = exports.Transaction = exports.DiscountCoupon = exports.HealthCenter = exports.MedicalService = exports.ServiceRequest = exports.Specialization = exports.WorkTimes = exports.Chat = exports.User = exports.FileAddresses = exports.ResponseTime = exports.AdminLog = exports.Privileges = exports.PrivilegeOptions = exports.PrivilegeOptionsDetails = exports.Notification = exports.CrashReport = exports.Archive = exports.Colors = exports.Translations = exports.ReservationRequest = exports.Reservation = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = exports.Conference = exports.CallAnalytics = exports.FileMetaData = exports.FileInfo = exports.AbstractCallMetric = void 0;
+exports.Helper = exports.ServerConfig = exports.Rating = exports.Admin = exports.Visit = exports.Transaction = exports.DiscountCoupon = exports.HealthCenter = exports.MedicalService = exports.ServiceRequest = exports.Specialization = exports.WorkTimes = exports.Chat = exports.User = exports.FileAddresses = exports.ResponseTime = exports.AdminLog = exports.Privileges = exports.PrivilegeOptions = exports.PrivilegeOptionsDetails = exports.Notification = exports.CrashReport = exports.Archive = exports.Colors = exports.Translations = exports.ReservationRequest = exports.Reservation = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = exports.Conference = exports.CallAnalytics = exports.FileMetaData = exports.FileInfo = exports.AbstractCallMetric = exports.Tamin = void 0;
 var FileAddresses_1 = require("./src/constants/FileAddresses");
 exports.FileAddresses = FileAddresses_1["default"];
 var User_1 = require("./src/models/users/User");
@@ -71,6 +71,8 @@ var file_info_1 = require("./src/models/file/file.info");
 exports.FileInfo = file_info_1["default"];
 exports.FileMetaData = file_info_1.FileMetaData;
 __exportStar(require("./src/models/Enums"), exports);
+var Tamin = require("./src/models/tamin/tamin");
+exports.Tamin = Tamin;
 var GeneralEvent_1 = require("./src/models/events/GeneralEvent");
 exports.GeneralEvent = GeneralEvent_1["default"];
 var ConferenceEvent_1 = require("./src/models/events/ConferenceEvent");

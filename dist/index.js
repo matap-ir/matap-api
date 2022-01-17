@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Helper = exports.ServerConfig = exports.Rating = exports.Admin = exports.Visit = exports.Transaction = exports.DiscountCoupon = exports.HealthCenter = exports.MedicalService = exports.ServiceRequest = exports.Specialization = exports.WorkTimes = exports.Chat = exports.User = exports.FileAddresses = exports.ResponseTime = exports.AdminLog = exports.Privileges = exports.PrivilegeOptions = exports.PrivilegeOptionsDetails = exports.Notification = exports.CrashReport = exports.Archive = exports.Colors = exports.Translations = exports.ReservationRequest = exports.Reservation = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = exports.Conference = exports.CallAnalytics = exports.FileMetaData = exports.FileInfo = exports.AbstractCallMetric = void 0;
+exports.Helper = exports.ServerConfig = exports.Rating = exports.Admin = exports.Visit = exports.Transaction = exports.DiscountCoupon = exports.HealthCenter = exports.MedicalService = exports.ServiceRequest = exports.Specialization = exports.WorkTimes = exports.Chat = exports.User = exports.FileAddresses = exports.ResponseTime = exports.AdminLog = exports.Privileges = exports.PrivilegeOptions = exports.PrivilegeOptionsDetails = exports.Notification = exports.CrashReport = exports.Archive = exports.Colors = exports.Translations = exports.ReservationRequest = exports.Reservation = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = exports.Conference = exports.CallAnalytics = exports.FileMetaData = exports.FileInfo = exports.AbstractCallMetric = exports.Tamin = void 0;
 const tslib_1 = require("tslib");
 const FileAddresses_1 = tslib_1.__importDefault(require("./src/constants/FileAddresses"));
 exports.FileAddresses = FileAddresses_1.default;
@@ -62,6 +62,8 @@ const file_info_1 = tslib_1.__importStar(require("./src/models/file/file.info"))
 exports.FileInfo = file_info_1.default;
 Object.defineProperty(exports, "FileMetaData", { enumerable: true, get: function () { return file_info_1.FileMetaData; } });
 tslib_1.__exportStar(require("./src/models/Enums"), exports);
+const Tamin = tslib_1.__importStar(require("./src/models/tamin/tamin"));
+exports.Tamin = Tamin;
 const GeneralEvent_1 = tslib_1.__importDefault(require("./src/models/events/GeneralEvent"));
 exports.GeneralEvent = GeneralEvent_1.default;
 const ConferenceEvent_1 = tslib_1.__importDefault(require("./src/models/events/ConferenceEvent"));
