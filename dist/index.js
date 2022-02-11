@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Helper = exports.ServerConfig = exports.Rating = exports.Admin = exports.Visit = exports.Transaction = exports.DiscountCoupon = exports.HealthCenter = exports.MedicalService = exports.ServiceRequest = exports.Specialization = exports.WorkTimes = exports.Chat = exports.User = exports.FileAddresses = exports.ResponseTime = exports.AdminLog = exports.Privileges = exports.PrivilegeOptions = exports.PrivilegeOptionsDetails = exports.Notification = exports.CrashReport = exports.Archive = exports.Colors = exports.Translations = exports.ReservationRequest = exports.Reservation = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = exports.Conference = exports.CallAnalytics = exports.FileMetaData = exports.FileInfo = exports.AbstractCallMetric = exports.Tamin = void 0;
+exports.Helper = exports.ServerConfig = exports.Rating = exports.Admin = exports.Visit = exports.Transaction = exports.DiscountCoupon = exports.HealthCenter = exports.MedicalService = exports.ServiceRequest = exports.Specialization = exports.WorkTimes = exports.Chat = exports.User = exports.FileAddresses = exports.ResponseTime = exports.AdminLog = exports.Privileges = exports.PrivilegeOptions = exports.PrivilegeOptionsDetails = exports.Notification = exports.CrashReport = exports.Archive = exports.Colors = exports.Translations = exports.ReservationRequest = exports.Reservation = exports.Events = exports.GeneralEvent = exports.ConferenceEvent = exports.Conference = exports.CallAnalytics = exports.FileMetaData = exports.FileInfo = exports.AbstractCallMetric = exports.Tamin = exports.Reception = void 0;
 const tslib_1 = require("tslib");
 const FileAddresses_1 = tslib_1.__importDefault(require("./src/constants/FileAddresses"));
 exports.FileAddresses = FileAddresses_1.default;
@@ -70,3 +70,5 @@ const ConferenceEvent_1 = tslib_1.__importDefault(require("./src/models/events/C
 exports.ConferenceEvent = ConferenceEvent_1.default;
 const Conference_1 = tslib_1.__importDefault(require("./src/models/conference/Conference"));
 exports.Conference = Conference_1.default;
+const reception_1 = tslib_1.__importDefault(require("./src/models/reception/reception"));
+exports.Reception = reception_1.default;

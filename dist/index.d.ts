@@ -36,7 +36,8 @@ import * as Tamin from './src/models/tamin/tamin';
 import GeneralEvent from './src/models/events/GeneralEvent';
 import ConferenceEvent from './src/models/events/ConferenceEvent';
 import Conference, { Participant } from './src/models/conference/Conference';
-export { Tamin, AbstractCallMetric, FileInfo, FileMetaData, CallAnalytics, Participant, Conference, ConferenceEvent, GeneralEvent, Events, Reservation, ReservationRequest, Translations, Colors, Issuer, WorkTime, Archive, CrashReport, Notification, PrivilegeOptionsDetails, PrivilegeOptions, Privileges, AdminLog, ResponseTime, FileAddresses, User, Chat, WorkTimes, DoctorStatus, PatientStatus, Specialization, ServiceRequest, MedicalService, HealthCenter, DiscountCoupon, Transaction, Visit, Admin, FinancialAudit, QueryResponse, Rating, ServerConfig, Helper };
+import Reception from './src/models/reception/reception';
+export { Reception, Tamin, AbstractCallMetric, FileInfo, FileMetaData, CallAnalytics, Participant, Conference, ConferenceEvent, GeneralEvent, Events, Reservation, ReservationRequest, Translations, Colors, Issuer, WorkTime, Archive, CrashReport, Notification, PrivilegeOptionsDetails, PrivilegeOptions, Privileges, AdminLog, ResponseTime, FileAddresses, User, Chat, WorkTimes, DoctorStatus, PatientStatus, Specialization, ServiceRequest, MedicalService, HealthCenter, DiscountCoupon, Transaction, Visit, Admin, FinancialAudit, QueryResponse, Rating, ServerConfig, Helper };
 export declare type HTMLTypes = 'text' | 'name' | 'number' | 'password' | 'tel' | 'date' | 'datetime-local' | 'file' | 'image' | 'month' | 'email' | 'url' | 'search';
 export interface ValidatorField {
     validator: any;

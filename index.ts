@@ -36,8 +36,10 @@ import * as Tamin from './src/models/tamin/tamin';
 import GeneralEvent from './src/models/events/GeneralEvent';
 import ConferenceEvent from './src/models/events/ConferenceEvent';
 import Conference,{Participant} from './src/models/conference/Conference';
+import Reception from './src/models/reception/reception';
 
 export {
+    Reception,
     Tamin,
     AbstractCallMetric,
     FileInfo,
