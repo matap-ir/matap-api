@@ -1,8 +1,0 @@
-import Visit from './visit/Visit';
-import Reservation from './reservation/Reservation';
-export default interface DoctorStatus {
-    visit: Visit | undefined;
-    ready: boolean;
-    queueList: Visit[];
-    reservations: Reservation[];
-}
