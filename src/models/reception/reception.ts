@@ -5,9 +5,11 @@ import User from '../users/User';
 export default class Reception{
     _id: string;
 
-    @Prop({type: [{type: ObjectId, ref: 'users'}]})
+    @Prop({type: [{type: ObjectId, ref: 'users'}], index: true})
     doctor: User;
 
-    @Prop({type: [{type: ObjectId, ref: 'users'}]})
+    @Prop({type: [{type: ObjectId, ref: 'users'}], index: true})
     patient: User;
+
+    createdAt: number;
 }

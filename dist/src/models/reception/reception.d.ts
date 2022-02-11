@@ -3,4 +3,5 @@ export default class Reception {
     _id: string;
     doctor: User;
     patient: User;
+    createdAt: number;
 }
