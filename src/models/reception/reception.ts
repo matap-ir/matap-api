@@ -6,5 +6,8 @@ export default class Reception{
     _id: string;
 
     @Prop({type: [{type: ObjectId, ref: 'users'}]})
-    doctor: User
+    doctor: User;
+
+    @Prop({type: [{type: ObjectId, ref: 'users'}]})
+    patient: User;
 }
