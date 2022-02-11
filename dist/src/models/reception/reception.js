@@ -9,7 +9,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", String)
 ], Reception.prototype, "docId", void 0);
 tslib_1.__decorate([
-    mongoose_types_1.Prop({ type: String, index: true }),
+    mongoose_types_1.Prop({ type: String, index: true, sparse: true, required: true }),
     tslib_1.__metadata("design:type", String)
 ], Reception.prototype, "patientId", void 0);
 tslib_1.__decorate([
