@@ -7,7 +7,7 @@ export default class Reception{
     @Prop({type: String, index: true})
     docId: string;
 
-    @Prop({type: String, index: true, sparse: true, required: true})
+    @Prop({type: String, index: true, sparse: true, required: false})
     patientId?: string;
 
     @Prop({type: [{}]})
