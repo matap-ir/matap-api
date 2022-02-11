@@ -1,15 +1,15 @@
-import {ObjectId, Prop, Schema} from '../../mongoose-types';
-import User from '../users/User';
+import { Prop, Schema } from '../../mongoose-types';
 
 @Schema()
 export default class Reception{
     _id: string;
 
-    @Prop({type: [{type: ObjectId, ref: 'users'}], index: true})
-    doctor: User;
+    @Prop({type: String, index: true})
+    docId: string;
 
-    @Prop({type: [{type: ObjectId, ref: 'users'}], index: true})
-    patient: User;
+    @Prop({type: String, index: true})
+    patientId: string;
 
-    createdAt: number;
+    @Prop({type: [{}]})
+    prescriptions: any[]
 }
