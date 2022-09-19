@@ -9,5 +9,5 @@ export default class Specialization {
     name:string;
 
     @Prop({type: [{type: ObjectId,ref: 'specializations'}],default: []})
-    childSpecs: Specialization[];
+    parentSpecs: Specialization[];
 }

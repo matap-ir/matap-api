@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Prop = exports.Schema = exports.ObjectId = void 0;
+const tslib_1 = require("tslib");
+const mongoose_1 = tslib_1.__importDefault(require("mongoose"));
+const mongoose_2 = require("@nestjs/mongoose");
+Object.defineProperty(exports, "Schema", { enumerable: true, get: function () { return mongoose_2.Schema; } });
+Object.defineProperty(exports, "Prop", { enumerable: true, get: function () { return mongoose_2.Prop; } });
+const ObjectId = mongoose_1.default.Types.ObjectId;
+exports.ObjectId = ObjectId;
