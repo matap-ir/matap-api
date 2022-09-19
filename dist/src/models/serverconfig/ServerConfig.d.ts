@@ -21,6 +21,7 @@ export default class ServerConfig {
     mediaConstraints: MediaConstraints;
     forceSpeaker: boolean;
     termsandconditions: string;
+    doctorsTermsandconditions: string;
     excludedReservationDates: string[];
     retryThreshold: number;
     videoMaxBitrate: number | 'unlimited';

@@ -50,6 +50,9 @@ export default class ServerConfig {
     termsandconditions: string;
 
     @Prop()
+    doctorsTermsandconditions: string;
+
+    @Prop()
     excludedReservationDates: string[];
 
     @Prop()

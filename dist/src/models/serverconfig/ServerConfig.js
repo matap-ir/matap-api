@@ -73,6 +73,10 @@ tslib_1.__decorate([
 ], ServerConfig.prototype, "termsandconditions", void 0);
 tslib_1.__decorate([
     (0, mongoose_types_1.Prop)(),
+    tslib_1.__metadata("design:type", String)
+], ServerConfig.prototype, "doctorsTermsandconditions", void 0);
+tslib_1.__decorate([
+    (0, mongoose_types_1.Prop)(),
     tslib_1.__metadata("design:type", Array)
 ], ServerConfig.prototype, "excludedReservationDates", void 0);
 tslib_1.__decorate([
