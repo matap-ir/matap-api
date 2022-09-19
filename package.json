@@ -1,0 +1,27 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "babel-node index.js",
+    "upgradeLatest": "yarn upgrade-interactive --latest",
+    "generate-dist": "yarn delete_dist && tsc --p ./tsconfig.json --declaration --declarationDir dist --outDir dist --pretty",
+    "delete_dist": "if exist \"./dist*\" Rmdir /S /Q \"./dist\""
+  },
+  "dependencies": {
+    "@nestjs/mongoose": "^9.0.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "javascript-dev-kit": "~0.28.7",
+    "mongoose": "^6.1.6"
+  },
+  "devDependencies": {
+    "@hapi/joi": "^17.1.0",
+    "@types/hapi__joi": "^16.0.9",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^14.14.31",
+    "tslint": "^6.0.0",
+    "typescript": "*"
+  }
+}
