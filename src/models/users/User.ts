@@ -177,6 +177,9 @@ export default class User {
     @Prop()
     creationDate: number;
 
+    @Prop({type: ObjectId,ref: 'users',required: false})
+    referrer?: User;
+
     @Prop({type: [String]})
     finalizable_visits:Visit[] | string[];
 

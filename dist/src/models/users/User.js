@@ -205,6 +205,10 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", Number)
 ], User.prototype, "creationDate", void 0);
 tslib_1.__decorate([
+    (0, mongoose_types_1.Prop)({ type: mongoose_types_1.ObjectId, ref: 'users', required: false }),
+    tslib_1.__metadata("design:type", User)
+], User.prototype, "referrer", void 0);
+tslib_1.__decorate([
     (0, mongoose_types_1.Prop)({ type: [String] }),
     tslib_1.__metadata("design:type", Array)
 ], User.prototype, "finalizable_visits", void 0);

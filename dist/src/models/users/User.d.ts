@@ -66,6 +66,7 @@ export default class User {
     sms_code: string;
     fcmtoken: string;
     creationDate: number;
+    referrer?: User;
     finalizable_visits: Visit[] | string[];
     followers: User[];
     gender: 'male' | 'female' | '';
