@@ -3,7 +3,6 @@ import Kit from 'javascript-dev-kit';
 import ServerConfig from '../serverconfig/ServerConfig';
 import {AbstractCallMetric} from '../analytics/call-analytics/CallAnalytics';
 import {ObjectId, Prop, Schema} from '../../mongoose-types';
-import  mongoose from 'mongoose';
 
 export class MediaConstraints{
     @Prop({type: {}})

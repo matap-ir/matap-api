@@ -1,6 +1,5 @@
 import {MediaConstraints} from '../conference/Conference';
 import {ObjectId, Prop, Schema} from '../../mongoose-types';
-import mongoose from 'mongoose';
 
 class IceServer{
     @Prop()

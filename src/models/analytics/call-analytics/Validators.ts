@@ -1,5 +1,4 @@
 import Joi from '../../Joi';
-import {Schema} from 'mongoose';
 import {GeneratedValidator} from '../../Validator';
 import {AbstractCallMetric} from './CallAnalytics';
 import createValidator from '../../createValidator';

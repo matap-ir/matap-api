@@ -1,5 +1,4 @@
 import {Schema} from 'mongoose';
-import {string} from '@hapi/joi';
 
 const dbModel = {
     iceServers:{
